@@ -8,7 +8,6 @@ using System.Windows.Forms;
 using System.Data;
 using capa_datos;
 
-
 namespace capa_negocio
 {
     public class ClsHojaRegistro : ClsConexion
@@ -40,7 +39,7 @@ namespace capa_negocio
             CI = "";            
         }
 
-        //Getters y Setters
+        //Getters y Setters de los atributos
         public string Nro_registro { get => nro_registro; set => nro_registro = value; }
         public string Nro_familiar_Contacto { get => nro_familiar_Contacto; set => nro_familiar_Contacto = value; }
         public bool Formulario_Referencia { get => formulario_Referencia; set => formulario_Referencia = value; }
