@@ -1,7 +1,7 @@
 ﻿
 namespace capa_presentacion.Usuarios.Medico
 {
-    partial class menuprincipalM
+    partial class formularioprincipalM
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace capa_presentacion.Usuarios.Medico
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(menuprincipalM));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formularioprincipalM));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelFormulario = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();

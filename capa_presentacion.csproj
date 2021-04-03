@@ -159,11 +159,11 @@
     <Compile Include="Usuarios\FrmGestionarEmpleado.Designer.cs">
       <DependentUpon>FrmGestionarEmpleado.cs</DependentUpon>
     </Compile>
-    <Compile Include="Usuarios\Medico\menuprincipalM.cs">
+    <Compile Include="Usuarios\Medico\formularioprincipalM.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Usuarios\Medico\menuprincipalM.Designer.cs">
-      <DependentUpon>menuprincipalM.cs</DependentUpon>
+    <Compile Include="Usuarios\Medico\formularioprincipalM.Designer.cs">
+      <DependentUpon>formularioprincipalM.cs</DependentUpon>
     </Compile>
     <Compile Include="Usuarios\secretario\formularioprincipalS.cs">
       <SubType>Form</SubType>
@@ -214,8 +214,8 @@
     <EmbeddedResource Include="Usuarios\Farmaceutico\formularioprincipalF.resx">
       <DependentUpon>formularioprincipalF.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Usuarios\Medico\menuprincipalM.resx">
-      <DependentUpon>menuprincipalM.cs</DependentUpon>
+    <EmbeddedResource Include="Usuarios\Medico\formularioprincipalM.resx">
+      <DependentUpon>formularioprincipalM.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Usuarios\secretario\formularioprincipalS.resx">
       <DependentUpon>formularioprincipalS.cs</DependentUpon>

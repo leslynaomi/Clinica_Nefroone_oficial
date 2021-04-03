@@ -46,7 +46,7 @@ namespace capa_presentacion
         {
             this.Hide();
 
-            menuprincipalM frm = new menuprincipalM();
+            formularioprincipalM frm = new formularioprincipalM();
             frm.Show();
         }
 

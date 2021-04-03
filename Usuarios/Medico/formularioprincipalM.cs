@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace capa_presentacion.Usuarios.Medico
 {
-    public partial class menuprincipalM : Form
+    public partial class formularioprincipalM : Form
     {
-        public menuprincipalM()
+        public formularioprincipalM()
         {
             InitializeComponent();
         }
