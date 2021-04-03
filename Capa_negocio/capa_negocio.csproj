@@ -50,6 +50,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="clsEmpleado.cs" />
+    <Compile Include="clsHojaEnfermeria.cs" />
+    <Compile Include="clsHojaMedica.cs" />
     <Compile Include="clsHojaRegistro.cs" />
     <Compile Include="clsPaciente.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

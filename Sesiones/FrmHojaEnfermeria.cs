@@ -22,5 +22,15 @@ namespace capa_presentacion
             FrmGestionarPaciente frm = new FrmGestionarPaciente();
             frm.Show();
         }
+
+        private void FrmHojaEnfermeria_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnInsertarRegistros_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

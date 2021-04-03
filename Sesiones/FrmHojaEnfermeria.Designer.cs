@@ -29,22 +29,14 @@ namespace capa_presentacion
         /// </summary>
         private void InitializeComponent()
         {
-            this.chkAccesoVascular = new System.Windows.Forms.CheckBox();
             this.txtSolucionDializante = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.txtNumUsoFiltro = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.txtParam = new System.Windows.Forms.TextBox();
-            this.btnBuscarRegistros = new System.Windows.Forms.Button();
-            this.btnMostrarRegistros = new System.Windows.Forms.Button();
-            this.btnInsertarRegistros = new System.Windows.Forms.Button();
             this.dgvHojaRegistro = new System.Windows.Forms.DataGridView();
             this.txtGrupoSang = new System.Windows.Forms.TextBox();
             this.txtIMC = new System.Windows.Forms.TextBox();
             this.txtTalla = new System.Windows.Forms.TextBox();
-            this.chkVIH = new System.Windows.Forms.CheckBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -67,18 +59,20 @@ namespace capa_presentacion
             this.txtFlujoEfect = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtNroReg = new System.Windows.Forms.TextBox();
+            this.btnModificarRegistros = new System.Windows.Forms.Button();
+            this.btnEliminarRegistros = new System.Windows.Forms.Button();
+            this.label17 = new System.Windows.Forms.Label();
+            this.chkAccesoVascular = new System.Windows.Forms.CheckBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtParam = new System.Windows.Forms.TextBox();
+            this.btnBuscarRegistros = new System.Windows.Forms.Button();
+            this.btnMostrarRegistros = new System.Windows.Forms.Button();
+            this.btnInsertarRegistros = new System.Windows.Forms.Button();
+            this.chkVIH = new System.Windows.Forms.CheckBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHojaRegistro)).BeginInit();
             this.SuspendLayout();
-            // 
-            // chkAccesoVascular
-            // 
-            this.chkAccesoVascular.AutoSize = true;
-            this.chkAccesoVascular.Location = new System.Drawing.Point(27, 447);
-            this.chkAccesoVascular.Name = "chkAccesoVascular";
-            this.chkAccesoVascular.Size = new System.Drawing.Size(106, 17);
-            this.chkAccesoVascular.TabIndex = 103;
-            this.chkAccesoVascular.Text = "Acceso Vascular";
-            this.chkAccesoVascular.UseVisualStyleBackColor = true;
             // 
             // txtSolucionDializante
             // 
@@ -112,55 +106,6 @@ namespace capa_presentacion
             this.txtNumUsoFiltro.Size = new System.Drawing.Size(100, 20);
             this.txtNumUsoFiltro.TabIndex = 99;
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(644, 451);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(131, 13);
-            this.label10.TabIndex = 98;
-            this.label10.Text = "Introduzca CI del paciente";
-            // 
-            // txtParam
-            // 
-            this.txtParam.Location = new System.Drawing.Point(644, 467);
-            this.txtParam.Name = "txtParam";
-            this.txtParam.Size = new System.Drawing.Size(131, 20);
-            this.txtParam.TabIndex = 97;
-            // 
-            // btnBuscarRegistros
-            // 
-            this.btnBuscarRegistros.BackColor = System.Drawing.Color.DarkSlateBlue;
-            this.btnBuscarRegistros.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btnBuscarRegistros.Location = new System.Drawing.Point(539, 462);
-            this.btnBuscarRegistros.Name = "btnBuscarRegistros";
-            this.btnBuscarRegistros.Size = new System.Drawing.Size(99, 29);
-            this.btnBuscarRegistros.TabIndex = 96;
-            this.btnBuscarRegistros.Text = "Buscar Registros";
-            this.btnBuscarRegistros.UseVisualStyleBackColor = false;
-            // 
-            // btnMostrarRegistros
-            // 
-            this.btnMostrarRegistros.BackColor = System.Drawing.Color.LightSlateGray;
-            this.btnMostrarRegistros.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btnMostrarRegistros.Location = new System.Drawing.Point(277, 462);
-            this.btnMostrarRegistros.Name = "btnMostrarRegistros";
-            this.btnMostrarRegistros.Size = new System.Drawing.Size(117, 29);
-            this.btnMostrarRegistros.TabIndex = 95;
-            this.btnMostrarRegistros.Text = "Mostrar Registros";
-            this.btnMostrarRegistros.UseVisualStyleBackColor = false;
-            // 
-            // btnInsertarRegistros
-            // 
-            this.btnInsertarRegistros.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.btnInsertarRegistros.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btnInsertarRegistros.Location = new System.Drawing.Point(414, 461);
-            this.btnInsertarRegistros.Name = "btnInsertarRegistros";
-            this.btnInsertarRegistros.Size = new System.Drawing.Size(117, 29);
-            this.btnInsertarRegistros.TabIndex = 94;
-            this.btnInsertarRegistros.Text = "Insertar Registros";
-            this.btnInsertarRegistros.UseVisualStyleBackColor = false;
-            // 
             // dgvHojaRegistro
             // 
             this.dgvHojaRegistro.AllowUserToOrderColumns = true;
@@ -191,27 +136,6 @@ namespace capa_presentacion
             this.txtTalla.Name = "txtTalla";
             this.txtTalla.Size = new System.Drawing.Size(100, 20);
             this.txtTalla.TabIndex = 90;
-            // 
-            // chkVIH
-            // 
-            this.chkVIH.AutoSize = true;
-            this.chkVIH.Location = new System.Drawing.Point(27, 472);
-            this.chkVIH.Name = "chkVIH";
-            this.chkVIH.Size = new System.Drawing.Size(44, 17);
-            this.chkVIH.TabIndex = 86;
-            this.chkVIH.Text = "VIH";
-            this.chkVIH.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Coral;
-            this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button1.Location = new System.Drawing.Point(148, 462);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(112, 28);
-            this.button1.TabIndex = 85;
-            this.button1.Text = "Menú Pacientes";
-            this.button1.UseVisualStyleBackColor = false;
             // 
             // label8
             // 
@@ -397,16 +321,145 @@ namespace capa_presentacion
             this.textBox6.Size = new System.Drawing.Size(100, 20);
             this.textBox6.TabIndex = 102;
             // 
+            // txtNroReg
+            // 
+            this.txtNroReg.Location = new System.Drawing.Point(148, 483);
+            this.txtNroReg.Name = "txtNroReg";
+            this.txtNroReg.Size = new System.Drawing.Size(100, 20);
+            this.txtNroReg.TabIndex = 121;
+            // 
+            // btnModificarRegistros
+            // 
+            this.btnModificarRegistros.BackColor = System.Drawing.Color.DarkGreen;
+            this.btnModificarRegistros.ForeColor = System.Drawing.SystemColors.Info;
+            this.btnModificarRegistros.Location = new System.Drawing.Point(25, 451);
+            this.btnModificarRegistros.Name = "btnModificarRegistros";
+            this.btnModificarRegistros.Size = new System.Drawing.Size(117, 29);
+            this.btnModificarRegistros.TabIndex = 120;
+            this.btnModificarRegistros.Text = "Modificar Registros";
+            this.btnModificarRegistros.UseVisualStyleBackColor = false;
+            // 
+            // btnEliminarRegistros
+            // 
+            this.btnEliminarRegistros.BackColor = System.Drawing.Color.Maroon;
+            this.btnEliminarRegistros.ForeColor = System.Drawing.Color.White;
+            this.btnEliminarRegistros.Location = new System.Drawing.Point(25, 486);
+            this.btnEliminarRegistros.Name = "btnEliminarRegistros";
+            this.btnEliminarRegistros.Size = new System.Drawing.Size(117, 29);
+            this.btnEliminarRegistros.TabIndex = 119;
+            this.btnEliminarRegistros.Text = "Eliminar Registros";
+            this.btnEliminarRegistros.UseVisualStyleBackColor = false;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(145, 459);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(101, 13);
+            this.label17.TabIndex = 118;
+            this.label17.Text = "Nº de Hoja Registro";
+            // 
+            // chkAccesoVascular
+            // 
+            this.chkAccesoVascular.AutoSize = true;
+            this.chkAccesoVascular.Location = new System.Drawing.Point(296, 463);
+            this.chkAccesoVascular.Name = "chkAccesoVascular";
+            this.chkAccesoVascular.Size = new System.Drawing.Size(106, 17);
+            this.chkAccesoVascular.TabIndex = 117;
+            this.chkAccesoVascular.Text = "Acceso Vascular";
+            this.chkAccesoVascular.UseVisualStyleBackColor = true;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(652, 442);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(131, 13);
+            this.label10.TabIndex = 116;
+            this.label10.Text = "Introduzca CI del paciente";
+            // 
+            // txtParam
+            // 
+            this.txtParam.Location = new System.Drawing.Point(652, 458);
+            this.txtParam.Name = "txtParam";
+            this.txtParam.Size = new System.Drawing.Size(131, 20);
+            this.txtParam.TabIndex = 115;
+            // 
+            // btnBuscarRegistros
+            // 
+            this.btnBuscarRegistros.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.btnBuscarRegistros.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.btnBuscarRegistros.Location = new System.Drawing.Point(652, 483);
+            this.btnBuscarRegistros.Name = "btnBuscarRegistros";
+            this.btnBuscarRegistros.Size = new System.Drawing.Size(131, 29);
+            this.btnBuscarRegistros.TabIndex = 114;
+            this.btnBuscarRegistros.Text = "Buscar Registros";
+            this.btnBuscarRegistros.UseVisualStyleBackColor = false;
+            // 
+            // btnMostrarRegistros
+            // 
+            this.btnMostrarRegistros.BackColor = System.Drawing.Color.LightSlateGray;
+            this.btnMostrarRegistros.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.btnMostrarRegistros.Location = new System.Drawing.Point(520, 483);
+            this.btnMostrarRegistros.Name = "btnMostrarRegistros";
+            this.btnMostrarRegistros.Size = new System.Drawing.Size(117, 29);
+            this.btnMostrarRegistros.TabIndex = 113;
+            this.btnMostrarRegistros.Text = "Mostrar Registros";
+            this.btnMostrarRegistros.UseVisualStyleBackColor = false;
+            // 
+            // btnInsertarRegistros
+            // 
+            this.btnInsertarRegistros.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.btnInsertarRegistros.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.btnInsertarRegistros.Location = new System.Drawing.Point(520, 448);
+            this.btnInsertarRegistros.Name = "btnInsertarRegistros";
+            this.btnInsertarRegistros.Size = new System.Drawing.Size(117, 29);
+            this.btnInsertarRegistros.TabIndex = 112;
+            this.btnInsertarRegistros.Text = "Insertar Registros";
+            this.btnInsertarRegistros.UseVisualStyleBackColor = false;
+            // 
+            // chkVIH
+            // 
+            this.chkVIH.AutoSize = true;
+            this.chkVIH.Location = new System.Drawing.Point(296, 488);
+            this.chkVIH.Name = "chkVIH";
+            this.chkVIH.Size = new System.Drawing.Size(44, 17);
+            this.chkVIH.TabIndex = 111;
+            this.chkVIH.Text = "VIH";
+            this.chkVIH.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Coral;
+            this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button1.Location = new System.Drawing.Point(655, 407);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(112, 28);
+            this.button1.TabIndex = 110;
+            this.button1.Text = "Menú Pacientes";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // FrmHojaEnfermeria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkCyan;
-            this.ClientSize = new System.Drawing.Size(800, 504);
+            this.ClientSize = new System.Drawing.Size(800, 527);
+            this.Controls.Add(this.txtNroReg);
+            this.Controls.Add(this.btnModificarRegistros);
+            this.Controls.Add(this.btnEliminarRegistros);
+            this.Controls.Add(this.label17);
+            this.Controls.Add(this.chkAccesoVascular);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.txtParam);
+            this.Controls.Add(this.btnBuscarRegistros);
+            this.Controls.Add(this.btnMostrarRegistros);
+            this.Controls.Add(this.btnInsertarRegistros);
+            this.Controls.Add(this.chkVIH);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.dtpHoraSalida);
             this.Controls.Add(this.dtpHoraInicio);
             this.Controls.Add(this.dtpFechaSesion);
-            this.Controls.Add(this.chkAccesoVascular);
             this.Controls.Add(this.textBox6);
             this.Controls.Add(this.txtFlujoEfect);
             this.Controls.Add(this.textBox4);
@@ -417,11 +470,6 @@ namespace capa_presentacion
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.txtNumUsoFiltro);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.txtParam);
-            this.Controls.Add(this.btnBuscarRegistros);
-            this.Controls.Add(this.btnMostrarRegistros);
-            this.Controls.Add(this.btnInsertarRegistros);
             this.Controls.Add(this.dgvHojaRegistro);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.txtGrupoSang);
@@ -429,9 +477,7 @@ namespace capa_presentacion
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.txtIMC);
             this.Controls.Add(this.txtTalla);
-            this.Controls.Add(this.chkVIH);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -443,6 +489,7 @@ namespace capa_presentacion
             this.Controls.Add(this.label1);
             this.Name = "FrmHojaEnfermeria";
             this.Text = "FrmHojaEnfermeria";
+            this.Load += new System.EventHandler(this.FrmHojaEnfermeria_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvHojaRegistro)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -450,23 +497,14 @@ namespace capa_presentacion
         }
 
         #endregion
-
-        private System.Windows.Forms.CheckBox chkAccesoVascular;
         private System.Windows.Forms.TextBox txtSolucionDializante;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtNumUsoFiltro;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox txtParam;
-        private System.Windows.Forms.Button btnBuscarRegistros;
-        private System.Windows.Forms.Button btnMostrarRegistros;
-        private System.Windows.Forms.Button btnInsertarRegistros;
         private System.Windows.Forms.DataGridView dgvHojaRegistro;
         private System.Windows.Forms.TextBox txtGrupoSang;
         private System.Windows.Forms.TextBox txtIMC;
         private System.Windows.Forms.TextBox txtTalla;
-        private System.Windows.Forms.CheckBox chkVIH;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
@@ -489,5 +527,17 @@ namespace capa_presentacion
         private System.Windows.Forms.TextBox txtFlujoEfect;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtNroReg;
+        private System.Windows.Forms.Button btnModificarRegistros;
+        private System.Windows.Forms.Button btnEliminarRegistros;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.CheckBox chkAccesoVascular;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txtParam;
+        private System.Windows.Forms.Button btnBuscarRegistros;
+        private System.Windows.Forms.Button btnMostrarRegistros;
+        private System.Windows.Forms.Button btnInsertarRegistros;
+        private System.Windows.Forms.CheckBox chkVIH;
+        private System.Windows.Forms.Button button1;
     }
 }
