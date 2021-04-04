@@ -36,6 +36,7 @@ namespace capa_presentacion
             this.label1 = new System.Windows.Forms.Label();
             this.btnMedico = new System.Windows.Forms.Button();
             this.btnEnfermera = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnAdminMenu
@@ -46,6 +47,7 @@ namespace capa_presentacion
             this.btnAdminMenu.TabIndex = 0;
             this.btnAdminMenu.Text = "Area Administrativa";
             this.btnAdminMenu.UseVisualStyleBackColor = true;
+            this.btnAdminMenu.Click += new System.EventHandler(this.btnAdminMenu_Click);
             // 
             // btnSaludMenu
             // 
@@ -68,7 +70,7 @@ namespace capa_presentacion
             // 
             // btnSecretaria
             // 
-            this.btnSecretaria.Location = new System.Drawing.Point(454, 166);
+            this.btnSecretaria.Location = new System.Drawing.Point(453, 191);
             this.btnSecretaria.Name = "btnSecretaria";
             this.btnSecretaria.Size = new System.Drawing.Size(75, 23);
             this.btnSecretaria.TabIndex = 3;
@@ -79,7 +81,7 @@ namespace capa_presentacion
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(416, 150);
+            this.label1.Location = new System.Drawing.Point(415, 175);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(137, 13);
             this.label1.TabIndex = 4;
@@ -87,7 +89,7 @@ namespace capa_presentacion
             // 
             // btnMedico
             // 
-            this.btnMedico.Location = new System.Drawing.Point(454, 195);
+            this.btnMedico.Location = new System.Drawing.Point(453, 220);
             this.btnMedico.Name = "btnMedico";
             this.btnMedico.Size = new System.Drawing.Size(75, 23);
             this.btnMedico.TabIndex = 5;
@@ -97,7 +99,7 @@ namespace capa_presentacion
             // 
             // btnEnfermera
             // 
-            this.btnEnfermera.Location = new System.Drawing.Point(454, 224);
+            this.btnEnfermera.Location = new System.Drawing.Point(453, 249);
             this.btnEnfermera.Name = "btnEnfermera";
             this.btnEnfermera.Size = new System.Drawing.Size(75, 23);
             this.btnEnfermera.TabIndex = 6;
@@ -105,13 +107,25 @@ namespace capa_presentacion
             this.btnEnfermera.UseVisualStyleBackColor = true;
             this.btnEnfermera.Click += new System.EventHandler(this.btnEnfermera_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(149, 27);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(245, 25);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "ENTORNO DE PRUEBA";
+            // 
             // FrmPrincipalAdministrador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Peru;
             this.ClientSize = new System.Drawing.Size(565, 295);
             this.Controls.Add(this.btnEnfermera);
             this.Controls.Add(this.btnMedico);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnSecretaria);
             this.Controls.Add(this.btnVolverMenu);
@@ -134,6 +148,7 @@ namespace capa_presentacion
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnMedico;
         private System.Windows.Forms.Button btnEnfermera;
+        private System.Windows.Forms.Label label2;
     }
 }
 

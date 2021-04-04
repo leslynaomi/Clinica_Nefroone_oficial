@@ -11,8 +11,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-//using capa_presentacion;
-
 namespace capa_presentacion
 {
     public partial class FrmPrincipalAdministrador : Form
@@ -55,6 +53,12 @@ namespace capa_presentacion
             this.Hide();
             
             formularioprincipalE frm = new formularioprincipalE();
+            frm.Show();
+        }
+
+        private void btnAdminMenu_Click(object sender, EventArgs e)
+        {
+            FrmGestionarEmpleado frm = new FrmGestionarEmpleado();
             frm.Show();
         }
     }

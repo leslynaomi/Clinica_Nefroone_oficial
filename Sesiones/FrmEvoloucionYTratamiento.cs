@@ -70,9 +70,9 @@ namespace capa_presentacion
             {                
                 evol.Nro_Seguro = txtNroSeguro.Text;
                 evol.Ultra_Filtracion = txtUltraFil.Text;
-                evol.Duracion = txtDuracion.Text;
+                evol.Duracion = cbxDuracion.Text;
                 evol.Flujo_Dialisis = txtFlujoDial.Text;
-                evol.Evolucion_Clinica = txtEvolClin.Text;
+                evol.Evolucion_Clinica = rtbEvolClin.Text;
                 evol.Detalles_Medicacion = txtDetMed.Text;
                 evol.Tipo_Tratamiento = txtTipoTrat.Text;
                 evol.Id_hoja_enfermeria = txtIDHojaEnf.Text;
@@ -91,9 +91,9 @@ namespace capa_presentacion
         {
             txtNroSeguro.Clear();
             txtUltraFil.Clear();
-            txtDuracion.Clear();
+            cbxDuracion.ResetText();
             txtFlujoDial.Clear();
-            txtEvolClin.Clear();
+            rtbEvolClin.Clear();
             txtDetMed.Clear();
             txtTipoTrat.Clear();
             txtIDHojaEnf.Clear();
@@ -115,9 +115,9 @@ namespace capa_presentacion
                     evol.Id_evolucion_tratamiento = txtParamModElim.Text;
                     evol.Nro_Seguro = txtNroSeguro.Text;
                     evol.Ultra_Filtracion = txtUltraFil.Text;
-                    evol.Duracion = txtDuracion.Text;
+                    evol.Duracion = cbxDuracion.Text;
                     evol.Flujo_Dialisis = txtFlujoDial.Text;
-                    evol.Evolucion_Clinica = txtEvolClin.Text;
+                    evol.Evolucion_Clinica = rtbEvolClin.Text;
                     evol.Detalles_Medicacion = txtDetMed.Text;
                     evol.Tipo_Tratamiento = txtTipoTrat.Text;
                     evol.Id_hoja_enfermeria = txtIDHojaEnf.Text;
