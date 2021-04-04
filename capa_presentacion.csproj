@@ -147,10 +147,10 @@
     <Compile Include="Sesiones\FrmHojaSecretaria.Designer.cs">
       <DependentUpon>FrmHojaSecretaria.cs</DependentUpon>
     </Compile>
-    <Compile Include="Usuarios\Enfermero\formularioprincipalE.cs">
+    <Compile Include="Usuarios\Enfermera\formularioprincipalE.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Usuarios\Enfermero\formularioprincipalE.Designer.cs">
+    <Compile Include="Usuarios\Enfermera\formularioprincipalE.Designer.cs">
       <DependentUpon>formularioprincipalE.cs</DependentUpon>
     </Compile>
     <Compile Include="Usuarios\Farmaceutico\formularioprincipalF.cs">
@@ -171,10 +171,10 @@
     <Compile Include="Usuarios\Medico\formularioprincipalM.Designer.cs">
       <DependentUpon>formularioprincipalM.cs</DependentUpon>
     </Compile>
-    <Compile Include="Usuarios\secretario\formularioprincipalS.cs">
+    <Compile Include="Usuarios\Secretario\formularioprincipalS.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Usuarios\secretario\formularioprincipalS.Designer.cs">
+    <Compile Include="Usuarios\Secretario\formularioprincipalS.Designer.cs">
       <DependentUpon>formularioprincipalS.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="FrmAreaSalud.resx">
@@ -217,7 +217,7 @@
     <EmbeddedResource Include="Sesiones\FrmHojaSecretaria.resx">
       <DependentUpon>FrmHojaSecretaria.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Usuarios\Enfermero\formularioprincipalE.resx">
+    <EmbeddedResource Include="Usuarios\Enfermera\formularioprincipalE.resx">
       <DependentUpon>formularioprincipalE.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Usuarios\Farmaceutico\formularioprincipalF.resx">
@@ -229,7 +229,7 @@
     <EmbeddedResource Include="Usuarios\Medico\formularioprincipalM.resx">
       <DependentUpon>formularioprincipalM.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Usuarios\secretario\formularioprincipalS.resx">
+    <EmbeddedResource Include="Usuarios\Secretario\formularioprincipalS.resx">
       <DependentUpon>formularioprincipalS.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ClinicaDataSet.xsc">
