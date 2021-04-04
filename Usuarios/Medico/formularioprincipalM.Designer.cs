@@ -86,18 +86,18 @@ namespace capa_presentacion.Usuarios.Medico
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Stencil", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label1.Location = new System.Drawing.Point(29, 39);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(185, 38);
+            this.label1.Size = new System.Drawing.Size(207, 37);
             this.label1.TabIndex = 12;
             this.label1.Text = "NEFROONE";
             // 
             // button3
             // 
             this.button3.BackColor = System.Drawing.SystemColors.Desktop;
-            this.button3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.button3.Location = new System.Drawing.Point(2, 234);
             this.button3.Name = "button3";
@@ -109,7 +109,7 @@ namespace capa_presentacion.Usuarios.Medico
             // button2
             // 
             this.button2.BackColor = System.Drawing.SystemColors.Desktop;
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.button2.Location = new System.Drawing.Point(2, 192);
             this.button2.Name = "button2";
@@ -117,11 +117,12 @@ namespace capa_presentacion.Usuarios.Medico
             this.button2.TabIndex = 10;
             this.button2.Text = "EVOLUCION TRATAMIENTO";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.SystemColors.Desktop;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.button1.Location = new System.Drawing.Point(2, 150);
             this.button1.Name = "button1";
@@ -182,14 +183,14 @@ namespace capa_presentacion.Usuarios.Medico
             this.btnCerrar.TabStop = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click_1);
             // 
-            // menuprincipalM
+            // formularioprincipalM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1353, 645);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "menuprincipalM";
+            this.Name = "formularioprincipalM";
             this.Text = "menuprincipalM";
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);

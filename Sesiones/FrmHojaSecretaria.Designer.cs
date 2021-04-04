@@ -231,7 +231,7 @@ namespace capa_presentacion
             // 
             this.btnMostrarRegistros.BackColor = System.Drawing.Color.LightSlateGray;
             this.btnMostrarRegistros.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btnMostrarRegistros.Location = new System.Drawing.Point(273, 438);
+            this.btnMostrarRegistros.Location = new System.Drawing.Point(350, 462);
             this.btnMostrarRegistros.Name = "btnMostrarRegistros";
             this.btnMostrarRegistros.Size = new System.Drawing.Size(117, 29);
             this.btnMostrarRegistros.TabIndex = 42;
@@ -243,7 +243,7 @@ namespace capa_presentacion
             // 
             this.btnInsertarRegistros.BackColor = System.Drawing.Color.LightSeaGreen;
             this.btnInsertarRegistros.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btnInsertarRegistros.Location = new System.Drawing.Point(405, 438);
+            this.btnInsertarRegistros.Location = new System.Drawing.Point(482, 462);
             this.btnInsertarRegistros.Name = "btnInsertarRegistros";
             this.btnInsertarRegistros.Size = new System.Drawing.Size(117, 29);
             this.btnInsertarRegistros.TabIndex = 41;
@@ -312,7 +312,7 @@ namespace capa_presentacion
             // 
             this.txtNroReg.Location = new System.Drawing.Point(144, 459);
             this.txtNroReg.Name = "txtNroReg";
-            this.txtNroReg.Size = new System.Drawing.Size(100, 20);
+            this.txtNroReg.Size = new System.Drawing.Size(151, 20);
             this.txtNroReg.TabIndex = 53;
             // 
             // label11
@@ -320,9 +320,9 @@ namespace capa_presentacion
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(141, 435);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(101, 13);
+            this.label11.Size = new System.Drawing.Size(154, 13);
             this.label11.TabIndex = 23;
-            this.label11.Text = "Nº de Hoja Registro";
+            this.label11.Text = "Introduzca Nº de Hoja Registro";
             // 
             // FrmHojaSecretaria
             // 

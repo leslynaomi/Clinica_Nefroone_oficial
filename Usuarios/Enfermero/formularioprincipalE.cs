@@ -31,18 +31,13 @@ namespace capa_presentacion.Usuarios.Enfermero
                 panelFormulario.Tag = formulario;
                 formulario.Show();
                 formulario.BringToFront();
-
             }
-
             else
             {
                 formulario.BringToFront();
             }
 
-        }
-
-      
-
+        }      
      
         private void button1_Click(object sender, EventArgs e)
         {
@@ -58,16 +53,10 @@ namespace capa_presentacion.Usuarios.Enfermero
         {
             this.Size = Screen.PrimaryScreen.WorkingArea.Size;
             this.Location = Screen.PrimaryScreen.WorkingArea.Location;
-
         }
-
         private void btnMinimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
     }
-
-
-
-
-    }
+ }

@@ -8,13 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Clinica_Nefroone.Sesiones
+namespace capa_presentacion
 {
-    public partial class FrmEmpleado : Form
+    public partial class FrmGestionarEmpleado : Form
     {
-        public FrmEmpleado()
+        public FrmGestionarEmpleado()
         {
             InitializeComponent();
+        }
+
+        private void FrmGestionarEmpleado_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

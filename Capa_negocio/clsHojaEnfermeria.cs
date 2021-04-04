@@ -11,6 +11,7 @@ namespace capa_negocio
     public class ClsHojaEnfermeria : ClsConexion
     {
         //Atributos        
+        private string id_hoja_enfermeria;
         private string fecha_Sesion;
         private string nro_Sesion_HD;
         private string hora_Inicio;
@@ -30,6 +31,7 @@ namespace capa_negocio
         //Constructor
         public ClsHojaEnfermeria()
         {
+            id_hoja_enfermeria = "";
             fecha_Sesion = "";
             nro_Sesion_HD = "";
             hora_Inicio = "";
@@ -47,7 +49,8 @@ namespace capa_negocio
             id_empleado = "";
         }
 
-        //Getters y Setters        
+        //Getters y Setters
+        public string Id_hoja_enfermeria { get => id_hoja_enfermeria; set => id_hoja_enfermeria = value; }        
         public string Fecha_Sesion { get => fecha_Sesion; set => fecha_Sesion = value; }
         public string Nro_Sesion_HD { get => nro_Sesion_HD; set => nro_Sesion_HD = value; }
         public string Hora_Inicio { get => hora_Inicio; set => hora_Inicio = value; }
@@ -68,21 +71,28 @@ namespace capa_negocio
         public void Guardar_Registros()
         {
             IniciarSP("insertar_control_enfermeria");
-            AddParametro("@ci", ci);
-            AddParametro("@nombre", nombre);
-            AddParametro("@paterno", paterno);
-            AddParametro("@materno", materno);
-            AddParametro("@fecha_Nac", fecha_Nac);
-            AddParametro("@edad", edad);
-            AddParametro("@sexo", sexo);
-            AddParametro("@direccion", direccion);
+            AddParametro("@fecha_Sesion", fecha_Sesion);
+            AddParametro("@nro_Sesion_HD", nro_Sesion_HD);
+            AddParametro("@hora_Inicio", hora_Inicio);
+            AddParametro("@hora_Salida", hora_Salida);
+            AddParametro("@peso_Inicial", peso_Inicial);
+            AddParametro("@peso_Final", peso_Final);
+            AddParametro("@U_F_Programada", U_F_Programada);
+            AddParametro("@heparina", heparina);
+            AddParametro("@flujo_Efectivo", flujo_Efectivo);
+            AddParametro("@presion_Arterial", presion_Arterial);
+            AddParametro("@temperatura", temperatura);
+            AddParametro("@pulso", pulso);
+            AddParametro("@saturacion", saturacion);
+            AddParametro("@nro_registro", nro_registro);
+            AddParametro("@id_empleado", id_empleado);
             ejecutarSP();
         }
 
         public DataSet Mostrar_Registros()
         {
             string s;
-            s = "select *from Paciente";
+            s = "select *from Control_Enfermeria";
             DataSet ds = new DataSet();
             ejecutarSQL(s, "tac", ds);
             return ds;
@@ -90,22 +100,32 @@ namespace capa_negocio
 
         public void Modificar_Registros()
         {
-            IniciarSP("modificar_paciente");
-            AddParametro("@ci", ci);
-            AddParametro("@nombre", nombre);
-            AddParametro("@paterno", paterno);
-            AddParametro("@materno", materno);
-            AddParametro("@fecha_Nac", fecha_Nac);
-            AddParametro("@edad", edad);
-            AddParametro("@sexo", sexo);
-            AddParametro("@direccion", direccion);
+            IniciarSP("modificar_control_enfermeria");
+            AddParametro("@id_hoja_enfermeria", id_hoja_enfermeria);
+            AddParametro("@fecha_Sesion", fecha_Sesion);
+            AddParametro("@nro_Sesion_HD", nro_Sesion_HD);
+            AddParametro("@hora_Inicio", hora_Inicio);
+            AddParametro("@hora_Salida", hora_Salida);
+            AddParametro("@peso_Inicial", peso_Inicial);
+            AddParametro("@peso_Final", peso_Final);
+            AddParametro("@U_F_Programada", U_F_Programada);
+            AddParametro("@heparina", heparina);
+            AddParametro("@flujo_Efectivo", flujo_Efectivo);
+            AddParametro("@presion_Arterial", presion_Arterial);
+            AddParametro("@temperatura", temperatura);
+            AddParametro("@pulso", pulso);
+            AddParametro("@saturacion", saturacion);
+            AddParametro("@nro_registro", nro_registro);
+            AddParametro("@id_empleado", id_empleado);
             ejecutarSP();
         }
 
         public void Eliminar_Registros()
         {
-            IniciarSP("eliminar_paciente");
-            AddParametro("@ci", ci);
+            IniciarSP("eliminar_control_enfermeria");
+            AddParametro("@id_hoja_enfermeria", id_hoja_enfermeria);
+            AddParametro("@nro_registro", nro_registro);
+            AddParametro("@id_empleado", id_empleado);
             ejecutarSP();
         }
         //Busca en los registros a un paciente por Nombre o por CI
@@ -113,7 +133,7 @@ namespace capa_negocio
         {
             string s;
             DataSet ds = new DataSet();
-            s = "select *from paciente where ci like '" + dato + "%' or nombre like '" + dato + "%'";
+            s = "select *from Control_Enfermeria where id_hoja_enfermeria like '" + dato + "%' or nro_registro like '" + dato + "%'";
             ejecutarSQL(s, "tac", ds);
             return ds;
         }

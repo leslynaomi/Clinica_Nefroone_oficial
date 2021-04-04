@@ -73,7 +73,7 @@ namespace capa_presentacion
             // 
             this.btnInsertarRegistros.BackColor = System.Drawing.Color.LightSeaGreen;
             this.btnInsertarRegistros.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btnInsertarRegistros.Location = new System.Drawing.Point(202, 462);
+            this.btnInsertarRegistros.Location = new System.Drawing.Point(201, 462);
             this.btnInsertarRegistros.Name = "btnInsertarRegistros";
             this.btnInsertarRegistros.Size = new System.Drawing.Size(117, 29);
             this.btnInsertarRegistros.TabIndex = 1;
@@ -97,7 +97,7 @@ namespace capa_presentacion
             // 
             this.btnEliminarRegistros.BackColor = System.Drawing.Color.Maroon;
             this.btnEliminarRegistros.ForeColor = System.Drawing.Color.White;
-            this.btnEliminarRegistros.Location = new System.Drawing.Point(546, 428);
+            this.btnEliminarRegistros.Location = new System.Drawing.Point(511, 462);
             this.btnEliminarRegistros.Name = "btnEliminarRegistros";
             this.btnEliminarRegistros.Size = new System.Drawing.Size(117, 29);
             this.btnEliminarRegistros.TabIndex = 3;
@@ -109,7 +109,7 @@ namespace capa_presentacion
             // 
             this.btnModificarRegistros.BackColor = System.Drawing.Color.DarkGreen;
             this.btnModificarRegistros.ForeColor = System.Drawing.SystemColors.Info;
-            this.btnModificarRegistros.Location = new System.Drawing.Point(363, 462);
+            this.btnModificarRegistros.Location = new System.Drawing.Point(361, 462);
             this.btnModificarRegistros.Name = "btnModificarRegistros";
             this.btnModificarRegistros.Size = new System.Drawing.Size(117, 29);
             this.btnModificarRegistros.TabIndex = 4;
@@ -121,7 +121,7 @@ namespace capa_presentacion
             // 
             this.btnBuscarRegistros.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.btnBuscarRegistros.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btnBuscarRegistros.Location = new System.Drawing.Point(546, 462);
+            this.btnBuscarRegistros.Location = new System.Drawing.Point(669, 419);
             this.btnBuscarRegistros.Name = "btnBuscarRegistros";
             this.btnBuscarRegistros.Size = new System.Drawing.Size(117, 29);
             this.btnBuscarRegistros.TabIndex = 5;
@@ -140,7 +140,7 @@ namespace capa_presentacion
             // 
             // txtParam
             // 
-            this.txtParam.Location = new System.Drawing.Point(669, 452);
+            this.txtParam.Location = new System.Drawing.Point(669, 467);
             this.txtParam.Name = "txtParam";
             this.txtParam.Size = new System.Drawing.Size(119, 20);
             this.txtParam.TabIndex = 7;
@@ -276,7 +276,7 @@ namespace capa_presentacion
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(669, 436);
+            this.label10.Location = new System.Drawing.Point(669, 451);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(119, 13);
             this.label10.TabIndex = 27;

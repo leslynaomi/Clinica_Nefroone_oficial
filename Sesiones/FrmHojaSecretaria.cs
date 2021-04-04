@@ -60,7 +60,6 @@ namespace capa_presentacion
                 reg.Guardar_Registros();
                 LimpiarTexto();
                 MessageBox.Show("Insertado correctamente", "INFORMACION");
-                reg = new ClsHojaRegistro();
             }
             catch (Exception er)
             {

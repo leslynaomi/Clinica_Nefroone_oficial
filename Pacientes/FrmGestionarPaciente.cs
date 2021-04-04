@@ -78,17 +78,24 @@ namespace capa_presentacion
         {
             try
             {
-                pac.Ci = txtCi.Text;
-                pac.Nombre = txtNombre.Text;
-                pac.Paterno = txtPaterno.Text;
-                pac.Materno = txtMaterno.Text;
-                pac.Fecha_Nac = txtFechaNac.Text;
-                pac.Edad = txtEdad.Text;
-                pac.Sexo = txtSexo.Text;
-                pac.Direccion = txtDireccion.Text;
-                pac.Modificar_Registros();
-                LimpiarTexto();
-                MessageBox.Show("Modificado correctamente", "INFORMACION");
+                if (txtCi.Text == "")
+                {
+                    MessageBox.Show("Debe colocar un valor de CI de paciente para proceder");
+                }
+                else
+                {
+                    pac.Ci = txtCi.Text;
+                    pac.Nombre = txtNombre.Text;
+                    pac.Paterno = txtPaterno.Text;
+                    pac.Materno = txtMaterno.Text;
+                    pac.Fecha_Nac = txtFechaNac.Text;
+                    pac.Edad = txtEdad.Text;
+                    pac.Sexo = txtSexo.Text;
+                    pac.Direccion = txtDireccion.Text;
+                    pac.Modificar_Registros();
+                    LimpiarTexto();
+                    MessageBox.Show("Modificado correctamente", "INFORMACION");
+                }
             }
             catch (Exception er)
             {
@@ -100,10 +107,17 @@ namespace capa_presentacion
         {
             try
             {
-                pac.Ci = txtCi.Text;
-                pac.Eliminar_Registros();
-                LimpiarTexto();
-                MessageBox.Show("Eliminado correctamente", "INFORMACION");
+                if (txtCi.Text == "")
+                {
+                    MessageBox.Show("Debe colocar un valor de CI de paciente para proceder");
+                }
+                else
+                {
+                    pac.Ci = txtCi.Text;
+                    pac.Eliminar_Registros();
+                    LimpiarTexto();
+                    MessageBox.Show("Eliminado correctamente", "INFORMACION");
+                }
             }
             catch (Exception er)
             {

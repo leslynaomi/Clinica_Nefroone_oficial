@@ -23,6 +23,7 @@ namespace capa_negocio
         private string seguro;
         private string fecha_PHemodialisis;
         private string CI;
+        private string id_empleado;
 
         //Constructor
         public ClsHojaRegistro()
@@ -36,7 +37,8 @@ namespace capa_negocio
             municipio = "";
             seguro = "";
             fecha_PHemodialisis = "";
-            CI = "";            
+            CI = "";
+            id_empleado = "";
         }
 
         //Getters y Setters de los atributos
@@ -50,12 +52,13 @@ namespace capa_negocio
         public string Seguro { get => seguro; set => seguro = value; }
         public string Fecha_PHemodialisis { get => fecha_PHemodialisis; set => fecha_PHemodialisis = value; }
         public string CI1 { get => CI; set => CI = value; }
+        public string Id_empleado { get => id_empleado; set => id_empleado = value; }
 
         //Una función solo para convertir bool a string de forma simple
-        public string Form_RefToString(bool frm_ref) 
+        public string BoolToString(bool entrada) 
         {
             string resultado = "0";
-            if (frm_ref==true) { resultado = "1"; }
+            if (entrada == true) { resultado = "1"; }
             return resultado; 
         }
 
@@ -68,7 +71,7 @@ namespace capa_negocio
             //AddParametro("@Nro_registro", Nro_registro);
 
             AddParametro("@nro_familiar_Contacto", nro_familiar_Contacto);
-            AddParametro("@formulario_Referencia", Form_RefToString(formulario_Referencia));
+            AddParametro("@formulario_Referencia", BoolToString(formulario_Referencia));
             AddParametro("@carta_Negativa", carta_Negativa);
             AddParametro("@grado_Intruccion", grado_Intruccion);
             AddParametro("@red", red);
@@ -76,6 +79,7 @@ namespace capa_negocio
             AddParametro("@seguro", seguro);
             AddParametro("@fecha_PHemodialisis", fecha_PHemodialisis);
             AddParametro("@CI", CI);
+            AddParametro("@id_empleado", id_empleado);
             ejecutarSP();
         }
 
@@ -93,7 +97,7 @@ namespace capa_negocio
             IniciarSP("modificar_hoja_reg");
             AddParametro("@Nro_registro", Nro_registro);
             AddParametro("@nro_familiar_Contacto", nro_familiar_Contacto);
-            AddParametro("@formulario_Referencia", Form_RefToString(formulario_Referencia));
+            AddParametro("@formulario_Referencia", BoolToString(formulario_Referencia));
             AddParametro("@carta_Negativa", carta_Negativa);
             AddParametro("@grado_Intruccion", grado_Intruccion);
             AddParametro("@red", red);
@@ -101,6 +105,7 @@ namespace capa_negocio
             AddParametro("@seguro", seguro);
             AddParametro("@fecha_PHemodialisis", fecha_PHemodialisis);
             AddParametro("@CI", CI);
+            AddParametro("@id_empleado", id_empleado);
             ejecutarSP();
         }
 
@@ -109,6 +114,7 @@ namespace capa_negocio
             IniciarSP("eliminar_hoja_reg");
             AddParametro("@nro_reg", Nro_registro);
             AddParametro("@CI", CI);
+            AddParametro("@id_empleado", id_empleado);
             ejecutarSP();
         }
         

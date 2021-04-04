@@ -17,13 +17,21 @@ namespace capa_datos
         private SqlCommand cmdSP;//store procedure ''procedimiento almacenado
 
         public ClsConexion()
-        { 
-            //constructor            
-            this.servidor = "DESKTOP-Q4VVLI3";
-            this.usuario = "lesly";
-            this.contrasena = "levanito";
-            this.basedatos = "Nefroone4";
+        {
+            //constructor Paul 
+            this.servidor = "Lenovo";
+            this.usuario = "Pol";
+            this.contrasena = "Pol";
+            this.basedatos = "Nefroone3";
             this.cmdSP = new SqlCommand();
+
+            //constructor Lesly
+            //Solo descomentan la línea de código que necesiten
+            /* this.servidor = "DESKTOP-Q4VVLI3";
+             this.usuario = "lesly";
+             this.contrasena = "levanito";
+             this.basedatos = "Nefroone4";
+             this.cmdSP = new SqlCommand();*/
         }
 
         public SqlConnection conectar()

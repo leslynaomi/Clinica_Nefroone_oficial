@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="clsEmpleado.cs" />
+    <Compile Include="clsEvoloucionYTratamiento.cs" />
     <Compile Include="clsHojaEnfermeria.cs" />
     <Compile Include="clsHojaMedica.cs" />
     <Compile Include="clsHojaRegistro.cs" />
