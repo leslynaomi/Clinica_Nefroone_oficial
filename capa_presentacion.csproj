@@ -171,6 +171,12 @@
     <Compile Include="Usuarios\Medico\formularioprincipalM.Designer.cs">
       <DependentUpon>formularioprincipalM.cs</DependentUpon>
     </Compile>
+    <Compile Include="Usuarios\Medico\frmRecetario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Usuarios\Medico\frmRecetario.Designer.cs">
+      <DependentUpon>frmRecetario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Usuarios\Secretario\formularioprincipalS.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -228,6 +234,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Usuarios\Medico\formularioprincipalM.resx">
       <DependentUpon>formularioprincipalM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usuarios\Medico\frmRecetario.resx">
+      <DependentUpon>frmRecetario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Usuarios\Secretario\formularioprincipalS.resx">
       <DependentUpon>formularioprincipalS.cs</DependentUpon>

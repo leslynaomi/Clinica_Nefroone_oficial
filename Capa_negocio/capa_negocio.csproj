@@ -55,6 +55,7 @@
     <Compile Include="clsHojaMedica.cs" />
     <Compile Include="clsHojaRegistro.cs" />
     <Compile Include="clsPaciente.cs" />
+    <Compile Include="clsRecetario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -1,6 +1,6 @@
 --Creación de la base de datos
---create database Nefroone3
---use Nefroone3
+--create database Nefroone1
+--use Nefroone1
 
 --Para borrar un trigger completamente de la base de datos
 --drop trigger Habitacion_Libre
@@ -144,7 +144,12 @@ foreign key (id_empleado) references Empleado (id_empleado),
 create table Medicamento(
 id_medicamento int primary key identity(1,1) not null,
 nombre_Medicamento varchar(100) not null,
+presentacion varchar(100),
+concentracion varchar(100),
 stock int,
+diagnosticoF bit,
+diagnosticoP bit,
+diagnosticoC bit,
 id_farmacia int not null,
 foreign key (id_farmacia) references Farmacia(id_farmacia),
 )
@@ -152,8 +157,7 @@ foreign key (id_farmacia) references Farmacia(id_farmacia),
 create table Receta(
 id_receta int identity(1,1) not null,
 fecha date,
-hemodialisis_Cateter bit,
-hemodialisis_Fistula bit,
+cantidadRecetada varchar(50),
 id_medicamento int not null,
 ci int not null,
 id_empleado int not null,
@@ -498,13 +502,66 @@ go
 ------------						SALA
 go
 --PROCEDIMIENTO INSERTAR SALA
-
+create proc insertar_sala(
+@tipo_Sala varchar(50),
+@cantidad_Camas int,
+@cantidad_Equipos int,
+@capacidad_Maxima int
+)as
+begin
+	begin try
+		begin tran		
+			insert into Sala values(@tipo_Sala,@cantidad_Camas,@cantidad_Equipos,@capacidad_Maxima)
+			commit tran
+	end try
+	begin catch
+		raiserror('Error insertando registro de sala',16,1) 
+		rollback tran
+	end catch
+end
 go
 --PROCEDIMIENTO MODIFICAR SALA
-
+create proc modificar_sala(
+@id_sala int,
+@tipo_Sala varchar(50),
+@cantidad_Camas int,
+@cantidad_Equipos int,
+@capacidad_Maxima int
+)as
+begin
+	begin try
+		begin tran		
+			update Sala
+			set tipo_Sala=@tipo_Sala,
+				cantidad_Camas=@cantidad_Camas,
+				cantidad_Equipos=@cantidad_Equipos,
+				capacidad_Maxima=@capacidad_Maxima 
+			where id_sala=@id_sala
+			commit tran
+	end try
+	begin catch
+		raiserror('Error modificando egistro de sala',16,1) 
+		rollback tran
+	end catch
+end
 go
 --PROCEDIMIENTO ELIMINAR SALA
-
+create proc eliminar_sala(
+@id_sala int
+)as
+begin
+	begin try
+		begin tran		
+			delete Sala 
+			where id_sala=@id_sala
+			commit tran
+	end try
+	begin catch
+		raiserror('Error eliminando registro de sala',16,1) 
+		rollback tran
+	end catch
+end
+go
 ------------						LABORATORIO
 go
 --PROCEDIMIENTO INSERTAR LABORATORIO
@@ -933,13 +990,73 @@ go
 ------------						SESION
 go
 --PROCEDIMIENTO INSERTAR SESION
-
+create proc insertar_sesion(
+@tipo_Sesion varchar(50),
+@cantidad_Sesiones int,
+@cantidad_Total_Sesiones int,
+@horario time,
+@id_hoja_enfermeria int,
+@id_sala int
+)as
+begin
+	begin try
+		begin tran
+			insert into Sesion values(@tipo_Sesion,@cantidad_Sesiones,@cantidad_Total_Sesiones,@horario,@id_hoja_enfermeria,@id_sala)
+		commit tran
+	end try
+	begin catch
+		raiserror('Error insertando registros de sesión',16,1) 
+		rollback tran
+	end catch	
+end
 go
 --PROCEDIMIENTO MODIFICAR SESION
-
+create proc modificar_sesion(
+@id_sesion int,
+@tipo_Sesion varchar(50),
+@cantidad_Sesiones int,
+@cantidad_Total_Sesiones int,
+@horario time,
+@id_hoja_enfermeria int,
+@id_sala int
+)as
+begin
+	begin try
+		begin tran
+			update Sesion 
+			set tipo_Sesion=@tipo_Sesion,
+				cantidad_Sesiones=@cantidad_Sesiones,
+				cantidad_Total_Sesiones=@cantidad_Total_Sesiones,
+				horario=@horario,
+				id_hoja_enfermeria=@id_hoja_enfermeria,
+				id_sala=@id_sala
+			where id_sesion=@id_sesion
+		commit tran
+	end try
+	begin catch
+		raiserror('Error modificando registros de sesión',16,1) 
+		rollback tran
+	end catch	
+end
 go
 --PROCEDIMIENTO ELIMINAR SESION
-
+create proc eliminar_sesion(
+@id_sesion int,
+@id_hoja_enfermeria int,
+@id_sala int
+)as
+begin
+	begin try
+		begin tran
+			delete Sesion
+			where id_sesion=@id_sesion and id_hoja_enfermeria=@id_hoja_enfermeria and id_sala=@id_sala
+		commit tran
+	end try
+	begin catch
+		raiserror('Error eliminando registros de sesión',16,1) 
+		rollback tran
+	end catch	
+end
 ------------						CATETER
 go
 --PROCEDIMIENTO INSERTAR CATETER
@@ -961,23 +1078,115 @@ go
 ------------						DIALISIS PERITONEAL
 go
 --PROCEDIMIENTO INSERTAR DIALISIS PERITONEAL
-
+create proc insertar_dialisis_peritoneal(
+@precio_Sesion_D_Peritoneal money,
+@infucion_Inicio time,
+@infucion_Final time,
+@infucion_Volumen varchar(50),
+@drenaje_Inicio date,
+@drenaje_Volumen varchar (50),
+@balance_Parcial varchar(50),
+@balance_Total varchar(50), 
+@solucion_Usada1 varchar(50),
+@solucion_Usada2 varchar(50),
+@observacion_Balance varchar(100),
+@id_hoja_enfermeria int,
+@id_sesion int
+)as
+begin
+	begin try
+		begin tran
+			insert into Dialisis_Peritoneal values(@precio_Sesion_D_Peritoneal,@infucion_Inicio,@infucion_Final,@infucion_Volumen,@drenaje_Inicio,@drenaje_Volumen,@balance_Parcial,@balance_Total,@solucion_Usada1,@solucion_Usada2,@observacion_Balance,@id_hoja_enfermeria,@id_sesion)
+		commit tran
+	end try
+	begin catch
+		raiserror('Error insertando registros de diálisis peritoneal',16,1) 
+		rollback tran
+	end catch	
+end
 go
 --PROCEDIMIENTO MODIFICAR DIALISIS PERITONEAL
-
+create proc modificar_dialisis_peritoneal(
+@precio_Sesion_D_Peritoneal money,
+@infucion_Inicio time,
+@infucion_Final time,
+@infucion_Volumen varchar(50),
+@drenaje_Inicio date,
+@drenaje_Volumen varchar (50),
+@balance_Parcial varchar(50),
+@balance_Total varchar(50), 
+@solucion_Usada1 varchar(50),
+@solucion_Usada2 varchar(50),
+@observacion_Balance varchar(100),
+@id_hoja_enfermeria int,
+@id_sesion int
+)as
+begin
+	begin try
+		begin tran
+			update Dialisis_Peritoneal 
+			set precio_Sesion_D_Peritoneal=@precio_Sesion_D_Peritoneal,
+				infucion_Inicio=@infucion_Inicio,
+				infucion_Final=@infucion_Final,
+				infucion_Volumen=@infucion_Volumen,
+				drenaje_Inicio=@drenaje_Inicio,
+				drenaje_Volumen=@drenaje_Volumen,
+				balance_Parcial=@balance_Parcial,
+				balance_Total=@balance_Total,
+				solucion_Usada1=@solucion_Usada1,
+				solucion_Usada2=@solucion_Usada2,
+				observacion_Balance=@observacion_Balance
+			where @id_hoja_enfermeria=id_hoja_enfermeria and @id_sesion=id_sesion
+		commit tran
+	end try
+	begin catch
+		raiserror('Error modificando registros de diálisis peritoneal',16,1) 
+		rollback tran
+	end catch	
+end
 go
 --PROCEDIMIENTO ELIMINAR DIALISIS PERITONEAL
+create proc eliminar_dialisis_peritoneal(
+@id_hoja_enfermeria int,
+@id_sesion int
+)as
+begin
+	begin try
+		begin tran
+			delete Dialisis_Peritoneal 
+			where @id_hoja_enfermeria=id_hoja_enfermeria and @id_sesion=id_sesion
+		commit tran
+	end try
+	begin catch
+		raiserror('Error eliminando registros de diálisis peritoneal',16,1) 
+		rollback tran
+	end catch	
+end
 
+go
+--Lista de Medicamentos Dialisis Peritoneal
+create proc ListarMedicP
+as
+select nombre_Medicamento,presentacion,concentracion
+from Medicamento
+where  diagnosticoP=1
+
+--Lista de Medicamentos Fistula
+go
+create proc ListarMedicF
+as
+select nombre_Medicamento,presentacion,concentracion
+from Medicamento
+where  diagnosticoF=1
+
+--Lista de Medicamentos Cateter
+go
+create proc ListarMedicC
+as
+select nombre_Medicamento,presentacion,concentracion
+from Medicamento
+where  diagnosticoC=1
+
+go
 
 -------------						TRIGGERS							-----------------
-
-
-
-
-
-
-
-
-
-
-
