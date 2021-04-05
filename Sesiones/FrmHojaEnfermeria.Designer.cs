@@ -160,6 +160,7 @@ namespace capa_presentacion
             this.btnInsertarRegistros.TabIndex = 94;
             this.btnInsertarRegistros.Text = "Insertar Registros";
             this.btnInsertarRegistros.UseVisualStyleBackColor = false;
+            this.btnInsertarRegistros.Click += new System.EventHandler(this.btnInsertarRegistros_Click);
             // 
             // dgvHojaRegistro
             // 

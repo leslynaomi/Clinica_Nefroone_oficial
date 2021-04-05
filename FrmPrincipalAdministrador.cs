@@ -1,4 +1,5 @@
 ﻿using capa_presentacion.Usuarios.Enfermero;
+using capa_presentacion.Usuarios.Farmaceutico;
 using capa_presentacion.Usuarios.Medico;
 using capa_presentacion.Usuarios.secretario;
 using System;
@@ -55,6 +56,14 @@ namespace capa_presentacion
             this.Hide();
             
             formularioprincipalE frm = new formularioprincipalE();
+            frm.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            formularioprincipalF frm = new formularioprincipalF();
             frm.Show();
         }
     }

@@ -31,6 +31,7 @@ namespace capa_presentacion.Usuarios.Farmaceutico
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formularioprincipalF));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.PanelFormulario = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
@@ -40,7 +41,6 @@ namespace capa_presentacion.Usuarios.Farmaceutico
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.btnMaximizar = new System.Windows.Forms.PictureBox();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
-            this.PanelFormulario = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -60,6 +60,15 @@ namespace capa_presentacion.Usuarios.Farmaceutico
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1395, 696);
             this.panel1.TabIndex = 1;
+            // 
+            // PanelFormulario
+            // 
+            this.PanelFormulario.BackColor = System.Drawing.SystemColors.Control;
+            this.PanelFormulario.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PanelFormulario.Location = new System.Drawing.Point(254, 50);
+            this.PanelFormulario.Name = "PanelFormulario";
+            this.PanelFormulario.Size = new System.Drawing.Size(1141, 646);
+            this.PanelFormulario.TabIndex = 2;
             // 
             // panel3
             // 
@@ -108,6 +117,7 @@ namespace capa_presentacion.Usuarios.Farmaceutico
             this.button2.TabIndex = 14;
             this.button2.Text = "RECETARIO";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -172,15 +182,6 @@ namespace capa_presentacion.Usuarios.Farmaceutico
             this.btnCerrar.TabIndex = 6;
             this.btnCerrar.TabStop = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click_1);
-            // 
-            // PanelFormulario
-            // 
-            this.PanelFormulario.BackColor = System.Drawing.SystemColors.Control;
-            this.PanelFormulario.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PanelFormulario.Location = new System.Drawing.Point(254, 50);
-            this.PanelFormulario.Name = "PanelFormulario";
-            this.PanelFormulario.Size = new System.Drawing.Size(1141, 646);
-            this.PanelFormulario.TabIndex = 2;
             // 
             // formularioprincipalF
             // 

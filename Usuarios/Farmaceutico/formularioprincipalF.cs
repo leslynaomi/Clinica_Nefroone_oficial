@@ -62,7 +62,12 @@ namespace capa_presentacion.Usuarios.Farmaceutico
 
         private void button1_Click(object sender, EventArgs e)
         {
+            AbrirFormulario<insumos>();
+        }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<frmRecetario>();
         }
     }
 }

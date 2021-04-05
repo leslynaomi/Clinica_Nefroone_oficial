@@ -153,6 +153,12 @@
     <Compile Include="Usuarios\Farmaceutico\formularioprincipalF.Designer.cs">
       <DependentUpon>formularioprincipalF.cs</DependentUpon>
     </Compile>
+    <Compile Include="Usuarios\Farmaceutico\frmRecetario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Usuarios\Farmaceutico\frmRecetario.Designer.cs">
+      <DependentUpon>frmRecetario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Usuarios\Farmaceutico\insumos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -165,11 +171,11 @@
     <Compile Include="Usuarios\FrmGestionarEmpleado.Designer.cs">
       <DependentUpon>FrmGestionarEmpleado.cs</DependentUpon>
     </Compile>
-    <Compile Include="Usuarios\Medico\menuprincipalM.cs">
+    <Compile Include="Usuarios\Medico\formularioprincipalM.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Usuarios\Medico\menuprincipalM.Designer.cs">
-      <DependentUpon>menuprincipalM.cs</DependentUpon>
+    <Compile Include="Usuarios\Medico\formularioprincipalM.Designer.cs">
+      <DependentUpon>formularioprincipalM.cs</DependentUpon>
     </Compile>
     <Compile Include="Usuarios\secretario\formularioprincipalS.cs">
       <SubType>Form</SubType>
@@ -220,11 +226,14 @@
     <EmbeddedResource Include="Usuarios\Farmaceutico\formularioprincipalF.resx">
       <DependentUpon>formularioprincipalF.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Usuarios\Farmaceutico\frmRecetario.resx">
+      <DependentUpon>frmRecetario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Usuarios\Farmaceutico\insumos.resx">
       <DependentUpon>insumos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Usuarios\Medico\menuprincipalM.resx">
-      <DependentUpon>menuprincipalM.cs</DependentUpon>
+    <EmbeddedResource Include="Usuarios\Medico\formularioprincipalM.resx">
+      <DependentUpon>formularioprincipalM.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Usuarios\secretario\formularioprincipalS.resx">
       <DependentUpon>formularioprincipalS.cs</DependentUpon>
@@ -275,7 +284,35 @@
       <Name>capa_negocio</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>9</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\maximize3.png" />
   </ItemGroup>

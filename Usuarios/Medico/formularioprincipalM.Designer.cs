@@ -105,6 +105,7 @@ namespace capa_presentacion.Usuarios.Medico
             this.button3.TabIndex = 11;
             this.button3.Text = "RECETARIO";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -182,14 +183,14 @@ namespace capa_presentacion.Usuarios.Medico
             this.btnCerrar.TabStop = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click_1);
             // 
-            // menuprincipalM
+            // formularioprincipalM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1353, 645);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "menuprincipalM";
+            this.Name = "formularioprincipalM";
             this.Text = "menuprincipalM";
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
