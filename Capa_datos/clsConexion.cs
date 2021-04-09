@@ -19,10 +19,10 @@ namespace capa_datos
         public ClsConexion()
         {
             //constructor Paul 
-            this.servidor = "Lenovo";
-            this.usuario = "Pol";
-            this.contrasena = "Pol";
-            this.basedatos = "Nefroone1";
+            this.servidor = "ALEJANDRA-PC";
+            this.usuario = "yo";
+            this.contrasena = "123456789";
+            this.basedatos = "Nefroone";
             this.cmdSP = new SqlCommand();
 
             //constructor Lesly

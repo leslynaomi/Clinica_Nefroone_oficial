@@ -153,6 +153,12 @@
     <Compile Include="Usuarios\Enfermera\formularioprincipalE.Designer.cs">
       <DependentUpon>formularioprincipalE.cs</DependentUpon>
     </Compile>
+    <Compile Include="Usuarios\Enfermera\FrmDialisisPeritoneal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Usuarios\Enfermera\FrmDialisisPeritoneal.Designer.cs">
+      <DependentUpon>FrmDialisisPeritoneal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Usuarios\Farmaceutico\formularioprincipalF.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -219,6 +225,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Usuarios\Enfermera\formularioprincipalE.resx">
       <DependentUpon>formularioprincipalE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usuarios\Enfermera\FrmDialisisPeritoneal.resx">
+      <DependentUpon>FrmDialisisPeritoneal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Usuarios\Farmaceutico\formularioprincipalF.resx">
       <DependentUpon>formularioprincipalF.cs</DependentUpon>

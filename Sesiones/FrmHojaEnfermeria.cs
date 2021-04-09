@@ -155,8 +155,14 @@ namespace capa_presentacion
 
         private void btnMenuEmpelados_Click(object sender, EventArgs e)
         {
-            FrmGestionarEmpleado frmEmp = new FrmGestionarEmpleado();
-            frmEmp.Show();            
+
+
+            this.Close();
+
+            FrmPrincipalAdministrador frm = new FrmPrincipalAdministrador();
+            frm.Show();
+            ////7/FrmGestionarEmpleado frmEmp = new FrmGestionarEmpleado();
+            ///  frmEmp.Show();  
         }
 
         private void btnBuscarRegistros_Click(object sender, EventArgs e)
@@ -167,6 +173,12 @@ namespace capa_presentacion
             dgvHojaEnfermeria.DataMember = "tac";
             dgvHojaEnfermeria.AutoResizeColumns();
             dgvHojaEnfermeria.AutoResizeRows();
+        }
+
+        private void bDIALISISPERITONEAL_Click(object sender, EventArgs e)
+        {
+            FrmDialisisPeritoneal frm = new FrmDialisisPeritoneal();
+            frm.Show();
         }
     }
 }

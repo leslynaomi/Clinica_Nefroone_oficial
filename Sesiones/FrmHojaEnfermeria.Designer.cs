@@ -72,6 +72,7 @@ namespace capa_presentacion
             this.btnMenuEmpelados = new System.Windows.Forms.Button();
             this.label18 = new System.Windows.Forms.Label();
             this.txtIDEmp = new System.Windows.Forms.TextBox();
+            this.bDIALISISPERITONEAL = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHojaEnfermeria)).BeginInit();
             this.SuspendLayout();
             // 
@@ -418,7 +419,7 @@ namespace capa_presentacion
             // 
             this.btnMenuPacientes.BackColor = System.Drawing.Color.Coral;
             this.btnMenuPacientes.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnMenuPacientes.Location = new System.Drawing.Point(676, 19);
+            this.btnMenuPacientes.Location = new System.Drawing.Point(148, 19);
             this.btnMenuPacientes.Name = "btnMenuPacientes";
             this.btnMenuPacientes.Size = new System.Drawing.Size(112, 28);
             this.btnMenuPacientes.TabIndex = 110;
@@ -430,7 +431,7 @@ namespace capa_presentacion
             // 
             this.btnMenuEmpelados.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.btnMenuEmpelados.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnMenuEmpelados.Location = new System.Drawing.Point(558, 19);
+            this.btnMenuEmpelados.Location = new System.Drawing.Point(12, 18);
             this.btnMenuEmpelados.Name = "btnMenuEmpelados";
             this.btnMenuEmpelados.Size = new System.Drawing.Size(112, 28);
             this.btnMenuEmpelados.TabIndex = 110;
@@ -454,12 +455,23 @@ namespace capa_presentacion
             this.txtIDEmp.Size = new System.Drawing.Size(100, 20);
             this.txtIDEmp.TabIndex = 102;
             // 
+            // bDIALISISPERITONEAL
+            // 
+            this.bDIALISISPERITONEAL.Location = new System.Drawing.Point(539, 23);
+            this.bDIALISISPERITONEAL.Name = "bDIALISISPERITONEAL";
+            this.bDIALISISPERITONEAL.Size = new System.Drawing.Size(144, 23);
+            this.bDIALISISPERITONEAL.TabIndex = 122;
+            this.bDIALISISPERITONEAL.Text = "Dialisis Peritoneal";
+            this.bDIALISISPERITONEAL.UseVisualStyleBackColor = true;
+            this.bDIALISISPERITONEAL.Click += new System.EventHandler(this.bDIALISISPERITONEAL_Click);
+            // 
             // FrmHojaEnfermeria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkCyan;
             this.ClientSize = new System.Drawing.Size(800, 527);
+            this.Controls.Add(this.bDIALISISPERITONEAL);
             this.Controls.Add(this.txtParamModElim);
             this.Controls.Add(this.btnModificarRegistros);
             this.Controls.Add(this.btnEliminarRegistros);
@@ -556,5 +568,6 @@ namespace capa_presentacion
         private System.Windows.Forms.Button btnMenuEmpelados;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox txtIDEmp;
+        private System.Windows.Forms.Button bDIALISISPERITONEAL;
     }
 }

@@ -39,6 +39,7 @@ namespace capa_presentacion.Usuarios.Enfermero
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.btnMaximizar = new System.Windows.Forms.PictureBox();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
+            this.bDIALISISPERITONEAL = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -56,7 +57,7 @@ namespace capa_presentacion.Usuarios.Enfermero
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1386, 697);
+            this.panel1.Size = new System.Drawing.Size(1044, 697);
             this.panel1.TabIndex = 1;
             // 
             // panelFormulario
@@ -65,12 +66,13 @@ namespace capa_presentacion.Usuarios.Enfermero
             this.panelFormulario.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelFormulario.Location = new System.Drawing.Point(254, 50);
             this.panelFormulario.Name = "panelFormulario";
-            this.panelFormulario.Size = new System.Drawing.Size(1132, 647);
+            this.panelFormulario.Size = new System.Drawing.Size(790, 647);
             this.panelFormulario.TabIndex = 2;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.Desktop;
+            this.panel3.Controls.Add(this.bDIALISISPERITONEAL);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.button1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
@@ -112,7 +114,7 @@ namespace capa_presentacion.Usuarios.Enfermero
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1386, 50);
+            this.panel2.Size = new System.Drawing.Size(1044, 50);
             this.panel2.TabIndex = 0;
             // 
             // btnMinimizar
@@ -120,7 +122,7 @@ namespace capa_presentacion.Usuarios.Enfermero
             this.btnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizar.Image")));
-            this.btnMinimizar.Location = new System.Drawing.Point(1239, 14);
+            this.btnMinimizar.Location = new System.Drawing.Point(897, 14);
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(30, 23);
             this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -133,7 +135,7 @@ namespace capa_presentacion.Usuarios.Enfermero
             this.btnMaximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMaximizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMaximizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMaximizar.Image")));
-            this.btnMaximizar.Location = new System.Drawing.Point(1275, 14);
+            this.btnMaximizar.Location = new System.Drawing.Point(933, 14);
             this.btnMaximizar.Name = "btnMaximizar";
             this.btnMaximizar.Size = new System.Drawing.Size(30, 23);
             this.btnMaximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -146,7 +148,7 @@ namespace capa_presentacion.Usuarios.Enfermero
             this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
-            this.btnCerrar.Location = new System.Drawing.Point(1311, 14);
+            this.btnCerrar.Location = new System.Drawing.Point(969, 14);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(30, 23);
             this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -154,11 +156,24 @@ namespace capa_presentacion.Usuarios.Enfermero
             this.btnCerrar.TabStop = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click_1);
             // 
+            // bDIALISISPERITONEAL
+            // 
+            this.bDIALISISPERITONEAL.BackColor = System.Drawing.SystemColors.Desktop;
+            this.bDIALISISPERITONEAL.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bDIALISISPERITONEAL.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.bDIALISISPERITONEAL.Location = new System.Drawing.Point(3, 177);
+            this.bDIALISISPERITONEAL.Name = "bDIALISISPERITONEAL";
+            this.bDIALISISPERITONEAL.Size = new System.Drawing.Size(251, 34);
+            this.bDIALISISPERITONEAL.TabIndex = 5;
+            this.bDIALISISPERITONEAL.Text = "DIALISIS PERITONEAL";
+            this.bDIALISISPERITONEAL.UseVisualStyleBackColor = false;
+            this.bDIALISISPERITONEAL.Click += new System.EventHandler(this.bDIALISISPERITONEAL_Click);
+            // 
             // formularioprincipalE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1386, 697);
+            this.ClientSize = new System.Drawing.Size(1044, 697);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "formularioprincipalE";
@@ -185,5 +200,6 @@ namespace capa_presentacion.Usuarios.Enfermero
         private System.Windows.Forms.PictureBox btnMinimizar;
         private System.Windows.Forms.PictureBox btnMaximizar;
         private System.Windows.Forms.PictureBox btnCerrar;
+        private System.Windows.Forms.Button bDIALISISPERITONEAL;
     }
 }
