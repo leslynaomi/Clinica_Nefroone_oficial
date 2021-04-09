@@ -83,36 +83,40 @@ namespace capa_presentacion
         private void bmostrar_Click(object sender, EventArgs e)
         {
 
-            try
-            {
-                if (textsesion1.Text == "" || texthojaenfermeria.Text == "" )
-                {
-                    MessageBox.Show("Debe colocar un valor de Nº de hoja registro, una ID de la Hoja de Control de Enfermería y un ID de empleado para poder proceder");
-                }
-                else
-                {
-                    dp.Aprecio_Sesion_D_Peritoneal = textprecio_total.Text;
-                    dp.Ainfucion_Inicio = textinicio.Text;
-                    dp.Ainfucion_Final = textfin.Text;
-                    dp.Ainfucion_Volumen = textvolumen.Text;
-                    dp.Adrenaje_Inicio = text1inicio.Text;
-                    dp.Adrenaje_Volumen = text1volumen.Text;
-                    dp.Abalance_Parcial = textparcial.Text;
-                    dp.Abalance_Total = texttotal.Text;
-                    dp.Asolucion_Usada1 = textsolucionusada1.Text;
-                    dp.Asolucion_Usada2 = textsolucionusada2.Text;
-                    dp.Aobservacion_Balance = textobservaciones.Text;
-                    dp.Aid_hoja_enfermeria = texthojaenfermeria.Text;
-                    dp.Aid_sesion = textsesion1.Text;
+            //try
+            //{
+            //  if (textsesion1.Text == "" || texthojaenfermeria.Text == "" )
+            //{
+            //  MessageBox.Show("Debe colocar un valor de Nº de hoja registro, una ID de la Hoja de Control de Enfermería y un ID de empleado para poder proceder");
+            //}
+            //else
+            //{
+            //  dp.Aprecio_Sesion_D_Peritoneal = textprecio_total.Text;
+            //dp.Ainfucion_Inicio = textinicio.Text;
+            //dp.Ainfucion_Final = textfin.Text;
+            //dp.Ainfucion_Volumen = textvolumen.Text;
+            //dp.Adrenaje_Inicio = text1inicio.Text;
+            //dp.Adrenaje_Volumen = text1volumen.Text;
+            //dp.Abalance_Parcial = textparcial.Text;
+            //dp.Abalance_Total = texttotal.Text;
+            //dp.Asolucion_Usada1 = textsolucionusada1.Text;
+            //dp.Asolucion_Usada2 = textsolucionusada2.Text;
+            //dp.Aobservacion_Balance = textobservaciones.Text;
+            //dp.Aid_hoja_enfermeria = texthojaenfermeria.Text;
+            //dp.Aid_sesion = textsesion1.Text;
 
-                    LimpiarTexto();
-                    MessageBox.Show("Modificado correctamente", "INFORMACION");
-                }
-            }
-            catch (Exception er)
-            {
-                MessageBox.Show("Error al modificar" + er.ToString());
-            }
+            //LimpiarTexto();
+            //MessageBox.Show("Modificado correctamente", "INFORMACION");
+            //}
+            //}
+            //catch (Exception er)
+            //{
+            //   MessageBox.Show("Error al modificar" + er.ToString());
+            //}
+            dda.DataSource = dp.Mostrar_Registros();
+            dda.DataMember = "tac";
+            dda.AutoResizeColumns();
+            dda.AutoResizeRows();
         }
 
         private void bhojaenfermeria_Click(object sender, EventArgs e)
