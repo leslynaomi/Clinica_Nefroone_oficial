@@ -30,23 +30,27 @@ namespace capa_presentacion.Usuarios.Farmaceutico
         private void InitializeComponent()
         {
             this.dgvMedicamento = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.rbFistula = new System.Windows.Forms.RadioButton();
-            this.rbCateter = new System.Windows.Forms.RadioButton();
             this.rbPeritoneal = new System.Windows.Forms.RadioButton();
+            this.rbCateter = new System.Windows.Forms.RadioButton();
+            this.rbFistula = new System.Windows.Forms.RadioButton();
             this.button1 = new System.Windows.Forms.Button();
-            this.Column1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.btnInsertarRegistros = new System.Windows.Forms.Button();
             this.Concentracion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMedicamento)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -65,11 +69,18 @@ namespace capa_presentacion.Usuarios.Farmaceutico
             this.dgvMedicamento.TabIndex = 0;
             this.dgvMedicamento.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgvMedicamento_MouseClick);
             // 
+            // Column1
+            // 
+            this.Column1.FalseValue = "false";
+            this.Column1.HeaderText = "Seleccionar";
+            this.Column1.Name = "Column1";
+            this.Column1.Visible = false;
+            // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(925, 161);
+            this.textBox1.Location = new System.Drawing.Point(1001, 161);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(166, 20);
+            this.textBox1.Size = new System.Drawing.Size(90, 20);
             this.textBox1.TabIndex = 2;
             // 
             // label2
@@ -116,6 +127,8 @@ namespace capa_presentacion.Usuarios.Farmaceutico
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.Controls.Add(this.textBox3);
+            this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.rbPeritoneal);
             this.panel1.Controls.Add(this.rbCateter);
             this.panel1.Controls.Add(this.rbFistula);
@@ -129,16 +142,16 @@ namespace capa_presentacion.Usuarios.Farmaceutico
             this.panel1.Size = new System.Drawing.Size(1169, 123);
             this.panel1.TabIndex = 7;
             // 
-            // rbFistula
+            // rbPeritoneal
             // 
-            this.rbFistula.AutoSize = true;
-            this.rbFistula.Location = new System.Drawing.Point(448, 41);
-            this.rbFistula.Name = "rbFistula";
-            this.rbFistula.Size = new System.Drawing.Size(14, 13);
-            this.rbFistula.TabIndex = 7;
-            this.rbFistula.TabStop = true;
-            this.rbFistula.UseVisualStyleBackColor = true;
-            this.rbFistula.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            this.rbPeritoneal.AutoSize = true;
+            this.rbPeritoneal.Location = new System.Drawing.Point(448, 100);
+            this.rbPeritoneal.Name = "rbPeritoneal";
+            this.rbPeritoneal.Size = new System.Drawing.Size(14, 13);
+            this.rbPeritoneal.TabIndex = 9;
+            this.rbPeritoneal.TabStop = true;
+            this.rbPeritoneal.UseVisualStyleBackColor = true;
+            this.rbPeritoneal.CheckedChanged += new System.EventHandler(this.rbPeritoneal_CheckedChanged);
             // 
             // rbCateter
             // 
@@ -151,38 +164,31 @@ namespace capa_presentacion.Usuarios.Farmaceutico
             this.rbCateter.UseVisualStyleBackColor = true;
             this.rbCateter.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
-            // rbPeritoneal
+            // rbFistula
             // 
-            this.rbPeritoneal.AutoSize = true;
-            this.rbPeritoneal.Location = new System.Drawing.Point(448, 100);
-            this.rbPeritoneal.Name = "rbPeritoneal";
-            this.rbPeritoneal.Size = new System.Drawing.Size(14, 13);
-            this.rbPeritoneal.TabIndex = 9;
-            this.rbPeritoneal.TabStop = true;
-            this.rbPeritoneal.UseVisualStyleBackColor = true;
-            this.rbPeritoneal.CheckedChanged += new System.EventHandler(this.rbPeritoneal_CheckedChanged);
+            this.rbFistula.AutoSize = true;
+            this.rbFistula.Location = new System.Drawing.Point(448, 41);
+            this.rbFistula.Name = "rbFistula";
+            this.rbFistula.Size = new System.Drawing.Size(14, 13);
+            this.rbFistula.TabIndex = 7;
+            this.rbFistula.TabStop = true;
+            this.rbFistula.UseVisualStyleBackColor = true;
+            this.rbFistula.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(778, 158);
+            this.button1.Location = new System.Drawing.Point(553, 147);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(124, 23);
             this.button1.TabIndex = 100;
             this.button1.Text = "cantidad recetada";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // Column1
-            // 
-            this.Column1.FalseValue = "false";
-            this.Column1.HeaderText = "Seleccionar";
-            this.Column1.Name = "Column1";
-            this.Column1.Visible = false;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(546, 146);
+            this.label1.Location = new System.Drawing.Point(964, 135);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(127, 17);
             this.label1.TabIndex = 1;
@@ -232,13 +238,49 @@ namespace capa_presentacion.Usuarios.Farmaceutico
             this.dataGridView2.Size = new System.Drawing.Size(575, 326);
             this.dataGridView2.TabIndex = 99;
             // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(844, 161);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(90, 20);
+            this.textBox2.TabIndex = 101;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(824, 135);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(110, 17);
+            this.label6.TabIndex = 100;
+            this.label6.Text = "id_medicamento";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(1046, 45);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(68, 20);
+            this.textBox3.TabIndex = 103;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(1043, 9);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(71, 17);
+            this.label7.TabIndex = 102;
+            this.label7.Text = "id_medico";
+            // 
             // frmRecetario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(1169, 582);
+            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.button1);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.btnInsertarRegistros);
             this.Controls.Add(this.panel1);
@@ -277,5 +319,9 @@ namespace capa_presentacion.Usuarios.Farmaceutico
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label6;
     }
 }
