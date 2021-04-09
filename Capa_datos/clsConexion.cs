@@ -22,7 +22,7 @@ namespace capa_datos
             this.servidor = "DESKTOP-Q4VVLI3";
             this.usuario = "lesly";
             this.contrasena = "levanito";
-            this.basedatos = "Nefroone9";
+            this.basedatos = "Nefroone10";
             this.cmdSP = new SqlCommand();
         }
 
@@ -38,7 +38,7 @@ namespace capa_datos
             SqlConnection cnx = this.conectar();
             cnx.Close();
         }
-
+        ///
         public void IniciarSP(String sp)
         {
             //procedimiento almacenado
