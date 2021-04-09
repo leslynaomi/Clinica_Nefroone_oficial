@@ -1,0 +1,303 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{39931F55-2C59-46A9-9726-E6A756109F2B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>capa_presentacion</RootNamespace>
+    <AssemblyName>capa_presentacion</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ClinicaDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ClinicaDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAreaSalud.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAreaSalud.Designer.cs">
+      <DependentUpon>FrmAreaSalud.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAreaAdministrativa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAreaAdministrativa.Designer.cs">
+      <DependentUpon>FrmAreaAdministrativa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPrincipalAdministrador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPrincipalAdministrador.Designer.cs">
+      <DependentUpon>FrmPrincipalAdministrador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmInicioSesion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmInicioSesion.Designer.cs">
+      <DependentUpon>FrmInicioSesion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRegistrarPersonalNuevo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRegistrarPersonalNuevo.Designer.cs">
+      <DependentUpon>FrmRegistrarPersonalNuevo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSaludGeneraldeCateter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSaludGeneraldeCateter.Designer.cs">
+      <DependentUpon>FrmSaludGeneraldeCateter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSaludGeneraldeDialisisPeritonial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSaludGeneraldeDialisisPeritonial.Designer.cs">
+      <DependentUpon>FrmSaludGeneraldeDialisisPeritonial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSaludGeneraldeFistula.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSaludGeneraldeFistula.Designer.cs">
+      <DependentUpon>FrmSaludGeneraldeFistula.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sesiones\FrmEvoloucionYTratamiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sesiones\FrmEvoloucionYTratamiento.Designer.cs">
+      <DependentUpon>FrmEvoloucionYTratamiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sesiones\FrmHojaEnfermeria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sesiones\FrmHojaEnfermeria.Designer.cs">
+      <DependentUpon>FrmHojaEnfermeria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sesiones\FrmHojaMedica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sesiones\FrmHojaMedica.Designer.cs">
+      <DependentUpon>FrmHojaMedica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pacientes\FrmGestionarPaciente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pacientes\FrmGestionarPaciente.Designer.cs">
+      <DependentUpon>FrmGestionarPaciente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sesiones\FrmHojaSecretaria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sesiones\FrmHojaSecretaria.Designer.cs">
+      <DependentUpon>FrmHojaSecretaria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Usuarios\Enfermera\formularioprincipalE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Usuarios\Enfermera\formularioprincipalE.Designer.cs">
+      <DependentUpon>formularioprincipalE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Usuarios\Enfermera\FrmDialisisPeritoneal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Usuarios\Enfermera\FrmDialisisPeritoneal.Designer.cs">
+      <DependentUpon>FrmDialisisPeritoneal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Usuarios\Farmaceutico\formularioprincipalF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Usuarios\Farmaceutico\formularioprincipalF.Designer.cs">
+      <DependentUpon>formularioprincipalF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Usuarios\FrmGestionarEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Usuarios\FrmGestionarEmpleado.Designer.cs">
+      <DependentUpon>FrmGestionarEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Usuarios\Medico\formularioprincipalM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Usuarios\Medico\formularioprincipalM.Designer.cs">
+      <DependentUpon>formularioprincipalM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Usuarios\Secretario\formularioprincipalS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Usuarios\Secretario\formularioprincipalS.Designer.cs">
+      <DependentUpon>formularioprincipalS.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FrmAreaSalud.resx">
+      <DependentUpon>FrmAreaSalud.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAreaAdministrativa.resx">
+      <DependentUpon>FrmAreaAdministrativa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmInicioSesion.resx">
+      <DependentUpon>FrmInicioSesion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPrincipalAdministrador.resx">
+      <DependentUpon>FrmPrincipalAdministrador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRegistrarPersonalNuevo.resx">
+      <DependentUpon>FrmRegistrarPersonalNuevo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Pacientes\FrmGestionarPaciente.resx">
+      <DependentUpon>FrmGestionarPaciente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sesiones\FrmEvoloucionYTratamiento.resx">
+      <DependentUpon>FrmEvoloucionYTratamiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sesiones\FrmHojaEnfermeria.resx">
+      <DependentUpon>FrmHojaEnfermeria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sesiones\FrmHojaMedica.resx">
+      <DependentUpon>FrmHojaMedica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sesiones\FrmHojaSecretaria.resx">
+      <DependentUpon>FrmHojaSecretaria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usuarios\Enfermera\formularioprincipalE.resx">
+      <DependentUpon>formularioprincipalE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usuarios\Enfermera\FrmDialisisPeritoneal.resx">
+      <DependentUpon>FrmDialisisPeritoneal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usuarios\Farmaceutico\formularioprincipalF.resx">
+      <DependentUpon>formularioprincipalF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usuarios\FrmGestionarEmpleado.resx">
+      <DependentUpon>FrmGestionarEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usuarios\Medico\formularioprincipalM.resx">
+      <DependentUpon>formularioprincipalM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usuarios\Secretario\formularioprincipalS.resx">
+      <DependentUpon>formularioprincipalS.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="ClinicaDataSet.xsc">
+      <DependentUpon>ClinicaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ClinicaDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ClinicaDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ClinicaDataSet.xss">
+      <DependentUpon>ClinicaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Capa_datos\capa_datos.csproj">
+      <Project>{9ba7cf23-0247-4f03-bd42-b77a533e067d}</Project>
+      <Name>capa_datos</Name>
+    </ProjectReference>
+    <ProjectReference Include="Capa_negocio\capa_negocio.csproj">
+      <Project>{06387f7e-5a14-4596-ba61-13bca9af9fbb}</Project>
+      <Name>capa_negocio</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Insumos\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maximize3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Minimize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Close.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
