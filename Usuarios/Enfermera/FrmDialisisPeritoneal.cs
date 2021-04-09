@@ -23,7 +23,7 @@ namespace capa_presentacion
 
 
         private void LimpiarTexto()
-        {
+        {//hola pooooool
         
             textprecio_total.Clear();
             textinicio.Clear();
