@@ -70,7 +70,7 @@ namespace capa_presentacion.Usuarios.Medico
 
         private void button3_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<frmRecetario>();
+            //AbrirFormulario<frmRecetario>();
         }
     }
 }
