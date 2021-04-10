@@ -22,7 +22,7 @@ namespace capa_datos
             this.servidor = "Lenovo";
             this.usuario = "Pol";
             this.contrasena = "Pol";
-            this.basedatos = "Nefroone3";
+            this.basedatos = "Nefroone1";
             this.cmdSP = new SqlCommand();
 
             //constructor Lesly
