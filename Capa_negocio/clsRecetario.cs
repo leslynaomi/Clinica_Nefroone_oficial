@@ -11,24 +11,74 @@ namespace capa_negocio
     public class clsRecetario : ClsConexion
     {
 
-    
-       // private string cantidad_Recetada;
-        ///private string id_medicamento;
-  
+        //atributos
+        private string fecha;
+        private string cantidad_Recetada;
+        private string id_medicamento;
+        private string ci;
+        private string id_empleado;
 
 
 
         public clsRecetario()
         {
-          //  cantidad_Recetada = "";
-           
+
+            fecha = "";
+
+          cantidad_Recetada = "";
+            id_medicamento = "";
+            ci = "";
+            id_empleado = "";
 
         }
 
-        public DataSet Mostrar_Registros()
+
+        ///get y setter
+
+        public string Fecha { get => fecha; set => fecha = value; }
+        public string Cantida_Recetada { get => cantidad_Recetada; set => cantidad_Recetada = value; }
+        public string Id_medicamento { get => id_medicamento; set => id_medicamento = value; }
+        public string Ci { get => ci; set => ci = value; }
+        public string Id_Empleado { get => id_empleado; set => id_empleado = value; }
+
+
+
+
+
+        public void Guardar_Registros()
+        {
+            IniciarSP("insertar_receta");
+
+            AddParametro("@fecha", Fecha);
+            AddParametro("@cantidad_Recetada",Cantida_Recetada);
+            AddParametro("@id_medicamento", Id_medicamento);
+
+            AddParametro("@ci", ci);
+            AddParametro("@id_empleado", id_empleado);
+            ejecutarSP();
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        public DataSet Mostrar_Registros(string fecharec, string id_pac)
         {
             string s;
-            s = "ListarMedic";
+            s = "select Medicamento.id_medicamento,nombre_Medicamento,cantidad_Recetada from Medicamento, Receta where Medicamento.id_medicamento = Receta.id_medicamento and fecha = '"+fecharec+"' and ci = '"+id_pac+"'";
             DataSet ds = new DataSet();
             ejecutarSQL(s, "tac", ds);
             return ds;
@@ -53,7 +103,7 @@ namespace capa_negocio
         public DataSet Mostrar_RegistrosP()
         {
             string s;
-            s = "ListarMedicD";
+            s = "ListarMedicP";
             DataSet ds = new DataSet();
             ejecutarSQL(s, "tac", ds);
             return ds;
