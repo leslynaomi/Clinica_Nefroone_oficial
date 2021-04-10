@@ -67,10 +67,5 @@ namespace capa_presentacion.Usuarios.Medico
         {
             AbrirFormulario<FrmEvoloucionYTratamiento>();
         }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            AbrirFormulario<frmRecetario>();
-        }
     }
 }
