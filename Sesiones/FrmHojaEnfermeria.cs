@@ -168,5 +168,10 @@ namespace capa_presentacion
             dgvHojaEnfermeria.AutoResizeColumns();
             dgvHojaEnfermeria.AutoResizeRows();
         }
+
+        private void btnInsertarRegistros_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

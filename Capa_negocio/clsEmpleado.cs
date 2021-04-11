@@ -42,7 +42,9 @@ namespace capa_negocio
             get { return nombre; }
             set { nombre = value; }
         }
-
+        /// <summary>
+        /// tratamiento
+        /// </summary>
         public string Paterno
         {
             get { return paterno; }

@@ -123,6 +123,7 @@ namespace capa_presentacion
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Peru;
             this.ClientSize = new System.Drawing.Size(565, 295);
+            //this.Controls.Add(this.button1);
             this.Controls.Add(this.btnEnfermera);
             this.Controls.Add(this.btnMedico);
             this.Controls.Add(this.label2);

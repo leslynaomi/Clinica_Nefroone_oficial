@@ -1,4 +1,5 @@
-﻿using System;
+﻿using capa_presentacion.Usuarios.Farmaceutico;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -70,7 +71,7 @@ namespace capa_presentacion.Usuarios.Medico
 
         private void button3_Click(object sender, EventArgs e)
         {
-            //AbrirFormulario<frmRecetario>();
+            AbrirFormulario<frmRecetario>();
         }
     }
 }

@@ -159,6 +159,18 @@
     <Compile Include="Usuarios\Farmaceutico\formularioprincipalF.Designer.cs">
       <DependentUpon>formularioprincipalF.cs</DependentUpon>
     </Compile>
+    <Compile Include="Usuarios\Farmaceutico\frmRecetario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Usuarios\Farmaceutico\frmRecetario.Designer.cs">
+      <DependentUpon>frmRecetario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Usuarios\Farmaceutico\insumos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Usuarios\Farmaceutico\insumos.Designer.cs">
+      <DependentUpon>insumos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Usuarios\FrmGestionarEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -222,6 +234,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Usuarios\Farmaceutico\formularioprincipalF.resx">
       <DependentUpon>formularioprincipalF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usuarios\Farmaceutico\frmRecetario.resx">
+      <DependentUpon>frmRecetario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usuarios\Farmaceutico\insumos.resx">
+      <DependentUpon>insumos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Usuarios\FrmGestionarEmpleado.resx">
       <DependentUpon>FrmGestionarEmpleado.cs</DependentUpon>

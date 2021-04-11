@@ -46,7 +46,7 @@ namespace capa_datos
             SqlConnection cnx = this.conectar();
             cnx.Close();
         }
-
+        ///
         public void IniciarSP(String sp)
         {
             //procedimiento almacenado

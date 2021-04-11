@@ -1,4 +1,5 @@
 ﻿using capa_presentacion.Usuarios.Enfermero;
+using capa_presentacion.Usuarios.Farmaceutico;
 using capa_presentacion.Usuarios.Medico;
 using capa_presentacion.Usuarios.secretario;
 using System;
