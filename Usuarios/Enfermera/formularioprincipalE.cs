@@ -58,5 +58,12 @@ namespace capa_presentacion.Usuarios.Enfermero
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void bDIALISISPERITONEAL_Click(object sender, EventArgs e)
+        {
+
+
+            AbrirFormulario<FrmDialisisPeritoneal>(); 
+        }
     }
  }

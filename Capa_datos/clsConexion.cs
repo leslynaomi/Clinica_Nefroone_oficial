@@ -25,6 +25,13 @@ namespace capa_datos
             this.basedatos = "Nefroone";
             this.cmdSP = new SqlCommand();
 
+            //constructor Alejandra
+            //this.servidor = "ALEJANDRA-PC";
+            //this.usuario = "yo";
+            //this.contrasena = "123456789";
+            //this.basedatos = "Nefroone";
+            //this.cmdSP = new SqlCommand();
+
             //constructor Lesly
             //Solo descomentan la línea de código que necesiten
             /* this.servidor = "DESKTOP-Q4VVLI3";
