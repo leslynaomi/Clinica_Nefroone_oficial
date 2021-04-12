@@ -1,6 +1,6 @@
 --Creación de la base de datos
---create database Nefroone3
---use Nefroone3
+--create database Nefroone
+--use Nefroone
 
 --Para borrar un trigger completamente de la base de datos
 --drop trigger Habitacion_Libre
@@ -143,17 +143,22 @@ foreign key (id_empleado) references Empleado (id_empleado),
 
 create table Medicamento(
 id_medicamento int primary key identity(1,1) not null,
+seleccionar bit,
 nombre_Medicamento varchar(100) not null,
+presentacion varchar(100),
+concentracion varchar(100),
 stock int,
-id_farmacia int not null,
+diagnosticoF bit,
+diagnosticoP bit,
+diagnosticoC bit,
+id_farmacia int ,
 foreign key (id_farmacia) references Farmacia(id_farmacia),
 )
 
 create table Receta(
 id_receta int identity(1,1) not null,
 fecha date,
-hemodialisis_Cateter bit,
-hemodialisis_Fistula bit,
+cantidad_Recetada int,
 id_medicamento int not null,
 ci int not null,
 id_empleado int not null,
@@ -721,22 +726,50 @@ go
 go
 --PROCEDIMIENTO ELIMINAR CONSULTA FARMACIA
 
-
+--select *from medicamento
 ------------						MEDICAMENTO
 go
---PROCEDIMIENTO INSERTAR CONSULTA MEDICAMENTO
+--PROCEDIMIENTO INSERTAR MEDICAMENTO
+/*create proc insertar_medicamento(
+@nombre_Medicamento varchar(100),
+@presentacion varchar(100),
+@concentracion varchar(100),
+@stock int,
+@tipo_diagnostico  char(1),
+@id_farmacia int
+)as
+begin
+	begin try
+		begin tran 
+			insert into Medicamento values(@nombre_Medicamento,@presentacion,@concentracion,@stock,@tipo_diagnostico,@id_farmacia)
+			commit tran
+	end try
+	begin catch
+		raiserror('Error eliminando hoja de registro',16,1) 
+		rollback tran
+	end catch
+end
+*/
+go
+--PROCEDIMIENTO MODIFICAR MEDICAMENTO
 
 go
---PROCEDIMIENTO MODIFICAR CONSULTA MEDICAMENTO
-
-go
---PROCEDIMIENTO ELIMINAR CONSULTA MEDICAMENTO
+--PROCEDIMIENTO ELIMINAR MEDICAMENTO
 
 
 ------------						RECETA
 go
 --PROCEDIMIENTO INSERTAR RECETA
-
+create proc insertar_receta(
+@fecha date,
+@cantidad_Recetada int,
+@id_medicamento int,
+@ci int,
+@id_empleado int
+)as
+begin tran 
+insert into Receta values(@fecha,@cantidad_Recetada,@id_medicamento,@ci,@id_empleado)
+commit tran 			
 go
 --PROCEDIMIENTO MODIFICAR RECETA
 
@@ -961,12 +994,127 @@ go
 ------------						DIALISIS PERITONEAL
 go
 --PROCEDIMIENTO INSERTAR DIALISIS PERITONEAL
-
+create proc insertar_dialisis_peritoneal(
+@precio_Sesion_D_Peritoneal money,
+@infucion_Inicio time,
+@infucion_Final time,
+@infucion_Volumen varchar(50),
+@drenaje_Inicio date,
+@drenaje_Volumen varchar (50),
+@balance_Parcial varchar(50),
+@balance_Total varchar(50), 
+@solucion_Usada1 varchar(50),
+@solucion_Usada2 varchar(50),
+@observacion_Balance varchar(100),
+@id_hoja_enfermeria int,
+@id_sesion int
+)as
+begin
+	begin try
+		begin tran
+			insert into Dialisis_Peritoneal values(@precio_Sesion_D_Peritoneal,@infucion_Inicio,@infucion_Final,@infucion_Volumen,@drenaje_Inicio,@drenaje_Volumen,@balance_Parcial,@balance_Total,@solucion_Usada1,@solucion_Usada2,@observacion_Balance,@id_hoja_enfermeria,@id_sesion)
+		commit tran
+	end try
+	begin catch
+		raiserror('Error insertando registros de diálisis peritoneal',16,1) 
+		rollback tran
+	end catch	
+end
 go
 --PROCEDIMIENTO MODIFICAR DIALISIS PERITONEAL
-
+create proc modificar_dialisis_peritoneal(
+@precio_Sesion_D_Peritoneal money,
+@infucion_Inicio time,
+@infucion_Final time,
+@infucion_Volumen varchar(50),
+@drenaje_Inicio date,
+@drenaje_Volumen varchar (50),
+@balance_Parcial varchar(50),
+@balance_Total varchar(50), 
+@solucion_Usada1 varchar(50),
+@solucion_Usada2 varchar(50),
+@observacion_Balance varchar(100),
+@id_hoja_enfermeria int,
+@id_sesion int
+)as
+begin
+	begin try
+		begin tran
+			update Dialisis_Peritoneal 
+			set precio_Sesion_D_Peritoneal=@precio_Sesion_D_Peritoneal,
+				infucion_Inicio=@infucion_Inicio,
+				infucion_Final=@infucion_Final,
+				infucion_Volumen=@infucion_Volumen,
+				drenaje_Inicio=@drenaje_Inicio,
+				drenaje_Volumen=@drenaje_Volumen,
+				balance_Parcial=@balance_Parcial,
+				balance_Total=@balance_Total,
+				solucion_Usada1=@solucion_Usada1,
+				solucion_Usada2=@solucion_Usada2,
+				observacion_Balance=@observacion_Balance
+			where @id_hoja_enfermeria=id_hoja_enfermeria and @id_sesion=id_sesion
+		commit tran
+	end try
+	begin catch
+		raiserror('Error modificando registros de diálisis peritoneal',16,1) 
+		rollback tran
+	end catch	
+end
 go
 --PROCEDIMIENTO ELIMINAR DIALISIS PERITONEAL
+create proc eliminar_dialisis_peritoneal(
+@id_hoja_enfermeria int,
+@id_sesion int
+)as
+begin
+	begin try
+		begin tran
+			delete Dialisis_Peritoneal 
+			where @id_hoja_enfermeria=id_hoja_enfermeria and @id_sesion=id_sesion
+		commit tran
+	end try
+	begin catch
+		raiserror('Error eliminando registros de diálisis peritoneal',16,1) 
+		rollback tran
+	end catch	
+end
+go
+
+---listar medicamentos para m--dico
+create proc ListarMedic
+as
+select nombre_Medicamento,presentacion,concentracion,cantidad_Recetada
+from Medicamento,Receta
+where Medicamento.id_medicamento=Receta.id_medicamento
+go
+create proc ListarMedicP
+as
+select nombre_Medicamento,presentacion,concentracion
+from Medicamento
+where  diagnosticoP=1
+
+go
+create proc ListarMedicF
+as
+select nombre_Medicamento,presentacion,concentracion
+from Medicamento
+where  diagnosticoF=1
+
+go
+create proc ListarMedicC
+as
+select nombre_Medicamento,presentacion,concentracion
+from Medicamento
+where  diagnosticoC=1
+
+go
+
+---listar medicamentos
+create proc ListarMedicamentos
+as
+select id_medicamento,nombre_Medicamento,presentacion,concentracion,stock
+from Medicamento
+go
 
 
 -------------						TRIGGERS							-----------------

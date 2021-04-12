@@ -58,7 +58,7 @@ namespace capa_presentacion.Usuarios.Farmaceutico
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1395, 696);
+            this.panel1.Size = new System.Drawing.Size(1386, 696);
             this.panel1.TabIndex = 1;
             // 
             // PanelFormulario
@@ -67,7 +67,7 @@ namespace capa_presentacion.Usuarios.Farmaceutico
             this.PanelFormulario.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelFormulario.Location = new System.Drawing.Point(254, 50);
             this.PanelFormulario.Name = "PanelFormulario";
-            this.PanelFormulario.Size = new System.Drawing.Size(1141, 646);
+            this.PanelFormulario.Size = new System.Drawing.Size(1132, 646);
             this.PanelFormulario.TabIndex = 2;
             // 
             // panel3
@@ -86,18 +86,18 @@ namespace capa_presentacion.Usuarios.Farmaceutico
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Stencil", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label1.Location = new System.Drawing.Point(29, 36);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(185, 38);
+            this.label1.Size = new System.Drawing.Size(207, 37);
             this.label1.TabIndex = 16;
             this.label1.Text = "NEFROONE";
             // 
             // button3
             // 
             this.button3.BackColor = System.Drawing.SystemColors.Desktop;
-            this.button3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.button3.Location = new System.Drawing.Point(2, 231);
             this.button3.Name = "button3";
@@ -109,7 +109,7 @@ namespace capa_presentacion.Usuarios.Farmaceutico
             // button2
             // 
             this.button2.BackColor = System.Drawing.SystemColors.Desktop;
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.button2.Location = new System.Drawing.Point(2, 189);
             this.button2.Name = "button2";
@@ -122,7 +122,7 @@ namespace capa_presentacion.Usuarios.Farmaceutico
             // button1
             // 
             this.button1.BackColor = System.Drawing.SystemColors.Desktop;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.button1.Location = new System.Drawing.Point(2, 147);
             this.button1.Name = "button1";
@@ -141,7 +141,7 @@ namespace capa_presentacion.Usuarios.Farmaceutico
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1395, 50);
+            this.panel2.Size = new System.Drawing.Size(1386, 50);
             this.panel2.TabIndex = 0;
             // 
             // btnMinimizar
@@ -149,7 +149,7 @@ namespace capa_presentacion.Usuarios.Farmaceutico
             this.btnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizar.Image")));
-            this.btnMinimizar.Location = new System.Drawing.Point(1269, 14);
+            this.btnMinimizar.Location = new System.Drawing.Point(1260, 14);
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(30, 23);
             this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -162,7 +162,7 @@ namespace capa_presentacion.Usuarios.Farmaceutico
             this.btnMaximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMaximizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMaximizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMaximizar.Image")));
-            this.btnMaximizar.Location = new System.Drawing.Point(1305, 14);
+            this.btnMaximizar.Location = new System.Drawing.Point(1296, 14);
             this.btnMaximizar.Name = "btnMaximizar";
             this.btnMaximizar.Size = new System.Drawing.Size(30, 23);
             this.btnMaximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -175,7 +175,7 @@ namespace capa_presentacion.Usuarios.Farmaceutico
             this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
-            this.btnCerrar.Location = new System.Drawing.Point(1341, 14);
+            this.btnCerrar.Location = new System.Drawing.Point(1332, 14);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(30, 23);
             this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -187,7 +187,7 @@ namespace capa_presentacion.Usuarios.Farmaceutico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1395, 696);
+            this.ClientSize = new System.Drawing.Size(1386, 696);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "formularioprincipalF";
