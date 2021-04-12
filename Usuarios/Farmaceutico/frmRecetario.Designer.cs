@@ -72,7 +72,7 @@ namespace capa_presentacion.Usuarios.Farmaceutico
             // 
             // txtCantidad
             // 
-            this.txtCantidad.Location = new System.Drawing.Point(910, 204);
+            this.txtCantidad.Location = new System.Drawing.Point(910, 242);
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(90, 20);
             this.txtCantidad.TabIndex = 2;
@@ -123,6 +123,7 @@ namespace capa_presentacion.Usuarios.Farmaceutico
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel1.Controls.Add(this.txtPaciente);
             this.panel1.Controls.Add(this.label9);
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.txtFecha);
             this.panel1.Controls.Add(this.txtIdMedico);
             this.panel1.Controls.Add(this.label8);
@@ -149,7 +150,7 @@ namespace capa_presentacion.Usuarios.Farmaceutico
             // 
             // txtIdMedico
             // 
-            this.txtIdMedico.Location = new System.Drawing.Point(896, 18);
+            this.txtIdMedico.Location = new System.Drawing.Point(894, 23);
             this.txtIdMedico.Name = "txtIdMedico";
             this.txtIdMedico.Size = new System.Drawing.Size(112, 20);
             this.txtIdMedico.TabIndex = 103;
@@ -168,7 +169,7 @@ namespace capa_presentacion.Usuarios.Farmaceutico
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(796, 21);
+            this.label7.Location = new System.Drawing.Point(794, 26);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(71, 17);
             this.label7.TabIndex = 102;
@@ -211,7 +212,7 @@ namespace capa_presentacion.Usuarios.Farmaceutico
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(880, 184);
+            this.label1.Location = new System.Drawing.Point(880, 222);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(127, 17);
             this.label1.TabIndex = 1;
@@ -229,7 +230,7 @@ namespace capa_presentacion.Usuarios.Farmaceutico
             // 
             // txtPaciente
             // 
-            this.txtPaciente.Location = new System.Drawing.Point(896, 51);
+            this.txtPaciente.Location = new System.Drawing.Point(894, 56);
             this.txtPaciente.Name = "txtPaciente";
             this.txtPaciente.Size = new System.Drawing.Size(112, 20);
             this.txtPaciente.TabIndex = 105;
@@ -238,7 +239,7 @@ namespace capa_presentacion.Usuarios.Farmaceutico
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(788, 54);
+            this.label9.Location = new System.Drawing.Point(786, 59);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(79, 17);
             this.label9.TabIndex = 104;
@@ -249,7 +250,7 @@ namespace capa_presentacion.Usuarios.Farmaceutico
             this.button1.BackColor = System.Drawing.Color.LightSeaGreen;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.button1.Location = new System.Drawing.Point(896, 622);
+            this.button1.Location = new System.Drawing.Point(927, 135);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(117, 29);
             this.button1.TabIndex = 102;
@@ -263,7 +264,7 @@ namespace capa_presentacion.Usuarios.Farmaceutico
             this.label10.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label10.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label10.Location = new System.Drawing.Point(77, 195);
+            this.label10.Location = new System.Drawing.Point(77, 182);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(302, 28);
             this.label10.TabIndex = 103;
@@ -275,7 +276,7 @@ namespace capa_presentacion.Usuarios.Farmaceutico
             this.label11.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label11.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label11.Location = new System.Drawing.Point(687, 243);
+            this.label11.Location = new System.Drawing.Point(703, 182);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(235, 28);
             this.label11.TabIndex = 104;
@@ -295,9 +296,9 @@ namespace capa_presentacion.Usuarios.Farmaceutico
             this.btnInsertarRegistros.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInsertarRegistros.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.btnInsertarRegistros.Image = global::capa_presentacion.Properties.Resources.iconfinder_compose_1055085;
-            this.btnInsertarRegistros.Location = new System.Drawing.Point(591, 173);
+            this.btnInsertarRegistros.Location = new System.Drawing.Point(607, 195);
             this.btnInsertarRegistros.Name = "btnInsertarRegistros";
-            this.btnInsertarRegistros.Size = new System.Drawing.Size(90, 78);
+            this.btnInsertarRegistros.Size = new System.Drawing.Size(73, 67);
             this.btnInsertarRegistros.TabIndex = 69;
             this.btnInsertarRegistros.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnInsertarRegistros.UseVisualStyleBackColor = false;
@@ -311,7 +312,6 @@ namespace capa_presentacion.Usuarios.Farmaceutico
             this.ClientSize = new System.Drawing.Size(1047, 685);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.dgvreceta);
             this.Controls.Add(this.btnInsertarRegistros);
             this.Controls.Add(this.panel1);
