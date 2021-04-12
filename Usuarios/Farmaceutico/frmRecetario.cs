@@ -13,39 +13,57 @@ namespace capa_presentacion.Usuarios.Farmaceutico
 {
     public partial class frmRecetario : Form
     {
-        private bool unChecedkAll = false;
+        
         public frmRecetario()
         {
             InitializeComponent();
         }
         clsRecetario Rec= new clsRecetario();
 
+        string recolectorid = "";
 
+        private void LimpiarTexto()
+        {
+            txtFecha.Clear();
+           txtIdMedico.Clear();
+         
+            txtCantidad.Clear();
+            txtPaciente.Clear();
+            
+        }
 
-     //*//  public void ExportarDatos(DataGridView datalistado)
-      //  {
-        ///    Microsoft.Office.Interop.Excel.Application exportar = new Microsoft.Office.Interop.Excel.Application();
-        ///    exportar.Application.Workbooks.Add(true);
-       //     int indice = 0;
-      //      foreach(DataGridViewColumn column in datalistado.Columns)
-        //    {
-       ///         indice++;
-        ///        exportar.Cells[1, indice] = Columns.Name;
-
-      ///      }
-    //*///
-       /// }
-       /// 
-
-
-
-
-        private void limpiarbtn() {
+        private void Limpiarrad()
+        {
             rbCateter.Checked = false;
             rbFistula.Checked = false;
             rbPeritoneal.Checked = false;
 
         }
+        private void seguirlista()
+        {
+          
+            txtCantidad.Clear();
+
+        }
+        //*//  public void ExportarDatos(DataGridView datalistado)
+        //  {
+        ///    Microsoft.Office.Interop.Excel.Application exportar = new Microsoft.Office.Interop.Excel.Application();
+        ///    exportar.Application.Workbooks.Add(true);
+        //     int indice = 0;
+        //      foreach(DataGridViewColumn column in datalistado.Columns)
+        //    {
+        ///         indice++;
+        ///        exportar.Cells[1, indice] = Columns.Name;
+
+        ///      }
+        //*///
+        /// }
+        /// 
+
+
+
+
+    
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
             if (rbCateter.Checked == true)
@@ -57,7 +75,7 @@ namespace capa_presentacion.Usuarios.Farmaceutico
                 dgvMedicamento.AutoResizeRows();
               
             
-            }
+            }if (rbCateter.Checked == false) { }
            
         }
 
@@ -77,7 +95,9 @@ namespace capa_presentacion.Usuarios.Farmaceutico
                 dgvMedicamento.AutoResizeRows();
              
             }
-      
+
+            if (rbFistula.Checked == false) { }
+
         }
 
         private void rbPeritoneal_CheckedChanged(object sender, EventArgs e)
@@ -90,32 +110,62 @@ namespace capa_presentacion.Usuarios.Farmaceutico
                 dgvMedicamento.AutoResizeRows();
                 
             }
-        
+
+            if (rbPeritoneal.Checked == false) {
+
+
+
+            }
+
         }
 
         private void btnInsertarRegistros_Click(object sender, EventArgs e)
         {
+            try
+            {
 
-            dataGridView2.Rows.Clear();
-            foreach (DataGridViewRow item in dgvMedicamento.Rows) {
-            
-                if((bool)item.Cells[0].Value==true) {
 
-                    int n = dataGridView2.Rows.Add();
-                    dataGridView2.Rows[n].Cells[0].Value = item.Cells[1].Value.ToString();
-                    dataGridView2.Rows[n].Cells[1].Value = item.Cells[2].Value.ToString();
-                    dataGridView2.Rows[n].Cells[2].Value = item.Cells[3].Value.ToString();
+                Rec.Fecha = txtFecha.Text;
+                Rec.Cantida_Recetada = txtCantidad.Text;
+                Rec.Id_medicamento = recolectorid;
+                Rec.Ci = txtPaciente.Text;
+                Rec.Id_Empleado = txtIdMedico.Text;
 
-                    
+              
+                Rec.Guardar_Registros();
+                seguirlista();
 
-                }
+                DataSet ds = new DataSet();
+                ds = Rec.Mostrar_Registros(txtFecha.Text, txtPaciente.Text);
+                dgvreceta.DataSource = ds;
+                dgvreceta.DataMember = "tac";
+                dgvreceta.AutoResizeColumns();
+                dgvreceta .AutoResizeRows();
 
+
+                recolectorid = "";
+
+
+                MessageBox.Show("Insertado correctamente", "INFORMACION");
+            }
+            catch (Exception er)
+            {
+                MessageBox.Show("Error al insertar" + er.ToString());
             }
         }
 
         private void dgvMedicamento_MouseClick(object sender, MouseEventArgs e)
-        {  
-           
+        {
+            recolectorid = dgvMedicamento.CurrentRow.Cells[1].Value.ToString();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            dgvMedicamento.DataSource = null;
+            dgvreceta.DataSource = null;
+            Limpiarrad();
+            LimpiarTexto();
+
         }
     }
 }

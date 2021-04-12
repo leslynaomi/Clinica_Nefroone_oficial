@@ -73,6 +73,16 @@ namespace capa_presentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap iconfinder_compose_1055085 {
+            get {
+                object obj = ResourceManager.GetObject("iconfinder_compose_1055085", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap maximize3 {
             get {
                 object obj = ResourceManager.GetObject("maximize3", resourceCulture);

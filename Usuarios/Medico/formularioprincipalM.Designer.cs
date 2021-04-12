@@ -41,7 +41,9 @@ namespace capa_presentacion.Usuarios.Medico
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.btnMaximizar = new System.Windows.Forms.PictureBox();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
+            this.panelFormulario.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
@@ -64,6 +66,7 @@ namespace capa_presentacion.Usuarios.Medico
             // panelFormulario
             // 
             this.panelFormulario.BackColor = System.Drawing.SystemColors.Control;
+            this.panelFormulario.Controls.Add(this.panel4);
             this.panelFormulario.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelFormulario.Location = new System.Drawing.Point(254, 50);
             this.panelFormulario.Name = "panelFormulario";
@@ -184,6 +187,14 @@ namespace capa_presentacion.Usuarios.Medico
             this.btnCerrar.TabStop = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click_1);
             // 
+            // panel4
+            // 
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1099, 595);
+            this.panel4.TabIndex = 0;
+            // 
             // formularioprincipalM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -194,6 +205,7 @@ namespace capa_presentacion.Usuarios.Medico
             this.Name = "formularioprincipalM";
             this.Text = "menuprincipalM";
             this.panel1.ResumeLayout(false);
+            this.panelFormulario.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -217,5 +229,6 @@ namespace capa_presentacion.Usuarios.Medico
         private System.Windows.Forms.PictureBox btnMinimizar;
         private System.Windows.Forms.PictureBox btnMaximizar;
         private System.Windows.Forms.PictureBox btnCerrar;
+        private System.Windows.Forms.Panel panel4;
     }
 }

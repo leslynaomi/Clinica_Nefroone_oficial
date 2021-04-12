@@ -69,7 +69,8 @@ namespace capa_presentacion.Usuarios.Farmaceutico
             dgvMedicamento.DataMember = "tac";
             dgvMedicamento.AutoResizeColumns();
             dgvMedicamento.AutoResizeRows();
-          
+
+
         }
 
         private void btnModificarRegistros_Click(object sender, EventArgs e)
@@ -92,6 +93,21 @@ namespace capa_presentacion.Usuarios.Farmaceutico
 
         private void btnBuscarRegistros_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void dgvMedicamento_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try { 
+            textNameMedic.Text = dgvMedicamento.CurrentRow.Cells[1].Value.ToString();
+            textPresentacion.Text = dgvMedicamento.CurrentRow.Cells[2].Value.ToString();
+            textConcentracion.Text = dgvMedicamento.CurrentRow.Cells[3].Value.ToString();
+            textStock.Text = dgvMedicamento.CurrentRow.Cells[4].Value.ToString();
+            }
+            catch
+            {
+
+            }
 
         }
     }

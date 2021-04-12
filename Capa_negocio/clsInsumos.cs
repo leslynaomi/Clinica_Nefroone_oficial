@@ -11,6 +11,7 @@ namespace capa_negocio
      public class clsInsumos: ClsConexion
     {
         private string id_medicamento;
+        private bool seleccionar;
         private string nombre_medicamento;
         private string presentacion;
         private string concentracion;
@@ -25,6 +26,7 @@ namespace capa_negocio
         {
 
             id_medicamento = "";
+            seleccionar = false;
             nombre_medicamento = "";
             presentacion = "";
             concentracion = "";
@@ -38,6 +40,7 @@ namespace capa_negocio
 
 
         public string id_Medicamento { get => id_medicamento; set => id_medicamento = value; }
+        public bool Seleccionar { get => seleccionar; set => seleccionar= value; }
         public string Nombre_medicamento { get => nombre_medicamento; set => nombre_medicamento = value; }
         public string Presentacion { get => presentacion; set => presentacion = value; }
         public string Concentracion{ get => concentracion; set => concentracion = value; }
@@ -45,6 +48,15 @@ namespace capa_negocio
         public string Tipo_diagnostico { get => tipo_diagnostico; set => tipo_diagnostico = value; }
         public string id_Farmacia { get => id_farmacia; set => id_Farmacia = value; }
 
+
+
+        //Una función solo para convertir bool a string de forma simple
+        public string Form_RefToString(bool frm_ref)
+        {
+            string resultado = "0";
+            if (frm_ref == true) { resultado = "1"; }
+            return resultado;
+        }
 
         //Procedimientos del Crud
 
@@ -65,7 +77,7 @@ namespace capa_negocio
         public DataSet Mostrar_Registros()
         {
             string s;
-            s = "select id_medicamento,nombre_Medicamento,presentacion,concentracion,stock, tipo_diagnostico from Medicamento";
+            s = "select*from Medicamento";
             DataSet ds = new DataSet();
             ejecutarSQL(s, "tac", ds);
             return ds;

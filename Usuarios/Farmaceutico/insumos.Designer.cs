@@ -45,6 +45,7 @@ namespace capa_presentacion.Usuarios.Farmaceutico
             this.textConcentracion = new System.Windows.Forms.TextBox();
             this.textDiagnostico = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.Column1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMedicamento)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,12 +58,16 @@ namespace capa_presentacion.Usuarios.Farmaceutico
             // 
             // dgvMedicamento
             // 
+            this.dgvMedicamento.AllowUserToAddRows = false;
             this.dgvMedicamento.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMedicamento.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1});
             this.dgvMedicamento.Location = new System.Drawing.Point(42, 66);
             this.dgvMedicamento.Name = "dgvMedicamento";
             this.dgvMedicamento.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMedicamento.Size = new System.Drawing.Size(646, 439);
             this.dgvMedicamento.TabIndex = 1;
+            this.dgvMedicamento.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMedicamento_CellContentClick);
             // 
             // label1
             // 
@@ -141,7 +146,7 @@ namespace capa_presentacion.Usuarios.Farmaceutico
             // 
             this.textIdMed.Location = new System.Drawing.Point(889, 37);
             this.textIdMed.Name = "textIdMed";
-            this.textIdMed.Size = new System.Drawing.Size(199, 20);
+            this.textIdMed.Size = new System.Drawing.Size(95, 20);
             this.textIdMed.TabIndex = 98;
             // 
             // label4
@@ -195,6 +200,12 @@ namespace capa_presentacion.Usuarios.Farmaceutico
             this.label6.TabIndex = 103;
             this.label6.Text = "Tipo Diagnostico";
             // 
+            // Column1
+            // 
+            this.Column1.FalseValue = "false";
+            this.Column1.HeaderText = "selecion";
+            this.Column1.Name = "Column1";
+            // 
             // insumos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -244,5 +255,6 @@ namespace capa_presentacion.Usuarios.Farmaceutico
         private System.Windows.Forms.TextBox textConcentracion;
         private System.Windows.Forms.TextBox textDiagnostico;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Column1;
     }
 }
