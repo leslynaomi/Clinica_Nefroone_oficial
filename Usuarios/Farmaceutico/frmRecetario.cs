@@ -20,22 +20,28 @@ namespace capa_presentacion.Usuarios.Farmaceutico
         }
         clsRecetario Rec= new clsRecetario();
 
-
+        string recolectorid = "";
 
         private void LimpiarTexto()
         {
             txtFecha.Clear();
            txtIdMedico.Clear();
-           txtIdMedicamento.Clear();
+         
             txtCantidad.Clear();
             txtPaciente.Clear();
             
         }
 
+        private void Limpiarrad()
+        {
+            rbCateter.Checked = false;
+            rbFistula.Checked = false;
+            rbPeritoneal.Checked = false;
 
+        }
         private void seguirlista()
         {
-            txtIdMedicamento.Clear();
+          
             txtCantidad.Clear();
 
         }
@@ -57,12 +63,7 @@ namespace capa_presentacion.Usuarios.Farmaceutico
 
 
 
-        private void limpiarbtn() {
-            rbCateter.Checked = false;
-            rbFistula.Checked = false;
-            rbPeritoneal.Checked = false;
-
-        }
+    
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
             if (rbCateter.Checked == true)
@@ -74,7 +75,7 @@ namespace capa_presentacion.Usuarios.Farmaceutico
                 dgvMedicamento.AutoResizeRows();
               
             
-            }
+            }if (rbCateter.Checked == false) { }
            
         }
 
@@ -94,7 +95,9 @@ namespace capa_presentacion.Usuarios.Farmaceutico
                 dgvMedicamento.AutoResizeRows();
              
             }
-      
+
+            if (rbFistula.Checked == false) { }
+
         }
 
         private void rbPeritoneal_CheckedChanged(object sender, EventArgs e)
@@ -107,7 +110,13 @@ namespace capa_presentacion.Usuarios.Farmaceutico
                 dgvMedicamento.AutoResizeRows();
                 
             }
-        
+
+            if (rbPeritoneal.Checked == false) {
+
+
+
+            }
+
         }
 
         private void btnInsertarRegistros_Click(object sender, EventArgs e)
@@ -118,7 +127,7 @@ namespace capa_presentacion.Usuarios.Farmaceutico
 
                 Rec.Fecha = txtFecha.Text;
                 Rec.Cantida_Recetada = txtCantidad.Text;
-                Rec.Id_medicamento = txtIdMedicamento.Text;
+                Rec.Id_medicamento = recolectorid;
                 Rec.Ci = txtPaciente.Text;
                 Rec.Id_Empleado = txtIdMedico.Text;
 
@@ -134,7 +143,7 @@ namespace capa_presentacion.Usuarios.Farmaceutico
                 dgvreceta .AutoResizeRows();
 
 
-
+                recolectorid = "";
 
 
                 MessageBox.Show("Insertado correctamente", "INFORMACION");
@@ -146,8 +155,17 @@ namespace capa_presentacion.Usuarios.Farmaceutico
         }
 
         private void dgvMedicamento_MouseClick(object sender, MouseEventArgs e)
-        {  
-           
+        {
+            recolectorid = dgvMedicamento.CurrentRow.Cells[1].Value.ToString();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            dgvMedicamento.DataSource = null;
+            dgvreceta.DataSource = null;
+            Limpiarrad();
+            LimpiarTexto();
+
         }
     }
 }
