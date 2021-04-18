@@ -22,7 +22,7 @@ namespace capa_datos
             this.servidor = "Lenovo";
             this.usuario = "Pol";
             this.contrasena = "Pol";
-            this.basedatos = "Nefroone";
+            this.basedatos = "Nefroone4";
             this.cmdSP = new SqlCommand();
 
             //constructor Alejandra
@@ -56,7 +56,6 @@ namespace capa_datos
 
         public void IniciarSP(String sp)
         {
-            //procedimiento almacenado
             cmdSP.Connection = conectar();
             cmdSP.CommandType = CommandType.StoredProcedure;
             cmdSP.CommandText = sp;

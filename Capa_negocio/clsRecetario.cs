@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 using capa_datos;
 using System.Data;
+
 namespace capa_negocio
-{
-    
+{    
     public class clsRecetario : ClsConexion
     {
 

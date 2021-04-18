@@ -33,13 +33,13 @@ namespace capa_presentacion.Usuarios.Enfermero
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelFormulario = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.bDIALISISPERITONEAL = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.btnMaximizar = new System.Windows.Forms.PictureBox();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
-            this.bDIALISISPERITONEAL = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -80,6 +80,19 @@ namespace capa_presentacion.Usuarios.Enfermero
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(254, 647);
             this.panel3.TabIndex = 1;
+            // 
+            // bDIALISISPERITONEAL
+            // 
+            this.bDIALISISPERITONEAL.BackColor = System.Drawing.SystemColors.Desktop;
+            this.bDIALISISPERITONEAL.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bDIALISISPERITONEAL.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.bDIALISISPERITONEAL.Location = new System.Drawing.Point(3, 160);
+            this.bDIALISISPERITONEAL.Name = "bDIALISISPERITONEAL";
+            this.bDIALISISPERITONEAL.Size = new System.Drawing.Size(251, 34);
+            this.bDIALISISPERITONEAL.TabIndex = 5;
+            this.bDIALISISPERITONEAL.Text = "DIALISIS PERITONEAL";
+            this.bDIALISISPERITONEAL.UseVisualStyleBackColor = false;
+            this.bDIALISISPERITONEAL.Click += new System.EventHandler(this.bDIALISISPERITONEAL_Click);
             // 
             // label1
             // 
@@ -122,7 +135,7 @@ namespace capa_presentacion.Usuarios.Enfermero
             this.btnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizar.Image")));
-            this.btnMinimizar.Location = new System.Drawing.Point(897, 14);
+            this.btnMinimizar.Location = new System.Drawing.Point(930, 12);
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(30, 23);
             this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -135,7 +148,7 @@ namespace capa_presentacion.Usuarios.Enfermero
             this.btnMaximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMaximizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMaximizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMaximizar.Image")));
-            this.btnMaximizar.Location = new System.Drawing.Point(933, 14);
+            this.btnMaximizar.Location = new System.Drawing.Point(966, 12);
             this.btnMaximizar.Name = "btnMaximizar";
             this.btnMaximizar.Size = new System.Drawing.Size(30, 23);
             this.btnMaximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -148,26 +161,13 @@ namespace capa_presentacion.Usuarios.Enfermero
             this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
-            this.btnCerrar.Location = new System.Drawing.Point(969, 14);
+            this.btnCerrar.Location = new System.Drawing.Point(1002, 12);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(30, 23);
             this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnCerrar.TabIndex = 3;
             this.btnCerrar.TabStop = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click_1);
-            // 
-            // bDIALISISPERITONEAL
-            // 
-            this.bDIALISISPERITONEAL.BackColor = System.Drawing.SystemColors.Desktop;
-            this.bDIALISISPERITONEAL.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bDIALISISPERITONEAL.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.bDIALISISPERITONEAL.Location = new System.Drawing.Point(3, 177);
-            this.bDIALISISPERITONEAL.Name = "bDIALISISPERITONEAL";
-            this.bDIALISISPERITONEAL.Size = new System.Drawing.Size(251, 34);
-            this.bDIALISISPERITONEAL.TabIndex = 5;
-            this.bDIALISISPERITONEAL.Text = "DIALISIS PERITONEAL";
-            this.bDIALISISPERITONEAL.UseVisualStyleBackColor = false;
-            this.bDIALISISPERITONEAL.Click += new System.EventHandler(this.bDIALISISPERITONEAL_Click);
             // 
             // formularioprincipalE
             // 

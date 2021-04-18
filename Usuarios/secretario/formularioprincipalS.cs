@@ -70,5 +70,10 @@ namespace capa_presentacion.Usuarios.secretario
         {
             AbrirFormulario<FrmHojaSecretaria>();
         }
+
+        private void btnColaAtencion_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<FrmColaAtencion>();
+        }
     }
 }

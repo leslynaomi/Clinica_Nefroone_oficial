@@ -57,6 +57,7 @@
     <Compile Include="clsHojaRegistro.cs" />
     <Compile Include="clsInsumos.cs" />
     <Compile Include="clsPaciente.cs" />
+    <Compile Include="N_Users.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="clsRecetario.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">

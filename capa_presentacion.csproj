@@ -195,6 +195,12 @@
     <Compile Include="Usuarios\Secretario\formularioprincipalS.Designer.cs">
       <DependentUpon>formularioprincipalS.cs</DependentUpon>
     </Compile>
+    <Compile Include="Usuarios\Secretario\FrmColaAtencion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Usuarios\Secretario\FrmColaAtencion.Designer.cs">
+      <DependentUpon>FrmColaAtencion.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FrmAreaSalud.resx">
       <DependentUpon>FrmAreaSalud.cs</DependentUpon>
     </EmbeddedResource>
@@ -258,6 +264,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Usuarios\Secretario\formularioprincipalS.resx">
       <DependentUpon>formularioprincipalS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usuarios\Secretario\FrmColaAtencion.resx">
+      <DependentUpon>FrmColaAtencion.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ClinicaDataSet.xsc">
       <DependentUpon>ClinicaDataSet.xsd</DependentUpon>

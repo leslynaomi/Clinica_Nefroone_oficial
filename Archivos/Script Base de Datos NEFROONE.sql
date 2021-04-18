@@ -1,6 +1,6 @@
 --Creación de la base de datos
 --create database Nefroone
---use Nefroone
+--use Nefroone4
 
 --Para borrar un trigger completamente de la base de datos
 --drop trigger Habitacion_Libre
@@ -10,7 +10,7 @@
 --enable trigger Habitacion_Libre on detalle_habitacion
 
 --Eliminación de la base de datos
---drop database Nefroone
+--drop database Nefroone3
 
 --Consulta para ver todas las tablas en una base de datos
 --SELECT CAST(table_name as varchar)  FROM INFORMATION_SCHEMA.TABLES
@@ -1080,7 +1080,7 @@ begin
 end
 go
 
----listar medicamentos para m--dico
+---listar medicamentos para médico
 create proc ListarMedic
 as
 select nombre_Medicamento,presentacion,concentracion,cantidad_Recetada
@@ -1115,6 +1115,71 @@ as
 select id_medicamento,nombre_Medicamento,presentacion,concentracion,stock
 from Medicamento
 go
+
+/*
+--Procedimiento de Damián para el Login
+create proc sp_login(
+@usuario varchar(30),
+@contrasena varchar(30)
+)as
+begin
+	begin try
+		begin tran
+			
+	end try
+	begin catch		
+		raiserror('Error en el usuario o la contraseña',16,1) 
+		rollback tran
+	end catch
+end
+*/
+
+-- PROCEDIMIENTO MOSTRAR REPORTE DE "DATOS DEL PACIENTE"
+create proc name_proc(
+
+)as
+begin
+	begin try
+		begin tran
+			
+	end try
+	begin catch		
+		raiserror('Error en ',16,1) 
+		rollback tran
+	end catch
+end
+
+-- PROCEDIMIENTO MOSTRAR REPORTE DE "RECIBO RECETARIO"
+create proc name_proc(
+
+)as
+begin
+	begin try
+		begin tran
+			
+	end try
+	begin catch		
+		raiserror('Error en ',16,1) 
+		rollback tran
+	end catch
+end
+
+-- PROCEDIMIENTO MOSTRAR REPORTE DE "CONSOLIDADO MENSUAL" DE SESIONES
+create proc name_proc(
+
+)as
+begin
+	begin try
+		begin tran
+			
+	end try
+	begin catch		
+		raiserror('Error en ',16,1) 
+		rollback tran
+	end catch
+end
+
+
 
 
 -------------						TRIGGERS							-----------------
