@@ -20,11 +20,11 @@ namespace capa_presentacion
             InitializeComponent();
         }
 
-        ClsHojaRegistro reg = new ClsHojaRegistro();
+        ClsHojaSecretaria reg = new ClsHojaSecretaria();
 
         private void btnMenuPacientes_Click(object sender, EventArgs e)
         {
-            FrmGestionarPaciente frm = new FrmGestionarPaciente();
+            FrmRegistrarPacientes frm = new FrmRegistrarPacientes();
             frm.Show();
         }
 

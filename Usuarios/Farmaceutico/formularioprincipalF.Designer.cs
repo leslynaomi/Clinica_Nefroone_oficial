@@ -34,7 +34,6 @@ namespace capa_presentacion.Usuarios.Farmaceutico
             this.PanelFormulario = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -74,7 +73,6 @@ namespace capa_presentacion.Usuarios.Farmaceutico
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.Desktop;
             this.panel3.Controls.Add(this.label1);
-            this.panel3.Controls.Add(this.button3);
             this.panel3.Controls.Add(this.button2);
             this.panel3.Controls.Add(this.button1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
@@ -93,19 +91,6 @@ namespace capa_presentacion.Usuarios.Farmaceutico
             this.label1.Size = new System.Drawing.Size(207, 37);
             this.label1.TabIndex = 16;
             this.label1.Text = "NEFROONE";
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.SystemColors.Desktop;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button3.Location = new System.Drawing.Point(2, 231);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(251, 36);
-            this.button3.TabIndex = 15;
-            this.button3.Text = "PACIENTE ACTUAL";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -210,7 +195,6 @@ namespace capa_presentacion.Usuarios.Farmaceutico
         private System.Windows.Forms.Panel PanelFormulario;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel2;

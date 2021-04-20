@@ -16,7 +16,10 @@ namespace capa_presentacion
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmPrincipalAdministrador());
+            //Application.Run(new FrmPrincipalAdministrador());
+
+            //Para el Login de damián descomentar esto
+            Application.Run(new FrmInicioSesion());
         }
     }
 }

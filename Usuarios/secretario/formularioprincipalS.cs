@@ -63,7 +63,7 @@ namespace capa_presentacion.Usuarios.secretario
 
         private void button1_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<FrmGestionarPaciente>();
+            AbrirFormulario<FrmRegistrarPacientes>();
         }
 
         private void button2_Click(object sender, EventArgs e)

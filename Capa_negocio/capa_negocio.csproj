@@ -54,7 +54,7 @@
     <Compile Include="clsEvoloucionYTratamiento.cs" />
     <Compile Include="clsHojaEnfermeria.cs" />
     <Compile Include="clsHojaMedica.cs" />
-    <Compile Include="clsHojaRegistro.cs" />
+    <Compile Include="clsHojaSecretaria.cs" />
     <Compile Include="clsInsumos.cs" />
     <Compile Include="clsPaciente.cs" />
     <Compile Include="N_Users.cs" />

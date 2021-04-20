@@ -35,19 +35,19 @@ namespace capa_presentacion
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(60, 127);
+            this.button3.Location = new System.Drawing.Point(12, 58);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(151, 33);
             this.button3.TabIndex = 4;
             this.button3.Text = "Registro General Pacientes";
             this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+//            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(56, 67);
+            this.label1.Location = new System.Drawing.Point(12, 24);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(163, 20);
             this.label1.TabIndex = 3;
@@ -57,7 +57,7 @@ namespace capa_presentacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(278, 255);
+            this.ClientSize = new System.Drawing.Size(587, 327);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.label1);
             this.Name = "FrmAreaSalud";

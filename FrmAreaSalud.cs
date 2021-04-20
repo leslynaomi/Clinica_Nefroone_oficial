@@ -24,11 +24,11 @@ namespace capa_presentacion
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        /*private void button3_Click(object sender, EventArgs e)
         {
             FrmGestionarPaciente frm = new FrmGestionarPaciente();
             //frm.MdiParent = this;
             frm.Show();
-        }        
+        } */       
     }
 }

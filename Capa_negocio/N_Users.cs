@@ -12,7 +12,7 @@ namespace capa_negocio
 {
     public class N_Users
     {
-        D_Users objd = new D_Users();
+        ClsConexion objd = new ClsConexion();
 
         public DataTable N_user(E_Users obje)
         {

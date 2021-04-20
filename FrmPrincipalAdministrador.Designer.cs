@@ -29,8 +29,6 @@ namespace capa_presentacion
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnAdminMenu = new System.Windows.Forms.Button();
-            this.btnSaludMenu = new System.Windows.Forms.Button();
             this.btnVolverMenu = new System.Windows.Forms.Button();
             this.btnSecretaria = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -39,38 +37,19 @@ namespace capa_presentacion
             this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // btnAdminMenu
-            // 
-            this.btnAdminMenu.Location = new System.Drawing.Point(103, 94);
-            this.btnAdminMenu.Name = "btnAdminMenu";
-            this.btnAdminMenu.Size = new System.Drawing.Size(133, 48);
-            this.btnAdminMenu.TabIndex = 0;
-            this.btnAdminMenu.Text = "Area Administrativa";
-            this.btnAdminMenu.UseVisualStyleBackColor = true;
-            this.btnAdminMenu.Click += new System.EventHandler(this.btnAdminMenu_Click);
-            // 
-            // btnSaludMenu
-            // 
-            this.btnSaludMenu.Location = new System.Drawing.Point(298, 94);
-            this.btnSaludMenu.Name = "btnSaludMenu";
-            this.btnSaludMenu.Size = new System.Drawing.Size(133, 48);
-            this.btnSaludMenu.TabIndex = 1;
-            this.btnSaludMenu.Text = "Area Salud";
-            this.btnSaludMenu.UseVisualStyleBackColor = true;
-            this.btnSaludMenu.Click += new System.EventHandler(this.btnSaludMenu_Click);
-            // 
             // btnVolverMenu
             // 
-            this.btnVolverMenu.Location = new System.Drawing.Point(31, 244);
+            this.btnVolverMenu.Location = new System.Drawing.Point(12, 187);
             this.btnVolverMenu.Name = "btnVolverMenu";
             this.btnVolverMenu.Size = new System.Drawing.Size(75, 23);
             this.btnVolverMenu.TabIndex = 2;
             this.btnVolverMenu.Text = "Volver";
             this.btnVolverMenu.UseVisualStyleBackColor = true;
+            this.btnVolverMenu.Click += new System.EventHandler(this.btnVolverMenu_Click);
             // 
             // btnSecretaria
             // 
-            this.btnSecretaria.Location = new System.Drawing.Point(453, 191);
+            this.btnSecretaria.Location = new System.Drawing.Point(203, 99);
             this.btnSecretaria.Name = "btnSecretaria";
             this.btnSecretaria.Size = new System.Drawing.Size(75, 23);
             this.btnSecretaria.TabIndex = 3;
@@ -81,7 +60,7 @@ namespace capa_presentacion
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(415, 175);
+            this.label1.Location = new System.Drawing.Point(169, 83);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(137, 13);
             this.label1.TabIndex = 4;
@@ -89,7 +68,7 @@ namespace capa_presentacion
             // 
             // btnMedico
             // 
-            this.btnMedico.Location = new System.Drawing.Point(453, 220);
+            this.btnMedico.Location = new System.Drawing.Point(203, 159);
             this.btnMedico.Name = "btnMedico";
             this.btnMedico.Size = new System.Drawing.Size(75, 23);
             this.btnMedico.TabIndex = 5;
@@ -99,7 +78,7 @@ namespace capa_presentacion
             // 
             // btnEnfermera
             // 
-            this.btnEnfermera.Location = new System.Drawing.Point(453, 249);
+            this.btnEnfermera.Location = new System.Drawing.Point(203, 129);
             this.btnEnfermera.Name = "btnEnfermera";
             this.btnEnfermera.Size = new System.Drawing.Size(75, 23);
             this.btnEnfermera.TabIndex = 6;
@@ -111,7 +90,7 @@ namespace capa_presentacion
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(149, 27);
+            this.label2.Location = new System.Drawing.Point(47, 25);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(245, 25);
             this.label2.TabIndex = 4;
@@ -122,16 +101,13 @@ namespace capa_presentacion
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Peru;
-            this.ClientSize = new System.Drawing.Size(565, 295);
-            //this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(321, 222);
             this.Controls.Add(this.btnEnfermera);
             this.Controls.Add(this.btnMedico);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnSecretaria);
             this.Controls.Add(this.btnVolverMenu);
-            this.Controls.Add(this.btnSaludMenu);
-            this.Controls.Add(this.btnAdminMenu);
             this.Name = "FrmPrincipalAdministrador";
             this.Text = "Menu Administrador(a)";
             this.Load += new System.EventHandler(this.FrmPrincipalAdministrador_Load);
@@ -141,9 +117,6 @@ namespace capa_presentacion
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnAdminMenu;
-        private System.Windows.Forms.Button btnSaludMenu;
         private System.Windows.Forms.Button btnVolverMenu;
         private System.Windows.Forms.Button btnSecretaria;
         private System.Windows.Forms.Label label1;

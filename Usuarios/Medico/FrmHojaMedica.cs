@@ -22,7 +22,7 @@ namespace capa_presentacion
 
         private void btnMenuPacientes_Click(object sender, EventArgs e)
         {
-            FrmGestionarPaciente frm = new FrmGestionarPaciente();
+            FrmRegistrarPacientes frm = new FrmRegistrarPacientes();
             frm.Show();
         }
 

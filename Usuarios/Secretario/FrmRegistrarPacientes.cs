@@ -10,14 +10,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-using capa_datos;
 using capa_negocio;
 
 namespace capa_presentacion
 {
-    public partial class FrmGestionarPaciente : Form
+    public partial class FrmRegistrarPacientes : Form
     {
-        public FrmGestionarPaciente()   
+        public FrmRegistrarPacientes()   
         {
             InitializeComponent();
         }
@@ -38,10 +37,7 @@ namespace capa_presentacion
 
         private void FrmGestionarPaciente_Load(object sender, EventArgs e)
         {
-            dgvPaciente.DataSource = pac.Mostrar_Registros();
-            dgvPaciente.DataMember = "tac";
-            dgvPaciente.AutoResizeColumns();
-            dgvPaciente.AutoResizeRows();
+            
         }
 
         private void btnMostrarRegistros_Click(object sender, EventArgs e)
@@ -127,9 +123,17 @@ namespace capa_presentacion
 
         private void btnBuscarRegistros_Click(object sender, EventArgs e)
         {
-            DataSet ds = new DataSet();
+           /* DataSet ds = new DataSet();
             ds = pac.Buscar_Registros(txtParam.Text);
             dgvPaciente.DataSource = ds;
+            dgvPaciente.DataMember = "tac";
+            dgvPaciente.AutoResizeColumns();
+            dgvPaciente.AutoResizeRows();*/
+        }
+
+        private void FrmRegistrarPacientes_Load(object sender, EventArgs e)
+        {
+            dgvPaciente.DataSource = pac.Mostrar_Registros();
             dgvPaciente.DataMember = "tac";
             dgvPaciente.AutoResizeColumns();
             dgvPaciente.AutoResizeRows();

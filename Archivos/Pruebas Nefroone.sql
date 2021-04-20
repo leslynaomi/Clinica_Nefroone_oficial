@@ -3,7 +3,7 @@
 -----------------------------------------------------------------------------------------------------------
 use Nefroone4
 go
-
+/*
 --Empleado
 select *from Empleado
 --No reciben el id como parámetro, modificar y eliminar específicamente trabajan de forma
@@ -90,7 +90,7 @@ insert into Medicamento values (0,'Equipo de suero','Pieza','',0,1,0,0,1)
 select *from Receta
 insert into Receta values('12-04-2021',1,12,92452354,1)
 
-
+*/
 
 
 

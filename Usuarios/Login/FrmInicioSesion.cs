@@ -24,6 +24,7 @@ namespace capa_presentacion
 
         E_Users objeuser = new E_Users();
         N_Users objnuser = new N_Users();
+        
         FrmPrincipalAdministrador frm1 = new FrmPrincipalAdministrador();
 
         void p_login()
@@ -42,25 +43,7 @@ namespace capa_presentacion
             {
                 MessageBox.Show("Usuario o Contraseña invalida");
             }
-        }
-
-        /*private void logins()
-        {
-            
-            /try
-            {
-                string cnn = ConfigurationManager.ConnectionStrings["cnn"].ConnectionString;
-                using (SqlConnection conexion = new SqlConnection(cnn))
-                {
-                    using (SqlCommand cmd = new SqlCommand("SELEC Usuario, pass FROM Usuarios Where usuario=" + txtUser.Text + "' AND pass='" + txtPass.Text));
-                }
-            }
-            catch (Exception ex)
-            { 
-                
-            }
-        }*/
-
+        }    
         private void FrmInicioSesion_Load(object sender, EventArgs e)
         {
 
@@ -71,6 +54,10 @@ namespace capa_presentacion
             p_login();
         }
 
-     
+        private void buttonCancelar_Click(object sender, EventArgs e)
+        {
+            FrmPrincipalAdministrador frm = new FrmPrincipalAdministrador();
+            frm.Show();
+        }
     }
 }

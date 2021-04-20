@@ -94,12 +94,13 @@ namespace capa_presentacion
             // 
             // buttonCancelar
             // 
-            this.buttonCancelar.Location = new System.Drawing.Point(237, 209);
+            this.buttonCancelar.Location = new System.Drawing.Point(263, 209);
             this.buttonCancelar.Name = "buttonCancelar";
             this.buttonCancelar.Size = new System.Drawing.Size(75, 23);
             this.buttonCancelar.TabIndex = 6;
-            this.buttonCancelar.Text = "Cancelar";
+            this.buttonCancelar.Text = "Pruebas";
             this.buttonCancelar.UseVisualStyleBackColor = false;
+            this.buttonCancelar.Click += new System.EventHandler(this.buttonCancelar_Click);
             // 
             // FrmInicioSesion
             // 

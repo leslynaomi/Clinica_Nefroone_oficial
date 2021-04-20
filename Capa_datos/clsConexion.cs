@@ -48,6 +48,36 @@ namespace capa_datos
             cnx.Open();
             return cnx;
         }
+
+        public DataTable D_users(E_Users obje)
+        {
+            SqlCommand cmd = new SqlCommand("sp_login", conectar());
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@user", obje.Usuario);
+            cmd.Parameters.AddWithValue("@passwd", obje.Contraseña);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            return dt;
+        }
+
+        /* public DataTable D_users(E_Users obje)
+         {
+
+             IniciarSP("sp_login");
+             //SqlCommand cmd = new SqlCommand("sp_login", cnx);
+             //cmd.CommandType = CommandType.StoredProcedure;
+             //cmd.Parameters.AddWithValue("@user", obje.Usuario);
+             //cmd.Parameters.AddWithValue("@passwd", obje.Contraseña);
+             AddParametro("@user", obje.Usuario);
+             AddParametro("@passwd", obje.Contraseña);
+             //SqlDataAdapter da = new SqlDataAdapter(cmd);
+             ejecutarSP();
+             DataTable dt = new DataTable();
+             da.Fill(dt);
+             return dt;
+         }*/
+
         public void desconectar()
         {
             SqlConnection cnx = this.conectar();
@@ -72,8 +102,8 @@ namespace capa_datos
         public void ejecutarSP()
         {
             SqlDataReader spResult;
-            cmdSP.Prepare();
-            spResult = cmdSP.ExecuteReader();
+            cmdSP.Prepare();            
+            spResult = cmdSP.ExecuteReader();            
             cmdSP.Parameters.Clear();
         }
 

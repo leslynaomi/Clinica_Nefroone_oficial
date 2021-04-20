@@ -38,7 +38,7 @@ namespace capa_presentacion
 
         private void btnMenuPac_Click(object sender, EventArgs e)
         {
-            FrmGestionarPaciente frmPac = new FrmGestionarPaciente();
+            FrmRegistrarPacientes frmPac = new FrmRegistrarPacientes();
             frmPac.Show();
         }
 

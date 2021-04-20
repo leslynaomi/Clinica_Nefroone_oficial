@@ -26,12 +26,12 @@ namespace capa_presentacion
 
         }
 
-        private void btnSaludMenu_Click(object sender, EventArgs e)
+        /*private void btnSaludMenu_Click(object sender, EventArgs e)
         {
             FrmAreaSalud frm = new FrmAreaSalud();
             //frm.MdiParent = this;
             frm.Show();
-        }
+        }*/
 
         private void btnSecretaria_Click(object sender, EventArgs e)
         {
@@ -59,8 +59,18 @@ namespace capa_presentacion
 
         private void btnAdminMenu_Click(object sender, EventArgs e)
         {
-            FrmGestionarEmpleado frm = new FrmGestionarEmpleado();
-            frm.Show();
+            /*FrmGestionarEmpleado frm = new FrmGestionarEmpleado();
+            frm.Show();*/
+        }
+
+        private void btnVolverMenu_Click(object sender, EventArgs e)
+        {
+            //Inserte código para volver al login (como un cerrar sesión)
+        }
+
+        private void btnReportes_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

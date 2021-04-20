@@ -10,7 +10,7 @@ using capa_datos;
 
 namespace capa_negocio
 {
-    public class ClsHojaRegistro : ClsConexion
+    public class ClsHojaSecretaria : ClsConexion
     {
         //Atributos
         private string nro_registro;
@@ -26,7 +26,7 @@ namespace capa_negocio
         private string id_empleado;
 
         //Constructor
-        public ClsHojaRegistro()
+        public ClsHojaSecretaria()
         {
             nro_registro = "";
             nro_familiar_Contacto = "";

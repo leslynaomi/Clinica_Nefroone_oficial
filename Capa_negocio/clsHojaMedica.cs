@@ -55,8 +55,8 @@ namespace capa_negocio
         public string Solucion_Dializante { get => solucion_Dializante; set => solucion_Dializante = value; }
         public string Id_empleado { get => id_empleado; set => id_empleado = value; }
 
-        //Solo para usar la función de BoolToString que he creado en ClsHojaRegistro
-        ClsHojaRegistro aux = new ClsHojaRegistro();
+        //Solo para usar la función de BoolToString que he creado en ClsHojaSecretaria
+        ClsHojaSecretaria aux = new ClsHojaSecretaria();
 
         //Procedimientos del Crud
         public void Guardar_Registros()

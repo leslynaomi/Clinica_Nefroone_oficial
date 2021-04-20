@@ -48,6 +48,24 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1449.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1449.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1449.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1449.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1449.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -85,10 +103,10 @@
     <Compile Include="FrmPrincipalAdministrador.Designer.cs">
       <DependentUpon>FrmPrincipalAdministrador.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmInicioSesion.cs">
+    <Compile Include="Usuarios\Login\FrmInicioSesion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmInicioSesion.Designer.cs">
+    <Compile Include="Usuarios\Login\FrmInicioSesion.Designer.cs">
       <DependentUpon>FrmInicioSesion.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmRegistrarPersonalNuevo.cs">
@@ -115,38 +133,51 @@
     <Compile Include="FrmSaludGeneraldeFistula.Designer.cs">
       <DependentUpon>FrmSaludGeneraldeFistula.cs</DependentUpon>
     </Compile>
+    <Compile Include="Usuarios\Administrador\FrmAreaPacientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Usuarios\Administrador\FrmAreaPacientes.Designer.cs">
+      <DependentUpon>FrmAreaPacientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Usuarios\Secretario\FrmConsultarPacientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Usuarios\Secretario\FrmConsultarPacientes.Designer.cs">
+      <DependentUpon>FrmConsultarPacientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Sesiones\FrmEvoloucionYTratamiento.cs">
+    <Compile Include="Usuarios\Medico\FrmEvoloucionYTratamiento.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Sesiones\FrmEvoloucionYTratamiento.Designer.cs">
+    <Compile Include="Usuarios\Medico\FrmEvoloucionYTratamiento.Designer.cs">
       <DependentUpon>FrmEvoloucionYTratamiento.cs</DependentUpon>
     </Compile>
-    <Compile Include="Sesiones\FrmHojaEnfermeria.cs">
+    <Compile Include="Usuarios\Enfermera\FrmHojaEnfermeria.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Sesiones\FrmHojaEnfermeria.Designer.cs">
+    <Compile Include="Usuarios\Enfermera\FrmHojaEnfermeria.Designer.cs">
       <DependentUpon>FrmHojaEnfermeria.cs</DependentUpon>
     </Compile>
-    <Compile Include="Sesiones\FrmHojaMedica.cs">
+    <Compile Include="Usuarios\Medico\FrmHojaMedica.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Sesiones\FrmHojaMedica.Designer.cs">
+    <Compile Include="Usuarios\Medico\FrmHojaMedica.Designer.cs">
       <DependentUpon>FrmHojaMedica.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pacientes\FrmGestionarPaciente.cs">
+    <Compile Include="Usuarios\Secretario\FrmRegistrarPacientes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pacientes\FrmGestionarPaciente.Designer.cs">
-      <DependentUpon>FrmGestionarPaciente.cs</DependentUpon>
+    <Compile Include="Usuarios\Secretario\FrmRegistrarPacientes.Designer.cs">
+      <DependentUpon>FrmRegistrarPacientes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Sesiones\FrmHojaSecretaria.cs">
+    <Compile Include="Usuarios\Secretario\FrmHojaSecretaria.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Sesiones\FrmHojaSecretaria.Designer.cs">
+    <Compile Include="Usuarios\Secretario\FrmHojaSecretaria.Designer.cs">
       <DependentUpon>FrmHojaSecretaria.cs</DependentUpon>
     </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="Usuarios\Enfermera\formularioprincipalE.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -177,11 +208,11 @@
     <Compile Include="Usuarios\Farmaceutico\insumos.Designer.cs">
       <DependentUpon>insumos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Usuarios\FrmGestionarEmpleado.cs">
+    <Compile Include="Usuarios\Administrador\FrmAreaEmpleados.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Usuarios\FrmGestionarEmpleado.Designer.cs">
-      <DependentUpon>FrmGestionarEmpleado.cs</DependentUpon>
+    <Compile Include="Usuarios\Administrador\FrmAreaEmpleados.Designer.cs">
+      <DependentUpon>FrmAreaEmpleados.cs</DependentUpon>
     </Compile>
     <Compile Include="Usuarios\Medico\formularioprincipalM.cs">
       <SubType>Form</SubType>
@@ -207,7 +238,7 @@
     <EmbeddedResource Include="FrmAreaAdministrativa.resx">
       <DependentUpon>FrmAreaAdministrativa.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmInicioSesion.resx">
+    <EmbeddedResource Include="Usuarios\Login\FrmInicioSesion.resx">
       <DependentUpon>FrmInicioSesion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPrincipalAdministrador.resx">
@@ -215,6 +246,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmRegistrarPersonalNuevo.resx">
       <DependentUpon>FrmRegistrarPersonalNuevo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usuarios\Administrador\FrmAreaPacientes.resx">
+      <DependentUpon>FrmAreaPacientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usuarios\Secretario\FrmConsultarPacientes.resx">
+      <DependentUpon>FrmConsultarPacientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -226,19 +263,19 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Pacientes\FrmGestionarPaciente.resx">
-      <DependentUpon>FrmGestionarPaciente.cs</DependentUpon>
+    <EmbeddedResource Include="Usuarios\Secretario\FrmRegistrarPacientes.resx">
+      <DependentUpon>FrmRegistrarPacientes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Sesiones\FrmEvoloucionYTratamiento.resx">
+    <EmbeddedResource Include="Usuarios\Medico\FrmEvoloucionYTratamiento.resx">
       <DependentUpon>FrmEvoloucionYTratamiento.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Sesiones\FrmHojaEnfermeria.resx">
+    <EmbeddedResource Include="Usuarios\Enfermera\FrmHojaEnfermeria.resx">
       <DependentUpon>FrmHojaEnfermeria.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Sesiones\FrmHojaMedica.resx">
+    <EmbeddedResource Include="Usuarios\Medico\FrmHojaMedica.resx">
       <DependentUpon>FrmHojaMedica.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Sesiones\FrmHojaSecretaria.resx">
+    <EmbeddedResource Include="Usuarios\Secretario\FrmHojaSecretaria.resx">
       <DependentUpon>FrmHojaSecretaria.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Usuarios\Enfermera\formularioprincipalE.resx">
@@ -256,8 +293,8 @@
     <EmbeddedResource Include="Usuarios\Farmaceutico\insumos.resx">
       <DependentUpon>insumos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Usuarios\FrmGestionarEmpleado.resx">
-      <DependentUpon>FrmGestionarEmpleado.cs</DependentUpon>
+    <EmbeddedResource Include="Usuarios\Administrador\FrmAreaEmpleados.resx">
+      <DependentUpon>FrmAreaEmpleados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Usuarios\Medico\formularioprincipalM.resx">
       <DependentUpon>formularioprincipalM.cs</DependentUpon>
@@ -279,6 +316,7 @@
     <None Include="ClinicaDataSet.xss">
       <DependentUpon>ClinicaDataSet.xsd</DependentUpon>
     </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -314,9 +352,7 @@
       <Name>capa_negocio</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Insumos\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\maximize3.png" />
   </ItemGroup>
@@ -328,6 +364,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\iconfinder_compose_1055085.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
