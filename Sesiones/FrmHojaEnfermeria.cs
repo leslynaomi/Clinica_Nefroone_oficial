@@ -55,6 +55,7 @@ namespace capa_presentacion
             {
                 MessageBox.Show("Error al insertar" + er.ToString());
             }
+
         }
 
         private void LimpiarTexto()

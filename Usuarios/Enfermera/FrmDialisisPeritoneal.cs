@@ -119,11 +119,10 @@ namespace capa_presentacion
             dda.AutoResizeRows();
         }
 
-        private void bhojaenfermeria_Click(object sender, EventArgs e)
+        
+        private void label5_Click(object sender, EventArgs e)
         {
 
-            FrmHojaEnfermeria frm = new FrmHojaEnfermeria();
-            frm.Show();
         }
     }
 }

@@ -69,7 +69,7 @@ namespace capa_presentacion
             this.txtParamModElim.Location = new System.Drawing.Point(141, 555);
             this.txtParamModElim.Name = "txtParamModElim";
             this.txtParamModElim.Size = new System.Drawing.Size(128, 20);
-            this.txtParamModElim.TabIndex = 163;
+            this.txtParamModElim.TabIndex = 8;
             // 
             // btnModificarRegistros
             // 
@@ -78,7 +78,7 @@ namespace capa_presentacion
             this.btnModificarRegistros.Location = new System.Drawing.Point(18, 523);
             this.btnModificarRegistros.Name = "btnModificarRegistros";
             this.btnModificarRegistros.Size = new System.Drawing.Size(117, 29);
-            this.btnModificarRegistros.TabIndex = 162;
+            this.btnModificarRegistros.TabIndex = 15;
             this.btnModificarRegistros.Text = "Modificar Registros";
             this.btnModificarRegistros.UseVisualStyleBackColor = false;
             this.btnModificarRegistros.Click += new System.EventHandler(this.btnModificarRegistros_Click);
@@ -90,7 +90,7 @@ namespace capa_presentacion
             this.btnEliminarRegistros.Location = new System.Drawing.Point(18, 558);
             this.btnEliminarRegistros.Name = "btnEliminarRegistros";
             this.btnEliminarRegistros.Size = new System.Drawing.Size(117, 29);
-            this.btnEliminarRegistros.TabIndex = 161;
+            this.btnEliminarRegistros.TabIndex = 16;
             this.btnEliminarRegistros.Text = "Eliminar Registros";
             this.btnEliminarRegistros.UseVisualStyleBackColor = false;
             this.btnEliminarRegistros.Click += new System.EventHandler(this.btnEliminarRegistros_Click);
@@ -101,7 +101,7 @@ namespace capa_presentacion
             this.label17.Location = new System.Drawing.Point(138, 523);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(131, 26);
-            this.label17.TabIndex = 160;
+            this.label17.TabIndex = 14;
             this.label17.Text = "Introduzca ID de la hoja\r\nde evolución y tratamiento";
             // 
             // label10
@@ -110,7 +110,7 @@ namespace capa_presentacion
             this.label10.Location = new System.Drawing.Point(532, 527);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(206, 39);
-            this.label10.TabIndex = 158;
+            this.label10.TabIndex = 24;
             this.label10.Text = "Introduzca el ID de la hoja de evolución y \r\ntratamiento, ID del empleado o \r\nID " +
     "de la hoja de enfermería";
             // 
@@ -119,7 +119,7 @@ namespace capa_presentacion
             this.txtParamBusc.Location = new System.Drawing.Point(744, 524);
             this.txtParamBusc.Name = "txtParamBusc";
             this.txtParamBusc.Size = new System.Drawing.Size(131, 20);
-            this.txtParamBusc.TabIndex = 157;
+            this.txtParamBusc.TabIndex = 9;
             // 
             // btnBuscarRegistros
             // 
@@ -128,7 +128,7 @@ namespace capa_presentacion
             this.btnBuscarRegistros.Location = new System.Drawing.Point(744, 550);
             this.btnBuscarRegistros.Name = "btnBuscarRegistros";
             this.btnBuscarRegistros.Size = new System.Drawing.Size(131, 29);
-            this.btnBuscarRegistros.TabIndex = 156;
+            this.btnBuscarRegistros.TabIndex = 13;
             this.btnBuscarRegistros.Text = "Buscar Registros";
             this.btnBuscarRegistros.UseVisualStyleBackColor = false;
             this.btnBuscarRegistros.Click += new System.EventHandler(this.btnBuscarRegistros_Click);
@@ -140,7 +140,7 @@ namespace capa_presentacion
             this.btnMostrarRegistros.Location = new System.Drawing.Point(409, 546);
             this.btnMostrarRegistros.Name = "btnMostrarRegistros";
             this.btnMostrarRegistros.Size = new System.Drawing.Size(117, 29);
-            this.btnMostrarRegistros.TabIndex = 155;
+            this.btnMostrarRegistros.TabIndex = 12;
             this.btnMostrarRegistros.Text = "Mostrar Registros";
             this.btnMostrarRegistros.UseVisualStyleBackColor = false;
             this.btnMostrarRegistros.Click += new System.EventHandler(this.btnMostrarRegistros_Click);
@@ -152,7 +152,7 @@ namespace capa_presentacion
             this.btnInsertarRegistros.Location = new System.Drawing.Point(283, 546);
             this.btnInsertarRegistros.Name = "btnInsertarRegistros";
             this.btnInsertarRegistros.Size = new System.Drawing.Size(117, 29);
-            this.btnInsertarRegistros.TabIndex = 154;
+            this.btnInsertarRegistros.TabIndex = 11;
             this.btnInsertarRegistros.Text = "Insertar Registros";
             this.btnInsertarRegistros.UseVisualStyleBackColor = false;
             this.btnInsertarRegistros.Click += new System.EventHandler(this.btnInsertarRegistros_Click);
@@ -164,7 +164,7 @@ namespace capa_presentacion
             this.btnMenuPac.Location = new System.Drawing.Point(763, 351);
             this.btnMenuPac.Name = "btnMenuPac";
             this.btnMenuPac.Size = new System.Drawing.Size(112, 28);
-            this.btnMenuPac.TabIndex = 152;
+            this.btnMenuPac.TabIndex = 17;
             this.btnMenuPac.Text = "Menú Pacientes";
             this.btnMenuPac.UseVisualStyleBackColor = false;
             this.btnMenuPac.Click += new System.EventHandler(this.btnMenuPac_Click);
@@ -174,14 +174,14 @@ namespace capa_presentacion
             this.txtFlujoDial.Location = new System.Drawing.Point(141, 474);
             this.txtFlujoDial.Name = "txtFlujoDial";
             this.txtFlujoDial.Size = new System.Drawing.Size(100, 20);
-            this.txtFlujoDial.TabIndex = 145;
+            this.txtFlujoDial.TabIndex = 3;
             // 
             // txtIDEmp
             // 
             this.txtIDEmp.Location = new System.Drawing.Point(638, 468);
             this.txtIDEmp.Name = "txtIDEmp";
             this.txtIDEmp.Size = new System.Drawing.Size(100, 20);
-            this.txtIDEmp.TabIndex = 148;
+            this.txtIDEmp.TabIndex = 7;
             // 
             // label15
             // 
@@ -189,7 +189,7 @@ namespace capa_presentacion
             this.label15.Location = new System.Drawing.Point(280, 321);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(89, 13);
-            this.label15.TabIndex = 143;
+            this.label15.TabIndex = 25;
             this.label15.Text = "Evolución clínica";
             // 
             // label2
@@ -198,7 +198,7 @@ namespace capa_presentacion
             this.label2.Location = new System.Drawing.Point(524, 471);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(67, 13);
-            this.label2.TabIndex = 141;
+            this.label2.TabIndex = 23;
             this.label2.Text = "ID empleado";
             // 
             // label9
@@ -207,7 +207,7 @@ namespace capa_presentacion
             this.label9.Location = new System.Drawing.Point(27, 359);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(69, 13);
-            this.label9.TabIndex = 140;
+            this.label9.TabIndex = 26;
             this.label9.Text = "Nº de seguro";
             // 
             // txtNroSeguro
@@ -215,7 +215,7 @@ namespace capa_presentacion
             this.txtNroSeguro.Location = new System.Drawing.Point(141, 356);
             this.txtNroSeguro.Name = "txtNroSeguro";
             this.txtNroSeguro.Size = new System.Drawing.Size(100, 20);
-            this.txtNroSeguro.TabIndex = 139;
+            this.txtNroSeguro.TabIndex = 0;
             // 
             // dgvHojaEvolucionTrat
             // 
@@ -225,35 +225,35 @@ namespace capa_presentacion
             this.dgvHojaEvolucionTrat.Location = new System.Drawing.Point(13, 47);
             this.dgvHojaEvolucionTrat.Name = "dgvHojaEvolucionTrat";
             this.dgvHojaEvolucionTrat.Size = new System.Drawing.Size(863, 256);
-            this.dgvHojaEvolucionTrat.TabIndex = 138;
+            this.dgvHojaEvolucionTrat.TabIndex = 30;
             // 
             // txtIDHojaEnf
             // 
             this.txtIDHojaEnf.Location = new System.Drawing.Point(638, 430);
             this.txtIDHojaEnf.Name = "txtIDHojaEnf";
             this.txtIDHojaEnf.Size = new System.Drawing.Size(100, 20);
-            this.txtIDHojaEnf.TabIndex = 136;
+            this.txtIDHojaEnf.TabIndex = 6;
             // 
             // txtUltraFil
             // 
             this.txtUltraFil.Location = new System.Drawing.Point(141, 394);
             this.txtUltraFil.Name = "txtUltraFil";
             this.txtUltraFil.Size = new System.Drawing.Size(100, 20);
-            this.txtUltraFil.TabIndex = 132;
+            this.txtUltraFil.TabIndex = 1;
             // 
             // txtDetMed
             // 
             this.txtDetMed.Location = new System.Drawing.Point(638, 356);
             this.txtDetMed.Name = "txtDetMed";
             this.txtDetMed.Size = new System.Drawing.Size(100, 20);
-            this.txtDetMed.TabIndex = 135;
+            this.txtDetMed.TabIndex = 4;
             // 
             // txtTipoTrat
             // 
             this.txtTipoTrat.Location = new System.Drawing.Point(638, 392);
             this.txtTipoTrat.Name = "txtTipoTrat";
             this.txtTipoTrat.Size = new System.Drawing.Size(100, 20);
-            this.txtTipoTrat.TabIndex = 133;
+            this.txtTipoTrat.TabIndex = 5;
             // 
             // label8
             // 
@@ -261,7 +261,7 @@ namespace capa_presentacion
             this.label8.Location = new System.Drawing.Point(524, 433);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(95, 13);
-            this.label8.TabIndex = 130;
+            this.label8.TabIndex = 22;
             this.label8.Text = "ID hoja enfermería";
             // 
             // label7
@@ -270,7 +270,7 @@ namespace capa_presentacion
             this.label7.Location = new System.Drawing.Point(524, 395);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(83, 13);
-            this.label7.TabIndex = 128;
+            this.label7.TabIndex = 21;
             this.label7.Text = "Tipo tratamiento";
             // 
             // label6
@@ -279,7 +279,7 @@ namespace capa_presentacion
             this.label6.Location = new System.Drawing.Point(27, 474);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(62, 13);
-            this.label6.TabIndex = 127;
+            this.label6.TabIndex = 29;
             this.label6.Text = "Flujo diálisis";
             // 
             // label5
@@ -288,7 +288,7 @@ namespace capa_presentacion
             this.label5.Location = new System.Drawing.Point(27, 436);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(50, 13);
-            this.label5.TabIndex = 126;
+            this.label5.TabIndex = 28;
             this.label5.Text = "Duración";
             // 
             // label3
@@ -297,7 +297,7 @@ namespace capa_presentacion
             this.label3.Location = new System.Drawing.Point(524, 359);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(102, 13);
-            this.label3.TabIndex = 125;
+            this.label3.TabIndex = 20;
             this.label3.Text = "Detalles medicación";
             // 
             // label11
@@ -306,7 +306,7 @@ namespace capa_presentacion
             this.label11.Location = new System.Drawing.Point(27, 398);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(71, 13);
-            this.label11.TabIndex = 123;
+            this.label11.TabIndex = 27;
             this.label11.Text = "Ultra filtración";
             // 
             // label1
@@ -316,7 +316,7 @@ namespace capa_presentacion
             this.label1.Location = new System.Drawing.Point(330, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(221, 25);
-            this.label1.TabIndex = 122;
+            this.label1.TabIndex = 31;
             this.label1.Text = "Evolución y Tratamiento";
             // 
             // btnMenuEnf
@@ -326,7 +326,7 @@ namespace capa_presentacion
             this.btnMenuEnf.Location = new System.Drawing.Point(760, 385);
             this.btnMenuEnf.Name = "btnMenuEnf";
             this.btnMenuEnf.Size = new System.Drawing.Size(112, 39);
-            this.btnMenuEnf.TabIndex = 164;
+            this.btnMenuEnf.TabIndex = 18;
             this.btnMenuEnf.Text = "Menú Hoja Enfermería";
             this.btnMenuEnf.UseVisualStyleBackColor = false;
             this.btnMenuEnf.Click += new System.EventHandler(this.btnMenuEnf_Click);
@@ -338,7 +338,7 @@ namespace capa_presentacion
             this.btnMenuEmp.Location = new System.Drawing.Point(760, 431);
             this.btnMenuEmp.Name = "btnMenuEmp";
             this.btnMenuEmp.Size = new System.Drawing.Size(112, 28);
-            this.btnMenuEmp.TabIndex = 165;
+            this.btnMenuEmp.TabIndex = 19;
             this.btnMenuEmp.Text = "Menú Empleados";
             this.btnMenuEmp.UseVisualStyleBackColor = false;
             this.btnMenuEmp.Click += new System.EventHandler(this.btnMenuEmp_Click);
@@ -355,14 +355,14 @@ namespace capa_presentacion
             this.cbxDuracion.Location = new System.Drawing.Point(141, 433);
             this.cbxDuracion.Name = "cbxDuracion";
             this.cbxDuracion.Size = new System.Drawing.Size(100, 21);
-            this.cbxDuracion.TabIndex = 166;
+            this.cbxDuracion.TabIndex = 2;
             // 
             // rtbEvolClin
             // 
             this.rtbEvolClin.Location = new System.Drawing.Point(274, 337);
             this.rtbEvolClin.Name = "rtbEvolClin";
             this.rtbEvolClin.Size = new System.Drawing.Size(244, 171);
-            this.rtbEvolClin.TabIndex = 167;
+            this.rtbEvolClin.TabIndex = 10;
             this.rtbEvolClin.Text = "";
             // 
             // FrmEvoloucionYTratamiento
