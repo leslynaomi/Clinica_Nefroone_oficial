@@ -82,7 +82,7 @@ namespace capa_negocio
         public DataSet Mostrar_Registros()
         {
             string s;
-            s = "select *from Paciente as pac,Hoja_Secretaria as sec where pac.ci=sec.ci";
+            s = "select pac.ci,nombre,paterno,materno,fecha_Nac as 'fecha de nacimiento',edad,sexo,direccion,nro_familiar_Contacto as 'Teléfono',formulario_Referencia,carta_Negativa,grado_Intruccion as 'grado de instrucción',red,municipio,seguro,fecha_PHemodialisis as 'primera fecha de hemodiálisis' from Paciente as pac,Hoja_Secretaria as sec where pac.ci=sec.ci";
             DataSet ds = new DataSet();
             ejecutarSQL(s, "tac", ds);
             return ds;
@@ -114,12 +114,67 @@ namespace capa_negocio
             ejecutarSP();
         }
         
-        public DataSet Buscar_Registros(string dato)
+        public DataSet Buscar_Edad(string dato)
         {
             string s;
             DataSet ds = new DataSet();
-            s = "select *from Hoja_Secretaria where ci like '" + dato + "%' or nombre like '" + dato + "%'";
-            ejecutarSQL(s, "tac", ds);
+            s = "select pac.ci,nombre,paterno,materno,fecha_Nac as 'fecha de nacimiento',edad,sexo,direccion,nro_familiar_Contacto as 'Teléfono',formulario_Referencia,carta_Negativa,grado_Intruccion as 'grado de instrucción',red,municipio,seguro,fecha_PHemodialisis as 'primera fecha de hemodiálisis' from Paciente as pac,Hoja_Secretaria as sec where pac.ci=sec.ci and edad like " + dato;
+            try
+            {                
+                ejecutarSQL(s, "tac", ds);
+            }
+            catch (Exception er)
+            {
+                MessageBox.Show("No se encuentra el registro" + er.ToString());
+            }
+            return ds;
+        }
+
+        public DataSet Buscar_Name(string dato)
+        {
+            string s;
+            DataSet ds = new DataSet();
+            s = "select pac.ci,nombre,paterno,materno,fecha_Nac as 'fecha de nacimiento',edad,sexo,direccion,nro_familiar_Contacto as 'Teléfono',formulario_Referencia,carta_Negativa,grado_Intruccion as 'grado de instrucción',red,municipio,seguro,fecha_PHemodialisis as 'primera fecha de hemodiálisis' from Paciente as pac,Hoja_Secretaria as sec where pac.ci=sec.ci and nombre like '" + dato + "%'";
+            try
+            {
+                ejecutarSQL(s, "tac", ds);
+            }
+            catch (Exception er)
+            {
+                MessageBox.Show("No se encuentra el registro" + er.ToString());
+            }
+            return ds;
+        }
+
+        public DataSet Buscar_Apellido(string dato)
+        {
+            string s;
+            DataSet ds = new DataSet();
+            s = "select pac.ci,nombre,paterno,materno,fecha_Nac as 'fecha de nacimiento',edad,sexo,direccion,nro_familiar_Contacto as 'Teléfono',formulario_Referencia,carta_Negativa,grado_Intruccion as 'grado de instrucción',red,municipio,seguro,fecha_PHemodialisis as 'primera fecha de hemodiálisis' from Paciente as pac,Hoja_Secretaria as sec where pac.ci=sec.ci and (paterno like '" + dato + "%') or materno like '" + dato + "%')";
+            try
+            {
+                ejecutarSQL(s, "tac", ds);
+            }
+            catch (Exception er)
+            {
+                MessageBox.Show("No se encuentra el registro" + er.ToString());
+            }
+            return ds;
+        }
+
+        public DataSet Buscar_Ci(string dato)
+        {
+            string s;
+            DataSet ds = new DataSet();
+            s = "select pac.ci,nombre,paterno,materno,fecha_Nac as 'fecha de nacimiento',edad,sexo,direccion,nro_familiar_Contacto as 'Teléfono',formulario_Referencia,carta_Negativa,grado_Intruccion as 'grado de instrucción',red,municipio,seguro,fecha_PHemodialisis as 'primera fecha de hemodiálisis' from Paciente as pac,Hoja_Secretaria as sec where pac.ci=sec.ci and pac.ci like '" + dato + "%')";
+            try
+            {
+                ejecutarSQL(s, "tac", ds);
+            }
+            catch (Exception er)
+            {
+                MessageBox.Show("No se encuentra el registro" + er.ToString());
+            }
             return ds;
         }
     }

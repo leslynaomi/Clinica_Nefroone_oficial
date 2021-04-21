@@ -21,6 +21,8 @@ namespace capa_presentacion
             //Impedir que se pueda escribir texto en los combobox
             cmbSeguro.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbSexo.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbxMunicipio.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbxRed.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         ClsHojaSecretaria sec = new ClsHojaSecretaria();
@@ -61,7 +63,15 @@ namespace capa_presentacion
                 //El trigger respectivo se encarga de actualizar la edad automáticamente
                 pac.Edad = "0";
                 
-                pac.Sexo = cmbSexo.Text;
+                if(cmbSexo.Text == "Masculino")
+                {
+                    pac.Sexo = "M";
+                }
+                else
+                {
+                    pac.Sexo = "F";
+                }
+
                 pac.Direccion = txtDireccion.Text;
                 pac.Guardar_Registros();
 
@@ -69,8 +79,8 @@ namespace capa_presentacion
                 sec.Formulario_Referencia = chkFormularioRef.Checked;
                 sec.Carta_Negativa = chkCartNeg.Checked;
                 sec.Grado_Intruccion = txtGradInstr.Text;
-                sec.Red= txtRed.Text;
-                sec.Municipio = txtMunicipio.Text;
+                sec.Red= cbxRed.Text;
+                sec.Municipio = cbxMunicipio.Text;
                 sec.Seguro = cmbSeguro.Text;
                 sec.Fecha_PHemodialisis = dtpPrimHem.Text;
                 sec.CI1 = txtCi.Text;
@@ -96,26 +106,12 @@ namespace capa_presentacion
             txtCi.Clear();
             txtNumTel.Clear();
             txtGradInstr.Clear();
-            txtRed.Clear();
-            txtMunicipio.Clear();
+            cbxRed.ResetText();
+            cbxMunicipio.ResetText();
             cmbSeguro.ResetText();
             txtParam.Clear();
             dtpPrimHem.ResetText();            
-        }
-
-        private void btnBuscarRegistros_Click(object sender, EventArgs e)
-        {
-            if (rdbName.Checked == true)
-            {
-
-            }
-            DataSet ds = new DataSet();
-            ds = sec.Buscar_Registros(txtParam.Text);
-            dgvHojaRegistro.DataSource = ds;
-            dgvHojaRegistro.DataMember = "tac";
-            dgvHojaRegistro.AutoResizeColumns();
-            dgvHojaRegistro.AutoResizeRows();
-        }
+        }       
         
         private void txtNumTel_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -150,6 +146,46 @@ namespace capa_presentacion
         private void rdbName_CheckedChanged(object sender, EventArgs e)
         {
            
+        }
+
+        private void btnBuscarRegistros_Click_1(object sender, EventArgs e)
+        {                                    
+            if (rdbName.Checked == true)
+            {
+                DataSet ds = new DataSet();
+                ds = sec.Buscar_Name(txtParam.Text);
+                dgvHojaRegistro.DataSource = ds;
+                dgvHojaRegistro.DataMember = "tac";
+                dgvHojaRegistro.AutoResizeColumns();
+                dgvHojaRegistro.AutoResizeRows();
+            }
+            if (rdbApellido.Checked == true)
+            {
+                DataSet ds = new DataSet();
+                ds = sec.Buscar_Apellido(txtParam.Text);
+                dgvHojaRegistro.DataSource = ds;
+                dgvHojaRegistro.DataMember = "tac";
+                dgvHojaRegistro.AutoResizeColumns();
+                dgvHojaRegistro.AutoResizeRows();
+            }
+            if (rdbCi.Checked == true)
+            {
+                DataSet ds = new DataSet();
+                ds = sec.Buscar_Ci(txtParam.Text);
+                dgvHojaRegistro.DataSource = ds;
+                dgvHojaRegistro.DataMember = "tac";
+                dgvHojaRegistro.AutoResizeColumns();
+                dgvHojaRegistro.AutoResizeRows();
+            }
+            if (rdbEdad.Checked == true)
+            {
+                DataSet ds = new DataSet();
+                ds = sec.Buscar_Edad(txtParam.Text);
+                dgvHojaRegistro.DataSource = ds;
+                dgvHojaRegistro.DataMember = "tac";
+                dgvHojaRegistro.AutoResizeColumns();
+                dgvHojaRegistro.AutoResizeRows();
+            }
         }
     }
 }

@@ -39,16 +39,14 @@ namespace capa_presentacion
             this.chkFormularioRef = new System.Windows.Forms.CheckBox();
             this.txtNumTel = new System.Windows.Forms.TextBox();
             this.txtGradInstr = new System.Windows.Forms.TextBox();
-            this.txtRed = new System.Windows.Forms.TextBox();
-            this.txtMunicipio = new System.Windows.Forms.TextBox();
             this.dgvHojaRegistro = new System.Windows.Forms.DataGridView();
             this.btnMostrarRegistros = new System.Windows.Forms.Button();
             this.btnInsertarRegistros = new System.Windows.Forms.Button();
             this.dtpPrimHem = new System.Windows.Forms.DateTimePicker();
             this.txtParam = new System.Windows.Forms.TextBox();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.rdbEdad = new System.Windows.Forms.RadioButton();
+            this.rdbApellido = new System.Windows.Forms.RadioButton();
+            this.rdbCi = new System.Windows.Forms.RadioButton();
             this.rdbName = new System.Windows.Forms.RadioButton();
             this.label10 = new System.Windows.Forms.Label();
             this.btnBuscarRegistros = new System.Windows.Forms.Button();
@@ -68,6 +66,8 @@ namespace capa_presentacion
             this.dtpFechaNac = new System.Windows.Forms.DateTimePicker();
             this.cmbSexo = new System.Windows.Forms.ComboBox();
             this.cmbSeguro = new System.Windows.Forms.ComboBox();
+            this.cbxRed = new System.Windows.Forms.ComboBox();
+            this.cbxMunicipio = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHojaRegistro)).BeginInit();
             this.SuspendLayout();
             // 
@@ -141,7 +141,7 @@ namespace capa_presentacion
             this.chkFormularioRef.Location = new System.Drawing.Point(144, 580);
             this.chkFormularioRef.Name = "chkFormularioRef";
             this.chkFormularioRef.Size = new System.Drawing.Size(129, 17);
-            this.chkFormularioRef.TabIndex = 9;
+            this.chkFormularioRef.TabIndex = 15;
             this.chkFormularioRef.Text = "Formulario Referencia";
             this.chkFormularioRef.UseVisualStyleBackColor = true;
             // 
@@ -150,7 +150,7 @@ namespace capa_presentacion
             this.txtNumTel.Location = new System.Drawing.Point(156, 343);
             this.txtNumTel.Name = "txtNumTel";
             this.txtNumTel.Size = new System.Drawing.Size(100, 20);
-            this.txtNumTel.TabIndex = 2;
+            this.txtNumTel.TabIndex = 8;
             this.txtNumTel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumTel_KeyPress);
             // 
             // txtGradInstr
@@ -158,22 +158,8 @@ namespace capa_presentacion
             this.txtGradInstr.Location = new System.Drawing.Point(156, 381);
             this.txtGradInstr.Name = "txtGradInstr";
             this.txtGradInstr.Size = new System.Drawing.Size(100, 20);
-            this.txtGradInstr.TabIndex = 3;
+            this.txtGradInstr.TabIndex = 9;
             this.txtGradInstr.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGradInstr_KeyPress);
-            // 
-            // txtRed
-            // 
-            this.txtRed.Location = new System.Drawing.Point(156, 419);
-            this.txtRed.Name = "txtRed";
-            this.txtRed.Size = new System.Drawing.Size(100, 20);
-            this.txtRed.TabIndex = 5;
-            // 
-            // txtMunicipio
-            // 
-            this.txtMunicipio.Location = new System.Drawing.Point(156, 457);
-            this.txtMunicipio.Name = "txtMunicipio";
-            this.txtMunicipio.Size = new System.Drawing.Size(100, 20);
-            this.txtMunicipio.TabIndex = 6;
             // 
             // dgvHojaRegistro
             // 
@@ -182,7 +168,8 @@ namespace capa_presentacion
             this.dgvHojaRegistro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHojaRegistro.Location = new System.Drawing.Point(285, 95);
             this.dgvHojaRegistro.Name = "dgvHojaRegistro";
-            this.dgvHojaRegistro.Size = new System.Drawing.Size(722, 545);
+            this.dgvHojaRegistro.ReadOnly = true;
+            this.dgvHojaRegistro.Size = new System.Drawing.Size(777, 545);
             this.dgvHojaRegistro.TabIndex = 40;
             // 
             // btnMostrarRegistros
@@ -192,7 +179,7 @@ namespace capa_presentacion
             this.btnMostrarRegistros.Location = new System.Drawing.Point(26, 51);
             this.btnMostrarRegistros.Name = "btnMostrarRegistros";
             this.btnMostrarRegistros.Size = new System.Drawing.Size(239, 31);
-            this.btnMostrarRegistros.TabIndex = 11;
+            this.btnMostrarRegistros.TabIndex = 17;
             this.btnMostrarRegistros.Text = "Mostrar Registros";
             this.btnMostrarRegistros.UseVisualStyleBackColor = false;
             this.btnMostrarRegistros.Click += new System.EventHandler(this.btnMostrarRegistros_Click);
@@ -204,7 +191,7 @@ namespace capa_presentacion
             this.btnInsertarRegistros.Location = new System.Drawing.Point(26, 607);
             this.btnInsertarRegistros.Name = "btnInsertarRegistros";
             this.btnInsertarRegistros.Size = new System.Drawing.Size(240, 33);
-            this.btnInsertarRegistros.TabIndex = 10;
+            this.btnInsertarRegistros.TabIndex = 16;
             this.btnInsertarRegistros.Text = "Insertar Registros";
             this.btnInsertarRegistros.UseVisualStyleBackColor = false;
             this.btnInsertarRegistros.Click += new System.EventHandler(this.btnInsertarRegistros_Click);
@@ -215,47 +202,47 @@ namespace capa_presentacion
             this.dtpPrimHem.Location = new System.Drawing.Point(156, 533);
             this.dtpPrimHem.Name = "dtpPrimHem";
             this.dtpPrimHem.Size = new System.Drawing.Size(99, 20);
-            this.dtpPrimHem.TabIndex = 8;
+            this.dtpPrimHem.TabIndex = 13;
             // 
             // txtParam
             // 
             this.txtParam.Location = new System.Drawing.Point(411, 62);
             this.txtParam.Name = "txtParam";
             this.txtParam.Size = new System.Drawing.Size(129, 20);
-            this.txtParam.TabIndex = 12;
+            this.txtParam.TabIndex = 18;
             // 
-            // radioButton3
+            // rdbEdad
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(957, 63);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(50, 17);
-            this.radioButton3.TabIndex = 56;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Edad";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.rdbEdad.AutoSize = true;
+            this.rdbEdad.Location = new System.Drawing.Point(957, 63);
+            this.rdbEdad.Name = "rdbEdad";
+            this.rdbEdad.Size = new System.Drawing.Size(50, 17);
+            this.rdbEdad.TabIndex = 22;
+            this.rdbEdad.TabStop = true;
+            this.rdbEdad.Text = "Edad";
+            this.rdbEdad.UseVisualStyleBackColor = true;
             // 
-            // radioButton4
+            // rdbApellido
             // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(727, 63);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(62, 17);
-            this.radioButton4.TabIndex = 15;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "Apellido";
-            this.radioButton4.UseVisualStyleBackColor = true;
+            this.rdbApellido.AutoSize = true;
+            this.rdbApellido.Location = new System.Drawing.Point(727, 63);
+            this.rdbApellido.Name = "rdbApellido";
+            this.rdbApellido.Size = new System.Drawing.Size(62, 17);
+            this.rdbApellido.TabIndex = 20;
+            this.rdbApellido.TabStop = true;
+            this.rdbApellido.Text = "Apellido";
+            this.rdbApellido.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // rdbCi
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(817, 63);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(118, 17);
-            this.radioButton2.TabIndex = 58;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Carnet de Identidad";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rdbCi.AutoSize = true;
+            this.rdbCi.Location = new System.Drawing.Point(817, 63);
+            this.rdbCi.Name = "rdbCi";
+            this.rdbCi.Size = new System.Drawing.Size(118, 17);
+            this.rdbCi.TabIndex = 21;
+            this.rdbCi.TabStop = true;
+            this.rdbCi.Text = "Carnet de Identidad";
+            this.rdbCi.UseVisualStyleBackColor = true;
             // 
             // rdbName
             // 
@@ -263,7 +250,7 @@ namespace capa_presentacion
             this.rdbName.Location = new System.Drawing.Point(646, 63);
             this.rdbName.Name = "rdbName";
             this.rdbName.Size = new System.Drawing.Size(62, 17);
-            this.rdbName.TabIndex = 14;
+            this.rdbName.TabIndex = 19;
             this.rdbName.TabStop = true;
             this.rdbName.Text = "Nombre";
             this.rdbName.UseVisualStyleBackColor = true;
@@ -285,9 +272,10 @@ namespace capa_presentacion
             this.btnBuscarRegistros.Location = new System.Drawing.Point(287, 57);
             this.btnBuscarRegistros.Name = "btnBuscarRegistros";
             this.btnBuscarRegistros.Size = new System.Drawing.Size(104, 29);
-            this.btnBuscarRegistros.TabIndex = 13;
+            this.btnBuscarRegistros.TabIndex = 23;
             this.btnBuscarRegistros.Text = "Buscar Registros";
             this.btnBuscarRegistros.UseVisualStyleBackColor = false;
+            this.btnBuscarRegistros.Click += new System.EventHandler(this.btnBuscarRegistros_Click_1);
             // 
             // chkCartNeg
             // 
@@ -295,7 +283,7 @@ namespace capa_presentacion
             this.chkCartNeg.Location = new System.Drawing.Point(33, 580);
             this.chkCartNeg.Name = "chkCartNeg";
             this.chkCartNeg.Size = new System.Drawing.Size(97, 17);
-            this.chkCartNeg.TabIndex = 9;
+            this.chkCartNeg.TabIndex = 14;
             this.chkCartNeg.Text = "Carta Negativa";
             this.chkCartNeg.UseVisualStyleBackColor = true;
             // 
@@ -304,14 +292,14 @@ namespace capa_presentacion
             this.txtDireccion.Location = new System.Drawing.Point(155, 310);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(100, 20);
-            this.txtDireccion.TabIndex = 74;
+            this.txtDireccion.TabIndex = 7;
             // 
             // txtCi
             // 
             this.txtCi.Location = new System.Drawing.Point(156, 95);
             this.txtCi.Name = "txtCi";
             this.txtCi.Size = new System.Drawing.Size(100, 20);
-            this.txtCi.TabIndex = 70;
+            this.txtCi.TabIndex = 1;
             this.txtCi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCi_KeyPress_1);
             // 
             // txtMaterno
@@ -319,7 +307,7 @@ namespace capa_presentacion
             this.txtMaterno.Location = new System.Drawing.Point(156, 197);
             this.txtMaterno.Name = "txtMaterno";
             this.txtMaterno.Size = new System.Drawing.Size(100, 20);
-            this.txtMaterno.TabIndex = 69;
+            this.txtMaterno.TabIndex = 4;
             this.txtMaterno.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMaterno_KeyPress);
             // 
             // txtPaterno
@@ -327,7 +315,7 @@ namespace capa_presentacion
             this.txtPaterno.Location = new System.Drawing.Point(155, 164);
             this.txtPaterno.Name = "txtPaterno";
             this.txtPaterno.Size = new System.Drawing.Size(100, 20);
-            this.txtPaterno.TabIndex = 68;
+            this.txtPaterno.TabIndex = 3;
             this.txtPaterno.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPaterno_KeyPress);
             // 
             // txtNombre
@@ -335,7 +323,7 @@ namespace capa_presentacion
             this.txtNombre.Location = new System.Drawing.Point(156, 130);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(100, 20);
-            this.txtNombre.TabIndex = 67;
+            this.txtNombre.TabIndex = 2;
             this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // label6
@@ -407,7 +395,7 @@ namespace capa_presentacion
             this.dtpFechaNac.Location = new System.Drawing.Point(156, 234);
             this.dtpFechaNac.Name = "dtpFechaNac";
             this.dtpFechaNac.Size = new System.Drawing.Size(99, 20);
-            this.dtpFechaNac.TabIndex = 8;
+            this.dtpFechaNac.TabIndex = 5;
             // 
             // cmbSexo
             // 
@@ -418,7 +406,7 @@ namespace capa_presentacion
             this.cmbSexo.Location = new System.Drawing.Point(155, 271);
             this.cmbSexo.Name = "cmbSexo";
             this.cmbSexo.Size = new System.Drawing.Size(100, 21);
-            this.cmbSexo.TabIndex = 75;
+            this.cmbSexo.TabIndex = 6;
             // 
             // cmbSeguro
             // 
@@ -428,15 +416,37 @@ namespace capa_presentacion
             this.cmbSeguro.Location = new System.Drawing.Point(155, 495);
             this.cmbSeguro.Name = "cmbSeguro";
             this.cmbSeguro.Size = new System.Drawing.Size(100, 21);
-            this.cmbSeguro.TabIndex = 75;
+            this.cmbSeguro.TabIndex = 12;
+            // 
+            // cbxRed
+            // 
+            this.cbxRed.FormattingEnabled = true;
+            this.cbxRed.Items.AddRange(new object[] {
+            "Salud"});
+            this.cbxRed.Location = new System.Drawing.Point(155, 419);
+            this.cbxRed.Name = "cbxRed";
+            this.cbxRed.Size = new System.Drawing.Size(100, 21);
+            this.cbxRed.TabIndex = 6;
+            // 
+            // cbxMunicipio
+            // 
+            this.cbxMunicipio.FormattingEnabled = true;
+            this.cbxMunicipio.Items.AddRange(new object[] {
+            "Montero"});
+            this.cbxMunicipio.Location = new System.Drawing.Point(156, 457);
+            this.cbxMunicipio.Name = "cbxMunicipio";
+            this.cbxMunicipio.Size = new System.Drawing.Size(100, 21);
+            this.cbxMunicipio.TabIndex = 6;
             // 
             // FrmHojaSecretaria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.BurlyWood;
-            this.ClientSize = new System.Drawing.Size(1019, 652);
+            this.ClientSize = new System.Drawing.Size(1081, 652);
             this.Controls.Add(this.cmbSeguro);
+            this.Controls.Add(this.cbxMunicipio);
+            this.Controls.Add(this.cbxRed);
             this.Controls.Add(this.cmbSexo);
             this.Controls.Add(this.txtDireccion);
             this.Controls.Add(this.txtCi);
@@ -450,9 +460,9 @@ namespace capa_presentacion
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label17);
-            this.Controls.Add(this.radioButton3);
-            this.Controls.Add(this.radioButton4);
-            this.Controls.Add(this.radioButton2);
+            this.Controls.Add(this.rdbEdad);
+            this.Controls.Add(this.rdbApellido);
+            this.Controls.Add(this.rdbCi);
             this.Controls.Add(this.rdbName);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.btnBuscarRegistros);
@@ -462,8 +472,6 @@ namespace capa_presentacion
             this.Controls.Add(this.btnMostrarRegistros);
             this.Controls.Add(this.btnInsertarRegistros);
             this.Controls.Add(this.dgvHojaRegistro);
-            this.Controls.Add(this.txtMunicipio);
-            this.Controls.Add(this.txtRed);
             this.Controls.Add(this.txtGradInstr);
             this.Controls.Add(this.txtNumTel);
             this.Controls.Add(this.chkCartNeg);
@@ -495,16 +503,14 @@ namespace capa_presentacion
         private System.Windows.Forms.CheckBox chkFormularioRef;
         private System.Windows.Forms.TextBox txtNumTel;
         private System.Windows.Forms.TextBox txtGradInstr;
-        private System.Windows.Forms.TextBox txtRed;
-        private System.Windows.Forms.TextBox txtMunicipio;
         private System.Windows.Forms.DataGridView dgvHojaRegistro;
         private System.Windows.Forms.Button btnMostrarRegistros;
         private System.Windows.Forms.Button btnInsertarRegistros;
         private System.Windows.Forms.DateTimePicker dtpPrimHem;
         private System.Windows.Forms.TextBox txtParam;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton4;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton rdbEdad;
+        private System.Windows.Forms.RadioButton rdbApellido;
+        private System.Windows.Forms.RadioButton rdbCi;
         private System.Windows.Forms.RadioButton rdbName;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btnBuscarRegistros;
@@ -524,5 +530,7 @@ namespace capa_presentacion
         private System.Windows.Forms.DateTimePicker dtpFechaNac;
         private System.Windows.Forms.ComboBox cmbSexo;
         private System.Windows.Forms.ComboBox cmbSeguro;
+        private System.Windows.Forms.ComboBox cbxRed;
+        private System.Windows.Forms.ComboBox cbxMunicipio;
     }
 }
