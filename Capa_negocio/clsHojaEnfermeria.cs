@@ -25,7 +25,7 @@ namespace capa_negocio
         private string temperatura;
         private string pulso;
         private string saturacion;
-        private string nro_registro;
+        private string id_hojaS;
         private string id_empleado;
 
         //Constructor
@@ -45,7 +45,7 @@ namespace capa_negocio
             temperatura = "";
             pulso = "";
             saturacion = "";
-            nro_registro = "";
+            id_hojaS = "";
             id_empleado = "";
         }
 
@@ -64,7 +64,7 @@ namespace capa_negocio
         public string Temperatura { get => temperatura; set => temperatura = value; }
         public string Pulso { get => pulso; set => pulso = value; }
         public string Saturacion { get => saturacion; set => saturacion = value; }
-        public string Nro_registro { get => nro_registro; set => nro_registro = value; }
+        public string Id_hojaS { get => id_hojaS; set => id_hojaS = value; }
         public string Id_empleado { get => id_empleado; set => id_empleado = value; }
 
         //Procedimientos del Crud
@@ -84,7 +84,7 @@ namespace capa_negocio
             AddParametro("@temperatura", temperatura);
             AddParametro("@pulso", pulso);
             AddParametro("@saturacion", saturacion);
-            AddParametro("@nro_registro", nro_registro);
+            AddParametro("@id_hojaS", id_hojaS);
             AddParametro("@id_empleado", id_empleado);
             ejecutarSP();
         }
@@ -115,7 +115,7 @@ namespace capa_negocio
             AddParametro("@temperatura", temperatura);
             AddParametro("@pulso", pulso);
             AddParametro("@saturacion", saturacion);
-            AddParametro("@nro_registro", nro_registro);
+            AddParametro("@id_hojaS", id_hojaS);
             AddParametro("@id_empleado", id_empleado);
             ejecutarSP();
         }
@@ -124,7 +124,7 @@ namespace capa_negocio
         {
             IniciarSP("eliminar_control_enfermeria");
             AddParametro("@id_hoja_enfermeria", id_hoja_enfermeria);
-            AddParametro("@nro_registro", nro_registro);
+            AddParametro("@id_hojaS", id_hojaS);
             AddParametro("@id_empleado", id_empleado);
             ejecutarSP();
         }
@@ -133,7 +133,7 @@ namespace capa_negocio
         {
             string s;
             DataSet ds = new DataSet();
-            s = "select *from Control_Enfermeria where id_hoja_enfermeria like '" + dato + "%' or nro_registro like '" + dato + "%'";
+            s = "select *from Control_Enfermeria where id_hoja_enfermeria like '" + dato + "%' or id_hojaS like '" + dato + "%'";
             ejecutarSQL(s, "tac", ds);
             return ds;
         }

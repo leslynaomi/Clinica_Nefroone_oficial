@@ -1,6 +1,6 @@
---Creación de la base de datos
---create database Nefroone4
---use Nefroone4
+ï»¿--Creaciï¿½n de la base de datos
+--create database Nefroone11
+--use Nefroone11
 
 --Para borrar un trigger completamente de la base de datos
 --drop trigger Habitacion_Libre
@@ -9,8 +9,8 @@
 --disable trigger Habitacion_Libre on detalle_habitacion
 --enable trigger Habitacion_Libre on detalle_habitacion
 
---Eliminación de la base de datos
---drop database Nefroone2
+--Eliminaciï¿½n de la base de datos
+--drop database Nefroone9
 
 --Consulta para ver todas las tablas en una base de datos
 --SELECT CAST(table_name as varchar)  FROM INFORMATION_SCHEMA.TABLES
@@ -30,47 +30,14 @@ direccion varchar(200)
 create table Empleado(
 id_empleado int primary key identity(1,1) not null,
 nombre varchar(50) not null,
-paterno varchar(50) not null,
-materno varchar(50) not null,
+paterno varchar(20) not null,
+materno varchar(20) not null,
 ci int not null,
 fecha_Nac date not null,
 nro_Celular int,
-tipo varchar(40) not null
-)
-
-create table Usuario(
-id_usuario int primary key identity(1,1) not null,
-usuario varchar(30),
-passwd varchar(30)
-)
-
-create table Administrador(
-id_empleado int primary key not null,
-foreign key(id_empleado) references Empleado (id_empleado),
-)
-
-create table Secretario(
-id_empleado int primary key not null,
-velocidad_Typeo varchar(50),
-foreign key (id_empleado) references Empleado(id_empleado),
-)
-
-create table Farmaceutico(
-id_empleado int primary key not null,
-tipo_Farmaceutica varchar(70),
-foreign key (id_empleado) references Empleado (id_empleado),
-)
-
-create table Medico(
-id_empleado int primary key not null,
-especialidad varchar(100),
-foreign key (id_empleado) references Empleado (id_empleado),
-)
-
-create table Enfermera (
-id_empleado int primary key not null,
-cod_Matricula int
-foreign key (id_empleado) references Empleado (id_empleado),
+tipo varchar(40) not null,
+usuario varchar(30) not null,
+passwd varchar(30) not null
 )
 
 create table Sesion(
@@ -85,8 +52,8 @@ create table Hoja_Secretaria(
 id_hojaS int primary key identity(1,1) not null,
 nro_familiar_Contacto int,
 formulario_Referencia bit,
-carta_Negativa varchar(200),
-grado_Intruccion varchar(50),
+carta_Negativa bit,
+grado_Intruccion varchar(200),
 red varchar(50),
 municipio varchar(50),
 seguro varchar(50),
@@ -305,7 +272,33 @@ begin
 		rollback tran
 	end catch	
 end
-
+/*
+------------						USUARIO
+go
+create proc insertar_usuario(
+@user varchar(30),
+@passwd varchar(30)
+)as
+begin
+	begin try
+		begin tran
+		if ((select count(id_usuario) from Usuario where usuario=@user)=0)
+			begin
+				insert into Usuario values(@user,@passwd)
+				commit tran				
+			end
+		else
+			begin
+				print 'El nombre de usuario ingresado ya existe en el sistema'
+				rollback tran return
+			end
+	end try
+	begin catch
+		raiserror('Error creando cuenta de usuario',16,1) 
+		rollback tran
+	end catch	
+end
+*/
 ------------						EMPLEADO
 go
 --PROCEDIMIENTO INSERTAR EMPLEADO
@@ -316,15 +309,25 @@ create proc insertar_empleado(
 @ci int,
 @fecha_Nac date,
 @nro_Celular int,
-@tipo varchar(40)
+@tipo varchar(40),
+@usuario varchar(40),
+@passwd varchar(40)
 )as
 begin
 	begin try
 		begin tran
 		if ((select count(ci) from Empleado where ci=@ci)=0)
 			begin
-				insert into Empleado values(@nombre,@paterno,@materno,@ci,@fecha_Nac,@nro_Celular,@tipo)
-				commit tran				
+			if ((select count(id_empleado) from Empleado where usuario=@usuario)=0)
+				begin
+					insert into Empleado values(@nombre,@paterno,@materno,@ci,@fecha_Nac,@nro_Celular,@tipo,@usuario,@passwd)
+					commit tran				
+				end
+			else
+				begin
+					print 'El nombre de usuario ingresado ya existe en los registros'
+					rollback tran return
+				end
 			end
 		else
 			begin
@@ -346,7 +349,9 @@ create proc modificar_empleado(
 @ci int,
 @fecha_Nac date,
 @nro_Celular int,
-@tipo varchar(40)
+@tipo varchar(40),
+@usuario varchar(40),
+@passwd varchar(40)
 )as
 begin
 	--Esta variable va a guardar el id del empleado a modificar
@@ -367,13 +372,15 @@ begin
 				ci=@ci,
 				fecha_Nac=@fecha_Nac,
 				nro_Celular=@nro_Celular,
-				tipo=@tipo
+				tipo=@tipo,
+				usuario=@usuario,
+				passwd=@passwd
 			where id_empleado=@id_emp and ci=@ci
 			commit tran
 		end
 		else
 			begin
-				print 'El id del empleado no existe en los registros'
+				print 'El empleado ingresado no existe en los registros'
 				rollback tran return
 			end
 	end try
@@ -401,63 +408,13 @@ begin
 	end catch	
 end
 
-------------						ADMINISTRADOR
-go
---PROCEDIMIENTO INSERTAR ADMINISTRADOR
-
-go
---PROCEDIMIENTO MODIFICAR ADMINISTRADOR
-
-go
---PROCEDIMIENTO ELIMINAR ADMINISTRADOR
-
-------------						SECRETARIO
-go
---PROCEDIMIENTO INSERTAR SECRETARIO
-
-go
---PROCEDIMIENTO MODIFICAR SECRETARIO
-
-go
---PROCEDIMIENTO ELIMINAR SECRETARIO
-
-------------						FARMACEUTICO
-go
---PROCEDIMIENTO INSERTAR FARMACEUTICO
-
-go
---PROCEDIMIENTO MODIFICAR FARMACEUTICO
-
-go
---PROCEDIMIENTO ELIMINAR FARMACEUTICO
-
-------------						MEDICO
-go
---PROCEDIMIENTO INSERTAR MEDICO
-
-go
---PROCEDIMIENTO MODIFICAR MEDICO
-
-go
---PROCEDIMIENTO ELIMINAR MEDICO
-
-------------						ENFERMERA
-go
---PROCEDIMIENTO INSERTAR ENFERMERA
-
-go
---PROCEDIMIENTO MODIFICAR ENFERMERA
-
-go
---PROCEDIMIENTO ELIMINAR ENFERMERA
-
 ------------						HOJA SECRETARIA
 go
 --PROCEDIMIENTO INSERTAR HOJA SECRETARIA
 create proc insertar_hoja_sec(
 @nro_familiar_Contacto int,
 @formulario_Referencia bit,
-@carta_Negativa varchar(200),
+@carta_Negativa bit,
 @grado_Intruccion varchar(50),
 @red varchar(50),
 @municipio varchar(50),
@@ -469,14 +426,14 @@ create proc insertar_hoja_sec(
 begin
 	begin try
 		begin tran
-		if exists(select ci from Hoja_Registro where CI=@CI)
+		if exists(select ci from Hoja_Secretaria where CI=@CI)
 		begin
 			print 'Ya existe una hoja registro del CI de este paciente'
 			rollback tran return			
 		end
 		else
 		begin			
-			insert into Hoja_Registro values(@nro_familiar_Contacto,@formulario_Referencia,@carta_Negativa,@grado_Intruccion,@red,@municipio,@seguro,@fecha_PHemodialisis,@CI,@id_empleado)
+			insert into Hoja_Secretaria values(@nro_familiar_Contacto,@formulario_Referencia,@carta_Negativa,@grado_Intruccion,@red,@municipio,@seguro,@fecha_PHemodialisis,@CI,@id_empleado)
 			commit tran
 		end
 	end try
@@ -491,7 +448,7 @@ create proc modificar_hoja_sec(
 @id_hojaS int,
 @nro_familiar_Contacto int,
 @formulario_Referencia bit,
-@carta_Negativa varchar(200),
+@carta_Negativa bit,
 @grado_Intruccion varchar(50),
 @red varchar(50),
 @municipio varchar(50),
@@ -503,7 +460,7 @@ create proc modificar_hoja_sec(
 begin
 	begin try
 		begin tran
-			update Hoja_Registro
+			update Hoja_Secretaria
 			set nro_familiar_Contacto=@nro_familiar_Contacto,
 				formulario_Referencia=@formulario_Referencia,
 				carta_Negativa=@carta_Negativa,
@@ -533,7 +490,7 @@ create proc eliminar_hoja_sec(
 begin
 	begin try
 		begin tran
-			delete Hoja_Registro
+			delete Hoja_Secretaria
 			where id_hojaS=@nro_reg and CI=@CI and id_empleado=@id_empleado
 			commit tran
 	end try
@@ -567,7 +524,7 @@ begin
 			commit tran
 	end try
 	begin catch
-		raiserror('Error insertando hoja médica',16,1) 
+		raiserror('Error insertando hoja mï¿½dica',16,1) 
 		rollback tran
 	end catch
 end
@@ -603,7 +560,7 @@ begin
 				grupo_Sanguineo=@grupo_Sanguineo,
 				solucion_Dializante=@solucion_Dializante,
 				id_empleado=@id_empleado,
-				id_hojaS=@id_hojaS,
+				id_hojaS=@id_hojaS
 			where id_hojaM=@id_hojaM and id_empleado=@id_empleado and id_hojaS=@id_hojaS
 			commit tran
 	end try
@@ -683,7 +640,7 @@ go
 --PROCEDIMIENTO ELIMINAR RECETA
 
 
-------------						CONTROL ENFERMERIA (Hoja enfermería)
+------------						CONTROL ENFERMERIA (Hoja enfermerï¿½a)
 go
 --PROCEDIMIENTO INSERTAR CONTROL ENFERMERIA
 create proc insertar_control_enfermeria(
@@ -710,7 +667,7 @@ begin
 		commit tran
 	end try
 	begin catch
-		raiserror('Error insertando hoja de control de enfermería',16,1) 
+		raiserror('Error insertando hoja de control de enfermerï¿½a',16,1) 
 		rollback tran
 	end catch	
 end
@@ -757,7 +714,7 @@ begin
 		commit tran
 	end try
 	begin catch
-		raiserror('Error modificando hoja de control de enfermería',16,1) 
+		raiserror('Error modificando hoja de control de enfermerï¿½a',16,1) 
 		rollback tran
 	end catch	
 end
@@ -776,7 +733,7 @@ begin
 		commit tran
 	end try
 	begin catch
-		raiserror('Error eliminando registro de la hoja de control de enfermería',16,1) 
+		raiserror('Error eliminando registro de la hoja de control de enfermerï¿½a',16,1) 
 		rollback tran
 	end catch	
 end
@@ -801,7 +758,7 @@ begin
 		commit tran
 	end try
 	begin catch
-		raiserror('Error insertando hoja de evolución y tratamiento',16,1) 
+		raiserror('Error insertando hoja de evoluciï¿½n y tratamiento',16,1) 
 		rollback tran
 	end catch	
 end
@@ -836,7 +793,7 @@ begin
 		commit tran
 	end try
 	begin catch
-		raiserror('Error modificando hoja de evolución y tratamiento',16,1) 
+		raiserror('Error modificando hoja de evoluciï¿½n y tratamiento',16,1) 
 		rollback tran
 	end catch	
 end
@@ -855,7 +812,7 @@ begin
 		commit tran
 	end try
 	begin catch
-		raiserror('Error eliminando hoja de evolución y tratamiento',16,1) 
+		raiserror('Error eliminando hoja de evoluciï¿½n y tratamiento',16,1) 
 		rollback tran
 	end catch	
 end
@@ -914,7 +871,7 @@ begin
 		commit tran
 	end try
 	begin catch
-		raiserror('Error insertando registros de diálisis peritoneal',16,1) 
+		raiserror('Error insertando registros de diï¿½lisis peritoneal',16,1) 
 		rollback tran
 	end catch	
 end
@@ -954,7 +911,7 @@ begin
 		commit tran
 	end try
 	begin catch
-		raiserror('Error modificando registros de diálisis peritoneal',16,1) 
+		raiserror('Error modificando registros de diï¿½lisis peritoneal',16,1) 
 		rollback tran
 	end catch	
 end
@@ -972,13 +929,13 @@ begin
 		commit tran
 	end try
 	begin catch
-		raiserror('Error eliminando registros de diálisis peritoneal',16,1) 
+		raiserror('Error eliminando registros de diï¿½lisis peritoneal',16,1) 
 		rollback tran
 	end catch	
 end
 go
 
----listar medicamentos para médico
+---listar medicamentos para mï¿½dico
 create proc ListarMedic
 as
 select nombre_Medicamento,presentacion,concentracion,cantidad_Recetada
@@ -1009,8 +966,8 @@ as
 select id_medicamento,nombre_Medicamento,presentacion,concentracion,stock
 from Medicamento
 go
-
---Procedimiento de Damián para el Login
+*/
+--Procedimiento de Damiï¿½n para el Login
 create proc sp_login(
 @user varchar(30),
 @passwd varchar(30)
@@ -1018,19 +975,15 @@ create proc sp_login(
 begin
 	begin try
 		begin tran
-			select id_usuario
-			from Usuario
+			select id_empleado
+			from Empleado
 			where Usuario=@user and passwd=@passwd
 	end try
 	begin catch		
-		raiserror('Error en el usuario o la contraseña',16,1) 
+		raiserror('Error en el usuario o la contraseï¿½a',16,1) 
 		rollback tran
 	end catch
 end
-select *from Usuario
-insert into Usuario values('pol','1234')
-SELECT CAST(table_name as varchar)  FROM INFORMATION_SCHEMA.TABLES
-*/
 
 /* AUN FALTA TERMINAR
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1046,9 +999,9 @@ begin
 	begin try
 		begin tran									
 			select ci,nombre,paterno,materno,fecha_Nac,edad,sexo,diagnostico,peso_Seco,talla,imc,serologia,vih,grado_Intruccion,direccion,seguro,acceso_Vascular,grupo_Sanguineo,solucion_Dializante,fecha_PHemodialisis
-			from Paciente,Hoja_Medica,Hoja_Registro
+			from Paciente,Hoja_Medica,Hoja_Secretaria
 			where Paciente.ci=@ci
-			--Falta igualar más ID's
+			--Falta igualar mï¿½s ID's
 			select *from Paciente
 	end try
 	begin catch		
@@ -1058,7 +1011,7 @@ begin
 end
 go
 
---Procedimiento Control de Enfermería
+--Procedimiento Control de Enfermerï¿½a
 create proc mostrar_control_enfermeria(
 @ci int
 )as
@@ -1066,9 +1019,8 @@ begin
 	begin try
 		begin tran									
 			select ci,nombre,paterno,materno,fecha_Nac,edad,sexo,diagnostico,peso_Seco,talla,imc,serologia,vih,grado_Intruccion,direccion,seguro,acceso_Vascular,grupo_Sanguineo,solucion_Dializante,fecha_PHemodialisis
-			from Paciente,Hoja_Medica,Hoja_Registro
+			from Paciente,Hoja_Medica,Hoja_Secretaria
 			where ci=@ci
-			select *from Hoja_Registro
 	end try
 	begin catch		
 		raiserror('Error en ',16,1) 
@@ -1076,7 +1028,7 @@ begin
 	end catch
 end
 go
---Procedimiento Evolución y Tratamiento
+--Procedimiento Evoluciï¿½n y Tratamiento
 create proc mostrar_evol_y_tratam(
 @ci int
 )as
@@ -1084,9 +1036,9 @@ begin
 	begin try
 		begin tran									
 			select ci,nombre,paterno,materno,fecha_Nac,edad,sexo,diagnostico,peso_Seco,talla,imc,serologia,vih,grado_Intruccion,direccion,seguro,acceso_Vascular,grupo_Sanguineo,solucion_Dializante,fecha_PHemodialisis
-			from Paciente,Hoja_Medica,Hoja_Registro
+			from Paciente,Hoja_Medica,Hoja_Secretaria
 			where ci=@ci
-			select *from Hoja_Registro
+			select *from Hoja_Secretaria
 	end try
 	begin catch		
 		raiserror('Error en ',16,1) 
@@ -1125,19 +1077,51 @@ begin
 	end catch
 end
 
-
 */
+--Consulta para mostrar el Tipo de Usuario que estï¿½ iniciando sesiï¿½n
+go
+create proc encontrar_tipo_usuario(
+@user varchar(40),
+@passwd varchar(40)
+)as
+begin
+	begin try
+		begin tran
+			select tipo from Empleado where usuario=@user and passwd=@passwd
+	end try
+	begin catch		
+		raiserror('Error encontrando el usuario en la base de datos',16,1) 
+		rollback tran
+	end catch
+end
+go
+create proc encontrar_ID_empleado(
+@user varchar(40),
+@passwd varchar(40)
+)as
+begin
+	begin try
+		begin tran
+			select id_empleado from Empleado where usuario=@user and passwd=@passwd
+	end try
+	begin catch		
+		raiserror('Error encontrando el usuario en la base de datos',16,1) 
+		rollback tran
+	end catch
+end
 
 -------------						TRIGGERS							-----------------
+go
+--Colocar la edad respectiva del paciente en el registro insertado de sus datos de forma automÃ¡tica
+create trigger calcular_edad
+on Paciente
+for Insert
+as
+begin
+	update Paciente
+	set edad=(select DATEDIFF(YEAR,fecha_Nac,GetDate()) from Paciente where ci=(select ci from inserted))
+	where ci=(select ci from inserted)
+end
 
 
-
-
-
-
-
-
-
-
-
-
+-------------						TRIGGERS							-----------------

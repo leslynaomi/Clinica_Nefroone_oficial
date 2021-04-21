@@ -36,6 +36,7 @@ namespace capa_presentacion
             this.txtContraseña = new System.Windows.Forms.TextBox();
             this.btnEntrar = new System.Windows.Forms.Button();
             this.buttonCancelar = new System.Windows.Forms.Button();
+            this.btnCrearCuenta = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -52,15 +53,16 @@ namespace capa_presentacion
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(176, 99);
+            this.txtUsuario.Location = new System.Drawing.Point(208, 119);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(100, 20);
             this.txtUsuario.TabIndex = 1;
+            this.txtUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUsuario_KeyPress);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(93, 102);
+            this.label2.Location = new System.Drawing.Point(125, 122);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(43, 13);
             this.label2.TabIndex = 2;
@@ -69,7 +71,7 @@ namespace capa_presentacion
             // Label3
             // 
             this.Label3.AutoSize = true;
-            this.Label3.Location = new System.Drawing.Point(93, 145);
+            this.Label3.Location = new System.Drawing.Point(125, 165);
             this.Label3.Name = "Label3";
             this.Label3.Size = new System.Drawing.Size(61, 13);
             this.Label3.TabIndex = 3;
@@ -77,30 +79,60 @@ namespace capa_presentacion
             // 
             // txtContraseña
             // 
-            this.txtContraseña.Location = new System.Drawing.Point(176, 145);
+            this.txtContraseña.Location = new System.Drawing.Point(208, 165);
             this.txtContraseña.Name = "txtContraseña";
+            this.txtContraseña.PasswordChar = '*';
             this.txtContraseña.Size = new System.Drawing.Size(100, 20);
-            this.txtContraseña.TabIndex = 4;
+            this.txtContraseña.TabIndex = 2;
+            this.txtContraseña.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtContraseña_KeyPress);
             // 
             // btnEntrar
             // 
-            this.btnEntrar.Location = new System.Drawing.Point(86, 209);
+            this.btnEntrar.BackColor = System.Drawing.Color.CadetBlue;
+            this.btnEntrar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnEntrar.Location = new System.Drawing.Point(107, 229);
             this.btnEntrar.Name = "btnEntrar";
             this.btnEntrar.Size = new System.Drawing.Size(104, 23);
-            this.btnEntrar.TabIndex = 5;
+            this.btnEntrar.TabIndex = 3;
             this.btnEntrar.Text = "Iniciar Sesión";
-            this.btnEntrar.UseVisualStyleBackColor = true;
+            this.btnEntrar.UseVisualStyleBackColor = false;
             this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
             // 
             // buttonCancelar
             // 
-            this.buttonCancelar.Location = new System.Drawing.Point(263, 209);
+            this.buttonCancelar.BackColor = System.Drawing.Color.Crimson;
+            this.buttonCancelar.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.buttonCancelar.Location = new System.Drawing.Point(366, 279);
             this.buttonCancelar.Name = "buttonCancelar";
             this.buttonCancelar.Size = new System.Drawing.Size(75, 23);
-            this.buttonCancelar.TabIndex = 6;
-            this.buttonCancelar.Text = "Pruebas";
+            this.buttonCancelar.TabIndex = 5;
+            this.buttonCancelar.Text = "Cancelar";
             this.buttonCancelar.UseVisualStyleBackColor = false;
             this.buttonCancelar.Click += new System.EventHandler(this.buttonCancelar_Click);
+            // 
+            // btnCrearCuenta
+            // 
+            this.btnCrearCuenta.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnCrearCuenta.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnCrearCuenta.Location = new System.Drawing.Point(243, 229);
+            this.btnCrearCuenta.Name = "btnCrearCuenta";
+            this.btnCrearCuenta.Size = new System.Drawing.Size(100, 23);
+            this.btnCrearCuenta.TabIndex = 4;
+            this.btnCrearCuenta.Text = "Crear Cuenta";
+            this.btnCrearCuenta.UseVisualStyleBackColor = false;
+            this.btnCrearCuenta.Click += new System.EventHandler(this.btnCrearCuenta_Click);
+            // 
+            // btnCrearCuenta
+            // 
+            this.btnCrearCuenta.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnCrearCuenta.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnCrearCuenta.Location = new System.Drawing.Point(243, 229);
+            this.btnCrearCuenta.Name = "btnCrearCuenta";
+            this.btnCrearCuenta.Size = new System.Drawing.Size(100, 23);
+            this.btnCrearCuenta.TabIndex = 6;
+            this.btnCrearCuenta.Text = "Crear Cuenta";
+            this.btnCrearCuenta.UseVisualStyleBackColor = false;
+            this.btnCrearCuenta.Click += new System.EventHandler(this.btnCrearCuenta_Click);
             // 
             // FrmInicioSesion
             // 
@@ -108,6 +140,7 @@ namespace capa_presentacion
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(463, 314);
+            this.Controls.Add(this.btnCrearCuenta);
             this.Controls.Add(this.buttonCancelar);
             this.Controls.Add(this.btnEntrar);
             this.Controls.Add(this.txtContraseña);
@@ -134,5 +167,6 @@ namespace capa_presentacion
         private System.Windows.Forms.TextBox txtContraseña;
         private System.Windows.Forms.Button btnEntrar;
         private System.Windows.Forms.Button buttonCancelar;
+        private System.Windows.Forms.Button btnCrearCuenta;
     }
 }

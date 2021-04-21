@@ -18,9 +18,13 @@ namespace capa_presentacion
         public FrmHojaSecretaria()
         {
             InitializeComponent();
+            //Impedir que se pueda escribir texto en los combobox
+            cmbSeguro.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbSexo.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
-        ClsHojaSecretaria reg = new ClsHojaSecretaria();
+        ClsHojaSecretaria sec = new ClsHojaSecretaria();
+        ClsPaciente pac = new ClsPaciente();
 
         private void btnMenuPacientes_Click(object sender, EventArgs e)
         {
@@ -30,7 +34,7 @@ namespace capa_presentacion
 
         private void FrmHojaSecretaria_Load(object sender, EventArgs e)
         {
-            dgvHojaRegistro.DataSource = reg.Mostrar_Registros();
+            dgvHojaRegistro.DataSource = sec.Mostrar_Registros();
             dgvHojaRegistro.DataMember = "tac";
             dgvHojaRegistro.AutoResizeColumns();
             dgvHojaRegistro.AutoResizeRows();
@@ -38,7 +42,7 @@ namespace capa_presentacion
 
         private void btnMostrarRegistros_Click(object sender, EventArgs e)
         {
-            dgvHojaRegistro.DataSource = reg.Mostrar_Registros();
+            dgvHojaRegistro.DataSource = sec.Mostrar_Registros();
             dgvHojaRegistro.DataMember = "tac";
             dgvHojaRegistro.AutoResizeColumns();
             dgvHojaRegistro.AutoResizeRows();
@@ -48,16 +52,30 @@ namespace capa_presentacion
         {
             try
             {
-                reg.Nro_familiar_Contacto = txtNumTel.Text;
-                reg.Formulario_Referencia = chkFormularioRef.Checked;
-                reg.Carta_Negativa = txtCartNeg.Text;
-                reg.Grado_Intruccion = txtGradoInst.Text;
-                reg.Red= txtRed.Text;
-                reg.Municipio = txtMunicipio.Text;
-                reg.Seguro = txtSeguro.Text;
-                reg.Fecha_PHemodialisis = dtpPrimHem.Text;
-                reg.CI1 = txtCi.Text;
-                reg.Guardar_Registros();
+                pac.Ci = txtCi.Text;
+                pac.Nombre = txtNombre.Text;
+                pac.Paterno = txtPaterno.Text;
+                pac.Materno = txtMaterno.Text;
+                pac.Fecha_Nac = dtpFechaNac.Text;
+                
+                //El trigger respectivo se encarga de actualizar la edad automáticamente
+                pac.Edad = "0";
+                
+                pac.Sexo = cmbSexo.Text;
+                pac.Direccion = txtDireccion.Text;
+                pac.Guardar_Registros();
+
+                sec.Nro_familiar_Contacto = txtNumTel.Text;
+                sec.Formulario_Referencia = chkFormularioRef.Checked;
+                sec.Carta_Negativa = chkCartNeg.Checked;
+                sec.Grado_Intruccion = txtGradInstr.Text;
+                sec.Red= txtRed.Text;
+                sec.Municipio = txtMunicipio.Text;
+                sec.Seguro = cmbSeguro.Text;
+                sec.Fecha_PHemodialisis = dtpPrimHem.Text;
+                sec.CI1 = txtCi.Text;
+                sec.Id_empleado = Constantes.ID_Emp;
+                sec.Guardar_Registros();
                 LimpiarTexto();
                 MessageBox.Show("Insertado correctamente", "INFORMACION");
             }
@@ -65,82 +83,73 @@ namespace capa_presentacion
             {
                 MessageBox.Show("Error al insertar" + er.ToString());
             }
-        }
+        }        
 
         private void LimpiarTexto()
         {
+            txtNombre.Clear();
+            txtPaterno.Clear();
+            txtMaterno.Clear();
+            dtpFechaNac.ResetText();
+            cmbSexo.ResetText();
+            txtDireccion.Clear();
             txtCi.Clear();
             txtNumTel.Clear();
-            txtCartNeg.Clear();
-            txtGradoInst.Clear();
+            txtGradInstr.Clear();
             txtRed.Clear();
             txtMunicipio.Clear();
-            txtSeguro.Clear();
-            txtNroReg.Clear();
+            cmbSeguro.ResetText();
+            txtParam.Clear();
+            dtpPrimHem.ResetText();            
         }
 
         private void btnBuscarRegistros_Click(object sender, EventArgs e)
         {
+            if (rdbName.Checked == true)
+            {
+
+            }
             DataSet ds = new DataSet();
-            ds = reg.Buscar_Registros(txtParam.Text);
+            ds = sec.Buscar_Registros(txtParam.Text);
             dgvHojaRegistro.DataSource = ds;
             dgvHojaRegistro.DataMember = "tac";
             dgvHojaRegistro.AutoResizeColumns();
             dgvHojaRegistro.AutoResizeRows();
         }
-
-        private void btnModificarRegistros_Click(object sender, EventArgs e)
+        
+        private void txtNumTel_KeyPress(object sender, KeyPressEventArgs e)
         {
-            try
-            {
-                if (txtNroReg.Text == "" || txtCi.Text == "")
-                { 
-                    MessageBox.Show("Debe colocar un valor de Nº de hoja registro y de CI");
-                }
-                else 
-                {
-                    reg.Nro_registro = txtNroReg.Text;
-                    reg.Nro_familiar_Contacto = txtNumTel.Text;
-                    reg.Formulario_Referencia = chkFormularioRef.Checked;
-                    reg.Carta_Negativa = txtCartNeg.Text;
-                    reg.Grado_Intruccion = txtGradoInst.Text;
-                    reg.Red = txtRed.Text;
-                    reg.Municipio = txtMunicipio.Text;
-                    reg.Seguro = txtSeguro.Text;
-                    reg.Fecha_PHemodialisis = dtpPrimHem.Text;
-                    reg.CI1 = txtCi.Text;
-                    reg.Modificar_Registros();
-                    LimpiarTexto();
-                    MessageBox.Show("Registros modificados correctamente", "INFORMACION");
-                }
-            }
-            catch (Exception er)
-            {
-                MessageBox.Show("Error al insertar" + er.ToString());
-            }
+            Metodos.SoloNumeros(e);
         }
 
-        private void btnEliminarRegistros_Click(object sender, EventArgs e)
+        private void txtCi_KeyPress_1(object sender, KeyPressEventArgs e)
         {
-            try
-            {
-                if (txtNroReg.Text == "" || txtCi.Text == "")
-                {
-                    MessageBox.Show("Debe colocar un valor de Nº de hoja registro y de CI");
-                }
-                else
-                {
-                    reg.Nro_registro = txtNroReg.Text;                   
-                    reg.CI1 = txtCi.Text;
-                    reg.Eliminar_Registros();
-                    LimpiarTexto();
-                    MessageBox.Show("Registros modificados correctamente", "INFORMACION");
-                }
-            }
-            catch (Exception er)
-            {
-                MessageBox.Show("Error al insertar" + er.ToString());
-            }
+            Metodos.SoloNumeros(e);
+        }
+
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+        }
+
+        private void txtPaterno_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Metodos.SoloLetras(e);
+        }
+
+        private void txtMaterno_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Metodos.SoloLetras(e);
+        }
+
+        private void txtGradInstr_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void rdbName_CheckedChanged(object sender, EventArgs e)
+        {
+           
         }
     }
 }

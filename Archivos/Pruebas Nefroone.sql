@@ -1,45 +1,50 @@
------------------------------------------------------------------------------------------------------------
--------------			POBLACIÓN DE TABLAS CON LOS PRODCEDIMIENTOS (PARA TESTEO)		-------------------
+ï»¿-----------------------------------------------------------------------------------------------------------
+-------------			POBLACIï¿½N DE TABLAS CON LOS PRODCEDIMIENTOS (PARA TESTEO)		-------------------
 -----------------------------------------------------------------------------------------------------------
 use Nefroone4
 go
-/*
+--Usuario
+select *from Usuario
+exec insertar_usuario 'pol','123'
+
 --Empleado
 select *from Empleado
---No reciben el id como parámetro, modificar y eliminar específicamente trabajan de forma
+--No reciben el id como parï¿½metro, modificar y eliminar especï¿½ficamente trabajan de forma
 --idependiente con el ci del empleado
-exec insertar_empleado 'Pepe','Vásquez','Muralla',9239544,'07/05/1978',7584329,'Enfermero'
-exec modificar_empleado 'Chepeto','Vásquez','Muralla',9239543,'07/05/1978',7584329,'Administrador'
+exec insertar_empleado 'Pepe','Vï¿½squez','Muralla',9239544,'07/05/1978',7584329,'Enfermero',1
+exec modificar_empleado 'Chepeto','Vï¿½squez','Muralla',9239543,'07/05/1978',7584329,'Administrador'
 exec eliminar_empleado 9239544
+/*
 go
 --Paciente
 select *from Paciente
 exec insertar_paciente 92452354,'Joaquin','Charles','Flower','13/08/1998',0,'M','Calle Cosorio'
-exec modificar_paciente 92452354,'Pedro','Contra','Barreras','13/08/1998',0,'M','Calle Alemán'
+exec modificar_paciente 92452354,'Pedro','Contra','Barreras','13/08/1998',0,'M','Calle Alemï¿½n'
 exec eliminar_paciente 0
 go
 --Hoja Registro
-select *from Hoja_Registro
-exec insertar_hoja_reg 7249399,false,'Esta es una carta negativa','este es un grado instrucción','local','Montero','Este es un seguro','27/09/2021',92452354,1
-exec modificar_hoja_reg 1,7249399,true,'Esta es una carta negativa','este es un grado instrucción','local','Montero','Este es un seguro','27/09/2021',92452354
-exec eliminar_hoja_reg 6,92452354
+select *from Hoja_Secretaria
+exec insertar_hoja_sec 7249399,false,'Esta es una carta negativa','este es un grado instrucciï¿½n','local','Montero','Este es un seguro','27/09/2021',92452354,1
+exec modificar_hoja_sec 1,7249399,true,'Esta es una carta negativa','este es un grado instrucciï¿½n','local','Montero','Este es un seguro','27/09/2021',92452354
+exec eliminar_hoja_sec 6,92452354
 
---Hoja Médica
+/*
+--Hoja Mï¿½dica
 select *from Hoja_Medica
-exec insertar_hoja_medica 23,'Fiebre y mucho cansancio',42.5,'esta es una serologia',1.70,23,true,'Cateter','O-RH Negativo','Esta es una solución dializante',1
-exec modificar_hoja_medica 1,23,'Tos y fiebre',42.5,'esta es una serologia',1.70,23,true,'Cateter','O-RH Negativo','Esta es una solución dializante',1
-exec eliminar_hoja_medica 2,1 --Funciona con el id de la hoja médica
+exec insertar_hoja_medica 23,'Fiebre y mucho cansancio',42.5,'esta es una serologia',1.70,23,true,'Cateter','O-RH Negativo','Esta es una soluciï¿½n dializante',1
+exec modificar_hoja_medica 1,23,'Tos y fiebre',42.5,'esta es una serologia',1.70,23,true,'Cateter','O-RH Negativo','Esta es una soluciï¿½n dializante',1
+exec eliminar_hoja_medica 2,1 --Funciona con el id de la hoja mï¿½dica
 go
---Hoja Control de Enfermería
+--Hoja Control de Enfermerï¿½a
 select *from Control_Enfermeria
-exec insertar_control_enfermeria '12/05/2021',1,'14:10','15:20',60.6,58.8,'Esta es una UF programada','Esta es una heparina',670.70,'Presión de 210',26.5,'Este es un pulso','Esta es una saturación',1,1
-exec modificar_control_enfermeria 2,'17/05/2021',19,'14:10','15:20',60.6,58.8,'Esta es una UF programada','Esta es una heparina',670.70,'Presión de 210',26.5,'Este es un pulso','Esta es una saturación',3,1
+exec insertar_control_enfermeria '12/05/2021',1,'14:10','15:20',60.6,58.8,'Esta es una UF programada','Esta es una heparina',670.70,'Presiï¿½n de 210',26.5,'Este es un pulso','Esta es una saturaciï¿½n',1,1
+exec modificar_control_enfermeria 2,'17/05/2021',19,'14:10','15:20',60.6,58.8,'Esta es una UF programada','Esta es una heparina',670.70,'Presiï¿½n de 210',26.5,'Este es un pulso','Esta es una saturaciï¿½n',3,1
 exec eliminar_control_enfermeria 2,3,1
 go
---Evolución y Tratamiento
+--Evoluciï¿½n y Tratamiento
 --Esta tabla es tremenda, roba de varios!!
 select *from Evolucion_Tratamiento
-exec insertar_evolucion_y_tratamiento 4252389,'esta es una ultra filtración','4 horas','Este es un flujo de dialisis','El paciente evoluciona favorablemente','Se le ha recetado al paciente un paracetamol','Tratamiento normal',1,1
+exec insertar_evolucion_y_tratamiento 4252389,'esta es una ultra filtraciï¿½n','4 horas','Este es un flujo de dialisis','El paciente evoluciona favorablemente','Se le ha recetado al paciente un paracetamol','Tratamiento normal',1,1
 exec modificar_evolucion_y_tratamiento 
 exec eliminar_evolucion_y_tratamiento 
 
@@ -52,39 +57,111 @@ insert into Farmacia values ('Farmacia NEFROONE',1)
 
 insert into empleado values ('Juan','Perez','Alba',123,'12-04-1998',77890212,'Farmaceutico')
 
-insert into Medicamento values (0,'Gasa','malla','',0,1,1,1,1)
-insert into Medicamento values (0,'Alcohol','','',0,1,0,0,1)
-insert into Medicamento values (0,'Aguja para Fistula nro 16','Par','',0,1,0,0,1)
-insert into Medicamento values (0,'Aguja para Fistula nro 17','Par','',0,1,0,0,1)
-insert into Medicamento values (0,'Micropore','','',0,1,1,1,1)
-insert into Medicamento values  (0,'Guantes Procedimiento','','',0,1,1,0,1)
-insert into Medicamento values  (0,'Jeringa','Pieza','10ML',0,1,1,1,1)
-insert into Medicamento values (0,'Jeringa','Pieza','20ML',0,1,0,1,1)
-insert into Medicamento values (0,'Heparina Sodica','Inyectable','5000UI',0,1,1,1,1)
-insert into Medicamento values (0,'Eritropoyetina','Inyectable','4.000UI',0,1,0,1,1)
-insert into Medicamento values (0,'Eritropoyetina','Inyectable','10.000UI',0,1,0,1,1)
-insert into Medicamento values (0,'Hierro','Inyectale','100Mg.',0,1,0,1,1)
-insert into Medicamento values (0,'Complejo B(B1-B6-B12)','Comprimido','Estandar',0,1,0,0,1)
-insert into Medicamento values (0,'Complejo B(B1-B6-B12)','Inyectable','Estandar',0,1,0,1,1)
-insert into Medicamento values (0,'Povidona','','',0,1,1,1,1)
-insert into Medicamento values (0,'Transductores','Pieza','',0,1,0,1,1)
-insert into Medicamento values (0,'Solucion Fisiologica','Infusor','0,9%(1.000ML)',0,1,0,1,1)
-insert into Medicamento values (0,'Filtro F7','Pieza','',0,1,0,1,1)
-insert into Medicamento values (0,'Filtro F8','Pieza','',0,1,0,1,1)
-insert into Medicamento values (0,'Filtro F10','Pieza','',0,1,0,1,1)
-insert into Medicamento values (0,'Lineas Artereo Venosas','Pieza','',0,1,0,1,1)
-insert into Medicamento values (0,'Acido Paracetico','Solucion','5L',0,1,0,1,1)
-insert into Medicamento values (0,'Solucion Acida','Solucion','Segun disponibilidad',0,1,0,1,1)
-insert into Medicamento values (0,'Solucion Basica','Solucion','Segun disponibilidad',0,1,0,1,1)
-insert into Medicamento values (0,'Equipo de venoclosis con aguja','Pieza','',0,1,0,0,1)
-insert into Medicamento values (0,'Equipo de suero','Pieza','',0,1,0,0,1)
+insert into Medicamento values ('Acido Folico','Comprimido','5Mg.',100,'F')
+insert into Medicamento values ('Acido Acetilsalicilico','Comprimido','100Mg.',100,'F')
+insert into Medicamento values ('Atorvastatina','Comprimido','10Mg.',100,'F')
+insert into Medicamento values ('Nifedipino','Comprimido','20Mg.',100,'F')
+insert into Medicamento values ('Calcio(carbonato o citrato)','Comprimido','500Mg.',100,'F')
+insert into Medicamento values ('Colecalciferol (vitamina D3)','Comprimido','0,25Mg.',100,'F')
+insert into Medicamento values ('Complejo B (B1-B6-B12)','Comprimido','Estandar',100,'F')
+insert into Medicamento values ('Complejo B(B1-B6-B12)','Inyectable','Estandar',100,'F')
+insert into Medicamento values ('Carvedilol','Comprimido','12,5Mg.',100,'F')
+insert into Medicamento values ('Eritropoyetina','Inyectable','4000 UI',100,'F')
+insert into Medicamento values ('Eritropoyetina','Inyectable','10000  UI',100,'F')
+insert into Medicamento values ('Hierro','Inyectable','100Mg',100,'F')
+insert into Medicamento values ('Heparina Sodica','Inyectable','5000 UI',100,'F')
+insert into Medicamento values ('Losartan','Comprimido','50Mg.',100,'F')
+insert into Medicamento values ('Omeprazol','Comprimido','20Mg.',100,'F')
+insert into Medicamento values ('Solucion Acida','Solucion','Segun disponibilidad',100,'F')
+insert into Medicamento values ('Solucion Basica','Solucion','Segun disponibilidad',100,'F')
+insert into Medicamento values ('Solucion Fisiologica','Infusor','0,9%(1000ML)',100,'F')
+insert into Medicamento values ('Acido Citrico','Polvo','200Mg.',100,'F')
+insert into Medicamento values ('Acido Paracetico','Solucion','5L',100,'F')
+insert into Medicamento values ('Aguja para Fistula','par','',100,'F')
+insert into Medicamento values ('Cloruro Benzalconio (DG-6)','Solucion','1,2 G/100ML.',100,'F')
+insert into Medicamento values ('Equipo de venoclosis con aguja','Pieza','',100,'F')
+insert into Medicamento values ('Filtro F6','Pieza','',100,'F')
+insert into Medicamento values ('Filtro F7','Pieza','',100,'F')
+insert into Medicamento values ('Filtro F8','Pieza','',100,'F')
+insert into Medicamento values ('Filtro F10','Pieza','',100,'F')
+insert into Medicamento values ('Guantes quirurgicos descartables','Par','',100,'F')
+insert into Medicamento values ('Hipoclorito de Sodio','Solucion','0,8%/250 ML.',100,'F')
+insert into Medicamento values ('Jeringas descartables','Pieza','20ML.',100,'F')
+insert into Medicamento values ('Lineas Arterio Venosas','Pieza','',100,'F')
+insert into Medicamento values ('Transductores','Pieza','.',100,'F')
+insert into Medicamento values ('Yodopovidona','Tubo','10 G.',100,'F')
 
---Si la tabla medicamento tiene solo un atributo para definir el tipo de acceso
---insert into Medicamento values (0,'Cloruro Benzalconio (DG-6)','Solucion','1,2G/100ML',0,'F',1)
---insert into Medicamento values (0,'Hipoclorito de Sodio','Solucion','0,8%/250ML.',0,'F',1)
---insert into Medicamento values (0,'Nifedipino','Comprimido','10 Mg.',0,'F',1)
---insert into Medicamento values (0,'Calcio(Carbonato o citrato)','Comprimido','500 Mg',0,'F',1)
---insert into Medicamento values (0,'Lozartan','Comprimido','50 Mg',0,'F',1)
+
+----------cateter-----------------------
+insert into Medicamento values ('Acido Folico','Comprimido','5Mg.',100,'C')
+insert into Medicamento values ('Acido Acetilsalicilico','Comprimido','100Mg.',100,'C')
+insert into Medicamento values ('Atorvastatina','Comprimido','10Mg.',100,'C')
+insert into Medicamento values ('Nifedipino','Comprimido','20Mg.',100,'C')
+insert into Medicamento values ('Calcio(carbonato o citrato)','Comprimido','500Mg.',100,'C')
+insert into Medicamento values ('Colecalciferol (vitamina D3)','Comprimido','0,25Mg.',100,'C')
+insert into Medicamento values ('Complejo B (B1-B6-B12)','Comprimido','Estandar',100,'C')
+insert into Medicamento values ('Complejo B(B1-B6-B12)','Inyectable','Estandar',100,'C')
+insert into Medicamento values ('Carvedilol','Comprimido','12,5Mg.',100,'C')
+insert into Medicamento values ('Eritropoyetina','Inyectable','4000 UI',100,'C')
+insert into Medicamento values ('Eritropoyetina','Inyectable','10000  UI',100,'C')
+insert into Medicamento values ('Hierro','Inyectable','100Mg',100,'C')
+insert into Medicamento values ('Heparina Sodica','Inyectable','5000 UI',100,'C')
+insert into Medicamento values ('Losartan','Comprimido','50Mg.',100,'C')
+insert into Medicamento values ('Omeprazol','Comprimido','20Mg.',100,'C')
+insert into Medicamento values ('Solucion Acida','Solucion','Segun disponibilidad',100,'C')
+insert into Medicamento values ('Solucion Basica','Solucion','Segun disponibilidad',100,'C')
+insert into Medicamento values ('Solucion Fisiologica','Infusor','0,9%(1000ML)',100,'C')
+insert into Medicamento values ('Acido Citrico','Polvo','200Mg.',100,'C')
+insert into Medicamento values ('Acido Paracetico','Solucion','5L',100,'C')
+insert into Medicamento values ('Cloruro Benzalconio (DG-6)','Solucion','1,2 G/100ML.',100,'C')
+insert into Medicamento values ('Equipo de venoclosis con aguja','Pieza','',100,'C')
+insert into Medicamento values ('Filtro F6','Pieza','',100,'C')
+insert into Medicamento values ('Filtro F7','Pieza','',100,'C')
+insert into Medicamento values ('Filtro F8','Pieza','',100,'C')
+insert into Medicamento values ('Filtro F10','Pieza','',100,'C')
+insert into Medicamento values ('Guantes quirurgicos descartables','Par','',100,'C')
+insert into Medicamento values ('Hipoclorito de Sodio','Solucion','0,8%/250 ML.',100,'C')
+insert into Medicamento values ('Jeringas descartables','Pieza','20ML.',100,'C')
+insert into Medicamento values ('Lineas Arterio Venosas','Pieza','',100,'C')
+insert into Medicamento values ('Transductores','Pieza','.',100,'C')
+insert into Medicamento values ('Yodopovidona','Tubo','10 G.',100,'C')
+
+
+
+insert into Medicamento values ('Acido Folico','Comprimido','5Mg.',100,'P')
+insert into Medicamento values ('Acido Acetilsalicilico','Comprimido','100Mg.',100,'P')
+insert into Medicamento values ('Atorvastatina','Comprimido','10Mg.',100,'P')
+insert into Medicamento values ('Nifedipino','Comprimido','20Mg.',100,'P')
+insert into Medicamento values ('Calcio(carbonato o citrato)','Comprimido','500Mg.',100,'P')
+insert into Medicamento values ('Colecalciferol (vitamina D3)','Comprimido','0,25Mg.',100,'P')
+insert into Medicamento values ('Complejo B (B1-B6-B12)','Comprimido','Estandar',100,'P')
+insert into Medicamento values ('Complejo B(B1-B6-B12)','Inyectable','Estandar',100,'P')
+insert into Medicamento values ('Carvedilol','Comprimido','12,5Mg.',100,'P')
+insert into Medicamento values ('Eritropoyetina','Inyectable','4000 UI',100,'P')
+insert into Medicamento values ('Eritropoyetina','Inyectable','10000  UI',100,'P')
+insert into Medicamento values ('Hierro','Inyectable','100Mg',100,'P')
+insert into Medicamento values ('Heparina Sodica','Inyectable','5000 UI',100,'P')
+insert into Medicamento values ('Losartan','Comprimido','50Mg.',100,'P')
+insert into Medicamento values ('Omeprazol','Comprimido','20Mg.',100,'P')
+insert into Medicamento values ('Solucion Acida','Solucion','Segun disponibilidad',100,'P')
+insert into Medicamento values ('Solucion Basica','Solucion','Segun disponibilidad',100,'P')
+insert into Medicamento values ('Solucion Fisiologica','Infusor','0,9%(1000ML)',100,'P')
+insert into Medicamento values ('Acido Citrico','Polvo','200Mg.',100,'P')
+insert into Medicamento values ('Acido Paracetico','Solucion','5L',100,'P')
+insert into Medicamento values ('Cloruro Benzalconio (DG-6)','Solucion','1,2 G/100ML.',100,'P')
+insert into Medicamento values ('Equipo de venoclosis con aguja','Pieza','',100,'P')
+insert into Medicamento values ('Filtro F6','Pieza','',100,'P')
+insert into Medicamento values ('Filtro F7','Pieza','',100,'P')
+insert into Medicamento values ('Filtro F8','Pieza','',100,'P')
+insert into Medicamento values ('Filtro F10','Pieza','',100,'P')
+insert into Medicamento values ('Guantes quirurgicos descartables','Par','',100,'P')
+insert into Medicamento values ('Hipoclorito de Sodio','Solucion','0,8%/250 ML.',100,'P')
+insert into Medicamento values ('Jeringas descartables','Pieza','20ML.',100,'P')
+insert into Medicamento values ('Lineas Arterio Venosas','Pieza','',100,'P')
+insert into Medicamento values ('Transductores','Pieza','.',100,'P')
+insert into Medicamento values ('Yodopovidona','Tubo','10 G.',100,'P')
+
+
 
 
 select *from Receta

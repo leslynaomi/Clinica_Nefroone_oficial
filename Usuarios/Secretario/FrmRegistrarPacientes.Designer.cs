@@ -56,7 +56,7 @@ namespace capa_presentacion
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label1.Location = new System.Drawing.Point(497, 9);
+            this.label1.Location = new System.Drawing.Point(399, 28);
             this.label1.Name = "label1";
             this.label1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label1.Size = new System.Drawing.Size(254, 26);
@@ -67,10 +67,11 @@ namespace capa_presentacion
             // btnInsertarRegistros
             // 
             this.btnInsertarRegistros.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.btnInsertarRegistros.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInsertarRegistros.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btnInsertarRegistros.Location = new System.Drawing.Point(1029, 100);
+            this.btnInsertarRegistros.Location = new System.Drawing.Point(48, 435);
             this.btnInsertarRegistros.Name = "btnInsertarRegistros";
-            this.btnInsertarRegistros.Size = new System.Drawing.Size(117, 29);
+            this.btnInsertarRegistros.Size = new System.Drawing.Size(219, 40);
             this.btnInsertarRegistros.TabIndex = 1;
             this.btnInsertarRegistros.Text = "Insertar Registros";
             this.btnInsertarRegistros.UseVisualStyleBackColor = false;
@@ -79,10 +80,11 @@ namespace capa_presentacion
             // btnMostrarRegistros
             // 
             this.btnMostrarRegistros.BackColor = System.Drawing.Color.LightSlateGray;
+            this.btnMostrarRegistros.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMostrarRegistros.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btnMostrarRegistros.Location = new System.Drawing.Point(1029, 65);
+            this.btnMostrarRegistros.Location = new System.Drawing.Point(47, 375);
             this.btnMostrarRegistros.Name = "btnMostrarRegistros";
-            this.btnMostrarRegistros.Size = new System.Drawing.Size(117, 29);
+            this.btnMostrarRegistros.Size = new System.Drawing.Size(221, 40);
             this.btnMostrarRegistros.TabIndex = 2;
             this.btnMostrarRegistros.Text = "Mostrar Registros";
             this.btnMostrarRegistros.UseVisualStyleBackColor = false;
@@ -92,15 +94,17 @@ namespace capa_presentacion
             // 
             this.dgvPaciente.BackgroundColor = System.Drawing.Color.Teal;
             this.dgvPaciente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPaciente.Location = new System.Drawing.Point(66, 147);
+            this.dgvPaciente.Location = new System.Drawing.Point(295, 80);
             this.dgvPaciente.Name = "dgvPaciente";
-            this.dgvPaciente.Size = new System.Drawing.Size(1123, 467);
+            this.dgvPaciente.ReadOnly = true;
+            this.dgvPaciente.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.dgvPaciente.Size = new System.Drawing.Size(690, 547);
             this.dgvPaciente.TabIndex = 6;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(64, 108);
+            this.label2.Location = new System.Drawing.Point(45, 116);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(44, 13);
             this.label2.TabIndex = 8;
@@ -109,7 +113,7 @@ namespace capa_presentacion
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(568, 108);
+            this.label3.Location = new System.Drawing.Point(45, 260);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(84, 13);
             this.label3.TabIndex = 9;
@@ -118,7 +122,7 @@ namespace capa_presentacion
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(306, 73);
+            this.label4.Location = new System.Drawing.Point(45, 153);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(86, 13);
             this.label4.TabIndex = 10;
@@ -127,7 +131,7 @@ namespace capa_presentacion
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(64, 73);
+            this.label5.Location = new System.Drawing.Point(45, 81);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(102, 13);
             this.label5.TabIndex = 11;
@@ -136,7 +140,7 @@ namespace capa_presentacion
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(306, 108);
+            this.label6.Location = new System.Drawing.Point(45, 188);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(108, 13);
             this.label6.TabIndex = 12;
@@ -145,7 +149,7 @@ namespace capa_presentacion
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(828, 108);
+            this.label7.Location = new System.Drawing.Point(44, 331);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(32, 13);
             this.label7.TabIndex = 13;
@@ -154,7 +158,7 @@ namespace capa_presentacion
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(568, 73);
+            this.label8.Location = new System.Drawing.Point(45, 225);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(31, 13);
             this.label8.TabIndex = 14;
@@ -163,7 +167,7 @@ namespace capa_presentacion
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(829, 73);
+            this.label9.Location = new System.Drawing.Point(45, 296);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(52, 13);
             this.label9.TabIndex = 15;
@@ -171,56 +175,56 @@ namespace capa_presentacion
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(172, 105);
+            this.txtNombre.Location = new System.Drawing.Point(168, 113);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(100, 20);
             this.txtNombre.TabIndex = 19;
             // 
             // txtPaterno
             // 
-            this.txtPaterno.Location = new System.Drawing.Point(673, 105);
+            this.txtPaterno.Location = new System.Drawing.Point(167, 257);
             this.txtPaterno.Name = "txtPaterno";
             this.txtPaterno.Size = new System.Drawing.Size(100, 20);
             this.txtPaterno.TabIndex = 20;
             // 
             // txtMaterno
             // 
-            this.txtMaterno.Location = new System.Drawing.Point(429, 70);
+            this.txtMaterno.Location = new System.Drawing.Point(168, 150);
             this.txtMaterno.Name = "txtMaterno";
             this.txtMaterno.Size = new System.Drawing.Size(100, 20);
             this.txtMaterno.TabIndex = 21;
             // 
             // txtCi
             // 
-            this.txtCi.Location = new System.Drawing.Point(172, 70);
+            this.txtCi.Location = new System.Drawing.Point(168, 78);
             this.txtCi.Name = "txtCi";
             this.txtCi.Size = new System.Drawing.Size(100, 20);
             this.txtCi.TabIndex = 22;
             // 
             // txtFechaNac
             // 
-            this.txtFechaNac.Location = new System.Drawing.Point(429, 105);
+            this.txtFechaNac.Location = new System.Drawing.Point(168, 185);
             this.txtFechaNac.Name = "txtFechaNac";
             this.txtFechaNac.Size = new System.Drawing.Size(100, 20);
             this.txtFechaNac.TabIndex = 23;
             // 
             // txtEdad
             // 
-            this.txtEdad.Location = new System.Drawing.Point(895, 105);
+            this.txtEdad.Location = new System.Drawing.Point(167, 328);
             this.txtEdad.Name = "txtEdad";
             this.txtEdad.Size = new System.Drawing.Size(100, 20);
             this.txtEdad.TabIndex = 24;
             // 
             // txtSexo
             // 
-            this.txtSexo.Location = new System.Drawing.Point(674, 70);
+            this.txtSexo.Location = new System.Drawing.Point(168, 222);
             this.txtSexo.Name = "txtSexo";
             this.txtSexo.Size = new System.Drawing.Size(100, 20);
             this.txtSexo.TabIndex = 25;
             // 
             // txtDireccion
             // 
-            this.txtDireccion.Location = new System.Drawing.Point(895, 70);
+            this.txtDireccion.Location = new System.Drawing.Point(167, 293);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(100, 20);
             this.txtDireccion.TabIndex = 26;
@@ -230,7 +234,7 @@ namespace capa_presentacion
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.ClientSize = new System.Drawing.Size(1019, 652);
             this.Controls.Add(this.txtDireccion);
             this.Controls.Add(this.txtSexo);
             this.Controls.Add(this.txtEdad);
@@ -252,7 +256,7 @@ namespace capa_presentacion
             this.Controls.Add(this.btnInsertarRegistros);
             this.Controls.Add(this.label1);
             this.Name = "FrmRegistrarPacientes";
-            this.Text = "Ññ";
+            this.Text = "FrmRegistrarPacientes";
             this.Load += new System.EventHandler(this.FrmRegistrarPacientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPaciente)).EndInit();
             this.ResumeLayout(false);

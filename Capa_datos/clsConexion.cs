@@ -19,11 +19,11 @@ namespace capa_datos
         public ClsConexion()
         {
             //constructor Paul 
-            this.servidor = "Lenovo";
-            this.usuario = "Pol";
-            this.contrasena = "Pol";
-            this.basedatos = "Nefroone4";
-            this.cmdSP = new SqlCommand();
+            //this.servidor = "Lenovo";
+           // this.usuario = "Pol";
+           // this.contrasena = "Pol";
+           // this.basedatos = "Nefroone11";
+           // this.cmdSP = new SqlCommand();
 
             //constructor Alejandra
             //this.servidor = "ALEJANDRA-PC";
@@ -34,11 +34,11 @@ namespace capa_datos
 
             //constructor Lesly
             //Solo descomentan la línea de código que necesiten
-            /* this.servidor = "DESKTOP-Q4VVLI3";
+             this.servidor = "DESKTOP-Q4VVLI3";
              this.usuario = "lesly";
              this.contrasena = "levanito";
-             this.basedatos = "Nefroone4";
-             this.cmdSP = new SqlCommand();*/
+             this.basedatos = "Nefroone02";
+             this.cmdSP = new SqlCommand();
         }
 
         public SqlConnection conectar()
@@ -49,6 +49,7 @@ namespace capa_datos
             return cnx;
         }
 
+        //Invocación del Procedimiento Almacenado para validar el usuario y contraseña
         public DataTable D_users(E_Users obje)
         {
             SqlCommand cmd = new SqlCommand("sp_login", conectar());
@@ -61,22 +62,32 @@ namespace capa_datos
             return dt;
         }
 
-        /* public DataTable D_users(E_Users obje)
-         {
+        //Validación del usuario logeado para mostrarle su respectivo menú
+        //Obtiene el tipo de usuario/empleado en un Datatable
+        public DataTable EncontrarTipoUsuario(String Usuario, String Contraseña)
+        {
+            SqlCommand cmd = new SqlCommand("encontrar_tipo_usuario", conectar());
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@user", Usuario);
+            cmd.Parameters.AddWithValue("@passwd", Contraseña);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            return dt;
+        }
 
-             IniciarSP("sp_login");
-             //SqlCommand cmd = new SqlCommand("sp_login", cnx);
-             //cmd.CommandType = CommandType.StoredProcedure;
-             //cmd.Parameters.AddWithValue("@user", obje.Usuario);
-             //cmd.Parameters.AddWithValue("@passwd", obje.Contraseña);
-             AddParametro("@user", obje.Usuario);
-             AddParametro("@passwd", obje.Contraseña);
-             //SqlDataAdapter da = new SqlDataAdapter(cmd);
-             ejecutarSP();
-             DataTable dt = new DataTable();
-             da.Fill(dt);
-             return dt;
-         }*/
+        //Devuelve el ID usuario de un empleado con solo su user y password
+        public DataTable EncontrarIDUsuario(String Usuario, String Contraseña)
+        {
+            SqlCommand cmd = new SqlCommand("encontrar_ID_empleado", conectar());
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@user", Usuario);
+            cmd.Parameters.AddWithValue("@passwd", Contraseña);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            return dt;
+        }
 
         public void desconectar()
         {

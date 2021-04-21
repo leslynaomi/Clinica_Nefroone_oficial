@@ -45,7 +45,7 @@ namespace capa_presentacion
                 enf.Temperatura = txtTemp.Text;
                 enf.Pulso = txtPulso.Text;
                 enf.Saturacion = txtSaturacion.Text;
-                enf.Nro_registro = txtNroHojReg.Text;
+                enf.Id_hojaS = txtNroHojReg.Text;
                 enf.Id_empleado = txtIDEmp.Text;
                 enf.Guardar_Registros();
                 LimpiarTexto();
@@ -110,7 +110,7 @@ namespace capa_presentacion
                     enf.Temperatura = txtTemp.Text;
                     enf.Pulso = txtPulso.Text;
                     enf.Saturacion = txtSaturacion.Text;
-                    enf.Nro_registro = txtNroHojReg.Text;
+                    enf.Id_hojaS = txtNroHojReg.Text;
                     enf.Id_empleado = txtIDEmp.Text;
                     enf.Modificar_Registros();
                     LimpiarTexto();
@@ -134,7 +134,7 @@ namespace capa_presentacion
                 else
                 {
                     enf.Id_hoja_enfermeria = txtParamModElim.Text;
-                    enf.Nro_registro = txtNroHojReg.Text;
+                    enf.Id_hojaS = txtNroHojReg.Text;
                     enf.Id_empleado = txtIDEmp.Text;
                     enf.Eliminar_Registros();
                     LimpiarTexto();

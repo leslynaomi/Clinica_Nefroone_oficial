@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClassDialisisPeritoneal.cs" />
+    <Compile Include="clsDetalle_Recetada.cs" />
     <Compile Include="clsEmpleado.cs" />
     <Compile Include="clsEvoloucionYTratamiento.cs" />
     <Compile Include="clsHojaEnfermeria.cs" />

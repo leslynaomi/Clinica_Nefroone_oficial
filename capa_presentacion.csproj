@@ -69,6 +69,7 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -102,6 +103,14 @@
     </Compile>
     <Compile Include="FrmPrincipalAdministrador.Designer.cs">
       <DependentUpon>FrmPrincipalAdministrador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Métodos y Clases\Constantes.cs" />
+    <Compile Include="Métodos y Clases\Metodos.cs" />
+    <Compile Include="Usuarios\Login\FrmCrearCuenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Usuarios\Login\FrmCrearCuenta.Designer.cs">
+      <DependentUpon>FrmCrearCuenta.cs</DependentUpon>
     </Compile>
     <Compile Include="Usuarios\Login\FrmInicioSesion.cs">
       <SubType>Form</SubType>
@@ -177,7 +186,6 @@
     <Compile Include="Usuarios\Secretario\FrmHojaSecretaria.Designer.cs">
       <DependentUpon>FrmHojaSecretaria.cs</DependentUpon>
     </Compile>
-    <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="Usuarios\Enfermera\formularioprincipalE.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -352,7 +360,9 @@
       <Name>capa_negocio</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Métodos\" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\maximize3.png" />
   </ItemGroup>
@@ -364,21 +374,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\iconfinder_compose_1055085.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="SqlServerTypes\readme.htm" />
-    <Content Include="SqlServerTypes\x64\msvcr120.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x86\msvcr120.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
