@@ -76,6 +76,8 @@ namespace capa_presentacion
                     emp.Guardar_Registros();
                     LimpiarTexto();
                     MessageBox.Show("Cuenta creada correctamente", "INFORMACION");
+                    
+                    //Clic al botón Cancelar para volver al Login
                     btnCancelar.PerformClick();
                 }
                 else

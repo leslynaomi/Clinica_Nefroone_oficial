@@ -103,7 +103,8 @@
     <Compile Include="FrmPrincipalAdministrador.Designer.cs">
       <DependentUpon>FrmPrincipalAdministrador.cs</DependentUpon>
     </Compile>
-    <Compile Include="Métodos\Metodos.cs" />
+    <Compile Include="Métodos y Clases\Constantes.cs" />
+    <Compile Include="Métodos y Clases\Metodos.cs" />
     <Compile Include="Usuarios\Login\FrmCrearCuenta.cs">
       <SubType>Form</SubType>
     </Compile>

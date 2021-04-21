@@ -22,7 +22,7 @@ namespace capa_datos
             this.servidor = "Lenovo";
             this.usuario = "Pol";
             this.contrasena = "Pol";
-            this.basedatos = "Nefroone11";
+            this.basedatos = "Nefroone13";
             this.cmdSP = new SqlCommand();
 
             //constructor Alejandra
@@ -67,6 +67,19 @@ namespace capa_datos
         public DataTable EncontrarTipoUsuario(String Usuario, String Contraseña)
         {
             SqlCommand cmd = new SqlCommand("encontrar_tipo_usuario", conectar());
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@user", Usuario);
+            cmd.Parameters.AddWithValue("@passwd", Contraseña);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            return dt;
+        }
+
+        //Devuelve el ID usuario de un empleado con solo su user y password
+        public DataTable EncontrarIDUsuario(String Usuario, String Contraseña)
+        {
+            SqlCommand cmd = new SqlCommand("encontrar_ID_empleado", conectar());
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@user", Usuario);
             cmd.Parameters.AddWithValue("@passwd", Contraseña);

@@ -1,6 +1,6 @@
 --Creación de la base de datos
---create database Nefroone11
---use Nefroone11
+--create database Nefroone13
+--use Nefroone13
 
 --Para borrar un trigger completamente de la base de datos
 --drop trigger Habitacion_Libre
@@ -40,35 +40,6 @@ usuario varchar(30) not null,
 passwd varchar(30) not null
 )
 
-create table Administrador(
-id_empleado int primary key not null,
-foreign key(id_empleado) references Empleado (id_empleado),
-)
-
-create table Secretario(
-id_empleado int primary key not null,
-velocidad_Typeo varchar(50),
-foreign key (id_empleado) references Empleado(id_empleado),
-)
-
-create table Farmaceutico(
-id_empleado int primary key not null,
-tipo_Farmaceutica varchar(70),
-foreign key (id_empleado) references Empleado (id_empleado),
-)
-
-create table Medico(
-id_empleado int primary key not null,
-especialidad varchar(100),
-foreign key (id_empleado) references Empleado (id_empleado),
-)
-
-create table Enfermera (
-id_empleado int primary key not null,
-cod_Matricula int
-foreign key (id_empleado) references Empleado (id_empleado),
-)
-
 create table Sesion(
 id_sesion int primary key identity(1,1) not null,
 tipo_Sesion varchar(50),
@@ -81,8 +52,8 @@ create table Hoja_Secretaria(
 id_hojaS int primary key identity(1,1) not null,
 nro_familiar_Contacto int,
 formulario_Referencia bit,
-carta_Negativa varchar(200),
-grado_Intruccion varchar(50),
+carta_Negativa bit,
+grado_Intruccion varchar(200),
 red varchar(50),
 municipio varchar(50),
 seguro varchar(50),
@@ -301,33 +272,7 @@ begin
 		rollback tran
 	end catch	
 end
-/*
-------------						USUARIO
-go
-create proc insertar_usuario(
-@user varchar(30),
-@passwd varchar(30)
-)as
-begin
-	begin try
-		begin tran
-		if ((select count(id_usuario) from Usuario where usuario=@user)=0)
-			begin
-				insert into Usuario values(@user,@passwd)
-				commit tran				
-			end
-		else
-			begin
-				print 'El nombre de usuario ingresado ya existe en el sistema'
-				rollback tran return
-			end
-	end try
-	begin catch
-		raiserror('Error creando cuenta de usuario',16,1) 
-		rollback tran
-	end catch	
-end
-*/
+
 ------------						EMPLEADO
 go
 --PROCEDIMIENTO INSERTAR EMPLEADO
@@ -347,8 +292,16 @@ begin
 		begin tran
 		if ((select count(ci) from Empleado where ci=@ci)=0)
 			begin
-				insert into Empleado values(@nombre,@paterno,@materno,@ci,@fecha_Nac,@nro_Celular,@tipo,@usuario,@passwd)
-				commit tran				
+			if ((select count(id_empleado) from Empleado where usuario=@usuario)=0)
+				begin
+					insert into Empleado values(@nombre,@paterno,@materno,@ci,@fecha_Nac,@nro_Celular,@tipo,@usuario,@passwd)
+					commit tran				
+				end
+			else
+				begin
+					print 'El nombre de usuario ingresado ya existe en los registros'
+					rollback tran return
+				end
 			end
 		else
 			begin
@@ -429,63 +382,13 @@ begin
 	end catch	
 end
 
-------------						ADMINISTRADOR
-go
---PROCEDIMIENTO INSERTAR ADMINISTRADOR
-
-go
---PROCEDIMIENTO MODIFICAR ADMINISTRADOR
-
-go
---PROCEDIMIENTO ELIMINAR ADMINISTRADOR
-
-------------						SECRETARIO
-go
---PROCEDIMIENTO INSERTAR SECRETARIO
-
-go
---PROCEDIMIENTO MODIFICAR SECRETARIO
-
-go
---PROCEDIMIENTO ELIMINAR SECRETARIO
-
-------------						FARMACEUTICO
-go
---PROCEDIMIENTO INSERTAR FARMACEUTICO
-
-go
---PROCEDIMIENTO MODIFICAR FARMACEUTICO
-
-go
---PROCEDIMIENTO ELIMINAR FARMACEUTICO
-
-------------						MEDICO
-go
---PROCEDIMIENTO INSERTAR MEDICO
-
-go
---PROCEDIMIENTO MODIFICAR MEDICO
-
-go
---PROCEDIMIENTO ELIMINAR MEDICO
-
-------------						ENFERMERA
-go
---PROCEDIMIENTO INSERTAR ENFERMERA
-
-go
---PROCEDIMIENTO MODIFICAR ENFERMERA
-
-go
---PROCEDIMIENTO ELIMINAR ENFERMERA
-
 ------------						HOJA SECRETARIA
 go
 --PROCEDIMIENTO INSERTAR HOJA SECRETARIA
 create proc insertar_hoja_sec(
 @nro_familiar_Contacto int,
 @formulario_Referencia bit,
-@carta_Negativa varchar(200),
+@carta_Negativa bit,
 @grado_Intruccion varchar(50),
 @red varchar(50),
 @municipio varchar(50),
@@ -519,7 +422,7 @@ create proc modificar_hoja_sec(
 @id_hojaS int,
 @nro_familiar_Contacto int,
 @formulario_Referencia bit,
-@carta_Negativa varchar(200),
+@carta_Negativa bit,
 @grado_Intruccion varchar(50),
 @red varchar(50),
 @municipio varchar(50),
@@ -1149,7 +1052,7 @@ begin
 end
 
 */
-
+--Consulta para mostrar el Tipo de Usuario que está iniciando sesión
 go
 create proc encontrar_tipo_usuario(
 @user varchar(40),
@@ -1165,7 +1068,33 @@ begin
 		rollback tran
 	end catch
 end
-
-
+go
+create proc encontrar_ID_empleado(
+@user varchar(40),
+@passwd varchar(40)
+)as
+begin
+	begin try
+		begin tran
+			select id_empleado from Empleado where usuario=@user and passwd=@passwd
+	end try
+	begin catch		
+		raiserror('Error encontrando el usuario en la base de datos',16,1) 
+		rollback tran
+	end catch
+end
 
 -------------						TRIGGERS							-----------------
+go
+--Colocar la edad respectiva del paciente en el registro insertado de sus datos de forma automática
+create trigger calcular_edad
+on Paciente
+for Insert
+as
+begin
+	update Paciente
+	set edad=(select DATEDIFF(YEAR,fecha_Nac,GetDate()) from Paciente where ci=(select ci from inserted))
+	where ci=(select ci from inserted)
+end
+
+

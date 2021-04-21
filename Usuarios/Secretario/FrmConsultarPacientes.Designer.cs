@@ -46,7 +46,7 @@ namespace capa_presentacion
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label1.Location = new System.Drawing.Point(486, 30);
+            this.label1.Location = new System.Drawing.Point(363, 27);
             this.label1.Name = "label1";
             this.label1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label1.Size = new System.Drawing.Size(254, 26);
@@ -86,9 +86,9 @@ namespace capa_presentacion
             // 
             this.dgvPaciente.BackgroundColor = System.Drawing.Color.Teal;
             this.dgvPaciente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPaciente.Location = new System.Drawing.Point(32, 107);
+            this.dgvPaciente.Location = new System.Drawing.Point(35, 102);
             this.dgvPaciente.Name = "dgvPaciente";
-            this.dgvPaciente.Size = new System.Drawing.Size(1168, 538);
+            this.dgvPaciente.Size = new System.Drawing.Size(947, 538);
             this.dgvPaciente.TabIndex = 31;
             // 
             // radioButton1
@@ -152,7 +152,7 @@ namespace capa_presentacion
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumAquamarine;
-            this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.ClientSize = new System.Drawing.Size(1019, 652);
             this.Controls.Add(this.btnMostrarRegistros);
             this.Controls.Add(this.radioButton3);
             this.Controls.Add(this.radioButton4);

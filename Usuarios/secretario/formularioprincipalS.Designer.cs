@@ -34,13 +34,13 @@ namespace capa_presentacion.Usuarios.secretario
             this.PanelFormulario = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnHojaSec = new System.Windows.Forms.Button();
+            this.btnRegPac = new System.Windows.Forms.Button();
+            this.btnConsPac = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.btnMaximizar = new System.Windows.Forms.PictureBox();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
-            this.button3 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -74,9 +74,9 @@ namespace capa_presentacion.Usuarios.secretario
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.Desktop;
             this.panel3.Controls.Add(this.label1);
-            this.panel3.Controls.Add(this.button2);
-            this.panel3.Controls.Add(this.button3);
-            this.panel3.Controls.Add(this.button1);
+            this.panel3.Controls.Add(this.btnHojaSec);
+            this.panel3.Controls.Add(this.btnRegPac);
+            this.panel3.Controls.Add(this.btnConsPac);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel3.Location = new System.Drawing.Point(0, 50);
             this.panel3.Name = "panel3";
@@ -94,31 +94,44 @@ namespace capa_presentacion.Usuarios.secretario
             this.label1.TabIndex = 8;
             this.label1.Text = "NEFROONE";
             // 
-            // button2
+            // btnHojaSec
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.Desktop;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.button2.Location = new System.Drawing.Point(3, 198);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(251, 36);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "HOJA DE SECREATARÍA";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnHojaSec.BackColor = System.Drawing.SystemColors.Desktop;
+            this.btnHojaSec.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHojaSec.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnHojaSec.Location = new System.Drawing.Point(3, 198);
+            this.btnHojaSec.Name = "btnHojaSec";
+            this.btnHojaSec.Size = new System.Drawing.Size(251, 36);
+            this.btnHojaSec.TabIndex = 6;
+            this.btnHojaSec.Text = "HOJA DE SECREATARÍA";
+            this.btnHojaSec.UseVisualStyleBackColor = false;
+            this.btnHojaSec.Click += new System.EventHandler(this.btnHojaSec_Click);
             // 
-            // button1
+            // btnRegPac
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.Desktop;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button1.Location = new System.Drawing.Point(3, 156);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(251, 36);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "CONSULTA DE PACIENTES";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnRegPac.BackColor = System.Drawing.SystemColors.Desktop;
+            this.btnRegPac.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegPac.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnRegPac.Location = new System.Drawing.Point(3, 114);
+            this.btnRegPac.Name = "btnRegPac";
+            this.btnRegPac.Size = new System.Drawing.Size(251, 36);
+            this.btnRegPac.TabIndex = 5;
+            this.btnRegPac.Text = "REGISTRO DE PACIENTES";
+            this.btnRegPac.UseVisualStyleBackColor = false;
+            this.btnRegPac.Click += new System.EventHandler(this.btnRegPac_Click);
+            // 
+            // btnConsPac
+            // 
+            this.btnConsPac.BackColor = System.Drawing.SystemColors.Desktop;
+            this.btnConsPac.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConsPac.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnConsPac.Location = new System.Drawing.Point(3, 156);
+            this.btnConsPac.Name = "btnConsPac";
+            this.btnConsPac.Size = new System.Drawing.Size(251, 36);
+            this.btnConsPac.TabIndex = 5;
+            this.btnConsPac.Text = "CONSULTA DE PACIENTES";
+            this.btnConsPac.UseVisualStyleBackColor = false;
+            this.btnConsPac.Click += new System.EventHandler(this.btnConsPac_Click);
             // 
             // panel2
             // 
@@ -171,19 +184,6 @@ namespace capa_presentacion.Usuarios.secretario
             this.btnCerrar.TabStop = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click_1);
             // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.SystemColors.Desktop;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button3.Location = new System.Drawing.Point(3, 114);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(251, 36);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "REGISTRO DE PACIENTES";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button1_Click);
-            // 
             // formularioprincipalS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -210,12 +210,12 @@ namespace capa_presentacion.Usuarios.secretario
         private System.Windows.Forms.Panel PanelFormulario;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnHojaSec;
+        private System.Windows.Forms.Button btnConsPac;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox btnMinimizar;
         private System.Windows.Forms.PictureBox btnMaximizar;
         private System.Windows.Forms.PictureBox btnCerrar;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnRegPac;
     }
 }

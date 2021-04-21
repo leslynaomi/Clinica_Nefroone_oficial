@@ -1,7 +1,7 @@
 -----------------------------------------------------------------------------------------------------------
 -------------			POBLACIÓN DE TABLAS CON LOS PRODCEDIMIENTOS (PARA TESTEO)		-------------------
 -----------------------------------------------------------------------------------------------------------
-use Nefroone11
+use Nefroone13
 go
 --Usuario
 select *from Usuario
@@ -14,7 +14,6 @@ select *from Empleado
 exec insertar_empleado 'Pepe','Vásquez','Muralla',9239544,'07/05/1978',7584329,'Enfermero',1
 exec modificar_empleado 'Chepeto','Vásquez','Muralla',9239543,'07/05/1978',7584329,'Administrador'
 exec eliminar_empleado 9239544
-/*
 go
 --Paciente
 select *from Paciente
@@ -23,11 +22,12 @@ exec modificar_paciente 92452354,'Pedro','Contra','Barreras','13/08/1998',0,'M',
 exec eliminar_paciente 0
 go
 --Hoja Registro
-select *from Hoja_Registro
-exec insertar_hoja_reg 7249399,false,'Esta es una carta negativa','este es un grado instrucción','local','Montero','Este es un seguro','27/09/2021',92452354,1
-exec modificar_hoja_reg 1,7249399,true,'Esta es una carta negativa','este es un grado instrucción','local','Montero','Este es un seguro','27/09/2021',92452354
-exec eliminar_hoja_reg 6,92452354
+select *from Hoja_Secretaria
+exec insertar_hoja_sec 7249399,false,'Esta es una carta negativa','este es un grado instrucción','local','Montero','Este es un seguro','27/09/2021',92452354,1
+exec modificar_hoja_sec 1,7249399,true,'Esta es una carta negativa','este es un grado instrucción','local','Montero','Este es un seguro','27/09/2021',92452354
+exec eliminar_hoja_sec 6,92452354
 
+/*
 --Hoja Médica
 select *from Hoja_Medica
 exec insertar_hoja_medica 23,'Fiebre y mucho cansancio',42.5,'esta es una serologia',1.70,23,true,'Cateter','O-RH Negativo','Esta es una solución dializante',1

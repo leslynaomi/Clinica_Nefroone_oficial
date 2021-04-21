@@ -66,7 +66,7 @@ namespace capa_presentacion
             this.cbxTipoUser.Location = new System.Drawing.Point(191, 315);
             this.cbxTipoUser.Name = "cbxTipoUser";
             this.cbxTipoUser.Size = new System.Drawing.Size(121, 21);
-            this.cbxTipoUser.TabIndex = 0;
+            this.cbxTipoUser.TabIndex = 8;
             // 
             // label1
             // 
@@ -106,7 +106,7 @@ namespace capa_presentacion
             this.txtUser.Location = new System.Drawing.Point(533, 91);
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(121, 20);
-            this.txtUser.TabIndex = 2;
+            this.txtUser.TabIndex = 9;
             // 
             // txtPassw1
             // 
@@ -114,7 +114,7 @@ namespace capa_presentacion
             this.txtPassw1.Name = "txtPassw1";
             this.txtPassw1.PasswordChar = '*';
             this.txtPassw1.Size = new System.Drawing.Size(121, 20);
-            this.txtPassw1.TabIndex = 2;
+            this.txtPassw1.TabIndex = 10;
             // 
             // label4
             // 
@@ -133,7 +133,7 @@ namespace capa_presentacion
             this.txtPasswd2.Name = "txtPasswd2";
             this.txtPasswd2.PasswordChar = '*';
             this.txtPasswd2.Size = new System.Drawing.Size(121, 20);
-            this.txtPasswd2.TabIndex = 2;
+            this.txtPasswd2.TabIndex = 11;
             // 
             // label5
             // 
@@ -151,7 +151,7 @@ namespace capa_presentacion
             this.txtCI.Location = new System.Drawing.Point(191, 202);
             this.txtCI.Name = "txtCI";
             this.txtCI.Size = new System.Drawing.Size(121, 20);
-            this.txtCI.TabIndex = 2;
+            this.txtCI.TabIndex = 5;
             this.txtCI.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCI_KeyPress);
             // 
             // label6
@@ -163,14 +163,14 @@ namespace capa_presentacion
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(114, 17);
             this.label6.TabIndex = 1;
-            this.label6.Text = "Apellido Materno";
+            this.label6.Text = "Apellido materno";
             // 
             // txtMaterno
             // 
             this.txtMaterno.Location = new System.Drawing.Point(191, 165);
             this.txtMaterno.Name = "txtMaterno";
             this.txtMaterno.Size = new System.Drawing.Size(121, 20);
-            this.txtMaterno.TabIndex = 2;
+            this.txtMaterno.TabIndex = 4;
             this.txtMaterno.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMaterno_KeyPress);
             // 
             // label7
@@ -200,7 +200,7 @@ namespace capa_presentacion
             this.txtPaterno.Location = new System.Drawing.Point(191, 130);
             this.txtPaterno.Name = "txtPaterno";
             this.txtPaterno.Size = new System.Drawing.Size(121, 20);
-            this.txtPaterno.TabIndex = 2;
+            this.txtPaterno.TabIndex = 3;
             this.txtPaterno.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPaterno_KeyPress);
             // 
             // txtNombre
@@ -218,7 +218,7 @@ namespace capa_presentacion
             this.btnCancelar.Location = new System.Drawing.Point(590, 371);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(103, 29);
-            this.btnCancelar.TabIndex = 7;
+            this.btnCancelar.TabIndex = 13;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -261,7 +261,7 @@ namespace capa_presentacion
             this.txtTel.Location = new System.Drawing.Point(192, 277);
             this.txtTel.Name = "txtTel";
             this.txtTel.Size = new System.Drawing.Size(121, 20);
-            this.txtTel.TabIndex = 2;
+            this.txtTel.TabIndex = 7;
             this.txtTel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTel_KeyPress);
             // 
             // dtpFechaNac
@@ -270,7 +270,7 @@ namespace capa_presentacion
             this.dtpFechaNac.Location = new System.Drawing.Point(201, 241);
             this.dtpFechaNac.Name = "dtpFechaNac";
             this.dtpFechaNac.Size = new System.Drawing.Size(99, 20);
-            this.dtpFechaNac.TabIndex = 8;
+            this.dtpFechaNac.TabIndex = 6;
             // 
             // btnCrearCuenta
             // 
@@ -279,7 +279,7 @@ namespace capa_presentacion
             this.btnCrearCuenta.Location = new System.Drawing.Point(39, 371);
             this.btnCrearCuenta.Name = "btnCrearCuenta";
             this.btnCrearCuenta.Size = new System.Drawing.Size(110, 29);
-            this.btnCrearCuenta.TabIndex = 113;
+            this.btnCrearCuenta.TabIndex = 12;
             this.btnCrearCuenta.Text = "Crear Cuenta";
             this.btnCrearCuenta.UseVisualStyleBackColor = false;
             this.btnCrearCuenta.Click += new System.EventHandler(this.btnCrearCuenta_Click);

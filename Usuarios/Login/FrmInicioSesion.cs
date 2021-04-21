@@ -42,20 +42,19 @@ namespace capa_presentacion
 
             if (dt.Rows.Count > 0)
             {                                
-                //Abrir el entorno de pruebas
-                //Lo quitaremos después
-                //FrmPrincipalAdministrador frm = new FrmPrincipalAdministrador();
-                //frm.Show();
-
-                //Identificar el tipo de usuario/empleado que está ingresando al sistema
-                DataTable dt_aux = new DataTable();
+                //Identificar el tipo y el ID del usuario/empleado que está ingresando al sistema
                 ClsConexion cs = new ClsConexion();
+                Metodos met = new Metodos();
 
                 //Acude al método en la clase ClsConexion para consultar a la base de datos
-                dt_aux = cs.EncontrarTipoUsuario(txtUsuario.Text,txtContraseña.Text);
-                
+                DataTable dtTipo = cs.EncontrarTipoUsuario(txtUsuario.Text,txtContraseña.Text);
+                DataTable dtIDEmp = cs.EncontrarIDUsuario(txtUsuario.Text, txtContraseña.Text);
+
                 //Devuelve en un string el tipo de usuario
-                string tipo = string.Join(Environment.NewLine, dt_aux.Rows.OfType<DataRow>().Select(x => string.Join(" ; ", x.ItemArray)));
+                string tipo = met.DatatableToString(dtTipo);
+                
+                //Igualmente guardo en un string el ID del empleado/usuario que está iniciando sesión
+                Constantes.ID_Emp = met.DatatableToString(dtIDEmp);
                 
                 //Muestra el tipo de usuario en pantalla con una bienvenida
                 MessageBox.Show("¡Welcome! " + tipo);

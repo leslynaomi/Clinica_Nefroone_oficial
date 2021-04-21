@@ -16,9 +16,7 @@ namespace capa_presentacion.Usuarios.secretario
         {
             InitializeComponent();
         }
-
-
-
+        
         private void AbrirFormulario<MiForm>() where MiForm : Form, new()
         {
             Form formulario;
@@ -31,9 +29,8 @@ namespace capa_presentacion.Usuarios.secretario
                 formulario.Dock = DockStyle.Fill;
                 PanelFormulario.Controls.Add(formulario);
                 PanelFormulario.Tag = formulario;
-                formulario.Show();
+                formulario.Show();                
                 formulario.BringToFront();
-
             }
 
             else
@@ -61,19 +58,21 @@ namespace capa_presentacion.Usuarios.secretario
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnRegPac_Click(object sender, EventArgs e)
         {
             AbrirFormulario<FrmRegistrarPacientes>();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnConsPac_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<FrmHojaSecretaria>();
+            AbrirFormulario<FrmConsultarPacientes>();
         }
 
-        private void btnColaAtencion_Click(object sender, EventArgs e)
+        private void btnHojaSec_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<FrmColaAtencion>();
+            AbrirFormulario<FrmHojaSecretaria>();
+            
         }
+        
     }
 }
