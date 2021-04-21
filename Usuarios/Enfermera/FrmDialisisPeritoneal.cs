@@ -24,15 +24,15 @@ namespace capa_presentacion
 
         private void LimpiarTexto()
         {//hola pooooool
-        
-            textprecio_total.Clear();
-            textinicio.Clear();
-            textfin.Clear();
-            textvolumen.Clear();
+
+            TimeInfucionesInicio.ResetText();
+            TimeInfucionesFin.ResetText();
+            T;
+            txtInfusionesVolumen.Clear();
             text1inicio.Clear();
-            text1volumen.Clear();
-            textparcial.Clear();
-            texttotal.Clear();
+            txtDrenajeVolumen.Clear();
+            txtBalanceParcial.Clear();
+            txtBalanceTotal.Clear();
             textsolucionusada1.Clear();
             textsolucionusada2.Clear();
             textobservaciones.Clear();
@@ -44,14 +44,14 @@ namespace capa_presentacion
             try
             {
 
-                dp.Aprecio_Sesion_D_Peritoneal = textprecio_total.Text;
-                dp.Ainfucion_Inicio = textinicio.Text;
+                
+                dp.Ainfucion_Inicio = TimeInfucionesInicio.Text;
                 dp.Ainfucion_Final = textfin.Text;
-                dp.Ainfucion_Volumen = textvolumen.Text;
+                dp.Ainfucion_Volumen = txtInfusionesVolumen.Text;
                 dp.Adrenaje_Inicio = text1inicio.Text;
-                dp.Adrenaje_Volumen = text1volumen.Text;
-                dp.Abalance_Parcial = textparcial.Text;
-                dp.Abalance_Total = texttotal.Text;
+                dp.Adrenaje_Volumen = txtDrenajeVolumen.Text;
+                dp.Abalance_Parcial = txtBalanceParcial.Text;
+                dp.Abalance_Total = txtBalanceTotal.Text;
                 dp.Asolucion_Usada1 = textsolucionusada1.Text;
                 dp.Asolucion_Usada2 = textsolucionusada2.Text;
                 dp.Aobservacion_Balance = textobservaciones.Text;
@@ -124,6 +124,16 @@ namespace capa_presentacion
 
             FrmHojaEnfermeria frm = new FrmHojaEnfermeria();
             frm.Show();
+        }
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
