@@ -18,6 +18,8 @@ namespace capa_negocio
         private string fecha_Nac;
         private string nro_Celular;
         private string tipo;
+        private string usuario;
+        private string passwd;
 
         public ClsEmpleado()
         {
@@ -29,56 +31,34 @@ namespace capa_negocio
             fecha_Nac = "";
             nro_Celular = "";
             tipo = "";
+            usuario = "";
+            passwd = "";
         }
 
-        public string Id_empleado
-        {
-            get { return id_empleado; }
-            set { id_empleado = value; }
-        }
+        public string Id_empleado1 { get => id_empleado; set => id_empleado = value; }
+        public string Nombre1 { get => nombre; set => nombre = value; }
+        public string Paterno1 { get => paterno; set => paterno = value; }
+        public string Materno1 { get => materno; set => materno = value; }
+        public string Ci1 { get => ci; set => ci = value; }
+        public string Fecha_Nac1 { get => fecha_Nac; set => fecha_Nac = value; }
+        public string Nro_Celular1 { get => nro_Celular; set => nro_Celular = value; }
+        public string Tipo1 { get => tipo; set => tipo = value; }
+        public string Usuario { get => usuario; set => usuario = value; }
+        public string Passwd { get => passwd; set => passwd = value; }
 
-        public string Nombre
+        public void Guardar_Registros()
         {
-            get { return nombre; }
-            set { nombre = value; }
-        }
-        /// <summary>
-        /// tratamiento
-        /// </summary>
-        public string Paterno
-        {
-            get { return paterno; }
-            set { paterno = value; }
-        }
-
-        public string Materno
-        {
-            get { return materno; }
-            set { materno = value; }
-        }
-
-        public string Ci
-        {
-            get { return ci; }
-            set { ci = value; }
-        }
-
-        public string Fecha_Nac
-        {
-            get { return fecha_Nac; }
-            set { fecha_Nac = value; }
-        }
-
-        public string Nro_Celular
-        {
-            get { return nro_Celular; }
-            set { nro_Celular = value; }
-        }
-
-        public string Tipo
-        {
-            get { return tipo; }
-            set { tipo = value; }
+            IniciarSP("insertar_empleado");
+            AddParametro("@nombre", nombre);
+            AddParametro("@paterno", paterno);
+            AddParametro("@materno", materno);
+            AddParametro("@ci", ci);
+            AddParametro("@fecha_Nac", fecha_Nac);
+            AddParametro("@nro_Celular", nro_Celular);
+            AddParametro("@tipo", tipo);
+            AddParametro("@usuario", usuario);
+            AddParametro("@passwd", passwd);
+            ejecutarSP();
         }
     }
 }

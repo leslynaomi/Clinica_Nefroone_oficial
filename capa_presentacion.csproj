@@ -103,6 +103,13 @@
     <Compile Include="FrmPrincipalAdministrador.Designer.cs">
       <DependentUpon>FrmPrincipalAdministrador.cs</DependentUpon>
     </Compile>
+    <Compile Include="Métodos\Metodos.cs" />
+    <Compile Include="Usuarios\Login\FrmCrearCuenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Usuarios\Login\FrmCrearCuenta.Designer.cs">
+      <DependentUpon>FrmCrearCuenta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Usuarios\Login\FrmInicioSesion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -237,6 +244,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAreaAdministrativa.resx">
       <DependentUpon>FrmAreaAdministrativa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usuarios\Login\FrmCrearCuenta.resx">
+      <DependentUpon>FrmCrearCuenta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Usuarios\Login\FrmInicioSesion.resx">
       <DependentUpon>FrmInicioSesion.cs</DependentUpon>

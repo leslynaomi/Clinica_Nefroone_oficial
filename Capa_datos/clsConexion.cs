@@ -22,7 +22,7 @@ namespace capa_datos
             this.servidor = "Lenovo";
             this.usuario = "Pol";
             this.contrasena = "Pol";
-            this.basedatos = "Nefroone4";
+            this.basedatos = "Nefroone11";
             this.cmdSP = new SqlCommand();
 
             //constructor Alejandra
@@ -49,6 +49,7 @@ namespace capa_datos
             return cnx;
         }
 
+        //Invocación del Procedimiento Almacenado para validar el usuario y contraseña
         public DataTable D_users(E_Users obje)
         {
             SqlCommand cmd = new SqlCommand("sp_login", conectar());
@@ -61,22 +62,19 @@ namespace capa_datos
             return dt;
         }
 
-        /* public DataTable D_users(E_Users obje)
-         {
-
-             IniciarSP("sp_login");
-             //SqlCommand cmd = new SqlCommand("sp_login", cnx);
-             //cmd.CommandType = CommandType.StoredProcedure;
-             //cmd.Parameters.AddWithValue("@user", obje.Usuario);
-             //cmd.Parameters.AddWithValue("@passwd", obje.Contraseña);
-             AddParametro("@user", obje.Usuario);
-             AddParametro("@passwd", obje.Contraseña);
-             //SqlDataAdapter da = new SqlDataAdapter(cmd);
-             ejecutarSP();
-             DataTable dt = new DataTable();
-             da.Fill(dt);
-             return dt;
-         }*/
+        //Validación del usuario logeado para mostrarle su respectivo menú
+        //Obtiene el tipo de usuario/empleado en un Datatable
+        public DataTable EncontrarTipoUsuario(String Usuario, String Contraseña)
+        {
+            SqlCommand cmd = new SqlCommand("encontrar_tipo_usuario", conectar());
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@user", Usuario);
+            cmd.Parameters.AddWithValue("@passwd", Contraseña);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            return dt;
+        }
 
         public void desconectar()
         {

@@ -1,16 +1,20 @@
 -----------------------------------------------------------------------------------------------------------
 -------------			POBLACIÓN DE TABLAS CON LOS PRODCEDIMIENTOS (PARA TESTEO)		-------------------
 -----------------------------------------------------------------------------------------------------------
-use Nefroone4
+use Nefroone11
 go
-/*
+--Usuario
+select *from Usuario
+exec insertar_usuario 'pol','123'
+
 --Empleado
 select *from Empleado
 --No reciben el id como parámetro, modificar y eliminar específicamente trabajan de forma
 --idependiente con el ci del empleado
-exec insertar_empleado 'Pepe','Vásquez','Muralla',9239544,'07/05/1978',7584329,'Enfermero'
+exec insertar_empleado 'Pepe','Vásquez','Muralla',9239544,'07/05/1978',7584329,'Enfermero',1
 exec modificar_empleado 'Chepeto','Vásquez','Muralla',9239543,'07/05/1978',7584329,'Administrador'
 exec eliminar_empleado 9239544
+/*
 go
 --Paciente
 select *from Paciente
