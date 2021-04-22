@@ -27,17 +27,15 @@ namespace capa_presentacion
 
             TimeInfucionesInicio.ResetText();
             TimeInfucionesFin.ResetText();
-            T;
+            txtBalanceParcial.Clear();
             txtInfusionesVolumen.Clear();
-            text1inicio.Clear();
+            txtBalanceTotal.Clear();
             txtDrenajeVolumen.Clear();
             txtBalanceParcial.Clear();
-            txtBalanceTotal.Clear();
-            textsolucionusada1.Clear();
-            textsolucionusada2.Clear();
+            BoxSolucion1.ClearSelected();
+            BoxSolucion2.ClearSelected();
             textobservaciones.Clear();
-            texthojaenfermeria.Clear();
-            textsesion1.Clear();
+            
         }
         private void binsertar_Click(object sender, EventArgs e)
         {
@@ -46,17 +44,16 @@ namespace capa_presentacion
 
                 
                 dp.Ainfucion_Inicio = TimeInfucionesInicio.Text;
-                dp.Ainfucion_Final = textfin.Text;
+                dp.Ainfucion_Final = TimeInfucionesFin.Text;
                 dp.Ainfucion_Volumen = txtInfusionesVolumen.Text;
-                dp.Adrenaje_Inicio = text1inicio.Text;
+                dp.Adrenaje_Inicio = TimeDrenajeInicio.Text;
                 dp.Adrenaje_Volumen = txtDrenajeVolumen.Text;
                 dp.Abalance_Parcial = txtBalanceParcial.Text;
                 dp.Abalance_Total = txtBalanceTotal.Text;
-                dp.Asolucion_Usada1 = textsolucionusada1.Text;
-                dp.Asolucion_Usada2 = textsolucionusada2.Text;
+                dp.Asolucion_Usada1 = BoxSolucion1.Text;
+                dp.Asolucion_Usada2 = BoxSolucion2.Text;
                 dp.Aobservacion_Balance = textobservaciones.Text;
-                dp.Aid_hoja_enfermeria = texthojaenfermeria.Text;
-                dp.Aid_sesion = textsesion1.Text;
+               
 
                 dp.Guardar_Registros();
                 LimpiarTexto();

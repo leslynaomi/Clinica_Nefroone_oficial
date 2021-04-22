@@ -52,17 +52,17 @@ namespace capa_presentacion
             this.bmostrar = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.TimeInfucionesInicio = new System.Windows.Forms.DateTimePicker();
             this.TimeInfucionesFin = new System.Windows.Forms.DateTimePicker();
+            this.TimeInfucionesInicio = new System.Windows.Forms.DateTimePicker();
+            this.label14 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.TimeDrenajeInicio = new System.Windows.Forms.DateTimePicker();
+            this.label16 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.label19 = new System.Windows.Forms.Label();
             this.BoxSolucion1 = new System.Windows.Forms.ListBox();
             this.BoxSolucion2 = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.dda)).BeginInit();
@@ -124,7 +124,7 @@ namespace capa_presentacion
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(33, 2);
+            this.label4.Location = new System.Drawing.Point(55, 2);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(70, 15);
             this.label4.TabIndex = 6;
@@ -144,7 +144,7 @@ namespace capa_presentacion
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(38, 2);
+            this.label6.Location = new System.Drawing.Point(47, 2);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(90, 15);
             this.label6.TabIndex = 8;
@@ -178,7 +178,7 @@ namespace capa_presentacion
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(47, 1);
+            this.label8.Location = new System.Drawing.Point(68, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(68, 15);
             this.label8.TabIndex = 14;
@@ -292,6 +292,34 @@ namespace capa_presentacion
             this.panel1.Size = new System.Drawing.Size(187, 164);
             this.panel1.TabIndex = 31;
             // 
+            // TimeInfucionesFin
+            // 
+            this.TimeInfucionesFin.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.TimeInfucionesFin.Location = new System.Drawing.Point(85, 86);
+            this.TimeInfucionesFin.Name = "TimeInfucionesFin";
+            this.TimeInfucionesFin.Size = new System.Drawing.Size(70, 20);
+            this.TimeInfucionesFin.TabIndex = 37;
+            // 
+            // TimeInfucionesInicio
+            // 
+            this.TimeInfucionesInicio.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.TimeInfucionesInicio.Location = new System.Drawing.Point(85, 47);
+            this.TimeInfucionesInicio.Name = "TimeInfucionesInicio";
+            this.TimeInfucionesInicio.Size = new System.Drawing.Size(70, 20);
+            this.TimeInfucionesInicio.TabIndex = 36;
+            this.TimeInfucionesInicio.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(143, 128);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(27, 15);
+            this.label14.TabIndex = 12;
+            this.label14.Text = "ml.";
+            this.label14.Click += new System.EventHandler(this.label14_Click);
+            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.TimeDrenajeInicio);
@@ -304,6 +332,24 @@ namespace capa_presentacion
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(182, 163);
             this.panel2.TabIndex = 32;
+            // 
+            // TimeDrenajeInicio
+            // 
+            this.TimeDrenajeInicio.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.TimeDrenajeInicio.Location = new System.Drawing.Point(86, 46);
+            this.TimeDrenajeInicio.Name = "TimeDrenajeInicio";
+            this.TimeDrenajeInicio.Size = new System.Drawing.Size(70, 20);
+            this.TimeDrenajeInicio.TabIndex = 37;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(142, 83);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(27, 15);
+            this.label16.TabIndex = 14;
+            this.label16.Text = "ml.";
             // 
             // panel3
             // 
@@ -319,33 +365,15 @@ namespace capa_presentacion
             this.panel3.Size = new System.Drawing.Size(183, 163);
             this.panel3.TabIndex = 33;
             // 
-            // dateTimePicker2
+            // label18
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(843, 458);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker2.TabIndex = 34;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(143, 128);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(27, 15);
-            this.label14.TabIndex = 12;
-            this.label14.Text = "ml.";
-            this.label14.Click += new System.EventHandler(this.label14_Click);
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(142, 83);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(27, 15);
-            this.label16.TabIndex = 14;
-            this.label16.Text = "ml.";
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(142, 86);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(27, 15);
+            this.label18.TabIndex = 19;
+            this.label18.Text = "ml.";
             // 
             // label17
             // 
@@ -357,15 +385,12 @@ namespace capa_presentacion
             this.label17.TabIndex = 15;
             this.label17.Text = "ml.";
             // 
-            // label18
+            // dateTimePicker2
             // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(142, 86);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(27, 15);
-            this.label18.TabIndex = 19;
-            this.label18.Text = "ml.";
+            this.dateTimePicker2.Location = new System.Drawing.Point(843, 458);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker2.TabIndex = 34;
             // 
             // label19
             // 
@@ -376,31 +401,6 @@ namespace capa_presentacion
             this.label19.Size = new System.Drawing.Size(192, 29);
             this.label19.TabIndex = 35;
             this.label19.Text = "HEMODIALISIS";
-            // 
-            // TimeInfucionesInicio
-            // 
-            this.TimeInfucionesInicio.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.TimeInfucionesInicio.Location = new System.Drawing.Point(85, 47);
-            this.TimeInfucionesInicio.Name = "TimeInfucionesInicio";
-            this.TimeInfucionesInicio.Size = new System.Drawing.Size(70, 20);
-            this.TimeInfucionesInicio.TabIndex = 36;
-            this.TimeInfucionesInicio.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
-            // 
-            // TimeInfucionesFin
-            // 
-            this.TimeInfucionesFin.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.TimeInfucionesFin.Location = new System.Drawing.Point(85, 86);
-            this.TimeInfucionesFin.Name = "TimeInfucionesFin";
-            this.TimeInfucionesFin.Size = new System.Drawing.Size(70, 20);
-            this.TimeInfucionesFin.TabIndex = 37;
-            // 
-            // TimeDrenajeInicio
-            // 
-            this.TimeDrenajeInicio.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.TimeDrenajeInicio.Location = new System.Drawing.Point(86, 46);
-            this.TimeDrenajeInicio.Name = "TimeDrenajeInicio";
-            this.TimeDrenajeInicio.Size = new System.Drawing.Size(70, 20);
-            this.TimeDrenajeInicio.TabIndex = 37;
             // 
             // BoxSolucion1
             // 
