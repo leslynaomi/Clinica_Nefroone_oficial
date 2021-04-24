@@ -13,7 +13,7 @@ using System.Data.SqlClient;
 using capa_datos;
 using capa_negocio;
 
-using System.Linq;
+//using System.Linq;
 using Clinica_Nefroone;
 using capa_presentacion.Usuarios.Medico;
 using capa_presentacion.Usuarios.Farmaceutico;
@@ -132,12 +132,7 @@ namespace capa_presentacion
             //Mostrar Formulario de creación de nueva cuenta
             FrmCrearCuenta frm = new FrmCrearCuenta();
             frm.Show();
-        }
-
-        private void buttonCancelar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+        }        
 
         private void txtUsuario_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -147,6 +142,11 @@ namespace capa_presentacion
         private void txtContraseña_KeyPress(object sender, KeyPressEventArgs e)
         {
 
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

@@ -167,12 +167,6 @@
     <Compile Include="Usuarios\Enfermera\FrmHojaEnfermeria.Designer.cs">
       <DependentUpon>FrmHojaEnfermeria.cs</DependentUpon>
     </Compile>
-    <Compile Include="Usuarios\Medico\FrmHojaMedica.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Usuarios\Medico\FrmHojaMedica.Designer.cs">
-      <DependentUpon>FrmHojaMedica.cs</DependentUpon>
-    </Compile>
     <Compile Include="Usuarios\Secretario\FrmRegistrarPacientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -282,9 +276,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Usuarios\Enfermera\FrmHojaEnfermeria.resx">
       <DependentUpon>FrmHojaEnfermeria.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Usuarios\Medico\FrmHojaMedica.resx">
-      <DependentUpon>FrmHojaMedica.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Usuarios\Secretario\FrmHojaSecretaria.resx">
       <DependentUpon>FrmHojaSecretaria.cs</DependentUpon>

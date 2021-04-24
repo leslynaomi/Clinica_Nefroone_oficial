@@ -23,6 +23,7 @@ namespace capa_presentacion
             cmbSexo.DropDownStyle = ComboBoxStyle.DropDownList;
             cbxMunicipio.DropDownStyle = ComboBoxStyle.DropDownList;
             cbxRed.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbxAccesoV.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         ClsHojaSecretaria sec = new ClsHojaSecretaria();
@@ -83,6 +84,7 @@ namespace capa_presentacion
                 sec.Municipio = cbxMunicipio.Text;
                 sec.Seguro = cmbSeguro.Text;
                 sec.Fecha_PHemodialisis = dtpPrimHem.Text;
+                sec.Acceso_Vascular = cbxAccesoV.Text;
                 sec.CI1 = txtCi.Text;
                 sec.Id_empleado = Constantes.ID_Emp;
                 sec.Guardar_Registros();
@@ -110,7 +112,8 @@ namespace capa_presentacion
             cbxMunicipio.ResetText();
             cmbSeguro.ResetText();
             txtParam.Clear();
-            dtpPrimHem.ResetText();            
+            dtpPrimHem.ResetText();
+            cbxAccesoV.ResetText();
         }       
         
         private void txtNumTel_KeyPress(object sender, KeyPressEventArgs e)

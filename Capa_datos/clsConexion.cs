@@ -22,7 +22,7 @@ namespace capa_datos
             this.servidor = "Lenovo";
             this.usuario = "Pol";
             this.contrasena = "Pol";
-            this.basedatos = "Nefroone13";
+            this.basedatos = "Nefroone15";
             this.cmdSP = new SqlCommand();
 
             //constructor Alejandra

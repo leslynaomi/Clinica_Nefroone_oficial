@@ -22,6 +22,7 @@ namespace capa_negocio
         private string municipio;
         private string seguro;
         private string fecha_PHemodialisis;
+        private string acceso_Vascular;
         private string CI;
         private string id_empleado;
 
@@ -51,6 +52,7 @@ namespace capa_negocio
         public string Municipio { get => municipio; set => municipio = value; }
         public string Seguro { get => seguro; set => seguro = value; }
         public string Fecha_PHemodialisis { get => fecha_PHemodialisis; set => fecha_PHemodialisis = value; }
+        public string Acceso_Vascular { get => acceso_Vascular; set => acceso_Vascular = value; }
         public string CI1 { get => CI; set => CI = value; }
         public string Id_empleado { get => id_empleado; set => id_empleado = value; }
 
@@ -74,6 +76,7 @@ namespace capa_negocio
             AddParametro("@municipio", municipio);
             AddParametro("@seguro", seguro);
             AddParametro("@fecha_PHemodialisis", fecha_PHemodialisis);
+            AddParametro("@acceso_Vascular", acceso_Vascular);
             AddParametro("@CI", CI);
             AddParametro("@id_empleado", id_empleado);
             ejecutarSP();
@@ -82,7 +85,7 @@ namespace capa_negocio
         public DataSet Mostrar_Registros()
         {
             string s;
-            s = "select pac.ci,nombre,paterno,materno,fecha_Nac as 'fecha de nacimiento',edad,sexo,direccion,nro_familiar_Contacto as 'Teléfono',formulario_Referencia,carta_Negativa,grado_Intruccion as 'grado de instrucción',red,municipio,seguro,fecha_PHemodialisis as 'primera fecha de hemodiálisis' from Paciente as pac,Hoja_Secretaria as sec where pac.ci=sec.ci";
+            s = "select pac.ci,nombre,paterno,materno,fecha_Nac as 'fecha de nacimiento',edad,sexo,direccion,nro_familiar_Contacto as 'Teléfono',formulario_Referencia,carta_Negativa,grado_Intruccion as 'grado de instrucción',red,municipio,seguro,fecha_PHemodialisis as 'primera fecha de hemodiálisis',acceso_Vascular from Paciente as pac,Hoja_Secretaria as sec where pac.ci=sec.ci";
             DataSet ds = new DataSet();
             ejecutarSQL(s, "tac", ds);
             return ds;
@@ -100,6 +103,7 @@ namespace capa_negocio
             AddParametro("@municipio", municipio);
             AddParametro("@seguro", seguro);
             AddParametro("@fecha_PHemodialisis", fecha_PHemodialisis);
+            AddParametro("@acceso_Vascular", acceso_Vascular);
             AddParametro("@CI", CI);
             AddParametro("@id_empleado", id_empleado);
             ejecutarSP();
@@ -108,7 +112,7 @@ namespace capa_negocio
         public void Eliminar_Registros()
         {
             IniciarSP("eliminar_hoja_sec");
-            AddParametro("@nro_reg", id_hojaS);
+            AddParametro("@id_hojaS", id_hojaS);
             AddParametro("@CI", CI);
             AddParametro("@id_empleado", id_empleado);
             ejecutarSP();
@@ -118,7 +122,7 @@ namespace capa_negocio
         {
             string s;
             DataSet ds = new DataSet();
-            s = "select pac.ci,nombre,paterno,materno,fecha_Nac as 'fecha de nacimiento',edad,sexo,direccion,nro_familiar_Contacto as 'Teléfono',formulario_Referencia,carta_Negativa,grado_Intruccion as 'grado de instrucción',red,municipio,seguro,fecha_PHemodialisis as 'primera fecha de hemodiálisis' from Paciente as pac,Hoja_Secretaria as sec where pac.ci=sec.ci and edad like " + dato;
+            s = "select pac.ci,nombre,paterno,materno,fecha_Nac as 'fecha de nacimiento',edad,sexo,direccion,nro_familiar_Contacto as 'Teléfono',formulario_Referencia,carta_Negativa,grado_Intruccion as 'grado de instrucción',red,municipio,seguro,fecha_PHemodialisis as 'primera fecha de hemodiálisis',acceso_Vascular from Paciente as pac,Hoja_Secretaria as sec where pac.ci=sec.ci and edad like " + dato;
             try
             {                
                 ejecutarSQL(s, "tac", ds);
@@ -134,7 +138,7 @@ namespace capa_negocio
         {
             string s;
             DataSet ds = new DataSet();
-            s = "select pac.ci,nombre,paterno,materno,fecha_Nac as 'fecha de nacimiento',edad,sexo,direccion,nro_familiar_Contacto as 'Teléfono',formulario_Referencia,carta_Negativa,grado_Intruccion as 'grado de instrucción',red,municipio,seguro,fecha_PHemodialisis as 'primera fecha de hemodiálisis' from Paciente as pac,Hoja_Secretaria as sec where pac.ci=sec.ci and nombre like '" + dato + "%'";
+            s = "select pac.ci,nombre,paterno,materno,fecha_Nac as 'fecha de nacimiento',edad,sexo,direccion,nro_familiar_Contacto as 'Teléfono',formulario_Referencia,carta_Negativa,grado_Intruccion as 'grado de instrucción',red,municipio,seguro,fecha_PHemodialisis as 'primera fecha de hemodiálisis',acceso_Vascular from Paciente as pac,Hoja_Secretaria as sec where pac.ci=sec.ci and nombre like '" + dato + "%'";
             try
             {
                 ejecutarSQL(s, "tac", ds);
@@ -150,7 +154,7 @@ namespace capa_negocio
         {
             string s;
             DataSet ds = new DataSet();
-            s = "select pac.ci,nombre,paterno,materno,fecha_Nac as 'fecha de nacimiento',edad,sexo,direccion,nro_familiar_Contacto as 'Teléfono',formulario_Referencia,carta_Negativa,grado_Intruccion as 'grado de instrucción',red,municipio,seguro,fecha_PHemodialisis as 'primera fecha de hemodiálisis' from Paciente as pac,Hoja_Secretaria as sec where pac.ci=sec.ci and (paterno like '" + dato + "%') or materno like '" + dato + "%')";
+            s = "select pac.ci,nombre,paterno,materno,fecha_Nac as 'fecha de nacimiento',edad,sexo,direccion,nro_familiar_Contacto as 'Teléfono',formulario_Referencia,carta_Negativa,grado_Intruccion as 'grado de instrucción',red,municipio,seguro,fecha_PHemodialisis as 'primera fecha de hemodiálisis',acceso_Vascular from Paciente as pac,Hoja_Secretaria as sec where pac.ci=sec.ci and (paterno like '" + dato + "%') or materno like '" + dato + "%')";
             try
             {
                 ejecutarSQL(s, "tac", ds);
@@ -166,7 +170,7 @@ namespace capa_negocio
         {
             string s;
             DataSet ds = new DataSet();
-            s = "select pac.ci,nombre,paterno,materno,fecha_Nac as 'fecha de nacimiento',edad,sexo,direccion,nro_familiar_Contacto as 'Teléfono',formulario_Referencia,carta_Negativa,grado_Intruccion as 'grado de instrucción',red,municipio,seguro,fecha_PHemodialisis as 'primera fecha de hemodiálisis' from Paciente as pac,Hoja_Secretaria as sec where pac.ci=sec.ci and pac.ci like '" + dato + "%')";
+            s = "select pac.ci,nombre,paterno,materno,fecha_Nac as 'fecha de nacimiento',edad,sexo,direccion,nro_familiar_Contacto as 'Teléfono',formulario_Referencia,carta_Negativa,grado_Intruccion as 'grado de instrucción',red,municipio,seguro,fecha_PHemodialisis as 'primera fecha de hemodiálisis',acceso_Vascular from Paciente as pac,Hoja_Secretaria as sec where pac.ci=sec.ci and pac.ci like '" + dato + "%')";
             try
             {
                 ejecutarSQL(s, "tac", ds);

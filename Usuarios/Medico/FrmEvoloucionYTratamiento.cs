@@ -67,19 +67,20 @@ namespace capa_presentacion
         private void btnInsertarRegistros_Click(object sender, EventArgs e)
         {
             try
-            {                
-                evol.Nro_Seguro = txtNroSeguro.Text;
+            {
+                /*evol.Nro_Seguro = txtNroSeguro.Text;
                 evol.Ultra_Filtracion = txtUltraFil.Text;
                 evol.Duracion = cbxDuracion.Text;
                 evol.Flujo_Dialisis = txtFlujoDial.Text;
                 evol.Evolucion_Clinica = rtbEvolClin.Text;
-                evol.Detalles_Medicacion = txtDetMed.Text;
+                evol.Detalles_Medicacion = txtNroUsoFiltro.Text;
                 evol.Tipo_Tratamiento = txtTipoTrat.Text;
                 evol.Id_hoja_enfermeria = txtIDHojaEnf.Text;
                 evol.Id_empleado = txtIDEmp.Text;
                 evol.Guardar_Registros();
-                LimpiarTexto();
-                MessageBox.Show("Insertado correctamente", "INFORMACION");
+                LimpiarTexto();*/
+                //MessageBox.Show("Insertado correctamente", "INFORMACION");
+                MessageBox.Show("Botón y formulario aún no programado!! Vuelva pronto", "INFORMACION");
             }
             catch (Exception er)
             {
@@ -89,19 +90,19 @@ namespace capa_presentacion
 
         private void LimpiarTexto()
         {
-            txtNroSeguro.Clear();
+            /*txtNroSeguro.Clear();
             txtUltraFil.Clear();
             cbxDuracion.ResetText();
             txtFlujoDial.Clear();
             rtbEvolClin.Clear();
-            txtDetMed.Clear();
+            txtNroUsoFiltro.Clear();
             txtTipoTrat.Clear();
             txtIDHojaEnf.Clear();
             txtIDEmp.Clear();
             txtParamBusc.Clear();
-            txtParamModElim.Clear();
+            txtParamModElim.Clear();*/
         }
-
+/*
         private void btnModificarRegistros_Click(object sender, EventArgs e)
         {
             try
@@ -112,13 +113,13 @@ namespace capa_presentacion
                 }
                 else
                 {
-                    evol.Id_evolucion_tratamiento = txtParamModElim.Text;
+                    evol.id_hojaEvolT = txtParamModElim.Text;
                     evol.Nro_Seguro = txtNroSeguro.Text;
                     evol.Ultra_Filtracion = txtUltraFil.Text;
                     evol.Duracion = cbxDuracion.Text;
                     evol.Flujo_Dialisis = txtFlujoDial.Text;
                     evol.Evolucion_Clinica = rtbEvolClin.Text;
-                    evol.Detalles_Medicacion = txtDetMed.Text;
+                    evol.Detalles_Medicacion = txtNroUsoFiltro.Text;
                     evol.Tipo_Tratamiento = txtTipoTrat.Text;
                     evol.Id_hoja_enfermeria = txtIDHojaEnf.Text;
                     evol.Id_empleado = txtIDEmp.Text;
@@ -141,7 +142,7 @@ namespace capa_presentacion
                 {
                     MessageBox.Show("Debe colocar un valor de ID de la hoja de evolución y tratamiento, una ID de la Hoja de Control de Enfermería y un ID de empleado para poder proceder");
                 }
-                evol.Id_evolucion_tratamiento = txtParamModElim.Text;
+                evol.id_hojaEvolT = txtParamModElim.Text;
                 evol.Id_hoja_enfermeria = txtIDHojaEnf.Text;
                 evol.Id_empleado = txtIDEmp.Text;
                 evol.Eliminar_Registros();
@@ -152,6 +153,6 @@ namespace capa_presentacion
             {
                 MessageBox.Show("Error al eliminar" + er.ToString());
             }
-        }
+        }*/
     }
 }

@@ -30,10 +30,12 @@ namespace capa_presentacion
             }
         }
         
+        //Convertir un DataTable a String
         public string DatatableToString(DataTable dt) 
         {                
             string result = string.Join(Environment.NewLine, dt.Rows.OfType<DataRow>().Select(x => string.Join(" ; ", x.ItemArray)));
             return result;
         }
+        
     }
 }

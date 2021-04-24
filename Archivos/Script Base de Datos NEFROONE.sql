@@ -1,6 +1,9 @@
 --Creación de la base de datos
---create database Nefroone13
---use Nefroone13
+--create database Nefroone15
+--use Nefroone15
+
+--Eliminar un Procedimiento
+--drop proc insertar_paciente
 
 --Para borrar un trigger completamente de la base de datos
 --drop trigger Habitacion_Libre
@@ -10,7 +13,7 @@
 --enable trigger Habitacion_Libre on detalle_habitacion
 
 --Eliminación de la base de datos
---drop database Nefroone9
+--drop database Nefroone13
 
 --Consulta para ver todas las tablas en una base de datos
 --SELECT CAST(table_name as varchar)  FROM INFORMATION_SCHEMA.TABLES
@@ -40,14 +43,6 @@ usuario varchar(30) not null,
 passwd varchar(30) not null
 )
 
-create table Sesion(
-id_sesion int primary key identity(1,1) not null,
-tipo_Sesion varchar(50),
-cantidad_Sesiones int,
-total_Sesiones int, 
-horario time,
-)
-
 create table Hoja_Secretaria(
 id_hojaS int primary key identity(1,1) not null,
 nro_familiar_Contacto int,
@@ -58,28 +53,11 @@ red varchar(50),
 municipio varchar(50),
 seguro varchar(50),
 fecha_PHemodialisis date,
+acceso_Vascular varchar(50),
 CI int not null,
 id_empleado int not null,
 foreign key (CI) references Paciente (CI),
 foreign key (id_empleado) references Empleado(id_empleado)
-)
-
-create table Hoja_Medica(
-id_hojaM int primary key identity(1,1) not null,
-nro_Uso_Filtro varchar(20),
-diagnostico varchar(50),
-peso_Seco float,
-serologia varchar(50),
-talla float,
-imc float,
-vih bit,
-acceso_Vascular varchar(50),
-grupo_Sanguineo varchar(50),
-solucion_Dializante varchar(50),
-id_empleado int not null,
-id_hojaS int not null,
-foreign key (id_empleado) references Empleado(id_empleado),
-foreign key (id_hojaS) references Hoja_Secretaria(id_hojaS)
 )
 
 create table Nota_Enfermeria(
@@ -87,41 +65,72 @@ id_nota int primary key identity(1,1) not null,
 descripcion varchar(200)
 )
 
-create table Control_Enfermeria(
-id_hoja_enfermeria int identity(1,1) not null,
+create table Sesion(
+id_sesion int primary key identity(1,1) not null,
 fecha_Sesion date,
+peso_Inicial float,
+peso_Final float,
+id_empleado int not null,
+id_nota int not null,
+id_hojaS int not null,
+foreign key (id_hojaS) references Hoja_Secretaria(id_hojaS),
+foreign key(id_empleado) references Empleado(id_empleado),
+foreign key (id_nota) references Nota_Enfermeria(id_nota)
+)
+
+create table Control_Enfermeria(
+id_HojaE int primary key identity(1,1) not null,
 nro_Sesion_HD int,
 hora_Inicio time,
 hora_Salida time,
-peso_Inicial float,
-peso_Final float,
 U_F_Programada varchar(50),
 heparina varchar(50),
-flujo_Efectivo money,
+flujo_Efectivo varchar(50),
 presion_Arterial varchar(50),
 temperatura float,
 pulso varchar(50),
 saturacion varchar(50),
-id_hojaS int not null,
-id_empleado int not null,
-id_nota int not null,
 id_sesion int not null,
-primary key(id_hoja_enfermeria,id_hojaS),
-foreign key(id_empleado) references Empleado (id_empleado),
-foreign key (id_nota) references Nota_Enfermeria(id_nota),
 foreign key (id_sesion) references Sesion(id_sesion)
 )
 
+create table Dialisis_Peritoneal(
+id_hojaDP int primary key identity(1,1) not null,
+nro_Dialisis int,
+infucion_Inicio time,
+infucion_Final time,
+infucion_Volumen varchar(50),
+drenaje_Inicio date,
+drenaje_Volumen varchar (50),
+balance_Parcial varchar(50),
+balance_Total varchar(50), 
+solucion_Usada1 varchar(50),
+solucion_Usada2 varchar(50),
+observacion_Balance varchar(100),
+total_Dialisis int,
+variedad_De_Peso varchar(50),
+id_sesion int not null,
+foreign key(id_sesion) references Sesion(id_sesion),
+)
+
 create table Evolucion_Tratamiento(
-id_evolucion_tratamiento int primary key identity(1,1) not null,
-duracion time,
+id_hojaEvolT int primary key identity(1,1) not null,
+duracion varchar(20),
 flujo_Dialisis varchar(50),
 evolucion_Clinica varchar(300),
-id_hoja_enfermeria int not null,
+nro_Uso_Filtro int,
+diagnostico varchar(50),
+peso_Seco float,
+serologia varchar(50),
+talla float,
+imc float,
+vih bit,
+grupo_Sanguineo varchar(50),
+solucion_Dializante varchar(50),
+id_sesion int,
 id_empleado int not null,
-id_hojaS int not null,
-foreign key(id_hoja_enfermeria,id_hojaS) references Control_Enfermeria(id_hoja_enfermeria,id_hojaS),
-foreign key(id_empleado) references Empleado(id_empleado)
+foreign key(id_empleado) references Empleado(id_empleado),
+foreign key(id_sesion) references Sesion(id_sesion)
 )
 
 create table Medicamento(
@@ -138,10 +147,10 @@ id_receta int primary key identity(1,1) not null,
 fecha date,
 ci int not null,
 id_empleado int not null,
-id_evolucion_tratamiento int,
+id_hojaEvolT int,
 foreign key(ci) references Paciente(ci),
 foreign key(id_empleado) references Empleado(id_empleado),
-foreign key (id_evolucion_tratamiento) references Evolucion_Tratamiento(id_evolucion_tratamiento)
+foreign key (id_hojaEvolT) references Evolucion_Tratamiento(id_hojaEvolT)
 )
 
 create table Detalle_Receta(
@@ -153,44 +162,8 @@ foreign key(id_medicamento) references Medicamento(id_medicamento),
 foreign key (id_receta) references Receta(id_receta)
 )
 
-create table Cateter(
-id_sesion int primary key not null,
-foreign key(id_sesion) references Sesion(id_sesion)
-)
-
-create table Fistula(
-id_sesion int primary key not null,
-foreign key(id_sesion) references Sesion(id_sesion)
-)
-
-create table Dialisis_Peritoneal(
-id_sesion int primary key,
-fecha_Dialisis date,
-peso_Inicial varchar(30),
-peso_Final varchar(30),
-nro_Sesion int,
-infucion_Inicio time,
-infucion_Final time,
-infucion_Volumen varchar(50),
-drenaje_Inicio date,
-drenaje_Volumen varchar (50),
-balance_Parcial varchar(50),
-balance_Total varchar(50), 
-solucion_Usada1 varchar(50),
-solucion_Usada2 varchar(50),
-observacion_Balance varchar(100), 
-id_nota int,
-id_empleado int,
-foreign key(id_empleado) references Empleado(id_empleado),
-foreign key(id_sesion) references Sesion(id_sesion),
-foreign key (id_nota) references Nota_Enfermeria(id_nota),
-)
-
 -------------				Procedimientos Almacenados					-----------------
 ------------						PACIENTE
---Eliminar un Procedimiento
---drop proc insertar_paciente
-
 go
 --PROCEDIMIENTO INSERTAR PACIENTE
 create proc insertar_paciente(
@@ -394,6 +367,7 @@ create proc insertar_hoja_sec(
 @municipio varchar(50),
 @seguro varchar(50),
 @fecha_PHemodialisis date,
+@acceso_Vascular varchar(50),
 @CI int,
 @id_empleado int
 )as
@@ -407,7 +381,7 @@ begin
 		end
 		else
 		begin			
-			insert into Hoja_Secretaria values(@nro_familiar_Contacto,@formulario_Referencia,@carta_Negativa,@grado_Intruccion,@red,@municipio,@seguro,@fecha_PHemodialisis,@CI,@id_empleado)
+			insert into Hoja_Secretaria values(@nro_familiar_Contacto,@formulario_Referencia,@carta_Negativa,@grado_Intruccion,@red,@municipio,@seguro,@fecha_PHemodialisis,@acceso_vascular,@CI,@id_empleado)
 			commit tran
 		end
 	end try
@@ -428,6 +402,7 @@ create proc modificar_hoja_sec(
 @municipio varchar(50),
 @seguro varchar(50),
 @fecha_PHemodialisis date,
+@acceso_Vascular varchar(50),
 @CI int,
 @id_empleado int
 )as
@@ -443,6 +418,7 @@ begin
 				municipio=@municipio,
 				seguro=@seguro,
 				fecha_PHemodialisis=@fecha_PHemodialisis,
+				acceso_Vascular=@acceso_Vascular,
 				CI=@CI,
 				id_empleado=@id_empleado
 			where id_hojaS=@id_hojaS and CI=@CI and id_empleado=@id_empleado
@@ -470,94 +446,6 @@ begin
 	end try
 	begin catch
 		raiserror('Error eliminando hoja de registro',16,1) 
-		rollback tran
-	end catch
-end
-
-------------						HOJA MEDICA
-go
---PROCEDIMIENTO INSERTAR HOJA MEDICA
-create proc insertar_hoja_medica(
-@nro_Uso_Filtro varchar(20),
-@diagnostico varchar(50),
-@peso_Seco float,
-@serologia varchar(50),
-@talla float,
-@imc float,
-@vih bit,
-@acceso_Vascular varchar(50),
-@grupo_Sanguineo varchar(50),
-@solucion_Dializante varchar(50),
-@id_empleado int,
-@id_hojaS int
-)as
-begin
-	begin try
-		begin tran		
-			insert into Hoja_Medica values(@nro_Uso_Filtro,@diagnostico,@peso_Seco,@serologia,@talla,@imc,@vih,@acceso_Vascular,@grupo_Sanguineo,@solucion_Dializante,@id_empleado,@id_hojaS)
-			commit tran
-	end try
-	begin catch
-		raiserror('Error insertando hoja médica',16,1) 
-		rollback tran
-	end catch
-end
-go
---PROCEDIMIENTO MODIFICAR HOJA MEDICA
-create proc modificar_hoja_medica(
-@id_hojaM int,
-@nro_Uso_Filtro varchar(20),
-@diagnostico varchar(50),
-@peso_Seco float,
-@serologia varchar(50),
-@talla float,
-@imc float,
-@vih bit,
-@acceso_Vascular varchar(50),
-@grupo_Sanguineo varchar(50),
-@solucion_Dializante varchar(50),
-@id_empleado int,
-@id_hojaS int
-)as
-begin
-	begin try
-		begin tran
-			update Hoja_Medica
-			set nro_Uso_Filtro=@nro_Uso_Filtro,
-				diagnostico=@diagnostico,
-				peso_Seco=@peso_Seco,
-				serologia=@serologia,
-				talla=@talla,
-				imc=@imc,
-				vih=vih,
-				acceso_Vascular=@acceso_Vascular,
-				grupo_Sanguineo=@grupo_Sanguineo,
-				solucion_Dializante=@solucion_Dializante,
-				id_empleado=@id_empleado,
-				id_hojaS=@id_hojaS
-			where id_hojaM=@id_hojaM and id_empleado=@id_empleado and id_hojaS=@id_hojaS
-			commit tran
-	end try
-	begin catch
-		raiserror('Error modificando hoja medica',16,1) 
-		rollback tran
-	end catch
-end
-go
---PROCEDIMIENTO ELIMINAR HOJA MEDICA
-create proc eliminar_hoja_medica(
-@id_hojaM int,
-@id_empleado int
-)as
-begin
-	begin try
-		begin tran
-			delete Hoja_Medica			
-			where id_hojaM=@id_hojaM and id_empleado=@id_empleado
-			commit tran
-	end try
-	begin catch
-		raiserror('Error eliminando hoja medica',16,1) 
 		rollback tran
 	end catch
 end
@@ -614,31 +502,78 @@ go
 --PROCEDIMIENTO ELIMINAR RECETA
 
 
-------------						CONTROL ENFERMERIA (Hoja enfermería)
+
+*/
+
+
+------------					NOTA ENFERMERIA
 go
---PROCEDIMIENTO INSERTAR CONTROL ENFERMERIA
-create proc insertar_control_enfermeria(
-@fecha_Sesion date,
-@nro_Sesion_HD int,
-@hora_Inicio time,
-@hora_Salida time,
-@peso_Inicial float,
-@peso_Final float,
-@U_F_Programada varchar(50),
-@heparina varchar(50),
-@flujo_Efectivo varchar(20),
-@presion_Arterial varchar(50),
-@temperatura float,
-@pulso varchar(50),
-@saturacion varchar(50),
-@id_hojaS int,
-@id_empleado int
+--PROCEDIMIENTO INSERTAR NOTA ENFERMERIA
+create proc insertar_nota_enf(
+@descripcion varchar(200)
 )as
 begin
 	begin try
 		begin tran
-			insert into Control_Enfermeria values(@fecha_Sesion,@nro_Sesion_HD,@hora_Inicio,@hora_Salida,@peso_Inicial,@peso_Final,@U_F_Programada,@heparina,@flujo_Efectivo,@presion_Arterial,@temperatura,@pulso,@saturacion,@id_hojaS,@id_empleado)
-		commit tran
+			insert into Nota_Enfermeria values(@descripcion)
+			commit tran
+	end try
+	begin catch		
+		raiserror('Error insertando Nota de Enfermería',16,1) 
+		rollback tran
+	end catch
+end
+
+------------						SESION
+go
+--PROCEDIMIENTO INSERTAR SESION
+create proc insertar_sesion(
+@fecha_Sesion date,
+@peso_Inicial float,
+@peso_Final float,
+@id_empleado int,
+@id_nota int,
+@id_hojaS int
+)as
+begin
+	begin try
+		begin tran
+			insert into Sesion values(@fecha_Sesion,@peso_Inicial,@peso_Final,@id_empleado,@id_nota,@id_hojaS)
+			commit tran
+	end try
+	begin catch		
+		raiserror('Error al insertar el registro de la sesión',16,1) 
+		rollback tran
+	end catch
+end
+go
+--PROCEDIMIENTO MODIFICAR SESION
+
+go
+--PROCEDIMIENTO ELIMINAR SESION
+
+------------						CONTROL ENFERMERIA (Hoja enfermería)
+go
+--PROCEDIMIENTO INSERTAR CONTROL ENFERMERIA
+create proc insertar_control_enfermeria(
+@nro_Sesion_HD int,
+@hora_Inicio time,
+@hora_Salida time,
+@U_F_Programada varchar(50),
+@heparina varchar(50),
+@flujo_Efectivo varchar(50),
+@presion_Arterial varchar(50),
+@temperatura float,
+@pulso varchar(50),
+@saturacion varchar(50),
+@id_sesion int
+)as
+begin
+	begin try
+		begin tran
+			--insert into Control_Enfermeria values(@nro_Sesion_HD,@hora_Inicio,@hora_Salida,@U_F_Programada,@heparina,@flujo_Efectivo,@presion_Arterial,@temperatura,@pulso,@saturacion,@id_sesion)
+			insert into Control_Enfermeria values(@nro_Sesion_HD,@hora_Inicio,@hora_Salida,@U_F_Programada,@heparina,@flujo_Efectivo,@presion_Arterial,@temperatura,@pulso,@saturacion,@id_sesion)			
+			commit tran
 	end try
 	begin catch
 		raiserror('Error insertando hoja de control de enfermería',16,1) 
@@ -648,33 +583,26 @@ end
 go
 --PROCEDIMIENTO MODIFICAR CONTROL ENFERMERIA
 create proc modificar_control_enfermeria(
-@id_hoja_enfermeria int,
-@fecha_Sesion date,
+@id_hojaE int,
 @nro_Sesion_HD int,
 @hora_Inicio time,
 @hora_Salida time,
-@peso_Inicial float,
-@peso_Final float,
 @U_F_Programada varchar(50),
 @heparina varchar(50),
-@flujo_Efectivo varchar(20),
+@flujo_Efectivo varchar(50),
 @presion_Arterial varchar(50),
 @temperatura float,
 @pulso varchar(50),
 @saturacion varchar(50),
-@id_hojaS int,
-@id_empleado int
+@id_sesion int
 )as
 begin
 	begin try
 		begin tran
 			update Control_Enfermeria
-			set fecha_Sesion=@fecha_Sesion,
-				nro_Sesion_HD=@nro_Sesion_HD,
+			set nro_Sesion_HD=@nro_Sesion_HD,
 				hora_Inicio=@hora_Inicio,
 				hora_Salida=@hora_Salida,
-				peso_Inicial=@peso_Inicial,
-				peso_Final=@peso_Final,
 				U_F_Programada=@U_F_Programada,
 				heparina=@heparina,
 				flujo_Efectivo=@flujo_Efectivo,
@@ -682,9 +610,8 @@ begin
 				temperatura=@temperatura,
 				pulso=@pulso,
 				saturacion=@saturacion,
-				id_hojaS=@id_hojaS,
-				id_empleado=@id_empleado
-			where id_empleado=@id_empleado and id_hoja_enfermeria=@id_hoja_enfermeria and id_hojaS=@id_hojaS
+				id_sesion=@id_sesion
+			where id_sesion=@id_sesion and id_HojaE=@id_hojaE
 		commit tran
 	end try
 	begin catch
@@ -695,15 +622,13 @@ end
 go
 --PROCEDIMIENTO ELIMINAR CONTROL ENFERMERIA
 create proc eliminar_control_enfermeria(
-@id_hoja_enfermeria int,
-@id_hojaS int,
-@id_empleado int
+@id_hojaE int
 )as
 begin
 	begin try
 		begin tran
 			delete Control_Enfermeria
-			where id_hoja_enfermeria=@id_hoja_enfermeria and id_hojaS=@id_hojaS and id_empleado=@id_empleado
+			where id_hojaE=@id_hojaE
 		commit tran
 	end try
 	begin catch
@@ -711,24 +636,30 @@ begin
 		rollback tran
 	end catch	
 end
+
 ------------						EVOLUCION TRATAMIENTO
 go
 --PROCEDIMIENTO INSERTAR EVOLUCION TRATAMIENTO
 create proc insertar_evolucion_y_tratamiento(
-@nro_Seguro int,
-@ultra_Filtracion varchar(50),
 @duracion varchar(20),
 @flujo_Dialisis varchar(50),
 @evolucion_Clinica varchar(300),
-@detalles_Medicacion varchar(200),
-@tipo_Tratamiento varchar(30),
-@id_hoja_enfermeria int,
+@nro_Uso_Filtro int,
+@diagnostico varchar(50),
+@peso_Seco float,
+@serologia varchar(50),
+@talla float,
+@imc float,
+@vih bit,
+@grupo_Sanguineo varchar(50),
+@solucion_Dializante varchar(50),
+@id_sesion int,
 @id_empleado int
 )as
 begin
 	begin try
 		begin tran
-			insert into Evolucion_Tratamiento values(@nro_Seguro,@ultra_Filtracion,@duracion,@flujo_Dialisis,@evolucion_Clinica,@detalles_Medicacion,@tipo_Tratamiento,@id_hoja_enfermeria,@id_empleado)
+			insert into Evolucion_Tratamiento values(@duracion,@flujo_Dialisis,@evolucion_Clinica,@nro_Uso_Filtro,@diagnostico,@peso_Seco,@serologia,@talla,@imc,@vih,@grupo_Sanguineo,@solucion_Dializante,@id_sesion,@id_empleado)
 		commit tran
 	end try
 	begin catch
@@ -739,31 +670,41 @@ end
 go
 --PROCEDIMIENTO MODIFICAR EVOLUCION TRATAMIENTO
 create proc modificar_evolucion_y_tratamiento(
-@id_evolucion_tratamiento int,
-@nro_Seguro int,
-@ultra_Filtracion varchar(50),
+@id_hojaEvolT int,
 @duracion varchar(20),
 @flujo_Dialisis varchar(50),
 @evolucion_Clinica varchar(300),
-@detalles_Medicacion varchar(200),
-@tipo_Tratamiento varchar(30),
-@id_hoja_enfermeria int,
+@nro_Uso_Filtro int,
+@diagnostico varchar(50),
+@peso_Seco float,
+@serologia varchar(50),
+@talla float,
+@imc float,
+@vih bit,
+@grupo_Sanguineo varchar(50),
+@solucion_Dializante varchar(50),
+@id_sesion int,
 @id_empleado int
 )as
 begin
 	begin try
 		begin tran
 			update Evolucion_Tratamiento
-			set nro_Seguro=@nro_Seguro,
-				ultra_Filtracion=@ultra_Filtracion,
-				duracion=@duracion,
+			set duracion=@duracion,
 				flujo_Dialisis=@flujo_Dialisis,
 				evolucion_Clinica=@evolucion_Clinica,
-				detalles_Medicacion=@detalles_Medicacion,
-				tipo_Tratamiento=@tipo_Tratamiento,
-				id_hoja_enfermeria=@id_hoja_enfermeria,
+				nro_Uso_Filtro=@nro_Uso_Filtro,
+				diagnostico=@diagnostico,
+				peso_Seco=@peso_Seco,
+				serologia=@serologia,
+				talla=@talla,
+				imc=@imc,
+				vih=@vih,
+				grupo_Sanguineo=@grupo_Sanguineo,
+				solucion_Dializante=@solucion_Dializante,
+				id_sesion=@id_sesion,
 				id_empleado=@id_empleado
-			where id_empleado=@id_empleado and id_evolucion_tratamiento=@id_evolucion_tratamiento and id_empleado=@id_empleado
+			where id_hojaEvolT=@id_hojaEvolT and id_empleado=@id_empleado and id_sesion=@id_sesion
 		commit tran
 	end try
 	begin catch
@@ -774,15 +715,13 @@ end
 go
 --PROCEDIMIENTO ELIMINAR EVOLUCION TRATAMIENTO
 create proc eliminar_evolucion_y_tratamiento(
-@id_evolucion_tratamiento int,
-@id_hoja_enfermeria int,
-@id_empleado int
+@id_hojaEvolT int
 )as
 begin
 	begin try
 		begin tran
 			delete Evolucion_Tratamiento
-			where id_evolucion_tratamiento=@id_evolucion_tratamiento and id_hoja_enfermeria=@id_hoja_enfermeria and id_empleado=@id_empleado
+			where id_hojaEvolT=@id_hojaEvolT
 		commit tran
 	end try
 	begin catch
@@ -790,35 +729,7 @@ begin
 		rollback tran
 	end catch	
 end
-
-------------						SESION
-go
---PROCEDIMIENTO INSERTAR SESION
-
-go
---PROCEDIMIENTO MODIFICAR SESION
-
-go
---PROCEDIMIENTO ELIMINAR SESION
-
-------------						CATETER
-go
---PROCEDIMIENTO INSERTAR CATETER
-
-go
---PROCEDIMIENTO MODIFICAR CATETER
-
-go
---PROCEDIMIENTO ELIMINAR CATETER
-------------						FISTULA
-go
---PROCEDIMIENTO INSERTAR FISTULA
-
-go
---PROCEDIMIENTO MODIFICAR FISTULA
-
-go
---PROCEDIMIENTO ELIMINAR FISTULA
+/*
 ------------						DIALISIS PERITONEAL
 go
 
@@ -835,13 +746,13 @@ create proc insertar_dialisis_peritoneal(
 @solucion_Usada1 varchar(50),
 @solucion_Usada2 varchar(50),
 @observacion_Balance varchar(100),
-@id_hoja_enfermeria int,
+@id_hojaE int,
 @id_sesion int
 )as
 begin
 	begin try
 		begin tran
-			insert into Dialisis_Peritoneal values(@precio_Sesion_D_Peritoneal,@infucion_Inicio,@infucion_Final,@infucion_Volumen,@drenaje_Inicio,@drenaje_Volumen,@balance_Parcial,@balance_Total,@solucion_Usada1,@solucion_Usada2,@observacion_Balance,@id_hoja_enfermeria,@id_sesion)
+			insert into Dialisis_Peritoneal values(@precio_Sesion_D_Peritoneal,@infucion_Inicio,@infucion_Final,@infucion_Volumen,@drenaje_Inicio,@drenaje_Volumen,@balance_Parcial,@balance_Total,@solucion_Usada1,@solucion_Usada2,@observacion_Balance,@id_hojaE,@id_sesion)
 		commit tran
 	end try
 	begin catch
@@ -863,7 +774,7 @@ create proc modificar_dialisis_peritoneal(
 @solucion_Usada1 varchar(50),
 @solucion_Usada2 varchar(50),
 @observacion_Balance varchar(100),
-@id_hoja_enfermeria int,
+@id_hojaE int,
 @id_sesion int
 )as
 begin
@@ -881,7 +792,7 @@ begin
 				solucion_Usada1=@solucion_Usada1,
 				solucion_Usada2=@solucion_Usada2,
 				observacion_Balance=@observacion_Balance
-			where @id_hoja_enfermeria=id_hoja_enfermeria and @id_sesion=id_sesion
+			where @id_hojaE=id_hojaE and @id_sesion=id_sesion
 		commit tran
 	end try
 	begin catch
@@ -892,14 +803,14 @@ end
 go
 --PROCEDIMIENTO ELIMINAR DIALISIS PERITONEAL
 create proc eliminar_dialisis_peritoneal(
-@id_hoja_enfermeria int,
+@id_hojaE int,
 @id_sesion int
 )as
 begin
 	begin try
 		begin tran
 			delete Dialisis_Peritoneal 
-			where @id_hoja_enfermeria=id_hoja_enfermeria and @id_sesion=id_sesion
+			where @id_hojaE=id_hojaE and @id_sesion=id_sesion
 		commit tran
 	end try
 	begin catch
@@ -939,8 +850,8 @@ create proc ListarMedicamentos
 as
 select id_medicamento,nombre_Medicamento,presentacion,concentracion,stock
 from Medicamento
-go
 */
+go
 --Procedimiento de Damián para el Login
 create proc sp_login(
 @user varchar(30),
@@ -951,14 +862,14 @@ begin
 		begin tran
 			select id_empleado
 			from Empleado
-			where Usuario=@user and passwd=@passwd
+			where usuario=@user and passwd=@passwd
+		commit tran
 	end try
 	begin catch		
 		raiserror('Error en el usuario o la contraseña',16,1) 
 		rollback tran
 	end catch
 end
-
 /* AUN FALTA TERMINAR
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
 -----------------------------------------		REPORTES		-------------------------------------
@@ -1062,6 +973,7 @@ begin
 	begin try
 		begin tran
 			select tipo from Empleado where usuario=@user and passwd=@passwd
+		commit tran
 	end try
 	begin catch		
 		raiserror('Error encontrando el usuario en la base de datos',16,1) 
@@ -1077,6 +989,7 @@ begin
 	begin try
 		begin tran
 			select id_empleado from Empleado where usuario=@user and passwd=@passwd
+		commit tran
 	end try
 	begin catch		
 		raiserror('Error encontrando el usuario en la base de datos',16,1) 
@@ -1096,5 +1009,39 @@ begin
 	set edad=(select DATEDIFF(YEAR,fecha_Nac,GetDate()) from Paciente where ci=(select ci from inserted))
 	where ci=(select ci from inserted)
 end
-
-
+go
+create trigger verificar_dialisis_p
+on Dialisis_Peritoneal
+for INSERT
+as
+begin
+	declare @tipo_acces  varchar(20)
+	select @tipo_acces = (select acceso_Vascular from Sesion, Hoja_Secretaria,inserted where Hoja_Secretaria.id_hojaS =Sesion.id_hojaS and Sesion.id_sesion = inserted.id_sesion)
+	if(@tipo_acces)='Dialisis Peritoneal'
+		begin
+			print 'formulario creado'
+		end
+	else
+		begin
+			raiserror('no pertenece a este formulario',16,1) 	
+			ROLLBACK TRANSACTION
+		end
+end
+go
+create trigger verificar_ctrl_enf
+on Control_Enfermeria
+for INSERT
+as
+begin
+	declare @tipo_acces varchar(20)
+	select @tipo_acces = (select acceso_Vascular from Sesion, Hoja_Secretaria,inserted where Hoja_Secretaria.id_hojaS =Sesion.id_hojaS and Sesion.id_sesion = inserted.id_sesion)
+	if(@tipo_acces='Cateter' or @tipo_acces='Fistula')
+		begin
+			print 'formulario creado'
+		end
+	else
+		begin
+			raiserror('no pertenece a este formulario',16,1) 
+			ROLLBACK TRANSACTION
+		end
+end

@@ -35,7 +35,7 @@ namespace capa_presentacion
             this.Label3 = new System.Windows.Forms.Label();
             this.txtContraseña = new System.Windows.Forms.TextBox();
             this.btnEntrar = new System.Windows.Forms.Button();
-            this.buttonCancelar = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
             this.btnCrearCuenta = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -98,17 +98,17 @@ namespace capa_presentacion
             this.btnEntrar.UseVisualStyleBackColor = false;
             this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
             // 
-            // buttonCancelar
+            // btnSalir
             // 
-            this.buttonCancelar.BackColor = System.Drawing.Color.Crimson;
-            this.buttonCancelar.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.buttonCancelar.Location = new System.Drawing.Point(366, 279);
-            this.buttonCancelar.Name = "buttonCancelar";
-            this.buttonCancelar.Size = new System.Drawing.Size(75, 23);
-            this.buttonCancelar.TabIndex = 5;
-            this.buttonCancelar.Text = "Cancelar";
-            this.buttonCancelar.UseVisualStyleBackColor = false;
-            this.buttonCancelar.Click += new System.EventHandler(this.buttonCancelar_Click);
+            this.btnSalir.BackColor = System.Drawing.Color.Crimson;
+            this.btnSalir.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnSalir.Location = new System.Drawing.Point(366, 279);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(75, 23);
+            this.btnSalir.TabIndex = 5;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // btnCrearCuenta
             // 
@@ -129,7 +129,7 @@ namespace capa_presentacion
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(463, 314);
             this.Controls.Add(this.btnCrearCuenta);
-            this.Controls.Add(this.buttonCancelar);
+            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnEntrar);
             this.Controls.Add(this.txtContraseña);
             this.Controls.Add(this.Label3);
@@ -154,7 +154,7 @@ namespace capa_presentacion
         private System.Windows.Forms.Label Label3;
         private System.Windows.Forms.TextBox txtContraseña;
         private System.Windows.Forms.Button btnEntrar;
-        private System.Windows.Forms.Button buttonCancelar;
+        private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnCrearCuenta;
     }
 }

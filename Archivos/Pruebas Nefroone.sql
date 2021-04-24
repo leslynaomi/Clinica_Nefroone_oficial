@@ -1,49 +1,64 @@
 -----------------------------------------------------------------------------------------------------------
 -------------			POBLACIÓN DE TABLAS CON LOS PRODCEDIMIENTOS (PARA TESTEO)		-------------------
 -----------------------------------------------------------------------------------------------------------
-use Nefroone13
+--use Nefroone15
 go
---Usuario
-select *from Usuario
-exec insertar_usuario 'pol','123'
 
 --Empleado
-select *from Empleado
+--select *from Empleado
 --No reciben el id como parámetro, modificar y eliminar específicamente trabajan de forma
 --idependiente con el ci del empleado
-exec insertar_empleado 'Pepe','Vásquez','Muralla',9239544,'07/05/1978',7584329,'Enfermero',1
-exec modificar_empleado 'Chepeto','Vásquez','Muralla',9239543,'07/05/1978',7584329,'Administrador'
-exec eliminar_empleado 9239544
+exec insertar_empleado 'Pepe','Vásquez','Muralla',9239544,'07/05/1978',7584329,'Secretario','pol','123'
+--exec modificar_empleado 'Chepeto','Vásquez','Muralla',9239543,'07/05/1978',7584329,'Administrador'
+--exec eliminar_empleado 9239544
 go
 --Paciente
-select *from Paciente
+--select *from Paciente
 exec insertar_paciente 92452354,'Joaquin','Charles','Flower','13/08/1998',0,'M','Calle Cosorio'
-exec modificar_paciente 92452354,'Pedro','Contra','Barreras','13/08/1998',0,'M','Calle Alemán'
-exec eliminar_paciente 0
+--exec modificar_paciente 92452354,'Pedro','Contra','Barreras','13/08/1998',0,'M','Calle Alemán'
+--exec eliminar_paciente 0
 go
---Hoja Registro
-select *from Hoja_Secretaria
-exec insertar_hoja_sec 7249399,false,'Esta es una carta negativa','este es un grado instrucción','local','Montero','Este es un seguro','27/09/2021',92452354,1
-exec modificar_hoja_sec 1,7249399,true,'Esta es una carta negativa','este es un grado instrucción','local','Montero','Este es un seguro','27/09/2021',92452354
-exec eliminar_hoja_sec 6,92452354
+--Hoja Secretaria
+--select *from Hoja_Secretaria
+exec insertar_hoja_sec 7249399,1,1,'Profesional','Salud','Montero','SUS','12/03/2020','Cateter',92452354,1
+--exec modificar_hoja_sec 1,7249399,true,'Esta es una carta negativa','este es un grado instrucción','local','Montero','Este es un seguro','27/09/2021',92452354
+--exec eliminar_hoja_sec 6,92452354
+go
+
+--Nota_Enfermeria
+--select *from Nota_Enfermeria
+exec insertar_nota_enf 'Paciente ingresa al servicio de hemodiálisis con signos vitales normales'
+
+--Sesion
+--select *from Sesion
+exec insertar_sesion '10/03/2021',60.7,50,1,1,1
+
+--Control Enfermeria
+--select *from Control_Enfermeria
+exec insertar_control_enfermeria 1,'14:10','15:20','3000 ml','5000 ui','250 mlx','140/70/mHg',30,'68x','98%',1
+
+--Evolución y Tratamiento
+--select *from Evolucion_Tratamiento
+--Inserción
+exec insertar_evolucion_y_tratamiento '4 horas','500 mlxl','Paciente en regular estado general',3,'Insuficiencia Renal Crónica',63,'Hepatitis B y C Negativo',1.54,32,0,'ORH (+)','Bicarbonato',1,1
+--Super Consulta para mostrar datos en el DataGridView
+/*
+select nro_Sesion_HD,fecha_Sesion,evolucion_Clinica,duracion,flujo_Efectivo,U_F_Programada,flujo_Dialisis,heparina,acceso_Vascular,nro_Uso_Filtro,diagnostico,peso_Seco,serologia,talla,imc,vih,grupo_Sanguineo,solucion_Dializante,nombre as 'Médico',paterno as 'Médico'
+from Evolucion_Tratamiento as evol,Sesion as ses,Control_Enfermeria as enf,Hoja_Secretaria as sec,Empleado as emp
+where evol.id_sesion=ses.id_sesion and ses.id_sesion=enf.id_sesion and sec.id_hojaS=ses.id_hojaS and emp.id_empleado=ses.id_empleado
+*/
+
+--Procedimientos para el Login
+--exec sp_login 'pol','123'
+--exec encontrar_tipo_usuario 'pol','123'
+--exec encontrar_ID_empleado 'pol','123'
+
 
 /*
---Hoja Médica
-select *from Hoja_Medica
-exec insertar_hoja_medica 23,'Fiebre y mucho cansancio',42.5,'esta es una serologia',1.70,23,true,'Cateter','O-RH Negativo','Esta es una solución dializante',1
-exec modificar_hoja_medica 1,23,'Tos y fiebre',42.5,'esta es una serologia',1.70,23,true,'Cateter','O-RH Negativo','Esta es una solución dializante',1
-exec eliminar_hoja_medica 2,1 --Funciona con el id de la hoja médica
-go
 --Hoja Control de Enfermería
-select *from Control_Enfermeria
-exec insertar_control_enfermeria '12/05/2021',1,'14:10','15:20',60.6,58.8,'Esta es una UF programada','Esta es una heparina',670.70,'Presión de 210',26.5,'Este es un pulso','Esta es una saturación',1,1
 exec modificar_control_enfermeria 2,'17/05/2021',19,'14:10','15:20',60.6,58.8,'Esta es una UF programada','Esta es una heparina',670.70,'Presión de 210',26.5,'Este es un pulso','Esta es una saturación',3,1
 exec eliminar_control_enfermeria 2,3,1
 go
---Evolución y Tratamiento
---Esta tabla es tremenda, roba de varios!!
-select *from Evolucion_Tratamiento
-exec insertar_evolucion_y_tratamiento 4252389,'esta es una ultra filtración','4 horas','Este es un flujo de dialisis','El paciente evoluciona favorablemente','Se le ha recetado al paciente un paracetamol','Tratamiento normal',1,1
 exec modificar_evolucion_y_tratamiento 
 exec eliminar_evolucion_y_tratamiento 
 
