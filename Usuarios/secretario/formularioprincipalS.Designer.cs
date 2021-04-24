@@ -31,6 +31,7 @@ namespace capa_presentacion.Usuarios.secretario
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formularioprincipalS));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.PanelFormulario = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
@@ -40,7 +41,6 @@ namespace capa_presentacion.Usuarios.secretario
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.btnMaximizar = new System.Windows.Forms.PictureBox();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
-            this.PanelFormulario = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -58,8 +58,17 @@ namespace capa_presentacion.Usuarios.secretario
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1401, 681);
+            this.panel1.Size = new System.Drawing.Size(1044, 681);
             this.panel1.TabIndex = 1;
+            // 
+            // PanelFormulario
+            // 
+            this.PanelFormulario.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.PanelFormulario.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PanelFormulario.Location = new System.Drawing.Point(254, 50);
+            this.PanelFormulario.Name = "PanelFormulario";
+            this.PanelFormulario.Size = new System.Drawing.Size(790, 631);
+            this.PanelFormulario.TabIndex = 2;
             // 
             // panel3
             // 
@@ -132,7 +141,7 @@ namespace capa_presentacion.Usuarios.secretario
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1401, 50);
+            this.panel2.Size = new System.Drawing.Size(1044, 50);
             this.panel2.TabIndex = 0;
             // 
             // btnMinimizar
@@ -140,7 +149,7 @@ namespace capa_presentacion.Usuarios.secretario
             this.btnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizar.Image")));
-            this.btnMinimizar.Location = new System.Drawing.Point(1277, 14);
+            this.btnMinimizar.Location = new System.Drawing.Point(920, 14);
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(30, 23);
             this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -153,7 +162,7 @@ namespace capa_presentacion.Usuarios.secretario
             this.btnMaximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMaximizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMaximizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMaximizar.Image")));
-            this.btnMaximizar.Location = new System.Drawing.Point(1313, 14);
+            this.btnMaximizar.Location = new System.Drawing.Point(956, 14);
             this.btnMaximizar.Name = "btnMaximizar";
             this.btnMaximizar.Size = new System.Drawing.Size(30, 23);
             this.btnMaximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -166,7 +175,7 @@ namespace capa_presentacion.Usuarios.secretario
             this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
-            this.btnCerrar.Location = new System.Drawing.Point(1349, 14);
+            this.btnCerrar.Location = new System.Drawing.Point(992, 14);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(30, 23);
             this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -174,20 +183,11 @@ namespace capa_presentacion.Usuarios.secretario
             this.btnCerrar.TabStop = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click_1);
             // 
-            // PanelFormulario
-            // 
-            this.PanelFormulario.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.PanelFormulario.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PanelFormulario.Location = new System.Drawing.Point(254, 50);
-            this.PanelFormulario.Name = "PanelFormulario";
-            this.PanelFormulario.Size = new System.Drawing.Size(1147, 631);
-            this.PanelFormulario.TabIndex = 2;
-            // 
             // formularioprincipalS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1401, 681);
+            this.ClientSize = new System.Drawing.Size(1044, 681);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "formularioprincipalS";

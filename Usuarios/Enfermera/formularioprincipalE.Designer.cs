@@ -33,13 +33,14 @@ namespace capa_presentacion.Usuarios.Enfermero
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelFormulario = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.bSESION = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.btnMaximizar = new System.Windows.Forms.PictureBox();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
-            this.bDIALISISPERITONEAL = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -72,7 +73,8 @@ namespace capa_presentacion.Usuarios.Enfermero
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.Desktop;
-            this.panel3.Controls.Add(this.bDIALISISPERITONEAL);
+            this.panel3.Controls.Add(this.button2);
+            this.panel3.Controls.Add(this.bSESION);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.button1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
@@ -80,6 +82,19 @@ namespace capa_presentacion.Usuarios.Enfermero
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(254, 647);
             this.panel3.TabIndex = 1;
+            // 
+            // bSESION
+            // 
+            this.bSESION.BackColor = System.Drawing.SystemColors.Desktop;
+            this.bSESION.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bSESION.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.bSESION.Location = new System.Drawing.Point(3, 160);
+            this.bSESION.Name = "bSESION";
+            this.bSESION.Size = new System.Drawing.Size(251, 34);
+            this.bSESION.TabIndex = 5;
+            this.bSESION.Text = "SESION";
+            this.bSESION.UseVisualStyleBackColor = false;
+            this.bSESION.Click += new System.EventHandler(this.bDIALISISPERITONEAL_Click);
             // 
             // label1
             // 
@@ -156,18 +171,18 @@ namespace capa_presentacion.Usuarios.Enfermero
             this.btnCerrar.TabStop = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click_1);
             // 
-            // bDIALISISPERITONEAL
+            // button2
             // 
-            this.bDIALISISPERITONEAL.BackColor = System.Drawing.SystemColors.Desktop;
-            this.bDIALISISPERITONEAL.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bDIALISISPERITONEAL.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.bDIALISISPERITONEAL.Location = new System.Drawing.Point(3, 177);
-            this.bDIALISISPERITONEAL.Name = "bDIALISISPERITONEAL";
-            this.bDIALISISPERITONEAL.Size = new System.Drawing.Size(251, 34);
-            this.bDIALISISPERITONEAL.TabIndex = 5;
-            this.bDIALISISPERITONEAL.Text = "DIALISIS PERITONEAL";
-            this.bDIALISISPERITONEAL.UseVisualStyleBackColor = false;
-            this.bDIALISISPERITONEAL.Click += new System.EventHandler(this.bDIALISISPERITONEAL_Click);
+            this.button2.BackColor = System.Drawing.SystemColors.Desktop;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button2.Location = new System.Drawing.Point(-3, 200);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(251, 34);
+            this.button2.TabIndex = 6;
+            this.button2.Text = "DIALISIS PERITONEAL";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // formularioprincipalE
             // 
@@ -200,6 +215,7 @@ namespace capa_presentacion.Usuarios.Enfermero
         private System.Windows.Forms.PictureBox btnMinimizar;
         private System.Windows.Forms.PictureBox btnMaximizar;
         private System.Windows.Forms.PictureBox btnCerrar;
-        private System.Windows.Forms.Button bDIALISISPERITONEAL;
+        private System.Windows.Forms.Button bSESION;
+        private System.Windows.Forms.Button button2;
     }
 }

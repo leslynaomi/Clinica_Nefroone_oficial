@@ -25,6 +25,7 @@ namespace capa_negocio
         private string observacion_Balance;
         private string id_hoja_enfermeria;
         private string id_sesion;
+        private string id_hojaDP;
 
 
 
@@ -45,6 +46,7 @@ namespace capa_negocio
             observacion_Balance = "";
             id_hoja_enfermeria = "";
             id_sesion = "";
+            id_hojaDP = "";
 
 
         }
@@ -63,6 +65,7 @@ namespace capa_negocio
         public string Aobservacion_Balance { get => observacion_Balance; set => observacion_Balance = value; }
         public string Aid_hoja_enfermeria { get => id_hoja_enfermeria; set => id_hoja_enfermeria = value; }
         public string Aid_sesion { get => id_sesion; set => id_sesion = value; }
+        public string Aid_hojaDP { get => id_hojaDP; set => id_hojaDP = value; }
         //Procedimientos del Crud
 
         public void Guardar_Registros()
@@ -80,7 +83,8 @@ namespace capa_negocio
             AddParametro("@solucion_Usada2", solucion_Usada2);
             AddParametro("@observacion_Balance", observacion_Balance);
             AddParametro("@id_hoja_enfermeria", id_hoja_enfermeria);
-            AddParametro("@id_sesion", id_sesion);
+            AddParametro("@id_sesion", id_sesion); 
+            AddParametro("@id_hojaDP", id_hojaDP);
             ejecutarSP();
 
         }
@@ -110,6 +114,7 @@ namespace capa_negocio
             AddParametro("@observacion_Balance", observacion_Balance);
             AddParametro("@id_hoja_enfermeria", id_hoja_enfermeria);
             AddParametro("@id_sesion", id_sesion);
+            AddParametro("@id_hojaDP", id_hojaDP);
             ejecutarSP();
         }
 
@@ -122,14 +127,14 @@ namespace capa_negocio
             //ejecutarSP();
         //}
         //Busca en los registros a un paciente por Nombre o por CI
-        //public DataSet Buscar_Registros(string dato)
-        //{
-          //  string s;
-            //DataSet ds = new DataSet();
-            ///s = "select *from Dialisis_Peritoneal where  like '" + dato + "%' or nombre like '" + dato + "%'";
-            //ejecutarSQL(s, "tac", ds);
-            //return ds;
-        //}
+        public DataSet Buscar_Registros(string dato)
+        {
+           string s;
+            DataSet ds = new DataSet();
+            s = "select *from Dialisis_Peritoneal where  like '" + dato + "%' or nombre like '" + dato + "%'";
+            ejecutarSQL(s, "tac", ds);
+            return ds;
+        }
     }
 }
 

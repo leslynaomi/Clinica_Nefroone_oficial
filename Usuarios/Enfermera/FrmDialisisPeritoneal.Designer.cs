@@ -65,6 +65,19 @@ namespace capa_presentacion
             this.binsertar = new System.Windows.Forms.Button();
             this.dda = new System.Windows.Forms.DataGridView();
             this.label11 = new System.Windows.Forms.Label();
+            this.bbuscar = new System.Windows.Forms.Button();
+            this.txtbuscar = new System.Windows.Forms.TextBox();
+            this.textnroinicio = new System.Windows.Forms.TextBox();
+            this.texttotaldialisis = new System.Windows.Forms.TextBox();
+            this.textvariedadpeso = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.textidsesion = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.textidhojadp = new System.Windows.Forms.TextBox();
+            this.label25 = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -87,7 +100,7 @@ namespace capa_presentacion
             // TimeInfucionesFin
             // 
             this.TimeInfucionesFin.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.TimeInfucionesFin.Location = new System.Drawing.Point(85, 86);
+            this.TimeInfucionesFin.Location = new System.Drawing.Point(82, 67);
             this.TimeInfucionesFin.Name = "TimeInfucionesFin";
             this.TimeInfucionesFin.Size = new System.Drawing.Size(70, 20);
             this.TimeInfucionesFin.TabIndex = 37;
@@ -95,7 +108,7 @@ namespace capa_presentacion
             // TimeInfucionesInicio
             // 
             this.TimeInfucionesInicio.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.TimeInfucionesInicio.Location = new System.Drawing.Point(85, 47);
+            this.TimeInfucionesInicio.Location = new System.Drawing.Point(86, 31);
             this.TimeInfucionesInicio.Name = "TimeInfucionesInicio";
             this.TimeInfucionesInicio.Size = new System.Drawing.Size(70, 20);
             this.TimeInfucionesInicio.TabIndex = 36;
@@ -104,7 +117,7 @@ namespace capa_presentacion
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(143, 128);
+            this.label14.Location = new System.Drawing.Point(140, 107);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(27, 15);
             this.label14.TabIndex = 12;
@@ -196,7 +209,7 @@ namespace capa_presentacion
             this.panel3.Controls.Add(this.label10);
             this.panel3.Controls.Add(this.label9);
             this.panel3.Controls.Add(this.label8);
-            this.panel3.Location = new System.Drawing.Point(399, 309);
+            this.panel3.Location = new System.Drawing.Point(400, 291);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(183, 152);
             this.panel3.TabIndex = 48;
@@ -239,7 +252,7 @@ namespace capa_presentacion
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(68, 0);
+            this.label8.Location = new System.Drawing.Point(68, 2);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(68, 15);
             this.label8.TabIndex = 14;
@@ -253,7 +266,7 @@ namespace capa_presentacion
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Location = new System.Drawing.Point(211, 309);
+            this.panel2.Location = new System.Drawing.Point(212, 291);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(182, 152);
             this.panel2.TabIndex = 47;
@@ -305,14 +318,14 @@ namespace capa_presentacion
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(21, 309);
+            this.panel1.Location = new System.Drawing.Point(21, 293);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(187, 152);
+            this.panel1.Size = new System.Drawing.Size(187, 150);
             this.panel1.TabIndex = 46;
             // 
             // txtInfusionesVolumen
             // 
-            this.txtInfusionesVolumen.Location = new System.Drawing.Point(85, 128);
+            this.txtInfusionesVolumen.Location = new System.Drawing.Point(82, 106);
             this.txtInfusionesVolumen.Name = "txtInfusionesVolumen";
             this.txtInfusionesVolumen.Size = new System.Drawing.Size(52, 20);
             this.txtInfusionesVolumen.TabIndex = 11;
@@ -331,7 +344,7 @@ namespace capa_presentacion
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(5, 86);
+            this.label5.Location = new System.Drawing.Point(5, 67);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(62, 15);
             this.label5.TabIndex = 7;
@@ -341,7 +354,7 @@ namespace capa_presentacion
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(5, 129);
+            this.label2.Location = new System.Drawing.Point(5, 103);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 15);
             this.label2.TabIndex = 4;
@@ -351,7 +364,7 @@ namespace capa_presentacion
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(2, 48);
+            this.label1.Location = new System.Drawing.Point(3, 31);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(77, 15);
             this.label1.TabIndex = 2;
@@ -369,7 +382,7 @@ namespace capa_presentacion
             // 
             // bmostrar
             // 
-            this.bmostrar.Location = new System.Drawing.Point(749, 385);
+            this.bmostrar.Location = new System.Drawing.Point(746, 360);
             this.bmostrar.Name = "bmostrar";
             this.bmostrar.Size = new System.Drawing.Size(75, 23);
             this.bmostrar.TabIndex = 44;
@@ -398,7 +411,7 @@ namespace capa_presentacion
             // 
             // binsertar
             // 
-            this.binsertar.Location = new System.Drawing.Point(621, 385);
+            this.binsertar.Location = new System.Drawing.Point(621, 360);
             this.binsertar.Name = "binsertar";
             this.binsertar.Size = new System.Drawing.Size(75, 23);
             this.binsertar.TabIndex = 39;
@@ -409,6 +422,7 @@ namespace capa_presentacion
             // 
             this.dda.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dda.GridColor = System.Drawing.Color.Teal;
             this.dda.Location = new System.Drawing.Point(21, 104);
             this.dda.Name = "dda";
             this.dda.Size = new System.Drawing.Size(555, 181);
@@ -424,12 +438,134 @@ namespace capa_presentacion
             this.label11.TabIndex = 40;
             this.label11.Text = "OBSERVACIONES BALANCE ANTERIOR";
             // 
+            // bbuscar
+            // 
+            this.bbuscar.Location = new System.Drawing.Point(690, 396);
+            this.bbuscar.Name = "bbuscar";
+            this.bbuscar.Size = new System.Drawing.Size(75, 23);
+            this.bbuscar.TabIndex = 53;
+            this.bbuscar.Text = "BUSCAR";
+            this.bbuscar.UseVisualStyleBackColor = true;
+            this.bbuscar.Click += new System.EventHandler(this.bbuscar_Click);
+            // 
+            // txtbuscar
+            // 
+            this.txtbuscar.Location = new System.Drawing.Point(670, 425);
+            this.txtbuscar.Name = "txtbuscar";
+            this.txtbuscar.Size = new System.Drawing.Size(119, 20);
+            this.txtbuscar.TabIndex = 54;
+            // 
+            // textnroinicio
+            // 
+            this.textnroinicio.Location = new System.Drawing.Point(46, 492);
+            this.textnroinicio.Name = "textnroinicio";
+            this.textnroinicio.Size = new System.Drawing.Size(100, 20);
+            this.textnroinicio.TabIndex = 58;
+            // 
+            // texttotaldialisis
+            // 
+            this.texttotaldialisis.Location = new System.Drawing.Point(258, 492);
+            this.texttotaldialisis.Name = "texttotaldialisis";
+            this.texttotaldialisis.Size = new System.Drawing.Size(113, 20);
+            this.texttotaldialisis.TabIndex = 59;
+            // 
+            // textvariedadpeso
+            // 
+            this.textvariedadpeso.Location = new System.Drawing.Point(152, 492);
+            this.textvariedadpeso.Name = "textvariedadpeso";
+            this.textvariedadpeso.Size = new System.Drawing.Size(100, 20);
+            this.textvariedadpeso.TabIndex = 60;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(267, 469);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(91, 15);
+            this.label20.TabIndex = 61;
+            this.label20.Text = "Total Dialisis";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(152, 467);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(100, 15);
+            this.label21.TabIndex = 62;
+            this.label21.Text = "Variedad Peso";
+            this.label21.Click += new System.EventHandler(this.label21_Click);
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(58, 465);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(86, 15);
+            this.label22.TabIndex = 63;
+            this.label22.Text = "Nro. Dialisis";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(403, 471);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(54, 13);
+            this.label23.TabIndex = 64;
+            this.label23.Text = "Id_Sesion";
+            // 
+            // textidsesion
+            // 
+            this.textidsesion.Location = new System.Drawing.Point(377, 492);
+            this.textidsesion.Name = "textidsesion";
+            this.textidsesion.Size = new System.Drawing.Size(100, 20);
+            this.textidsesion.TabIndex = 65;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(495, 471);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(0, 13);
+            this.label24.TabIndex = 38;
+            // 
+            // textidhojadp
+            // 
+            this.textidhojadp.Location = new System.Drawing.Point(483, 492);
+            this.textidhojadp.Name = "textidhojadp";
+            this.textidhojadp.Size = new System.Drawing.Size(100, 20);
+            this.textidhojadp.TabIndex = 39;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(502, 469);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(57, 13);
+            this.label25.TabIndex = 66;
+            this.label25.Text = "Id_hojaDP";
+            // 
             // FrmDialisisPeritoneal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.BackColor = System.Drawing.Color.MediumAquamarine;
             this.ClientSize = new System.Drawing.Size(853, 538);
+            this.Controls.Add(this.label25);
+            this.Controls.Add(this.label24);
+            this.Controls.Add(this.textidhojadp);
+            this.Controls.Add(this.textidsesion);
+            this.Controls.Add(this.label23);
+            this.Controls.Add(this.label22);
+            this.Controls.Add(this.label21);
+            this.Controls.Add(this.label20);
+            this.Controls.Add(this.textvariedadpeso);
+            this.Controls.Add(this.texttotaldialisis);
+            this.Controls.Add(this.textnroinicio);
+            this.Controls.Add(this.txtbuscar);
+            this.Controls.Add(this.bbuscar);
             this.Controls.Add(this.BoxSolucion2);
             this.Controls.Add(this.BoxSolucion1);
             this.Controls.Add(this.textobservaciones);
@@ -498,5 +634,18 @@ namespace capa_presentacion
         private System.Windows.Forms.Button binsertar;
         private System.Windows.Forms.DataGridView dda;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button bbuscar;
+        private System.Windows.Forms.TextBox txtbuscar;
+        private System.Windows.Forms.TextBox textnroinicio;
+        private System.Windows.Forms.TextBox texttotaldialisis;
+        private System.Windows.Forms.TextBox textvariedadpeso;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.TextBox textidsesion;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.TextBox textidhojadp;
+        private System.Windows.Forms.Label label25;
     }
 }

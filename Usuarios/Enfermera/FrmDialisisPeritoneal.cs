@@ -25,38 +25,41 @@ namespace capa_presentacion
         private void LimpiarTexto()
         {//hola pooooool
         
-            textprecio_total.Clear();
-            textinicio.Clear();
-            textfin.Clear();
-            textvolumen.Clear();
-            text1inicio.Clear();
-            text1volumen.Clear();
-            textparcial.Clear();
-            texttotal.Clear();
-            textsolucionusada1.Clear();
-            textsolucionusada2.Clear();
+            
+
+
+
+            TimeInfucionesInicio.ResetText();
+            TimeInfucionesFin.ResetText();
+            txtBalanceParcial.Clear();
+            txtInfusionesVolumen.Clear();
+            txtBalanceTotal.Clear();
+            txtDrenajeVolumen.Clear();
+            txtBalanceParcial.Clear();
+            BoxSolucion1.ClearSelected();
+            BoxSolucion2.ClearSelected();
             textobservaciones.Clear();
-            texthojaenfermeria.Clear();
-            textsesion1.Clear();
+            textidsesion.Clear();
+            textidhojadp.Clear();
         }
         private void binsertar_Click(object sender, EventArgs e)
         {
             try
             {
 
-                dp.Aprecio_Sesion_D_Peritoneal = textprecio_total.Text;
-                dp.Ainfucion_Inicio = textinicio.Text;
-                dp.Ainfucion_Final = textfin.Text;
-                dp.Ainfucion_Volumen = textvolumen.Text;
-                dp.Adrenaje_Inicio = text1inicio.Text;
-                dp.Adrenaje_Volumen = text1volumen.Text;
-                dp.Abalance_Parcial = textparcial.Text;
-                dp.Abalance_Total = texttotal.Text;
-                dp.Asolucion_Usada1 = textsolucionusada1.Text;
-                dp.Asolucion_Usada2 = textsolucionusada2.Text;
+               
+                dp.Ainfucion_Inicio = TimeInfucionesInicio.Text;
+                dp.Ainfucion_Final = TimeInfucionesFin.Text;
+                dp.Ainfucion_Volumen = txtInfusionesVolumen.Text;
+                dp.Adrenaje_Inicio = TimeDrenajeInicio.Text;
+                dp.Adrenaje_Volumen = txtDrenajeVolumen.Text;
+                dp.Abalance_Parcial = txtBalanceParcial.Text;
+                dp.Abalance_Total = txtBalanceTotal.Text;
+                dp.Asolucion_Usada1 = BoxSolucion1.Text;
+                dp.Asolucion_Usada2 = BoxSolucion2.Text;
                 dp.Aobservacion_Balance = textobservaciones.Text;
-                dp.Aid_hoja_enfermeria = texthojaenfermeria.Text;
-                dp.Aid_sesion = textsesion1.Text;
+                dp.Aid_sesion = textidsesion.Text;
+                dp.Aid_hojaDP = textidhojadp.Text;
 
                 dp.Guardar_Registros();
                 LimpiarTexto();
@@ -83,36 +86,6 @@ namespace capa_presentacion
         private void bmostrar_Click(object sender, EventArgs e)
         {
 
-            //try
-            //{
-            //  if (textsesion1.Text == "" || texthojaenfermeria.Text == "" )
-            //{
-            //  MessageBox.Show("Debe colocar un valor de Nº de hoja registro, una ID de la Hoja de Control de Enfermería y un ID de empleado para poder proceder");
-            //}
-            //else
-            //{
-            //  dp.Aprecio_Sesion_D_Peritoneal = textprecio_total.Text;
-            //dp.Ainfucion_Inicio = textinicio.Text;
-            //dp.Ainfucion_Final = textfin.Text;
-            //dp.Ainfucion_Volumen = textvolumen.Text;
-            //dp.Adrenaje_Inicio = text1inicio.Text;
-            //dp.Adrenaje_Volumen = text1volumen.Text;
-            //dp.Abalance_Parcial = textparcial.Text;
-            //dp.Abalance_Total = texttotal.Text;
-            //dp.Asolucion_Usada1 = textsolucionusada1.Text;
-            //dp.Asolucion_Usada2 = textsolucionusada2.Text;
-            //dp.Aobservacion_Balance = textobservaciones.Text;
-            //dp.Aid_hoja_enfermeria = texthojaenfermeria.Text;
-            //dp.Aid_sesion = textsesion1.Text;
-
-            //LimpiarTexto();
-            //MessageBox.Show("Modificado correctamente", "INFORMACION");
-            //}
-            //}
-            //catch (Exception er)
-            //{
-            //   MessageBox.Show("Error al modificar" + er.ToString());
-            //}
             dda.DataSource = dp.Mostrar_Registros();
             dda.DataMember = "tac";
             dda.AutoResizeColumns();
@@ -121,6 +94,21 @@ namespace capa_presentacion
 
         
         private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bbuscar_Click(object sender, EventArgs e)
+        {
+            DataSet ds = new DataSet();
+            ds = dp.Buscar_Registros(txtbuscar.Text);
+            dda.DataSource = ds;
+            dda.DataMember = "tac";
+            dda.AutoResizeColumns();
+            dda.AutoResizeRows();
+        }
+
+        private void label21_Click(object sender, EventArgs e)
         {
 
         }
