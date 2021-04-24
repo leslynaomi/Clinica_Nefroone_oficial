@@ -13,7 +13,7 @@
 --enable trigger Habitacion_Libre on detalle_habitacion
 
 --Eliminación de la base de datos
---drop database Nefroone13
+--drop database Nefroone14
 
 --Consulta para ver todas las tablas en una base de datos
 --SELECT CAST(table_name as varchar)  FROM INFORMATION_SCHEMA.TABLES

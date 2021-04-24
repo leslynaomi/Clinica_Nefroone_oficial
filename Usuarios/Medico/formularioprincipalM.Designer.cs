@@ -32,6 +32,7 @@ namespace capa_presentacion.Usuarios.Medico
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formularioprincipalM));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelFormulario = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
@@ -41,7 +42,8 @@ namespace capa_presentacion.Usuarios.Medico
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.btnMaximizar = new System.Windows.Forms.PictureBox();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panelFormulario.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -73,9 +75,18 @@ namespace capa_presentacion.Usuarios.Medico
             this.panelFormulario.Size = new System.Drawing.Size(790, 595);
             this.panelFormulario.TabIndex = 2;
             // 
+            // panel4
+            // 
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(790, 595);
+            this.panel4.TabIndex = 0;
+            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.Desktop;
+            this.panel3.Controls.Add(this.btnCerrarSesion);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.button3);
             this.panel3.Controls.Add(this.button2);
@@ -119,7 +130,7 @@ namespace capa_presentacion.Usuarios.Medico
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(251, 36);
             this.button2.TabIndex = 10;
-            this.button2.Text = "EVOLUCION TRATAMIENTO";
+            this.button2.Text = "CONSULTA DE REGISTROS";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -132,13 +143,14 @@ namespace capa_presentacion.Usuarios.Medico
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(251, 36);
             this.button1.TabIndex = 9;
-            this.button1.Text = "HOJA MEDICA";
+            this.button1.Text = "INSERCIÓN DE REGISTROS";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.CadetBlue;
+            this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.btnMinimizar);
             this.panel2.Controls.Add(this.btnMaximizar);
             this.panel2.Controls.Add(this.btnCerrar);
@@ -187,13 +199,29 @@ namespace capa_presentacion.Usuarios.Medico
             this.btnCerrar.TabStop = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click_1);
             // 
-            // panel4
+            // label2
             // 
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1099, 595);
-            this.panel4.TabIndex = 0;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label2.Location = new System.Drawing.Point(468, 14);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(321, 25);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "EVOLUCIÓN Y TRATAMIENTO";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnCerrarSesion
+            // 
+            this.btnCerrarSesion.BackColor = System.Drawing.Color.DarkRed;
+            this.btnCerrarSesion.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnCerrarSesion.Location = new System.Drawing.Point(66, 551);
+            this.btnCerrarSesion.Name = "btnCerrarSesion";
+            this.btnCerrarSesion.Size = new System.Drawing.Size(111, 32);
+            this.btnCerrarSesion.TabIndex = 0;
+            this.btnCerrarSesion.Text = "CERRA SESIÓN";
+            this.btnCerrarSesion.UseVisualStyleBackColor = false;
+            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
             // 
             // formularioprincipalM
             // 
@@ -209,6 +237,7 @@ namespace capa_presentacion.Usuarios.Medico
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
@@ -230,5 +259,7 @@ namespace capa_presentacion.Usuarios.Medico
         private System.Windows.Forms.PictureBox btnMaximizar;
         private System.Windows.Forms.PictureBox btnCerrar;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Button btnCerrarSesion;
+        private System.Windows.Forms.Label label2;
     }
 }

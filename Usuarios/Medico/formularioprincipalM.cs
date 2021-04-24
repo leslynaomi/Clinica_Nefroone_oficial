@@ -66,13 +66,20 @@ namespace capa_presentacion.Usuarios.Medico
 
         private void button2_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<FrmEvoloucionYTratamiento>();
+            AbrirFormulario<FrmInsercionEvoloucionYTratamiento>();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             
             AbrirFormulario<frmRecetario>();
+        }
+
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            FrmInicioSesion frm = new FrmInicioSesion();
+            frm.Show();
         }
     }
 }

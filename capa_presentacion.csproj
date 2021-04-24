@@ -147,6 +147,12 @@
     <Compile Include="Usuarios\Administrador\FrmAreaPacientes.Designer.cs">
       <DependentUpon>FrmAreaPacientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Usuarios\Medico\FrmConsultaEvolYTrat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Usuarios\Medico\FrmConsultaEvolYTrat.Designer.cs">
+      <DependentUpon>FrmConsultaEvolYTrat.cs</DependentUpon>
+    </Compile>
     <Compile Include="Usuarios\Secretario\FrmConsultarPacientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -155,11 +161,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Usuarios\Medico\FrmEvoloucionYTratamiento.cs">
+    <Compile Include="Usuarios\Medico\FrmInsercionEvolYTrat.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Usuarios\Medico\FrmEvoloucionYTratamiento.Designer.cs">
-      <DependentUpon>FrmEvoloucionYTratamiento.cs</DependentUpon>
+    <Compile Include="Usuarios\Medico\FrmInsercionEvolYTrat.Designer.cs">
+      <DependentUpon>FrmInsercionEvolYTrat.cs</DependentUpon>
     </Compile>
     <Compile Include="Usuarios\Enfermera\FrmHojaEnfermeria.cs">
       <SubType>Form</SubType>
@@ -255,6 +261,9 @@
     <EmbeddedResource Include="Usuarios\Administrador\FrmAreaPacientes.resx">
       <DependentUpon>FrmAreaPacientes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Usuarios\Medico\FrmConsultaEvolYTrat.resx">
+      <DependentUpon>FrmConsultaEvolYTrat.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Usuarios\Secretario\FrmConsultarPacientes.resx">
       <DependentUpon>FrmConsultarPacientes.cs</DependentUpon>
     </EmbeddedResource>
@@ -271,8 +280,8 @@
     <EmbeddedResource Include="Usuarios\Secretario\FrmRegistrarPacientes.resx">
       <DependentUpon>FrmRegistrarPacientes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Usuarios\Medico\FrmEvoloucionYTratamiento.resx">
-      <DependentUpon>FrmEvoloucionYTratamiento.cs</DependentUpon>
+    <EmbeddedResource Include="Usuarios\Medico\FrmInsercionEvolYTrat.resx">
+      <DependentUpon>FrmInsercionEvolYTrat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Usuarios\Enfermera\FrmHojaEnfermeria.resx">
       <DependentUpon>FrmHojaEnfermeria.cs</DependentUpon>

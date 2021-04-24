@@ -8,6 +8,7 @@ namespace capa_presentacion
 {
     public class Constantes
     {
-        static public string ID_Emp;
+        public static string ID_Sesion;
+        public static string ID_Emp;
     }
 }
