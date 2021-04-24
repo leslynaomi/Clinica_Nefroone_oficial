@@ -39,7 +39,7 @@ namespace capa_presentacion
         }
         private void binsertar_Click(object sender, EventArgs e)
         {
-            try
+             try
             {
 
                 
@@ -129,6 +129,11 @@ namespace capa_presentacion
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BoxSolucion1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

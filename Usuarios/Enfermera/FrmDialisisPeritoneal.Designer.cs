@@ -61,7 +61,6 @@ namespace capa_presentacion
             this.panel3 = new System.Windows.Forms.Panel();
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.label19 = new System.Windows.Forms.Label();
             this.BoxSolucion1 = new System.Windows.Forms.ListBox();
             this.BoxSolucion2 = new System.Windows.Forms.ListBox();
@@ -75,14 +74,14 @@ namespace capa_presentacion
             // 
             this.dda.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dda.Location = new System.Drawing.Point(12, 96);
+            this.dda.Location = new System.Drawing.Point(12, 233);
             this.dda.Name = "dda";
             this.dda.Size = new System.Drawing.Size(555, 181);
             this.dda.TabIndex = 0;
             // 
             // binsertar
             // 
-            this.binsertar.Location = new System.Drawing.Point(618, 353);
+            this.binsertar.Location = new System.Drawing.Point(617, 478);
             this.binsertar.Name = "binsertar";
             this.binsertar.Size = new System.Drawing.Size(75, 23);
             this.binsertar.TabIndex = 1;
@@ -178,7 +177,7 @@ namespace capa_presentacion
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(68, 0);
+            this.label8.Location = new System.Drawing.Point(55, 2);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(68, 15);
             this.label8.TabIndex = 14;
@@ -222,7 +221,7 @@ namespace capa_presentacion
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(579, 226);
+            this.label11.Location = new System.Drawing.Point(579, 354);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(259, 15);
             this.label11.TabIndex = 19;
@@ -232,7 +231,7 @@ namespace capa_presentacion
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(634, 96);
+            this.label12.Location = new System.Drawing.Point(634, 224);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(138, 15);
             this.label12.TabIndex = 20;
@@ -241,7 +240,7 @@ namespace capa_presentacion
             // textobservaciones
             // 
             this.textobservaciones.BackColor = System.Drawing.SystemColors.MenuBar;
-            this.textobservaciones.Location = new System.Drawing.Point(582, 253);
+            this.textobservaciones.Location = new System.Drawing.Point(582, 381);
             this.textobservaciones.Name = "textobservaciones";
             this.textobservaciones.Size = new System.Drawing.Size(256, 77);
             this.textobservaciones.TabIndex = 23;
@@ -251,7 +250,7 @@ namespace capa_presentacion
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(196, 55);
+            this.label13.Location = new System.Drawing.Point(200, 55);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(460, 29);
             this.label13.TabIndex = 24;
@@ -259,7 +258,7 @@ namespace capa_presentacion
             // 
             // bmostrar
             // 
-            this.bmostrar.Location = new System.Drawing.Point(727, 353);
+            this.bmostrar.Location = new System.Drawing.Point(726, 478);
             this.bmostrar.Name = "bmostrar";
             this.bmostrar.Size = new System.Drawing.Size(75, 23);
             this.bmostrar.TabIndex = 26;
@@ -271,7 +270,7 @@ namespace capa_presentacion
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(634, 163);
+            this.label15.Location = new System.Drawing.Point(634, 285);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(138, 15);
             this.label15.TabIndex = 29;
@@ -287,7 +286,7 @@ namespace capa_presentacion
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(6, 293);
+            this.panel1.Location = new System.Drawing.Point(6, 430);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(187, 164);
             this.panel1.TabIndex = 31;
@@ -328,7 +327,7 @@ namespace capa_presentacion
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Location = new System.Drawing.Point(199, 293);
+            this.panel2.Location = new System.Drawing.Point(199, 430);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(182, 163);
             this.panel2.TabIndex = 32;
@@ -360,7 +359,7 @@ namespace capa_presentacion
             this.panel3.Controls.Add(this.label10);
             this.panel3.Controls.Add(this.label9);
             this.panel3.Controls.Add(this.label8);
-            this.panel3.Location = new System.Drawing.Point(393, 293);
+            this.panel3.Location = new System.Drawing.Point(393, 430);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(183, 163);
             this.panel3.TabIndex = 33;
@@ -385,18 +384,11 @@ namespace capa_presentacion
             this.label17.TabIndex = 15;
             this.label17.Text = "ml.";
             // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(843, 458);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker2.TabIndex = 34;
-            // 
             // label19
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(300, 26);
+            this.label19.Location = new System.Drawing.Point(337, 26);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(192, 29);
             this.label19.TabIndex = 35;
@@ -410,10 +402,11 @@ namespace capa_presentacion
             this.BoxSolucion1.Items.AddRange(new object[] {
             "Perito I",
             "Perito II"});
-            this.BoxSolucion1.Location = new System.Drawing.Point(637, 114);
+            this.BoxSolucion1.Location = new System.Drawing.Point(637, 242);
             this.BoxSolucion1.Name = "BoxSolucion1";
             this.BoxSolucion1.Size = new System.Drawing.Size(120, 32);
             this.BoxSolucion1.TabIndex = 36;
+            this.BoxSolucion1.SelectedIndexChanged += new System.EventHandler(this.BoxSolucion1_SelectedIndexChanged);
             // 
             // BoxSolucion2
             // 
@@ -423,7 +416,7 @@ namespace capa_presentacion
             this.BoxSolucion2.Items.AddRange(new object[] {
             "Perito I",
             "Perito II"});
-            this.BoxSolucion2.Location = new System.Drawing.Point(637, 181);
+            this.BoxSolucion2.Location = new System.Drawing.Point(637, 303);
             this.BoxSolucion2.Name = "BoxSolucion2";
             this.BoxSolucion2.Size = new System.Drawing.Size(120, 32);
             this.BoxSolucion2.TabIndex = 37;
@@ -433,11 +426,10 @@ namespace capa_presentacion
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Teal;
-            this.ClientSize = new System.Drawing.Size(857, 471);
+            this.ClientSize = new System.Drawing.Size(857, 602);
             this.Controls.Add(this.BoxSolucion2);
             this.Controls.Add(this.BoxSolucion1);
             this.Controls.Add(this.label19);
-            this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -492,7 +484,6 @@ namespace capa_presentacion
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label17;
