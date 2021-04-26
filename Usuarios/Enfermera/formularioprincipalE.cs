@@ -61,9 +61,19 @@ namespace capa_presentacion.Usuarios.Enfermero
 
         private void bDIALISISPERITONEAL_Click(object sender, EventArgs e)
         {
-
-
             AbrirFormulario<FrmDialisisPeritoneal>(); 
+        }
+
+        private void btnSesion_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<FrmConsultaSesion>();
+        }
+
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            FrmInicioSesion frm = new FrmInicioSesion();
+            frm.Show();
         }
     }
  }

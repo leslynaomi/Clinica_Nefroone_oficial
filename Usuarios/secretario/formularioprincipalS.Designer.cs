@@ -41,6 +41,7 @@ namespace capa_presentacion.Usuarios.secretario
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.btnMaximizar = new System.Windows.Forms.PictureBox();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
+            this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -73,6 +74,7 @@ namespace capa_presentacion.Usuarios.secretario
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.Desktop;
+            this.panel3.Controls.Add(this.btnCerrarSesion);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.btnHojaSec);
             this.panel3.Controls.Add(this.btnRegPac);
@@ -184,6 +186,18 @@ namespace capa_presentacion.Usuarios.secretario
             this.btnCerrar.TabStop = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click_1);
             // 
+            // btnCerrarSesion
+            // 
+            this.btnCerrarSesion.BackColor = System.Drawing.Color.DarkRed;
+            this.btnCerrarSesion.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnCerrarSesion.Location = new System.Drawing.Point(67, 559);
+            this.btnCerrarSesion.Name = "btnCerrarSesion";
+            this.btnCerrarSesion.Size = new System.Drawing.Size(111, 32);
+            this.btnCerrarSesion.TabIndex = 3;
+            this.btnCerrarSesion.Text = "CERRAR SESIÓN";
+            this.btnCerrarSesion.UseVisualStyleBackColor = false;
+            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
+            // 
             // formularioprincipalS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -217,5 +231,6 @@ namespace capa_presentacion.Usuarios.secretario
         private System.Windows.Forms.PictureBox btnMaximizar;
         private System.Windows.Forms.PictureBox btnCerrar;
         private System.Windows.Forms.Button btnRegPac;
+        private System.Windows.Forms.Button btnCerrarSesion;
     }
 }

@@ -33,6 +33,7 @@ namespace capa_presentacion.Usuarios.Enfermero
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelFormulario = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnSesion = new System.Windows.Forms.Button();
             this.bDIALISISPERITONEAL = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -40,6 +41,7 @@ namespace capa_presentacion.Usuarios.Enfermero
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.btnMaximizar = new System.Windows.Forms.PictureBox();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
+            this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -72,6 +74,8 @@ namespace capa_presentacion.Usuarios.Enfermero
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.Desktop;
+            this.panel3.Controls.Add(this.btnCerrarSesion);
+            this.panel3.Controls.Add(this.btnSesion);
             this.panel3.Controls.Add(this.bDIALISISPERITONEAL);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.button1);
@@ -80,6 +84,19 @@ namespace capa_presentacion.Usuarios.Enfermero
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(254, 647);
             this.panel3.TabIndex = 1;
+            // 
+            // btnSesion
+            // 
+            this.btnSesion.BackColor = System.Drawing.SystemColors.Desktop;
+            this.btnSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSesion.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnSesion.Location = new System.Drawing.Point(3, 200);
+            this.btnSesion.Name = "btnSesion";
+            this.btnSesion.Size = new System.Drawing.Size(251, 34);
+            this.btnSesion.TabIndex = 5;
+            this.btnSesion.Text = "SESIÓN";
+            this.btnSesion.UseVisualStyleBackColor = false;
+            this.btnSesion.Click += new System.EventHandler(this.btnSesion_Click);
             // 
             // bDIALISISPERITONEAL
             // 
@@ -169,6 +186,18 @@ namespace capa_presentacion.Usuarios.Enfermero
             this.btnCerrar.TabStop = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click_1);
             // 
+            // btnCerrarSesion
+            // 
+            this.btnCerrarSesion.BackColor = System.Drawing.Color.DarkRed;
+            this.btnCerrarSesion.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnCerrarSesion.Location = new System.Drawing.Point(69, 589);
+            this.btnCerrarSesion.Name = "btnCerrarSesion";
+            this.btnCerrarSesion.Size = new System.Drawing.Size(111, 32);
+            this.btnCerrarSesion.TabIndex = 2;
+            this.btnCerrarSesion.Text = "CERRAR SESIÓN";
+            this.btnCerrarSesion.UseVisualStyleBackColor = false;
+            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
+            // 
             // formularioprincipalE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -201,5 +230,7 @@ namespace capa_presentacion.Usuarios.Enfermero
         private System.Windows.Forms.PictureBox btnMaximizar;
         private System.Windows.Forms.PictureBox btnCerrar;
         private System.Windows.Forms.Button bDIALISISPERITONEAL;
+        private System.Windows.Forms.Button btnSesion;
+        private System.Windows.Forms.Button btnCerrarSesion;
     }
 }

@@ -71,6 +71,12 @@ namespace capa_presentacion.Usuarios.secretario
             AbrirFormulario<FrmHojaSecretaria>();
             
         }
-        
+
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            FrmInicioSesion frm = new FrmInicioSesion();
+            frm.Show();
+        }
     }
 }

@@ -33,6 +33,13 @@ exec insertar_nota_enf 'Paciente ingresa al servicio de hemodiálisis con signos 
 --select *from Sesion
 exec insertar_sesion '10/03/2021',60.7,50,1,1,1
 
+--Super consulta para el formulario de Sesion
+/*
+select id_sesion,fecha_Sesion,pac.ci,nombre,materno,materno,edad,sexo,seguro,acceso_Vascular,seguro,nro_familiar_Contacto
+from Sesion as ses,Paciente as pac,Hoja_Secretaria as sec
+where sec.ci = pac.ci and sec.id_hojaS = ses.id_hojaS
+*/
+
 --Control Enfermeria
 --select *from Control_Enfermeria
 exec insertar_control_enfermeria 1,'14:10','15:20','3000 ml','5000 ui','250 mlx','140/70/mHg',30,'68x','98%',1

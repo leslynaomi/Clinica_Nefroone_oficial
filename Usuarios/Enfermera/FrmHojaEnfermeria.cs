@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 using capa_negocio;
 
 namespace capa_presentacion
@@ -45,8 +46,8 @@ namespace capa_presentacion
                 enf.Temperatura = txtTemp.Text;
                 enf.Pulso = txtPulso.Text;
                 enf.Saturacion = txtSaturacion.Text;
-                enf.Id_hojaS = txtNroHojReg.Text;
-                enf.Id_empleado = txtIDEmp.Text;
+                /*enf.Id_hojaS = txtNroHojReg.Text;
+                enf.Id_empleado = txtIDEmp.Text;*/
                 enf.Guardar_Registros();
                 LimpiarTexto();
                 MessageBox.Show("Insertado correctamente", "INFORMACION");
@@ -59,8 +60,8 @@ namespace capa_presentacion
 
         private void LimpiarTexto()
         {
-            txtParamBusc.Clear();
-            txtParamModElim.Clear();
+            txtParam.Clear();
+            //txtParamModElim.Clear();
             dtpFechaSesion.ResetText();
             txtNumSesion.Clear();
             dtpHoraInicio.ResetText();
@@ -74,8 +75,6 @@ namespace capa_presentacion
             txtTemp.Clear();
             txtPulso.Clear();
             txtSaturacion.Clear();
-            txtNroHojReg.Clear();
-            txtIDEmp.Clear();
         }
 
         private void btnMostrarRegistros_Click(object sender, EventArgs e)
@@ -86,7 +85,7 @@ namespace capa_presentacion
             dgvHojaEnfermeria.AutoResizeRows();
         }
 
-        private void btnModificarRegistros_Click(object sender, EventArgs e)
+        /*private void btnModificarRegistros_Click(object sender, EventArgs e)
         {
             try
             {
@@ -146,7 +145,7 @@ namespace capa_presentacion
                 MessageBox.Show("Error al eliminar" + er.ToString());
             }
         }
-
+*/
         private void btnMenuPacientes_Click(object sender, EventArgs e)
         {
             FrmRegistrarPacientes frmPac = new FrmRegistrarPacientes();
@@ -168,7 +167,7 @@ namespace capa_presentacion
         private void btnBuscarRegistros_Click(object sender, EventArgs e)
         {
             DataSet ds = new DataSet();
-            ds = enf.Buscar_Registros(txtParamBusc.Text);
+            ds = enf.Buscar_Registros(txtParam.Text);
             dgvHojaEnfermeria.DataSource = ds;
             dgvHojaEnfermeria.DataMember = "tac";
             dgvHojaEnfermeria.AutoResizeColumns();

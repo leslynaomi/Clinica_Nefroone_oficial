@@ -13,7 +13,7 @@
 --enable trigger Habitacion_Libre on detalle_habitacion
 
 --Eliminación de la base de datos
---drop database Nefroone14
+--drop database Nefroone13
 
 --Consulta para ver todas las tablas en una base de datos
 --SELECT CAST(table_name as varchar)  FROM INFORMATION_SCHEMA.TABLES
@@ -1045,3 +1045,27 @@ begin
 			ROLLBACK TRANSACTION
 		end
 end
+
+--Obtener ID_Sesion de una Sesion
+create proc encontrar_ID_sesion(
+
+)as
+begin
+	begin try
+		begin tran
+			select id_sesion
+			from Sesion as ses,Paciente as pac,Hoja_Secretaria as sec
+			where sec.ci = pac.ci and sec.id_hojaS = ses.id_hojaS
+		commit tran
+	end try
+	begin catch		
+		raiserror('Error encontrando la sesión',16,1) 
+		rollback tran
+	end catch
+end
+
+select fecha_Sesion,pac.ci,nombre,materno,materno,acceso_Vascular,seguro,nro_familiar_Contacto
+from Sesion as ses,Paciente as pac,Hoja_Secretaria as sec
+where sec.ci = pac.ci and sec.id_hojaS = ses.id_hojaS
+
+select *from Hoja_Secretaria
