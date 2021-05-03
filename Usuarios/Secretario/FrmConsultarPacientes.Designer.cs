@@ -38,7 +38,6 @@ namespace capa_presentacion
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.btnMostrarRegistros = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPaciente)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,7 +45,7 @@ namespace capa_presentacion
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label1.Location = new System.Drawing.Point(363, 27);
+            this.label1.Location = new System.Drawing.Point(277, 26);
             this.label1.Name = "label1";
             this.label1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label1.Size = new System.Drawing.Size(254, 26);
@@ -88,7 +87,7 @@ namespace capa_presentacion
             this.dgvPaciente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPaciente.Location = new System.Drawing.Point(35, 102);
             this.dgvPaciente.Name = "dgvPaciente";
-            this.dgvPaciente.Size = new System.Drawing.Size(947, 538);
+            this.dgvPaciente.Size = new System.Drawing.Size(753, 350);
             this.dgvPaciente.TabIndex = 31;
             // 
             // radioButton1
@@ -135,25 +134,12 @@ namespace capa_presentacion
             this.radioButton4.Text = "Apellido";
             this.radioButton4.UseVisualStyleBackColor = true;
             // 
-            // btnMostrarRegistros
-            // 
-            this.btnMostrarRegistros.BackColor = System.Drawing.Color.LightSlateGray;
-            this.btnMostrarRegistros.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btnMostrarRegistros.Location = new System.Drawing.Point(1083, 65);
-            this.btnMostrarRegistros.Name = "btnMostrarRegistros";
-            this.btnMostrarRegistros.Size = new System.Drawing.Size(117, 29);
-            this.btnMostrarRegistros.TabIndex = 33;
-            this.btnMostrarRegistros.Text = "Mostrar Registros";
-            this.btnMostrarRegistros.UseVisualStyleBackColor = false;
-            this.btnMostrarRegistros.Click += new System.EventHandler(this.btnMostrarRegistros_Click);
-            // 
             // FrmConsultarPacientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumAquamarine;
-            this.ClientSize = new System.Drawing.Size(1019, 652);
-            this.Controls.Add(this.btnMostrarRegistros);
+            this.ClientSize = new System.Drawing.Size(826, 478);
             this.Controls.Add(this.radioButton3);
             this.Controls.Add(this.radioButton4);
             this.Controls.Add(this.radioButton2);
@@ -182,6 +168,5 @@ namespace capa_presentacion
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton3;
         private System.Windows.Forms.RadioButton radioButton4;
-        private System.Windows.Forms.Button btnMostrarRegistros;
     }
 }

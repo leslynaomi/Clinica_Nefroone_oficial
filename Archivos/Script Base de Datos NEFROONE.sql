@@ -852,7 +852,7 @@ select id_medicamento,nombre_Medicamento,presentacion,concentracion,stock
 from Medicamento
 */
 go
---Procedimiento de Damián para el Login
+--Procedimiento que valida la existencia de un usuario y contraseña en los registros
 create proc sp_login(
 @user varchar(30),
 @passwd varchar(30)
@@ -963,6 +963,7 @@ begin
 end
 
 */
+
 --Consulta para mostrar el Tipo de Usuario que está iniciando sesión
 go
 create proc encontrar_tipo_usuario(
@@ -981,6 +982,7 @@ begin
 	end catch
 end
 go
+--Devuelve el ID de un empleado con el user y contraseña de parámetros
 create proc encontrar_ID_empleado(
 @user varchar(40),
 @passwd varchar(40)
@@ -1010,6 +1012,7 @@ begin
 	where ci=(select ci from inserted)
 end
 go
+--Permite la inserción de un registro de diálisis peritoneal si es que corresponde con el tipo de acceso de Hoja Secretaria
 create trigger verificar_dialisis_p
 on Dialisis_Peritoneal
 for INSERT
@@ -1028,6 +1031,7 @@ begin
 		end
 end
 go
+--Permite la inserción de un registro de control de enfermería si es que corresponde con el tipo de acceso de Hoja Secretaria
 create trigger verificar_ctrl_enf
 on Control_Enfermeria
 for INSERT
@@ -1045,27 +1049,3 @@ begin
 			ROLLBACK TRANSACTION
 		end
 end
-
---Obtener ID_Sesion de una Sesion
-create proc encontrar_ID_sesion(
-
-)as
-begin
-	begin try
-		begin tran
-			select id_sesion
-			from Sesion as ses,Paciente as pac,Hoja_Secretaria as sec
-			where sec.ci = pac.ci and sec.id_hojaS = ses.id_hojaS
-		commit tran
-	end try
-	begin catch		
-		raiserror('Error encontrando la sesión',16,1) 
-		rollback tran
-	end catch
-end
-
-select fecha_Sesion,pac.ci,nombre,materno,materno,acceso_Vascular,seguro,nro_familiar_Contacto
-from Sesion as ses,Paciente as pac,Hoja_Secretaria as sec
-where sec.ci = pac.ci and sec.id_hojaS = ses.id_hojaS
-
-select *from Hoja_Secretaria

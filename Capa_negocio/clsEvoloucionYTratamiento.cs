@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 
 using capa_datos;
+using System.Windows.Forms;
 
 namespace capa_negocio
 {
@@ -92,45 +93,111 @@ namespace capa_negocio
         public DataSet Mostrar_Registros()
         {
             string s;
-            s = "select nro_Sesion_HD,fecha_Sesion,evolucion_Clinica,duracion,flujo_Efectivo,U_F_Programada,flujo_Dialisis,heparina,acceso_Vascular,nro_Uso_Filtro,diagnostico,peso_Seco,serologia,talla,imc,vih,grupo_Sanguineo,solucion_Dializante,nombre as 'Médico',paterno as 'Médico' from Evolucion_Tratamiento as evol,Sesion as ses,Control_Enfermeria as enf,Hoja_Secretaria as sec,Empleado as emp where evol.id_sesion=ses.id_sesion and ses.id_sesion=enf.id_sesion and sec.id_hojaS=ses.id_hojaS and emp.id_empleado=ses.id_empleado";
+            s = "select nro_Sesion_HD, fecha_Sesion, evolucion_Clinica, duracion, flujo_Efectivo, U_F_Programada, flujo_Dialisis, heparina, acceso_Vascular, nro_Uso_Filtro, diagnostico, peso_Seco, serologia, talla, imc, vih, grupo_Sanguineo, solucion_Dializante, nombre as 'Nombre del Médico',paterno as 'Apellido del Médico' from Evolucion_Tratamiento as evol,Sesion as ses,Control_Enfermeria as enf,Hoja_Secretaria as sec,Empleado as emp where evol.id_sesion = ses.id_sesion and ses.id_sesion = enf.id_sesion and sec.id_hojaS = ses.id_hojaS and emp.id_empleado = ses.id_empleado";            
             DataSet ds = new DataSet();
             ejecutarSQL(s, "tac", ds);
             return ds;
         }
 
-        /*
-        public void Modificar_Registros()
-        {
-            IniciarSP("modificar_evolucion_y_tratamiento");
-            AddParametro("@id_hojaEvolT", id_hojaEvolT);
-            AddParametro("@nro_Seguro", nro_Seguro);
-            AddParametro("@ultra_Filtracion", ultra_Filtracion);
-            AddParametro("@duracion", duracion);
-            AddParametro("@flujo_Dialisis", flujo_Dialisis);
-            AddParametro("@evolucion_Clinica", evolucion_Clinica);
-            AddParametro("@detalles_Medicacion", detalles_Medicacion);
-            AddParametro("@tipo_Tratamiento", tipo_Tratamiento);
-            AddParametro("@id_hoja_enfermeria", id_hoja_enfermeria);
-            AddParametro("@id_empleado", id_empleado);
-            ejecutarSP();
-        }
-
-        public void Eliminar_Registros()
-        {
-            IniciarSP("eliminar_evolucion_y_tratamiento");
-            AddParametro("@id_hojaEvolT", id_hojaEvolT);
-            AddParametro("@id_hoja_enfermeria", id_hoja_enfermeria);
-            AddParametro("@id_empleado", id_empleado);
-            ejecutarSP();
-        }*/
-
-        //Busca en los registros a un paciente por Nombre o por CI
-        public DataSet Buscar_Registros(string dato)
+        //Busca en los registros de evolución y tratamiento por fecha
+        public DataSet Buscar_fecha_Sesion(string dato)
         {
             string s;
             DataSet ds = new DataSet();
-            s = "select *from Evolucion_Tratamiento where id_hojaEvolT like '" + dato + "%' or id_empleado like '" + dato + "%' or id_hoja_enfermeria like '" + dato + "%'";
-            ejecutarSQL(s, "tac", ds);
+            s = "select nro_Sesion_HD,fecha_Sesion,evolucion_Clinica,duracion,flujo_Efectivo,U_F_Programada,flujo_Dialisis,heparina,acceso_Vascular,nro_Uso_Filtro,diagnostico,peso_Seco,serologia,talla,imc,vih,grupo_Sanguineo,solucion_Dializante,nombre as 'Médico',paterno as 'Médico' from Evolucion_Tratamiento as evol,Sesion as ses,Control_Enfermeria as enf,Hoja_Secretaria as sec,Empleado as emp where evol.id_sesion=ses.id_sesion and ses.id_sesion=enf.id_sesion and sec.id_hojaS=ses.id_hojaS and emp.id_empleado=ses.id_empleado and fecha_Sesion like '" + dato + "%'";
+            try
+            {
+                ejecutarSQL(s, "tac", ds);
+            }
+            catch (Exception er)
+            {
+                MessageBox.Show("No se encuentra el registro" + er.ToString());
+            }
+            return ds;
+        }
+
+        //Busca en los registros de evolución y tratamiento por acceso vascular
+        public DataSet Buscar_acceso_Vascular(string dato)
+        {
+            string s;
+            DataSet ds = new DataSet();
+            s = "select nro_Sesion_HD,fecha_Sesion,evolucion_Clinica,duracion,flujo_Efectivo,U_F_Programada,flujo_Dialisis,heparina,acceso_Vascular,nro_Uso_Filtro,diagnostico,peso_Seco,serologia,talla,imc,vih,grupo_Sanguineo,solucion_Dializante,nombre as 'Médico',paterno as 'Médico' from Evolucion_Tratamiento as evol,Sesion as ses,Control_Enfermeria as enf,Hoja_Secretaria as sec,Empleado as emp where evol.id_sesion=ses.id_sesion and ses.id_sesion=enf.id_sesion and sec.id_hojaS=ses.id_hojaS and emp.id_empleado=ses.id_empleado and acceso_Vascular like '" + dato + "%'";
+            try
+            {
+                ejecutarSQL(s, "tac", ds);
+            }
+            catch (Exception er)
+            {
+                MessageBox.Show("No se encuentra el registro" + er.ToString());
+            }
+            return ds;
+        }
+
+        //Busca en los registros de evolución y tratamiento por VIH
+        public DataSet Buscar_VIH(string dato)
+        {
+            string s;
+            DataSet ds = new DataSet();
+            s = "select nro_Sesion_HD,fecha_Sesion,evolucion_Clinica,duracion,flujo_Efectivo,U_F_Programada,flujo_Dialisis,heparina,acceso_Vascular,nro_Uso_Filtro,diagnostico,peso_Seco,serologia,talla,imc,vih,grupo_Sanguineo,solucion_Dializante,nombre as 'Médico',paterno as 'Médico' from Evolucion_Tratamiento as evol,Sesion as ses,Control_Enfermeria as enf,Hoja_Secretaria as sec,Empleado as emp where evol.id_sesion=ses.id_sesion and ses.id_sesion=enf.id_sesion and sec.id_hojaS=ses.id_hojaS and emp.id_empleado=ses.id_empleado and vih like '" + dato + "%'";
+            try
+            {
+                ejecutarSQL(s, "tac", ds);
+            }
+            catch (Exception er)
+            {
+                MessageBox.Show("No se encuentra el registro" + er.ToString());
+            }
+            return ds;
+        }
+
+        //Busca en los registros de evolución y tratamiento por grupo sanguíneo del paciente
+        public DataSet Buscar_grupo_Sanguineo(string dato)
+        {
+            string s;
+            DataSet ds = new DataSet();
+            s = "select nro_Sesion_HD,fecha_Sesion,evolucion_Clinica,duracion,flujo_Efectivo,U_F_Programada,flujo_Dialisis,heparina,acceso_Vascular,nro_Uso_Filtro,diagnostico,peso_Seco,serologia,talla,imc,vih,grupo_Sanguineo,solucion_Dializante,nombre as 'Médico',paterno as 'Médico' from Evolucion_Tratamiento as evol,Sesion as ses,Control_Enfermeria as enf,Hoja_Secretaria as sec,Empleado as emp where evol.id_sesion=ses.id_sesion and ses.id_sesion=enf.id_sesion and sec.id_hojaS=ses.id_hojaS and emp.id_empleado=ses.id_empleado and grupo_Sanguineo like '" + dato + "%'";
+            try
+            {
+                ejecutarSQL(s, "tac", ds);
+            }
+            catch (Exception er)
+            {
+                MessageBox.Show("No se encuentra el registro" + er.ToString());
+            }
+            return ds;
+        }
+
+        //Busca en los registros de evolución y tratamiento por nombre del médico que ingresó el registro de evolución y tratamiento
+        public DataSet Buscar_nombre_Medico(string dato)
+        {
+            string s;
+            DataSet ds = new DataSet();
+            s = "select nro_Sesion_HD,fecha_Sesion,evolucion_Clinica,duracion,flujo_Efectivo,U_F_Programada,flujo_Dialisis,heparina,acceso_Vascular,nro_Uso_Filtro,diagnostico,peso_Seco,serologia,talla,imc,vih,grupo_Sanguineo,solucion_Dializante,nombre as 'Médico',paterno as 'Médico' from Evolucion_Tratamiento as evol,Sesion as ses,Control_Enfermeria as enf,Hoja_Secretaria as sec,Empleado as emp where evol.id_sesion=ses.id_sesion and ses.id_sesion=enf.id_sesion and sec.id_hojaS=ses.id_hojaS and emp.id_empleado=ses.id_empleado and nombre like '" + dato + "%'";
+            try
+            {
+                ejecutarSQL(s, "tac", ds);
+            }
+            catch (Exception er)
+            {
+                MessageBox.Show("No se encuentra el registro" + er.ToString());
+            }
+            return ds;
+        }
+
+        //Busca en los registros de evolución y tratamiento por apellido del médico que ingresó el registro de evolución y tratamiento
+        public DataSet Buscar_apellido_Medico(string dato)
+        {
+            string s;
+            DataSet ds = new DataSet();
+            s = "select nro_Sesion_HD,fecha_Sesion,evolucion_Clinica,duracion,flujo_Efectivo,U_F_Programada,flujo_Dialisis,heparina,acceso_Vascular,nro_Uso_Filtro,diagnostico,peso_Seco,serologia,talla,imc,vih,grupo_Sanguineo,solucion_Dializante,nombre as 'Médico',paterno as 'Médico' from Evolucion_Tratamiento as evol,Sesion as ses,Control_Enfermeria as enf,Hoja_Secretaria as sec,Empleado as emp where evol.id_sesion=ses.id_sesion and ses.id_sesion=enf.id_sesion and sec.id_hojaS=ses.id_hojaS and emp.id_empleado=ses.id_empleado and paterno like '" + dato + "%' and materno like '" + dato + "%' ";
+            try
+            {
+                ejecutarSQL(s, "tac", ds);
+            }
+            catch (Exception er)
+            {
+                MessageBox.Show("No se encuentra el registro" + er.ToString());
+            }
             return ds;
         }
     }

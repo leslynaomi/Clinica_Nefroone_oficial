@@ -143,7 +143,7 @@ namespace capa_presentacion
             this.chkFormularioRef.Location = new System.Drawing.Point(144, 580);
             this.chkFormularioRef.Name = "chkFormularioRef";
             this.chkFormularioRef.Size = new System.Drawing.Size(129, 17);
-            this.chkFormularioRef.TabIndex = 15;
+            this.chkFormularioRef.TabIndex = 17;
             this.chkFormularioRef.Text = "Formulario Referencia";
             this.chkFormularioRef.UseVisualStyleBackColor = true;
             // 
@@ -152,7 +152,7 @@ namespace capa_presentacion
             this.txtNumTel.Location = new System.Drawing.Point(156, 373);
             this.txtNumTel.Name = "txtNumTel";
             this.txtNumTel.Size = new System.Drawing.Size(100, 20);
-            this.txtNumTel.TabIndex = 8;
+            this.txtNumTel.TabIndex = 10;
             this.txtNumTel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumTel_KeyPress);
             // 
             // txtGradInstr
@@ -160,7 +160,7 @@ namespace capa_presentacion
             this.txtGradInstr.Location = new System.Drawing.Point(156, 407);
             this.txtGradInstr.Name = "txtGradInstr";
             this.txtGradInstr.Size = new System.Drawing.Size(100, 20);
-            this.txtGradInstr.TabIndex = 9;
+            this.txtGradInstr.TabIndex = 11;
             this.txtGradInstr.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGradInstr_KeyPress);
             // 
             // dgvHojaRegistro
@@ -181,7 +181,7 @@ namespace capa_presentacion
             this.btnMostrarRegistros.Location = new System.Drawing.Point(30, 83);
             this.btnMostrarRegistros.Name = "btnMostrarRegistros";
             this.btnMostrarRegistros.Size = new System.Drawing.Size(225, 31);
-            this.btnMostrarRegistros.TabIndex = 17;
+            this.btnMostrarRegistros.TabIndex = 1;
             this.btnMostrarRegistros.Text = "Mostrar Registros";
             this.btnMostrarRegistros.UseVisualStyleBackColor = false;
             this.btnMostrarRegistros.Click += new System.EventHandler(this.btnMostrarRegistros_Click);
@@ -193,7 +193,7 @@ namespace capa_presentacion
             this.btnInsertarRegistros.Location = new System.Drawing.Point(26, 607);
             this.btnInsertarRegistros.Name = "btnInsertarRegistros";
             this.btnInsertarRegistros.Size = new System.Drawing.Size(240, 33);
-            this.btnInsertarRegistros.TabIndex = 16;
+            this.btnInsertarRegistros.TabIndex = 18;
             this.btnInsertarRegistros.Text = "Insertar Registros";
             this.btnInsertarRegistros.UseVisualStyleBackColor = false;
             this.btnInsertarRegistros.Click += new System.EventHandler(this.btnInsertarRegistros_Click);
@@ -204,14 +204,14 @@ namespace capa_presentacion
             this.dtpPrimHem.Location = new System.Drawing.Point(156, 549);
             this.dtpPrimHem.Name = "dtpPrimHem";
             this.dtpPrimHem.Size = new System.Drawing.Size(99, 20);
-            this.dtpPrimHem.TabIndex = 13;
+            this.dtpPrimHem.TabIndex = 15;
             // 
             // txtParam
             // 
             this.txtParam.Location = new System.Drawing.Point(411, 62);
             this.txtParam.Name = "txtParam";
             this.txtParam.Size = new System.Drawing.Size(129, 20);
-            this.txtParam.TabIndex = 18;
+            this.txtParam.TabIndex = 19;
             // 
             // rdbEdad
             // 
@@ -219,7 +219,7 @@ namespace capa_presentacion
             this.rdbEdad.Location = new System.Drawing.Point(957, 63);
             this.rdbEdad.Name = "rdbEdad";
             this.rdbEdad.Size = new System.Drawing.Size(50, 17);
-            this.rdbEdad.TabIndex = 22;
+            this.rdbEdad.TabIndex = 23;
             this.rdbEdad.TabStop = true;
             this.rdbEdad.Text = "Edad";
             this.rdbEdad.UseVisualStyleBackColor = true;
@@ -230,7 +230,7 @@ namespace capa_presentacion
             this.rdbApellido.Location = new System.Drawing.Point(727, 63);
             this.rdbApellido.Name = "rdbApellido";
             this.rdbApellido.Size = new System.Drawing.Size(62, 17);
-            this.rdbApellido.TabIndex = 20;
+            this.rdbApellido.TabIndex = 21;
             this.rdbApellido.TabStop = true;
             this.rdbApellido.Text = "Apellido";
             this.rdbApellido.UseVisualStyleBackColor = true;
@@ -241,7 +241,7 @@ namespace capa_presentacion
             this.rdbCi.Location = new System.Drawing.Point(817, 63);
             this.rdbCi.Name = "rdbCi";
             this.rdbCi.Size = new System.Drawing.Size(118, 17);
-            this.rdbCi.TabIndex = 21;
+            this.rdbCi.TabIndex = 22;
             this.rdbCi.TabStop = true;
             this.rdbCi.Text = "Carnet de Identidad";
             this.rdbCi.UseVisualStyleBackColor = true;
@@ -252,7 +252,7 @@ namespace capa_presentacion
             this.rdbName.Location = new System.Drawing.Point(646, 63);
             this.rdbName.Name = "rdbName";
             this.rdbName.Size = new System.Drawing.Size(62, 17);
-            this.rdbName.TabIndex = 19;
+            this.rdbName.TabIndex = 20;
             this.rdbName.TabStop = true;
             this.rdbName.Text = "Nombre";
             this.rdbName.UseVisualStyleBackColor = true;
@@ -274,7 +274,7 @@ namespace capa_presentacion
             this.btnBuscarRegistros.Location = new System.Drawing.Point(287, 57);
             this.btnBuscarRegistros.Name = "btnBuscarRegistros";
             this.btnBuscarRegistros.Size = new System.Drawing.Size(104, 29);
-            this.btnBuscarRegistros.TabIndex = 23;
+            this.btnBuscarRegistros.TabIndex = 24;
             this.btnBuscarRegistros.Text = "Buscar Registros";
             this.btnBuscarRegistros.UseVisualStyleBackColor = false;
             this.btnBuscarRegistros.Click += new System.EventHandler(this.btnBuscarRegistros_Click_1);
@@ -285,7 +285,7 @@ namespace capa_presentacion
             this.chkCartNeg.Location = new System.Drawing.Point(33, 580);
             this.chkCartNeg.Name = "chkCartNeg";
             this.chkCartNeg.Size = new System.Drawing.Size(97, 17);
-            this.chkCartNeg.TabIndex = 14;
+            this.chkCartNeg.TabIndex = 16;
             this.chkCartNeg.Text = "Carta Negativa";
             this.chkCartNeg.UseVisualStyleBackColor = true;
             // 
@@ -294,14 +294,14 @@ namespace capa_presentacion
             this.txtDireccion.Location = new System.Drawing.Point(155, 340);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(100, 20);
-            this.txtDireccion.TabIndex = 7;
+            this.txtDireccion.TabIndex = 9;
             // 
             // txtCi
             // 
             this.txtCi.Location = new System.Drawing.Point(156, 150);
             this.txtCi.Name = "txtCi";
             this.txtCi.Size = new System.Drawing.Size(100, 20);
-            this.txtCi.TabIndex = 1;
+            this.txtCi.TabIndex = 3;
             this.txtCi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCi_KeyPress_1);
             // 
             // txtMaterno
@@ -309,7 +309,7 @@ namespace capa_presentacion
             this.txtMaterno.Location = new System.Drawing.Point(156, 245);
             this.txtMaterno.Name = "txtMaterno";
             this.txtMaterno.Size = new System.Drawing.Size(100, 20);
-            this.txtMaterno.TabIndex = 4;
+            this.txtMaterno.TabIndex = 6;
             this.txtMaterno.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMaterno_KeyPress);
             // 
             // txtPaterno
@@ -317,7 +317,7 @@ namespace capa_presentacion
             this.txtPaterno.Location = new System.Drawing.Point(155, 214);
             this.txtPaterno.Name = "txtPaterno";
             this.txtPaterno.Size = new System.Drawing.Size(100, 20);
-            this.txtPaterno.TabIndex = 3;
+            this.txtPaterno.TabIndex = 5;
             this.txtPaterno.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPaterno_KeyPress);
             // 
             // txtNombre
@@ -325,7 +325,7 @@ namespace capa_presentacion
             this.txtNombre.Location = new System.Drawing.Point(156, 181);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(100, 20);
-            this.txtNombre.TabIndex = 2;
+            this.txtNombre.TabIndex = 4;
             this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // label6
@@ -397,18 +397,19 @@ namespace capa_presentacion
             this.dtpFechaNac.Location = new System.Drawing.Point(156, 277);
             this.dtpFechaNac.Name = "dtpFechaNac";
             this.dtpFechaNac.Size = new System.Drawing.Size(99, 20);
-            this.dtpFechaNac.TabIndex = 5;
+            this.dtpFechaNac.TabIndex = 7;
             // 
             // cmbSexo
             // 
             this.cmbSexo.FormattingEnabled = true;
+            this.cmbSexo.ItemHeight = 13;
             this.cmbSexo.Items.AddRange(new object[] {
             "Masculino",
             "Femenino"});
             this.cmbSexo.Location = new System.Drawing.Point(155, 309);
             this.cmbSexo.Name = "cmbSexo";
             this.cmbSexo.Size = new System.Drawing.Size(100, 21);
-            this.cmbSexo.TabIndex = 6;
+            this.cmbSexo.TabIndex = 8;
             // 
             // cmbSeguro
             // 
@@ -418,7 +419,7 @@ namespace capa_presentacion
             this.cmbSeguro.Location = new System.Drawing.Point(155, 511);
             this.cmbSeguro.Name = "cmbSeguro";
             this.cmbSeguro.Size = new System.Drawing.Size(100, 21);
-            this.cmbSeguro.TabIndex = 12;
+            this.cmbSeguro.TabIndex = 14;
             // 
             // cbxRed
             // 
@@ -428,7 +429,7 @@ namespace capa_presentacion
             this.cbxRed.Location = new System.Drawing.Point(155, 441);
             this.cbxRed.Name = "cbxRed";
             this.cbxRed.Size = new System.Drawing.Size(100, 21);
-            this.cbxRed.TabIndex = 6;
+            this.cbxRed.TabIndex = 12;
             // 
             // cbxMunicipio
             // 
@@ -438,7 +439,7 @@ namespace capa_presentacion
             this.cbxMunicipio.Location = new System.Drawing.Point(156, 478);
             this.cbxMunicipio.Name = "cbxMunicipio";
             this.cbxMunicipio.Size = new System.Drawing.Size(100, 21);
-            this.cbxMunicipio.TabIndex = 6;
+            this.cbxMunicipio.TabIndex = 13;
             // 
             // label9
             // 
@@ -459,7 +460,7 @@ namespace capa_presentacion
             this.cbxAccesoV.Location = new System.Drawing.Point(155, 120);
             this.cbxAccesoV.Name = "cbxAccesoV";
             this.cbxAccesoV.Size = new System.Drawing.Size(100, 21);
-            this.cbxAccesoV.TabIndex = 6;
+            this.cbxAccesoV.TabIndex = 2;
             // 
             // FrmHojaSecretaria
             // 

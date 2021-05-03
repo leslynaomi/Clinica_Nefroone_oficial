@@ -33,15 +33,14 @@ namespace capa_presentacion.Usuarios.secretario
             this.panel1 = new System.Windows.Forms.Panel();
             this.PanelFormulario = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnHojaSec = new System.Windows.Forms.Button();
-            this.btnRegPac = new System.Windows.Forms.Button();
             this.btnConsPac = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.btnMaximizar = new System.Windows.Forms.PictureBox();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
-            this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -77,13 +76,24 @@ namespace capa_presentacion.Usuarios.secretario
             this.panel3.Controls.Add(this.btnCerrarSesion);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.btnHojaSec);
-            this.panel3.Controls.Add(this.btnRegPac);
             this.panel3.Controls.Add(this.btnConsPac);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel3.Location = new System.Drawing.Point(0, 50);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(254, 631);
             this.panel3.TabIndex = 1;
+            // 
+            // btnCerrarSesion
+            // 
+            this.btnCerrarSesion.BackColor = System.Drawing.Color.DarkRed;
+            this.btnCerrarSesion.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnCerrarSesion.Location = new System.Drawing.Point(67, 559);
+            this.btnCerrarSesion.Name = "btnCerrarSesion";
+            this.btnCerrarSesion.Size = new System.Drawing.Size(111, 32);
+            this.btnCerrarSesion.TabIndex = 3;
+            this.btnCerrarSesion.Text = "CERRAR SESIÓN";
+            this.btnCerrarSesion.UseVisualStyleBackColor = false;
+            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
             // 
             // label1
             // 
@@ -101,7 +111,7 @@ namespace capa_presentacion.Usuarios.secretario
             this.btnHojaSec.BackColor = System.Drawing.SystemColors.Desktop;
             this.btnHojaSec.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHojaSec.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnHojaSec.Location = new System.Drawing.Point(3, 198);
+            this.btnHojaSec.Location = new System.Drawing.Point(0, 136);
             this.btnHojaSec.Name = "btnHojaSec";
             this.btnHojaSec.Size = new System.Drawing.Size(251, 36);
             this.btnHojaSec.TabIndex = 6;
@@ -109,25 +119,12 @@ namespace capa_presentacion.Usuarios.secretario
             this.btnHojaSec.UseVisualStyleBackColor = false;
             this.btnHojaSec.Click += new System.EventHandler(this.btnHojaSec_Click);
             // 
-            // btnRegPac
-            // 
-            this.btnRegPac.BackColor = System.Drawing.SystemColors.Desktop;
-            this.btnRegPac.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegPac.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnRegPac.Location = new System.Drawing.Point(3, 114);
-            this.btnRegPac.Name = "btnRegPac";
-            this.btnRegPac.Size = new System.Drawing.Size(251, 36);
-            this.btnRegPac.TabIndex = 5;
-            this.btnRegPac.Text = "REGISTRO DE PACIENTES";
-            this.btnRegPac.UseVisualStyleBackColor = false;
-            this.btnRegPac.Click += new System.EventHandler(this.btnRegPac_Click);
-            // 
             // btnConsPac
             // 
             this.btnConsPac.BackColor = System.Drawing.SystemColors.Desktop;
             this.btnConsPac.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConsPac.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnConsPac.Location = new System.Drawing.Point(3, 156);
+            this.btnConsPac.Location = new System.Drawing.Point(0, 94);
             this.btnConsPac.Name = "btnConsPac";
             this.btnConsPac.Size = new System.Drawing.Size(251, 36);
             this.btnConsPac.TabIndex = 5;
@@ -186,18 +183,6 @@ namespace capa_presentacion.Usuarios.secretario
             this.btnCerrar.TabStop = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click_1);
             // 
-            // btnCerrarSesion
-            // 
-            this.btnCerrarSesion.BackColor = System.Drawing.Color.DarkRed;
-            this.btnCerrarSesion.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnCerrarSesion.Location = new System.Drawing.Point(67, 559);
-            this.btnCerrarSesion.Name = "btnCerrarSesion";
-            this.btnCerrarSesion.Size = new System.Drawing.Size(111, 32);
-            this.btnCerrarSesion.TabIndex = 3;
-            this.btnCerrarSesion.Text = "CERRAR SESIÓN";
-            this.btnCerrarSesion.UseVisualStyleBackColor = false;
-            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
-            // 
             // formularioprincipalS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -230,7 +215,6 @@ namespace capa_presentacion.Usuarios.secretario
         private System.Windows.Forms.PictureBox btnMinimizar;
         private System.Windows.Forms.PictureBox btnMaximizar;
         private System.Windows.Forms.PictureBox btnCerrar;
-        private System.Windows.Forms.Button btnRegPac;
         private System.Windows.Forms.Button btnCerrarSesion;
     }
 }

@@ -72,7 +72,7 @@ namespace capa_presentacion
             this.btnInsertarRegistros.Location = new System.Drawing.Point(48, 435);
             this.btnInsertarRegistros.Name = "btnInsertarRegistros";
             this.btnInsertarRegistros.Size = new System.Drawing.Size(219, 40);
-            this.btnInsertarRegistros.TabIndex = 1;
+            this.btnInsertarRegistros.TabIndex = 10;
             this.btnInsertarRegistros.Text = "Insertar Registros";
             this.btnInsertarRegistros.UseVisualStyleBackColor = false;
             this.btnInsertarRegistros.Click += new System.EventHandler(this.btnInsertarRegistros_Click);
@@ -85,7 +85,7 @@ namespace capa_presentacion
             this.btnMostrarRegistros.Location = new System.Drawing.Point(47, 375);
             this.btnMostrarRegistros.Name = "btnMostrarRegistros";
             this.btnMostrarRegistros.Size = new System.Drawing.Size(221, 40);
-            this.btnMostrarRegistros.TabIndex = 2;
+            this.btnMostrarRegistros.TabIndex = 9;
             this.btnMostrarRegistros.Text = "Mostrar Registros";
             this.btnMostrarRegistros.UseVisualStyleBackColor = false;
             this.btnMostrarRegistros.Click += new System.EventHandler(this.btnMostrarRegistros_Click);
@@ -178,56 +178,56 @@ namespace capa_presentacion
             this.txtNombre.Location = new System.Drawing.Point(168, 113);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(100, 20);
-            this.txtNombre.TabIndex = 19;
+            this.txtNombre.TabIndex = 2;
             // 
             // txtPaterno
             // 
             this.txtPaterno.Location = new System.Drawing.Point(167, 257);
             this.txtPaterno.Name = "txtPaterno";
             this.txtPaterno.Size = new System.Drawing.Size(100, 20);
-            this.txtPaterno.TabIndex = 20;
+            this.txtPaterno.TabIndex = 6;
             // 
             // txtMaterno
             // 
             this.txtMaterno.Location = new System.Drawing.Point(168, 150);
             this.txtMaterno.Name = "txtMaterno";
             this.txtMaterno.Size = new System.Drawing.Size(100, 20);
-            this.txtMaterno.TabIndex = 21;
+            this.txtMaterno.TabIndex = 3;
             // 
             // txtCi
             // 
             this.txtCi.Location = new System.Drawing.Point(168, 78);
             this.txtCi.Name = "txtCi";
             this.txtCi.Size = new System.Drawing.Size(100, 20);
-            this.txtCi.TabIndex = 22;
+            this.txtCi.TabIndex = 1;
             // 
             // txtFechaNac
             // 
             this.txtFechaNac.Location = new System.Drawing.Point(168, 185);
             this.txtFechaNac.Name = "txtFechaNac";
             this.txtFechaNac.Size = new System.Drawing.Size(100, 20);
-            this.txtFechaNac.TabIndex = 23;
+            this.txtFechaNac.TabIndex = 4;
             // 
             // txtEdad
             // 
             this.txtEdad.Location = new System.Drawing.Point(167, 328);
             this.txtEdad.Name = "txtEdad";
             this.txtEdad.Size = new System.Drawing.Size(100, 20);
-            this.txtEdad.TabIndex = 24;
+            this.txtEdad.TabIndex = 8;
             // 
             // txtSexo
             // 
             this.txtSexo.Location = new System.Drawing.Point(168, 222);
             this.txtSexo.Name = "txtSexo";
             this.txtSexo.Size = new System.Drawing.Size(100, 20);
-            this.txtSexo.TabIndex = 25;
+            this.txtSexo.TabIndex = 5;
             // 
             // txtDireccion
             // 
             this.txtDireccion.Location = new System.Drawing.Point(167, 293);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(100, 20);
-            this.txtDireccion.TabIndex = 26;
+            this.txtDireccion.TabIndex = 7;
             // 
             // FrmRegistrarPacientes
             // 
