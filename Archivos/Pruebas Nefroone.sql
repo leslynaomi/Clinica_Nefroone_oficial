@@ -49,12 +49,11 @@ exec insertar_control_enfermeria 1,'14:10','15:20','3000 ml','5000 ui','250 mlx'
 --Inserción
 exec insertar_evolucion_y_tratamiento '4 horas','500 mlxl','Paciente en regular estado general',3,'Insuficiencia Renal Crónica',63,'Hepatitis B y C Negativo',1.54,32,0,'ORH (+)','Bicarbonato',1,1
 --Super Consulta para mostrar datos en el DataGridView
-/*
-select nro_Sesion_HD,fecha_Sesion,evolucion_Clinica,duracion,flujo_Efectivo,U_F_Programada,flujo_Dialisis,heparina,acceso_Vascular,nro_Uso_Filtro,diagnostico,peso_Seco,serologia,talla,imc,vih,grupo_Sanguineo,solucion_Dializante,nombre as 'Nombre del Médico',paterno as 'Apellido del Médico'
-from Evolucion_Tratamiento as evol,Sesion as ses,Control_Enfermeria as enf,Hoja_Secretaria as sec,Empleado as emp
-where evol.id_sesion=ses.id_sesion and ses.id_sesion=enf.id_sesion and sec.id_hojaS=ses.id_hojaS and emp.id_empleado=ses.id_empleado
+^/*
+select nro_Sesion_HD,pac.nombre,pac.paterno,pac.materno,pac.ci,edad,sexo,seguro,fecha_Sesion,evolucion_Clinica,duracion,flujo_Efectivo,U_F_Programada,flujo_Dialisis,heparina,acceso_Vascular,nro_Uso_Filtro,diagnostico,peso_Seco,serologia,talla,imc,vih,grupo_Sanguineo,solucion_Dializante,emp.nombre as 'Nombre del Médico',emp.paterno as 'Apellido del Médico'
+from Evolucion_Tratamiento as evol,Sesion as ses,Control_Enfermeria as enf,Hoja_Secretaria as sec,Empleado as emp,Paciente as pac
+where evol.id_sesion=ses.id_sesion and ses.id_sesion=enf.id_sesion and sec.id_hojaS=ses.id_hojaS and emp.id_empleado=ses.id_empleado and pac.ci = sec.ci
 */
-
 
 /*
 --Hoja Control de Enfermería

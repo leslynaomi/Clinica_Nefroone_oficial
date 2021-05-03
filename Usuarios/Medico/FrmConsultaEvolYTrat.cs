@@ -57,7 +57,14 @@ namespace capa_presentacion
                 }
                 if (rdbVIH.Checked == true)
                 {
-                    ds = evol.Buscar_VIH(cbxVIH.Text);
+                    if(cbxVIH.Text == "Positivo")
+                    {
+                        ds = evol.Buscar_VIH("1");
+                    }
+                    else
+                    {
+                        ds = evol.Buscar_VIH("0");
+                    }
                 }
                 if (rdbNameMed.Checked == true)
                 {

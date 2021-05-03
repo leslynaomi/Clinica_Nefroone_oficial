@@ -8,11 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Clinica_Nefroone
+
+
+namespace capa_presentacion
 {
-    public partial class FrmSaludGeneraldeFistula : Form
+    public partial class FrmAreaAdministrativa : Form
     {
-        public FrmSaludGeneraldeFistula()
+        public FrmAreaAdministrativa()
         {
             InitializeComponent();
         }

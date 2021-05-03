@@ -1,7 +1,7 @@
 ﻿
-namespace Clinica_Nefroone
+namespace capa_presentacion
 {
-    partial class FrmSaludGeneraldeFistula
+    partial class FrmAreaAdministrativa
     {
         /// <summary>
         /// Required designer variable.
@@ -32,7 +32,7 @@ namespace Clinica_Nefroone
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "FrmSaludFistula";
+            this.Text = "FrmAreaAdministrativa";
         }
 
         #endregion

@@ -152,18 +152,6 @@ namespace capa_presentacion
             frmPac.Show();                        
         }
 
-        private void btnMenuEmpelados_Click(object sender, EventArgs e)
-        {
-
-
-            this.Close();
-
-            FrmPrincipalAdministrador frm = new FrmPrincipalAdministrador();
-            frm.Show();
-            ////7/FrmGestionarEmpleado frmEmp = new FrmGestionarEmpleado();
-            ///  frmEmp.Show();  
-        }
-
         private void btnBuscarRegistros_Click(object sender, EventArgs e)
         {
             DataSet ds = new DataSet();

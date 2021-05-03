@@ -68,7 +68,7 @@ namespace capa_presentacion
             // 
             this.btnInsertarRegistros.BackColor = System.Drawing.Color.LightSeaGreen;
             this.btnInsertarRegistros.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btnInsertarRegistros.Location = new System.Drawing.Point(196, 497);
+            this.btnInsertarRegistros.Location = new System.Drawing.Point(191, 485);
             this.btnInsertarRegistros.Name = "btnInsertarRegistros";
             this.btnInsertarRegistros.Size = new System.Drawing.Size(112, 29);
             this.btnInsertarRegistros.TabIndex = 15;
@@ -146,11 +146,11 @@ namespace capa_presentacion
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(327, 22);
+            this.label1.Location = new System.Drawing.Point(333, 29);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(166, 25);
+            this.label1.Size = new System.Drawing.Size(221, 25);
             this.label1.TabIndex = 122;
-            this.label1.Text = "Registro de Datos";
+            this.label1.Text = "Evolución y Tratamiento";
             // 
             // cbxDuracion
             // 
@@ -300,7 +300,7 @@ namespace capa_presentacion
             // 
             this.btnSelectSesion.BackColor = System.Drawing.Color.DarkCyan;
             this.btnSelectSesion.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btnSelectSesion.Location = new System.Drawing.Point(49, 497);
+            this.btnSelectSesion.Location = new System.Drawing.Point(44, 485);
             this.btnSelectSesion.Name = "btnSelectSesion";
             this.btnSelectSesion.Size = new System.Drawing.Size(130, 29);
             this.btnSelectSesion.TabIndex = 1;

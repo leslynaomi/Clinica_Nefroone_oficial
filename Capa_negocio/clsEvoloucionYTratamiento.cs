@@ -93,7 +93,7 @@ namespace capa_negocio
         public DataSet Mostrar_Registros()
         {
             string s;
-            s = "select nro_Sesion_HD, fecha_Sesion, evolucion_Clinica, duracion, flujo_Efectivo, U_F_Programada, flujo_Dialisis, heparina, acceso_Vascular, nro_Uso_Filtro, diagnostico, peso_Seco, serologia, talla, imc, vih, grupo_Sanguineo, solucion_Dializante, nombre as 'Nombre del Médico',paterno as 'Apellido del Médico' from Evolucion_Tratamiento as evol,Sesion as ses,Control_Enfermeria as enf,Hoja_Secretaria as sec,Empleado as emp where evol.id_sesion = ses.id_sesion and ses.id_sesion = enf.id_sesion and sec.id_hojaS = ses.id_hojaS and emp.id_empleado = ses.id_empleado";            
+            s = "select nro_Sesion_HD,pac.nombre,pac.paterno,pac.materno,pac.ci,edad,sexo,seguro,fecha_Sesion,evolucion_Clinica,duracion,flujo_Efectivo,U_F_Programada,flujo_Dialisis,heparina,acceso_Vascular,nro_Uso_Filtro,diagnostico,peso_Seco,serologia,talla,imc,vih,grupo_Sanguineo,solucion_Dializante,emp.nombre as 'Nombre del Médico',emp.paterno as 'Apellido del Médico' from Evolucion_Tratamiento as evol,Sesion as ses,Control_Enfermeria as enf,Hoja_Secretaria as sec,Empleado as emp,Paciente as pac where evol.id_sesion=ses.id_sesion and ses.id_sesion=enf.id_sesion and sec.id_hojaS=ses.id_hojaS and emp.id_empleado=ses.id_empleado and pac.ci = sec.ci";
             DataSet ds = new DataSet();
             ejecutarSQL(s, "tac", ds);
             return ds;
@@ -104,7 +104,7 @@ namespace capa_negocio
         {
             string s;
             DataSet ds = new DataSet();
-            s = "select nro_Sesion_HD,fecha_Sesion,evolucion_Clinica,duracion,flujo_Efectivo,U_F_Programada,flujo_Dialisis,heparina,acceso_Vascular,nro_Uso_Filtro,diagnostico,peso_Seco,serologia,talla,imc,vih,grupo_Sanguineo,solucion_Dializante,nombre as 'Médico',paterno as 'Médico' from Evolucion_Tratamiento as evol,Sesion as ses,Control_Enfermeria as enf,Hoja_Secretaria as sec,Empleado as emp where evol.id_sesion=ses.id_sesion and ses.id_sesion=enf.id_sesion and sec.id_hojaS=ses.id_hojaS and emp.id_empleado=ses.id_empleado and fecha_Sesion like '" + dato + "%'";
+            s = "select nro_Sesion_HD,pac.nombre,pac.paterno,pac.materno,pac.ci,edad,sexo,seguro,fecha_Sesion,evolucion_Clinica,duracion,flujo_Efectivo,U_F_Programada,flujo_Dialisis,heparina,acceso_Vascular,nro_Uso_Filtro,diagnostico,peso_Seco,serologia,talla,imc,vih,grupo_Sanguineo,solucion_Dializante,emp.nombre as 'Nombre del Médico',emp.paterno as 'Apellido del Médico' from Evolucion_Tratamiento as evol,Sesion as ses,Control_Enfermeria as enf,Hoja_Secretaria as sec,Empleado as emp,Paciente as pac where evol.id_sesion=ses.id_sesion and ses.id_sesion=enf.id_sesion and sec.id_hojaS=ses.id_hojaS and emp.id_empleado=ses.id_empleado and pac.ci = sec.ci and fecha_Sesion = '" + dato + "'";
             try
             {
                 ejecutarSQL(s, "tac", ds);
@@ -121,7 +121,7 @@ namespace capa_negocio
         {
             string s;
             DataSet ds = new DataSet();
-            s = "select nro_Sesion_HD,fecha_Sesion,evolucion_Clinica,duracion,flujo_Efectivo,U_F_Programada,flujo_Dialisis,heparina,acceso_Vascular,nro_Uso_Filtro,diagnostico,peso_Seco,serologia,talla,imc,vih,grupo_Sanguineo,solucion_Dializante,nombre as 'Médico',paterno as 'Médico' from Evolucion_Tratamiento as evol,Sesion as ses,Control_Enfermeria as enf,Hoja_Secretaria as sec,Empleado as emp where evol.id_sesion=ses.id_sesion and ses.id_sesion=enf.id_sesion and sec.id_hojaS=ses.id_hojaS and emp.id_empleado=ses.id_empleado and acceso_Vascular like '" + dato + "%'";
+            s = "select nro_Sesion_HD,pac.nombre,pac.paterno,pac.materno,pac.ci,edad,sexo,seguro,fecha_Sesion,evolucion_Clinica,duracion,flujo_Efectivo,U_F_Programada,flujo_Dialisis,heparina,acceso_Vascular,nro_Uso_Filtro,diagnostico,peso_Seco,serologia,talla,imc,vih,grupo_Sanguineo,solucion_Dializante,emp.nombre as 'Nombre del Médico',emp.paterno as 'Apellido del Médico' from Evolucion_Tratamiento as evol,Sesion as ses,Control_Enfermeria as enf,Hoja_Secretaria as sec,Empleado as emp,Paciente as pac where evol.id_sesion=ses.id_sesion and ses.id_sesion=enf.id_sesion and sec.id_hojaS=ses.id_hojaS and emp.id_empleado=ses.id_empleado and pac.ci = sec.ci and acceso_Vascular = '" + dato + "'";
             try
             {
                 ejecutarSQL(s, "tac", ds);
@@ -138,7 +138,7 @@ namespace capa_negocio
         {
             string s;
             DataSet ds = new DataSet();
-            s = "select nro_Sesion_HD,fecha_Sesion,evolucion_Clinica,duracion,flujo_Efectivo,U_F_Programada,flujo_Dialisis,heparina,acceso_Vascular,nro_Uso_Filtro,diagnostico,peso_Seco,serologia,talla,imc,vih,grupo_Sanguineo,solucion_Dializante,nombre as 'Médico',paterno as 'Médico' from Evolucion_Tratamiento as evol,Sesion as ses,Control_Enfermeria as enf,Hoja_Secretaria as sec,Empleado as emp where evol.id_sesion=ses.id_sesion and ses.id_sesion=enf.id_sesion and sec.id_hojaS=ses.id_hojaS and emp.id_empleado=ses.id_empleado and vih like '" + dato + "%'";
+            s = "select nro_Sesion_HD,pac.nombre,pac.paterno,pac.materno,pac.ci,edad,sexo,seguro,fecha_Sesion,evolucion_Clinica,duracion,flujo_Efectivo,U_F_Programada,flujo_Dialisis,heparina,acceso_Vascular,nro_Uso_Filtro,diagnostico,peso_Seco,serologia,talla,imc,vih,grupo_Sanguineo,solucion_Dializante,emp.nombre as 'Nombre del Médico',emp.paterno as 'Apellido del Médico' from Evolucion_Tratamiento as evol,Sesion as ses,Control_Enfermeria as enf,Hoja_Secretaria as sec,Empleado as emp,Paciente as pac where evol.id_sesion=ses.id_sesion and ses.id_sesion=enf.id_sesion and sec.id_hojaS=ses.id_hojaS and emp.id_empleado=ses.id_empleado and pac.ci = sec.ci and vih = '" + dato + "'";
             try
             {
                 ejecutarSQL(s, "tac", ds);
@@ -155,7 +155,7 @@ namespace capa_negocio
         {
             string s;
             DataSet ds = new DataSet();
-            s = "select nro_Sesion_HD,fecha_Sesion,evolucion_Clinica,duracion,flujo_Efectivo,U_F_Programada,flujo_Dialisis,heparina,acceso_Vascular,nro_Uso_Filtro,diagnostico,peso_Seco,serologia,talla,imc,vih,grupo_Sanguineo,solucion_Dializante,nombre as 'Médico',paterno as 'Médico' from Evolucion_Tratamiento as evol,Sesion as ses,Control_Enfermeria as enf,Hoja_Secretaria as sec,Empleado as emp where evol.id_sesion=ses.id_sesion and ses.id_sesion=enf.id_sesion and sec.id_hojaS=ses.id_hojaS and emp.id_empleado=ses.id_empleado and grupo_Sanguineo like '" + dato + "%'";
+            s = "select nro_Sesion_HD,pac.nombre,pac.paterno,pac.materno,pac.ci,edad,sexo,seguro,fecha_Sesion,evolucion_Clinica,duracion,flujo_Efectivo,U_F_Programada,flujo_Dialisis,heparina,acceso_Vascular,nro_Uso_Filtro,diagnostico,peso_Seco,serologia,talla,imc,vih,grupo_Sanguineo,solucion_Dializante,emp.nombre as 'Nombre del Médico',emp.paterno as 'Apellido del Médico' from Evolucion_Tratamiento as evol,Sesion as ses,Control_Enfermeria as enf,Hoja_Secretaria as sec,Empleado as emp,Paciente as pac where evol.id_sesion=ses.id_sesion and ses.id_sesion=enf.id_sesion and sec.id_hojaS=ses.id_hojaS and emp.id_empleado=ses.id_empleado and pac.ci = sec.ci and grupo_Sanguineo like '" + dato + "%'";
             try
             {
                 ejecutarSQL(s, "tac", ds);
@@ -172,7 +172,7 @@ namespace capa_negocio
         {
             string s;
             DataSet ds = new DataSet();
-            s = "select nro_Sesion_HD,fecha_Sesion,evolucion_Clinica,duracion,flujo_Efectivo,U_F_Programada,flujo_Dialisis,heparina,acceso_Vascular,nro_Uso_Filtro,diagnostico,peso_Seco,serologia,talla,imc,vih,grupo_Sanguineo,solucion_Dializante,nombre as 'Médico',paterno as 'Médico' from Evolucion_Tratamiento as evol,Sesion as ses,Control_Enfermeria as enf,Hoja_Secretaria as sec,Empleado as emp where evol.id_sesion=ses.id_sesion and ses.id_sesion=enf.id_sesion and sec.id_hojaS=ses.id_hojaS and emp.id_empleado=ses.id_empleado and nombre like '" + dato + "%'";
+            s = "select nro_Sesion_HD,pac.nombre,pac.paterno,pac.materno,pac.ci,edad,sexo,seguro,fecha_Sesion,evolucion_Clinica,duracion,flujo_Efectivo,U_F_Programada,flujo_Dialisis,heparina,acceso_Vascular,nro_Uso_Filtro,diagnostico,peso_Seco,serologia,talla,imc,vih,grupo_Sanguineo,solucion_Dializante,emp.nombre as 'Nombre del Médico',emp.paterno as 'Apellido del Médico' from Evolucion_Tratamiento as evol,Sesion as ses,Control_Enfermeria as enf,Hoja_Secretaria as sec,Empleado as emp,Paciente as pac where evol.id_sesion=ses.id_sesion and ses.id_sesion=enf.id_sesion and sec.id_hojaS=ses.id_hojaS and emp.id_empleado=ses.id_empleado and pac.ci = sec.ci and emp.nombre like '" + dato + "%'";
             try
             {
                 ejecutarSQL(s, "tac", ds);
@@ -189,7 +189,7 @@ namespace capa_negocio
         {
             string s;
             DataSet ds = new DataSet();
-            s = "select nro_Sesion_HD,fecha_Sesion,evolucion_Clinica,duracion,flujo_Efectivo,U_F_Programada,flujo_Dialisis,heparina,acceso_Vascular,nro_Uso_Filtro,diagnostico,peso_Seco,serologia,talla,imc,vih,grupo_Sanguineo,solucion_Dializante,nombre as 'Médico',paterno as 'Médico' from Evolucion_Tratamiento as evol,Sesion as ses,Control_Enfermeria as enf,Hoja_Secretaria as sec,Empleado as emp where evol.id_sesion=ses.id_sesion and ses.id_sesion=enf.id_sesion and sec.id_hojaS=ses.id_hojaS and emp.id_empleado=ses.id_empleado and paterno like '" + dato + "%' and materno like '" + dato + "%' ";
+            s = "select nro_Sesion_HD,pac.nombre,pac.paterno,pac.materno,pac.ci,edad,sexo,seguro,fecha_Sesion,evolucion_Clinica,duracion,flujo_Efectivo,U_F_Programada,flujo_Dialisis,heparina,acceso_Vascular,nro_Uso_Filtro,diagnostico,peso_Seco,serologia,talla,imc,vih,grupo_Sanguineo,solucion_Dializante,emp.nombre as 'Nombre del Médico',emp.paterno as 'Apellido del Médico' from Evolucion_Tratamiento as evol,Sesion as ses,Control_Enfermeria as enf,Hoja_Secretaria as sec,Empleado as emp,Paciente as pac where evol.id_sesion=ses.id_sesion and ses.id_sesion=enf.id_sesion and sec.id_hojaS=ses.id_hojaS and emp.id_empleado=ses.id_empleado and pac.ci = sec.ci and emp.paterno like '" + dato + "%' or emp.materno like '" + dato + "%'";
             try
             {
                 ejecutarSQL(s, "tac", ds);

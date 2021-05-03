@@ -24,19 +24,29 @@ namespace capa_presentacion
         private void btnBuscarRegistros_Click(object sender, EventArgs e)
         {
             DataSet ds = new DataSet();
-            ds = pac.Buscar_Registros(txtParam.Text);
-            dgvPaciente.DataSource = ds;
-            dgvPaciente.DataMember = "tac";
-            dgvPaciente.AutoResizeColumns();
-            dgvPaciente.AutoResizeRows();
-        }
+            if (rdbName.Checked == true || rdbApellido.Checked == true || rdbEdad.Checked == true || rdbCi.Checked == true)
+            {
+                if (rdbName.Checked == true)
+                { ds = pac.Buscar_Nombre(txtParam.Text); }
 
-        private void btnMostrarRegistros_Click(object sender, EventArgs e)
-        {
-            dgvPaciente.DataSource = pac.Mostrar_Registros();
-            dgvPaciente.DataMember = "tac";
-            dgvPaciente.AutoResizeColumns();
-            dgvPaciente.AutoResizeRows();
-        }
+                if (rdbApellido.Checked == true)
+                { ds = pac.Buscar_Apellido(txtParam.Text); }
+
+                if (rdbEdad.Checked == true)
+                { ds = pac.Buscar_Edad(txtParam.Text); }
+
+                if (rdbCi.Checked == true)
+                { ds = pac.Buscar_Ci(txtParam.Text); }
+
+                dgvPaciente.DataSource = ds;
+                dgvPaciente.DataMember = "tac";
+                dgvPaciente.AutoResizeColumns();
+                dgvPaciente.AutoResizeRows();
+            }            
+            else
+            {
+                MessageBox.Show("Tiene que seleccionar una opción de búsqueda");
+            }
+        }        
     }
 }

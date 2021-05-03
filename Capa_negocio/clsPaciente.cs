@@ -92,11 +92,38 @@ namespace capa_negocio
             ejecutarSP();
         }
         //Busca en los registros a un paciente por Nombre o por CI
-        public DataSet Buscar_Registros(string dato)
+        public DataSet Buscar_Nombre(string dato)
         {
             string s;
             DataSet ds = new DataSet();
-            s = "select *from paciente where ci like '" + dato + "%' or nombre like '" + dato + "%'";
+            s = "select *from paciente where nombre like '" + dato + "%'";
+            ejecutarSQL(s, "tac", ds);
+            return ds;
+        }
+
+        public DataSet Buscar_Apellido(string dato)
+        {
+            string s;
+            DataSet ds = new DataSet();
+            s = "select *from paciente where paterno like '" + dato + "%' or materno like '" + dato + "%'";
+            ejecutarSQL(s, "tac", ds);
+            return ds;
+        }
+
+        public DataSet Buscar_Edad(string dato)
+        {
+            string s;
+            DataSet ds = new DataSet();
+            s = "select *from paciente where edad like '" + dato + "%'";
+            ejecutarSQL(s, "tac", ds);
+            return ds;
+        }
+
+        public DataSet Buscar_Ci(string dato)
+        {
+            string s;
+            DataSet ds = new DataSet();
+            s = "select *from paciente where ci like '" + dato + "%'";
             ejecutarSQL(s, "tac", ds);
             return ds;
         }

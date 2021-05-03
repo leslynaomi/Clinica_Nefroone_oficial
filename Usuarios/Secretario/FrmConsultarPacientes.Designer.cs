@@ -34,10 +34,10 @@ namespace capa_presentacion
             this.txtParam = new System.Windows.Forms.TextBox();
             this.btnBuscarRegistros = new System.Windows.Forms.Button();
             this.dgvPaciente = new System.Windows.Forms.DataGridView();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.rdbName = new System.Windows.Forms.RadioButton();
+            this.rdbCi = new System.Windows.Forms.RadioButton();
+            this.rdbEdad = new System.Windows.Forms.RadioButton();
+            this.rdbApellido = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPaciente)).BeginInit();
             this.SuspendLayout();
             // 
@@ -90,49 +90,49 @@ namespace capa_presentacion
             this.dgvPaciente.Size = new System.Drawing.Size(753, 350);
             this.dgvPaciente.TabIndex = 31;
             // 
-            // radioButton1
+            // rdbName
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(410, 75);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(62, 17);
-            this.radioButton1.TabIndex = 32;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Nombre";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rdbName.AutoSize = true;
+            this.rdbName.Location = new System.Drawing.Point(410, 75);
+            this.rdbName.Name = "rdbName";
+            this.rdbName.Size = new System.Drawing.Size(62, 17);
+            this.rdbName.TabIndex = 32;
+            this.rdbName.TabStop = true;
+            this.rdbName.Text = "Nombre";
+            this.rdbName.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // rdbCi
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(581, 75);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(118, 17);
-            this.radioButton2.TabIndex = 32;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Carnet de Identidad";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rdbCi.AutoSize = true;
+            this.rdbCi.Location = new System.Drawing.Point(573, 75);
+            this.rdbCi.Name = "rdbCi";
+            this.rdbCi.Size = new System.Drawing.Size(118, 17);
+            this.rdbCi.TabIndex = 32;
+            this.rdbCi.TabStop = true;
+            this.rdbCi.Text = "Carnet de Identidad";
+            this.rdbCi.UseVisualStyleBackColor = true;
             // 
-            // radioButton3
+            // rdbEdad
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(721, 75);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(50, 17);
-            this.radioButton3.TabIndex = 32;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Edad";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.rdbEdad.AutoSize = true;
+            this.rdbEdad.Location = new System.Drawing.Point(713, 75);
+            this.rdbEdad.Name = "rdbEdad";
+            this.rdbEdad.Size = new System.Drawing.Size(50, 17);
+            this.rdbEdad.TabIndex = 32;
+            this.rdbEdad.TabStop = true;
+            this.rdbEdad.Text = "Edad";
+            this.rdbEdad.UseVisualStyleBackColor = true;
             // 
-            // radioButton4
+            // rdbApellido
             // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(491, 75);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(62, 17);
-            this.radioButton4.TabIndex = 32;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "Apellido";
-            this.radioButton4.UseVisualStyleBackColor = true;
+            this.rdbApellido.AutoSize = true;
+            this.rdbApellido.Location = new System.Drawing.Point(491, 75);
+            this.rdbApellido.Name = "rdbApellido";
+            this.rdbApellido.Size = new System.Drawing.Size(62, 17);
+            this.rdbApellido.TabIndex = 32;
+            this.rdbApellido.TabStop = true;
+            this.rdbApellido.Text = "Apellido";
+            this.rdbApellido.UseVisualStyleBackColor = true;
             // 
             // FrmConsultarPacientes
             // 
@@ -140,10 +140,10 @@ namespace capa_presentacion
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumAquamarine;
             this.ClientSize = new System.Drawing.Size(826, 478);
-            this.Controls.Add(this.radioButton3);
-            this.Controls.Add(this.radioButton4);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.rdbEdad);
+            this.Controls.Add(this.rdbApellido);
+            this.Controls.Add(this.rdbCi);
+            this.Controls.Add(this.rdbName);
             this.Controls.Add(this.dgvPaciente);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.txtParam);
@@ -164,9 +164,9 @@ namespace capa_presentacion
         private System.Windows.Forms.TextBox txtParam;
         private System.Windows.Forms.Button btnBuscarRegistros;
         private System.Windows.Forms.DataGridView dgvPaciente;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton4;
+        private System.Windows.Forms.RadioButton rdbName;
+        private System.Windows.Forms.RadioButton rdbCi;
+        private System.Windows.Forms.RadioButton rdbEdad;
+        private System.Windows.Forms.RadioButton rdbApellido;
     }
 }

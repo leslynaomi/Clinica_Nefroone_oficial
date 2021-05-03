@@ -50,7 +50,7 @@ namespace capa_presentacion
             // rdbGrupSang
             // 
             this.rdbGrupSang.AutoSize = true;
-            this.rdbGrupSang.Location = new System.Drawing.Point(694, 63);
+            this.rdbGrupSang.Location = new System.Drawing.Point(694, 73);
             this.rdbGrupSang.Name = "rdbGrupSang";
             this.rdbGrupSang.Size = new System.Drawing.Size(108, 17);
             this.rdbGrupSang.TabIndex = 7;
@@ -62,7 +62,7 @@ namespace capa_presentacion
             // rdbAccesoVasc
             // 
             this.rdbAccesoVasc.AutoSize = true;
-            this.rdbAccesoVasc.Location = new System.Drawing.Point(530, 64);
+            this.rdbAccesoVasc.Location = new System.Drawing.Point(530, 74);
             this.rdbAccesoVasc.Name = "rdbAccesoVasc";
             this.rdbAccesoVasc.Size = new System.Drawing.Size(105, 17);
             this.rdbAccesoVasc.TabIndex = 5;
@@ -74,7 +74,7 @@ namespace capa_presentacion
             // rdbVIH
             // 
             this.rdbVIH.AutoSize = true;
-            this.rdbVIH.Location = new System.Drawing.Point(645, 64);
+            this.rdbVIH.Location = new System.Drawing.Point(645, 74);
             this.rdbVIH.Name = "rdbVIH";
             this.rdbVIH.Size = new System.Drawing.Size(43, 17);
             this.rdbVIH.TabIndex = 6;
@@ -86,7 +86,7 @@ namespace capa_presentacion
             // rdbFechaSesion
             // 
             this.rdbFechaSesion.AutoSize = true;
-            this.rdbFechaSesion.Location = new System.Drawing.Point(421, 64);
+            this.rdbFechaSesion.Location = new System.Drawing.Point(421, 74);
             this.rdbFechaSesion.Name = "rdbFechaSesion";
             this.rdbFechaSesion.Size = new System.Drawing.Size(103, 17);
             this.rdbFechaSesion.TabIndex = 4;
@@ -98,7 +98,7 @@ namespace capa_presentacion
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(354, 66);
+            this.label2.Location = new System.Drawing.Point(354, 76);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 13);
             this.label2.TabIndex = 197;
@@ -106,7 +106,7 @@ namespace capa_presentacion
             // 
             // txtParamBusc
             // 
-            this.txtParamBusc.Location = new System.Drawing.Point(248, 63);
+            this.txtParamBusc.Location = new System.Drawing.Point(248, 73);
             this.txtParamBusc.Name = "txtParamBusc";
             this.txtParamBusc.Size = new System.Drawing.Size(100, 20);
             this.txtParamBusc.TabIndex = 192;
@@ -115,7 +115,7 @@ namespace capa_presentacion
             // 
             this.btnBuscarRegistros.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.btnBuscarRegistros.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btnBuscarRegistros.Location = new System.Drawing.Point(164, 58);
+            this.btnBuscarRegistros.Location = new System.Drawing.Point(164, 68);
             this.btnBuscarRegistros.Name = "btnBuscarRegistros";
             this.btnBuscarRegistros.Size = new System.Drawing.Size(78, 29);
             this.btnBuscarRegistros.TabIndex = 3;
@@ -128,9 +128,9 @@ namespace capa_presentacion
             this.dgvHojaEvolucionTrat.AllowUserToOrderColumns = true;
             this.dgvHojaEvolucionTrat.BackgroundColor = System.Drawing.Color.LightSkyBlue;
             this.dgvHojaEvolucionTrat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvHojaEvolucionTrat.Location = new System.Drawing.Point(28, 102);
+            this.dgvHojaEvolucionTrat.Location = new System.Drawing.Point(27, 116);
             this.dgvHojaEvolucionTrat.Name = "dgvHojaEvolucionTrat";
-            this.dgvHojaEvolucionTrat.Size = new System.Drawing.Size(1027, 525);
+            this.dgvHojaEvolucionTrat.Size = new System.Drawing.Size(1027, 515);
             this.dgvHojaEvolucionTrat.TabIndex = 190;
             // 
             // label1
@@ -139,15 +139,15 @@ namespace capa_presentacion
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(451, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(173, 25);
+            this.label1.Size = new System.Drawing.Size(221, 25);
             this.label1.TabIndex = 198;
-            this.label1.Text = "Consulta de Datos";
+            this.label1.Text = "Evolución y Tratamiento";
             // 
             // btnMostrarRegistros
             // 
             this.btnMostrarRegistros.BackColor = System.Drawing.Color.LightSlateGray;
             this.btnMostrarRegistros.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btnMostrarRegistros.Location = new System.Drawing.Point(27, 58);
+            this.btnMostrarRegistros.Location = new System.Drawing.Point(27, 68);
             this.btnMostrarRegistros.Name = "btnMostrarRegistros";
             this.btnMostrarRegistros.Size = new System.Drawing.Size(103, 29);
             this.btnMostrarRegistros.TabIndex = 1;
@@ -158,7 +158,7 @@ namespace capa_presentacion
             // rdbNameMed
             // 
             this.rdbNameMed.AutoSize = true;
-            this.rdbNameMed.Location = new System.Drawing.Point(808, 64);
+            this.rdbNameMed.Location = new System.Drawing.Point(808, 74);
             this.rdbNameMed.Name = "rdbNameMed";
             this.rdbNameMed.Size = new System.Drawing.Size(114, 17);
             this.rdbNameMed.TabIndex = 8;
@@ -170,7 +170,7 @@ namespace capa_presentacion
             // rdbApellidoMed
             // 
             this.rdbApellidoMed.AutoSize = true;
-            this.rdbApellidoMed.Location = new System.Drawing.Point(928, 64);
+            this.rdbApellidoMed.Location = new System.Drawing.Point(928, 74);
             this.rdbApellidoMed.Name = "rdbApellidoMed";
             this.rdbApellidoMed.Size = new System.Drawing.Size(114, 17);
             this.rdbApellidoMed.TabIndex = 9;
@@ -186,7 +186,7 @@ namespace capa_presentacion
             "Cateter",
             "Fistula",
             "Dialisis Peritoneal"});
-            this.cbxAccesoV.Location = new System.Drawing.Point(249, 62);
+            this.cbxAccesoV.Location = new System.Drawing.Point(249, 72);
             this.cbxAccesoV.Name = "cbxAccesoV";
             this.cbxAccesoV.Size = new System.Drawing.Size(100, 21);
             this.cbxAccesoV.TabIndex = 201;
@@ -195,7 +195,7 @@ namespace capa_presentacion
             // dtpFechaSes
             // 
             this.dtpFechaSes.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaSes.Location = new System.Drawing.Point(249, 63);
+            this.dtpFechaSes.Location = new System.Drawing.Point(249, 73);
             this.dtpFechaSes.Name = "dtpFechaSes";
             this.dtpFechaSes.Size = new System.Drawing.Size(99, 20);
             this.dtpFechaSes.TabIndex = 200;
@@ -207,7 +207,7 @@ namespace capa_presentacion
             this.cbxVIH.Items.AddRange(new object[] {
             "Positivo",
             "Negativo"});
-            this.cbxVIH.Location = new System.Drawing.Point(248, 62);
+            this.cbxVIH.Location = new System.Drawing.Point(248, 72);
             this.cbxVIH.Name = "cbxVIH";
             this.cbxVIH.Size = new System.Drawing.Size(100, 21);
             this.cbxVIH.TabIndex = 2;

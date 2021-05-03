@@ -14,7 +14,6 @@ using capa_datos;
 using capa_negocio;
 
 //using System.Linq;
-using Clinica_Nefroone;
 using capa_presentacion.Usuarios.Medico;
 using capa_presentacion.Usuarios.Farmaceutico;
 using capa_presentacion.Usuarios.secretario;

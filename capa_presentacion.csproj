@@ -80,31 +80,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClinicaDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ClinicaDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="FrmAreaSalud.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmAreaSalud.Designer.cs">
-      <DependentUpon>FrmAreaSalud.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmAreaAdministrativa.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmAreaAdministrativa.Designer.cs">
-      <DependentUpon>FrmAreaAdministrativa.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmPrincipalAdministrador.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmPrincipalAdministrador.Designer.cs">
-      <DependentUpon>FrmPrincipalAdministrador.cs</DependentUpon>
-    </Compile>
     <Compile Include="Métodos y Clases\Constantes.cs" />
     <Compile Include="Métodos y Clases\Metodos.cs" />
+    <Compile Include="Usuarios\Administrador\FrmAreaAdministrativa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Usuarios\Administrador\FrmAreaAdministrativa.Designer.cs">
+      <DependentUpon>FrmAreaAdministrativa.cs</DependentUpon>
+    </Compile>
     <Compile Include="Usuarios\Enfermera\FrmConsultaSesion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,30 +105,6 @@
     </Compile>
     <Compile Include="Usuarios\Login\FrmInicioSesion.Designer.cs">
       <DependentUpon>FrmInicioSesion.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmRegistrarPersonalNuevo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmRegistrarPersonalNuevo.Designer.cs">
-      <DependentUpon>FrmRegistrarPersonalNuevo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmSaludGeneraldeCateter.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmSaludGeneraldeCateter.Designer.cs">
-      <DependentUpon>FrmSaludGeneraldeCateter.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmSaludGeneraldeDialisisPeritonial.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmSaludGeneraldeDialisisPeritonial.Designer.cs">
-      <DependentUpon>FrmSaludGeneraldeDialisisPeritonial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmSaludGeneraldeFistula.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmSaludGeneraldeFistula.Designer.cs">
-      <DependentUpon>FrmSaludGeneraldeFistula.cs</DependentUpon>
     </Compile>
     <Compile Include="Usuarios\Administrador\FrmAreaPacientes.cs">
       <SubType>Form</SubType>
@@ -179,10 +138,10 @@
     <Compile Include="Usuarios\Enfermera\FrmHojaEnfermeria.Designer.cs">
       <DependentUpon>FrmHojaEnfermeria.cs</DependentUpon>
     </Compile>
-    <Compile Include="Usuarios\Secretario\FrmRegistrarPacientes.cs">
+    <Compile Include="Usuarios\Administrador\FrmRegistrarPacientes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Usuarios\Secretario\FrmRegistrarPacientes.Designer.cs">
+    <Compile Include="Usuarios\Administrador\FrmRegistrarPacientes.Designer.cs">
       <DependentUpon>FrmRegistrarPacientes.cs</DependentUpon>
     </Compile>
     <Compile Include="Usuarios\Secretario\FrmHojaSecretaria.cs">
@@ -246,12 +205,6 @@
     <Compile Include="Usuarios\Secretario\FrmColaAtencion.Designer.cs">
       <DependentUpon>FrmColaAtencion.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="FrmAreaSalud.resx">
-      <DependentUpon>FrmAreaSalud.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmAreaAdministrativa.resx">
-      <DependentUpon>FrmAreaAdministrativa.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Usuarios\Enfermera\FrmConsultaSesion.resx">
       <DependentUpon>FrmConsultaSesion.cs</DependentUpon>
     </EmbeddedResource>
@@ -260,12 +213,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Usuarios\Login\FrmInicioSesion.resx">
       <DependentUpon>FrmInicioSesion.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmPrincipalAdministrador.resx">
-      <DependentUpon>FrmPrincipalAdministrador.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmRegistrarPersonalNuevo.resx">
-      <DependentUpon>FrmRegistrarPersonalNuevo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Usuarios\Administrador\FrmAreaPacientes.resx">
       <DependentUpon>FrmAreaPacientes.cs</DependentUpon>
@@ -286,7 +233,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Usuarios\Secretario\FrmRegistrarPacientes.resx">
+    <EmbeddedResource Include="Usuarios\Administrador\FrmRegistrarPacientes.resx">
       <DependentUpon>FrmRegistrarPacientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Usuarios\Medico\FrmInsercionEvolYTrat.resx">
@@ -325,17 +272,6 @@
     <EmbeddedResource Include="Usuarios\Secretario\FrmColaAtencion.resx">
       <DependentUpon>FrmColaAtencion.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="ClinicaDataSet.xsc">
-      <DependentUpon>ClinicaDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="ClinicaDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ClinicaDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="ClinicaDataSet.xss">
-      <DependentUpon>ClinicaDataSet.xsd</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
