@@ -78,5 +78,10 @@ namespace capa_presentacion.Usuarios.secretario
             FrmInicioSesion frm = new FrmInicioSesion();
             frm.Show();
         }
+
+        private void btnConsHojSec_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<FrmConsultaHojaSec>();
+        }
     }
 }

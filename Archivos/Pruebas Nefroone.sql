@@ -15,12 +15,14 @@ go
 --Paciente
 --select *from Paciente
 exec insertar_paciente 92452354,'Joaquin','Charles','Flower','13/08/1998',0,'M','Calle Cosorio'
+exec insertar_paciente 93467764,'Oliver','Atom','','14/03/1998',0,'M','Calle Ambaibo'
 --exec modificar_paciente 92452354,'Pedro','Contra','Barreras','13/08/1998',0,'M','Calle Alemán'
 --exec eliminar_paciente 0
 go
 --Hoja Secretaria
 --select *from Hoja_Secretaria
 exec insertar_hoja_sec 7249399,1,1,'Profesional','Salud','Montero','SUS','12/03/2020','Cateter',92452354,1
+exec insertar_hoja_sec 7545699,0,0,'Profesional','Salud','Montero','SUS','12/03/2020','Dialisis Peritoneal',93467764,1
 --exec modificar_hoja_sec 1,7249399,true,'Esta es una carta negativa','este es un grado instrucción','local','Montero','Este es un seguro','27/09/2021',92452354
 --exec eliminar_hoja_sec 6,92452354
 go
@@ -32,6 +34,7 @@ exec insertar_nota_enf 'Paciente ingresa al servicio de hemodiálisis con signos 
 --Sesion
 --select *from Sesion
 exec insertar_sesion '10/03/2021',60.7,50,1,1,1
+exec insertar_sesion '03/04/2021',62,55,1,1,4
 
 --Super consulta para el formulario de Sesion
 /*
@@ -44,6 +47,11 @@ where sec.ci = pac.ci and sec.id_hojaS = ses.id_hojaS
 --select *from Control_Enfermeria
 exec insertar_control_enfermeria 1,'14:10','15:20','3000 ml','5000 ui','250 mlx','140/70/mHg',30,'68x','98%',1
 
+--Dialisis Peritoneal
+--select *from Dialisis_Peritoneal
+exec insertar_dialisis_peritoneal 1,'7:00','7:15','2000 ml','08:00','2500 ml','-500 ml','-500 ml','Perito I','Perito I','P/A = 181/83 FC = 97x',8,'4 gr',5
+--insert into Dialisis_Peritoneal values (1,'7:00','7:15','2000 ml','08:00','2500 ml','-500 ml','-500 ml','Perito I','Perito I','P/A = 181/83 FC = 97x',8,'4 gr',3)
+
 --Evolución y Tratamiento
 --select *from Evolucion_Tratamiento
 --Inserción
@@ -55,19 +63,9 @@ from Evolucion_Tratamiento as evol,Sesion as ses,Control_Enfermeria as enf,Hoja_
 where evol.id_sesion=ses.id_sesion and ses.id_sesion=enf.id_sesion and sec.id_hojaS=ses.id_hojaS and emp.id_empleado=ses.id_empleado and pac.ci = sec.ci
 */
 
+
+
 /*
---Hoja Control de Enfermería
-exec modificar_control_enfermeria 2,'17/05/2021',19,'14:10','15:20',60.6,58.8,'Esta es una UF programada','Esta es una heparina',670.70,'Presión de 210',26.5,'Este es un pulso','Esta es una saturación',3,1
-exec eliminar_control_enfermeria 2,3,1
-go
-exec modificar_evolucion_y_tratamiento 
-exec eliminar_evolucion_y_tratamiento 
-
-
-SELECT *FROM  Medicamento
-SELECT * FROM Farmacia
-select*from empleado
-
 insert into Farmacia values ('Farmacia NEFROONE',1)
 
 insert into empleado values ('Juan','Perez','Alba',123,'12-04-1998',77890212,'Farmaceutico')
@@ -77,8 +75,8 @@ insert into Medicamento values (0,'Alcohol','','',0,1,0,0,1)
 insert into Medicamento values (0,'Aguja para Fistula nro 16','Par','',0,1,0,0,1)
 insert into Medicamento values (0,'Aguja para Fistula nro 17','Par','',0,1,0,0,1)
 insert into Medicamento values (0,'Micropore','','',0,1,1,1,1)
-insert into Medicamento values  (0,'Guantes Procedimiento','','',0,1,1,0,1)
-insert into Medicamento values  (0,'Jeringa','Pieza','10ML',0,1,1,1,1)
+insert into Medicamento values (0,'Guantes Procedimiento','','',0,1,1,0,1)
+insert into Medicamento values (0,'Jeringa','Pieza','10ML',0,1,1,1,1)
 insert into Medicamento values (0,'Jeringa','Pieza','20ML',0,1,0,1,1)
 insert into Medicamento values (0,'Heparina Sodica','Inyectable','5000UI',0,1,1,1,1)
 insert into Medicamento values (0,'Eritropoyetina','Inyectable','4.000UI',0,1,0,1,1)

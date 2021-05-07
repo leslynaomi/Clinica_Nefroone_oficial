@@ -49,12 +49,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clsCola.cs" />
+    <Compile Include="clsDetalleReceta.cs" />
     <Compile Include="clsDialisisPeritoneal.cs" />
     <Compile Include="clsEmpleado.cs" />
     <Compile Include="clsEvoloucionYTratamiento.cs" />
     <Compile Include="clsHojaEnfermeria.cs" />
     <Compile Include="clsHojaSecretaria.cs" />
     <Compile Include="clsInsumos.cs" />
+    <Compile Include="clsNodo.cs" />
     <Compile Include="clsPaciente.cs" />
     <Compile Include="clsSesion.cs" />
     <Compile Include="N_Users.cs" />

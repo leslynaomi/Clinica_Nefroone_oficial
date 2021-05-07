@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-using capa_datos;
 using capa_negocio;
 
 namespace capa_presentacion
@@ -111,7 +110,6 @@ namespace capa_presentacion
             cbxRed.ResetText();
             cbxMunicipio.ResetText();
             cmbSeguro.ResetText();
-            txtParam.Clear();
             dtpPrimHem.ResetText();
             cbxAccesoV.ResetText();
         }       
@@ -151,8 +149,8 @@ namespace capa_presentacion
            
         }
 
-        private void btnBuscarRegistros_Click_1(object sender, EventArgs e)
-        {                                    
+        private void btnBuscarRegistros_Click(object sender, EventArgs e)
+        {
             if (rdbName.Checked == true)
             {
                 DataSet ds = new DataSet();

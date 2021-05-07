@@ -35,6 +35,7 @@ namespace capa_presentacion.Usuarios.secretario
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnConsHojSec = new System.Windows.Forms.Button();
             this.btnHojaSec = new System.Windows.Forms.Button();
             this.btnConsPac = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -75,6 +76,7 @@ namespace capa_presentacion.Usuarios.secretario
             this.panel3.BackColor = System.Drawing.SystemColors.Desktop;
             this.panel3.Controls.Add(this.btnCerrarSesion);
             this.panel3.Controls.Add(this.label1);
+            this.panel3.Controls.Add(this.btnConsHojSec);
             this.panel3.Controls.Add(this.btnHojaSec);
             this.panel3.Controls.Add(this.btnConsPac);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
@@ -105,6 +107,19 @@ namespace capa_presentacion.Usuarios.secretario
             this.label1.Size = new System.Drawing.Size(207, 37);
             this.label1.TabIndex = 8;
             this.label1.Text = "NEFROONE";
+            // 
+            // btnConsHojSec
+            // 
+            this.btnConsHojSec.BackColor = System.Drawing.SystemColors.Desktop;
+            this.btnConsHojSec.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConsHojSec.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnConsHojSec.Location = new System.Drawing.Point(0, 178);
+            this.btnConsHojSec.Name = "btnConsHojSec";
+            this.btnConsHojSec.Size = new System.Drawing.Size(251, 40);
+            this.btnConsHojSec.TabIndex = 6;
+            this.btnConsHojSec.Text = "CONSULTA HOJA SECRETARIA";
+            this.btnConsHojSec.UseVisualStyleBackColor = false;
+            this.btnConsHojSec.Click += new System.EventHandler(this.btnConsHojSec_Click);
             // 
             // btnHojaSec
             // 
@@ -216,5 +231,6 @@ namespace capa_presentacion.Usuarios.secretario
         private System.Windows.Forms.PictureBox btnMaximizar;
         private System.Windows.Forms.PictureBox btnCerrar;
         private System.Windows.Forms.Button btnCerrarSesion;
+        private System.Windows.Forms.Button btnConsHojSec;
     }
 }

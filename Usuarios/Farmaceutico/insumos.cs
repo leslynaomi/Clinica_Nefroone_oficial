@@ -10,13 +10,16 @@ using System.Windows.Forms;
 using capa_datos;
 using capa_negocio;
 
-namespace capa_presentacion.Usuarios.Farmaceutico
+namespace capa_presentacion
 {
     public partial class insumos : Form
-
-
     {
 
+        public insumos()
+        {
+            InitializeComponent();
+        }
+        
         clsInsumos ins = new clsInsumos();
 
         private void LimpiarTexto()
@@ -26,29 +29,42 @@ namespace capa_presentacion.Usuarios.Farmaceutico
             textConcentracion.Clear();
             textStock.Clear();
             textDiagnostico.Clear();
-            
+
         }
 
-       
-
-        public insumos()
+        private void insumos_Load(object sender, EventArgs e)
         {
-            InitializeComponent();
+            dgvMedicamento.DataSource = ins.Mostrar_Registros();
+            dgvMedicamento.DataMember = "tac";
+            dgvMedicamento.AutoResizeColumns();
+            dgvMedicamento.AutoResizeRows();
         }
 
-        private void btnInsertarRegistros_Click(object sender, EventArgs e)
-        {   
+        private void dgvMedicamento_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                textNameMedic.Text = dgvMedicamento.CurrentRow.Cells[1].Value.ToString();
+                textPresentacion.Text = dgvMedicamento.CurrentRow.Cells[2].Value.ToString();
+                textConcentracion.Text = dgvMedicamento.CurrentRow.Cells[3].Value.ToString();
+                textStock.Text = dgvMedicamento.CurrentRow.Cells[4].Value.ToString();
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void btnInsertarRegistros_Click_1(object sender, EventArgs e)
+        {
             try
             {
                 ins.Nombre_medicamento = textNameMedic.Text;
                 ins.Presentacion = textPresentacion.Text;
-               ins.Concentracion = textConcentracion.Text;
+                ins.Concentracion = textConcentracion.Text;
                 ins.Stock = textStock.Text;
-                ins.Tipo_diagnostico = textDiagnostico.Text;
-               
-                ins.Guardar_Registros();
 
-               ////prueba
+                ////prueba
                 dgvMedicamento.DataSource = ins.Mostrar_Registros();
                 dgvMedicamento.DataMember = "tac";
                 dgvMedicamento.AutoResizeColumns();
@@ -61,54 +77,6 @@ namespace capa_presentacion.Usuarios.Farmaceutico
             {
                 MessageBox.Show("Error al insertar" + er.ToString());
             }
-        }
-
-        private void insumos_Load(object sender, EventArgs e)
-        {
-            dgvMedicamento.DataSource = ins.Mostrar_Registros();
-            dgvMedicamento.DataMember = "tac";
-            dgvMedicamento.AutoResizeColumns();
-            dgvMedicamento.AutoResizeRows();
-
-
-        }
-
-        private void btnModificarRegistros_Click(object sender, EventArgs e)
-        {     
-            try
-            {
-                ins.Nombre_medicamento = textIdMed.Text;
-                ins.Presentacion = textPresentacion.Text;
-                ins.Concentracion = textConcentracion.Text;
-                ins.Stock = textStock.Text;
-                ins.Modificar_Registros();
-                LimpiarTexto();
-                MessageBox.Show("Modificado correctamente", "INFORMACION");
-            }
-            catch (Exception er)
-            {
-                MessageBox.Show("Error al modificar" + er.ToString());
-            }
-        }
-
-        private void btnBuscarRegistros_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dgvMedicamento_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            try { 
-            textNameMedic.Text = dgvMedicamento.CurrentRow.Cells[1].Value.ToString();
-            textPresentacion.Text = dgvMedicamento.CurrentRow.Cells[2].Value.ToString();
-            textConcentracion.Text = dgvMedicamento.CurrentRow.Cells[3].Value.ToString();
-            textStock.Text = dgvMedicamento.CurrentRow.Cells[4].Value.ToString();
-            }
-            catch
-            {
-
-            }
-
         }
     }
 }

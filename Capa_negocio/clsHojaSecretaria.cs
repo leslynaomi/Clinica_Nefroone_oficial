@@ -91,6 +91,15 @@ namespace capa_negocio
             return ds;
         }
 
+        public DataSet Mostrar_HojaSec()
+        {
+            string s;
+            s = "select * from Hoja_Secretaria";
+            DataSet ds = new DataSet();
+            ejecutarSQL(s, "tac", ds);
+            return ds;
+        }
+
         public void Modificar_Registros()
         {
             IniciarSP("modificar_hoja_sec");

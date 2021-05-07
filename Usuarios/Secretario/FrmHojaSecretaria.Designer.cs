@@ -43,13 +43,6 @@ namespace capa_presentacion
             this.btnMostrarRegistros = new System.Windows.Forms.Button();
             this.btnInsertarRegistros = new System.Windows.Forms.Button();
             this.dtpPrimHem = new System.Windows.Forms.DateTimePicker();
-            this.txtParam = new System.Windows.Forms.TextBox();
-            this.rdbEdad = new System.Windows.Forms.RadioButton();
-            this.rdbApellido = new System.Windows.Forms.RadioButton();
-            this.rdbCi = new System.Windows.Forms.RadioButton();
-            this.rdbName = new System.Windows.Forms.RadioButton();
-            this.label10 = new System.Windows.Forms.Label();
-            this.btnBuscarRegistros = new System.Windows.Forms.Button();
             this.chkCartNeg = new System.Windows.Forms.CheckBox();
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.txtCi = new System.Windows.Forms.TextBox();
@@ -70,6 +63,13 @@ namespace capa_presentacion
             this.cbxMunicipio = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.cbxAccesoV = new System.Windows.Forms.ComboBox();
+            this.rdbEdad = new System.Windows.Forms.RadioButton();
+            this.rdbApellido = new System.Windows.Forms.RadioButton();
+            this.rdbCi = new System.Windows.Forms.RadioButton();
+            this.rdbName = new System.Windows.Forms.RadioButton();
+            this.label10 = new System.Windows.Forms.Label();
+            this.btnBuscarRegistros = new System.Windows.Forms.Button();
+            this.txtParam = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHojaRegistro)).BeginInit();
             this.SuspendLayout();
             // 
@@ -131,7 +131,7 @@ namespace capa_presentacion
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(404, 23);
+            this.label1.Location = new System.Drawing.Point(453, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(222, 25);
             this.label1.TabIndex = 31;
@@ -168,10 +168,10 @@ namespace capa_presentacion
             this.dgvHojaRegistro.AllowUserToOrderColumns = true;
             this.dgvHojaRegistro.BackgroundColor = System.Drawing.Color.DarkSalmon;
             this.dgvHojaRegistro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvHojaRegistro.Location = new System.Drawing.Point(285, 95);
+            this.dgvHojaRegistro.Location = new System.Drawing.Point(285, 104);
             this.dgvHojaRegistro.Name = "dgvHojaRegistro";
             this.dgvHojaRegistro.ReadOnly = true;
-            this.dgvHojaRegistro.Size = new System.Drawing.Size(777, 545);
+            this.dgvHojaRegistro.Size = new System.Drawing.Size(777, 536);
             this.dgvHojaRegistro.TabIndex = 40;
             // 
             // btnMostrarRegistros
@@ -205,79 +205,6 @@ namespace capa_presentacion
             this.dtpPrimHem.Name = "dtpPrimHem";
             this.dtpPrimHem.Size = new System.Drawing.Size(99, 20);
             this.dtpPrimHem.TabIndex = 15;
-            // 
-            // txtParam
-            // 
-            this.txtParam.Location = new System.Drawing.Point(411, 62);
-            this.txtParam.Name = "txtParam";
-            this.txtParam.Size = new System.Drawing.Size(129, 20);
-            this.txtParam.TabIndex = 19;
-            // 
-            // rdbEdad
-            // 
-            this.rdbEdad.AutoSize = true;
-            this.rdbEdad.Location = new System.Drawing.Point(957, 63);
-            this.rdbEdad.Name = "rdbEdad";
-            this.rdbEdad.Size = new System.Drawing.Size(50, 17);
-            this.rdbEdad.TabIndex = 23;
-            this.rdbEdad.TabStop = true;
-            this.rdbEdad.Text = "Edad";
-            this.rdbEdad.UseVisualStyleBackColor = true;
-            // 
-            // rdbApellido
-            // 
-            this.rdbApellido.AutoSize = true;
-            this.rdbApellido.Location = new System.Drawing.Point(727, 63);
-            this.rdbApellido.Name = "rdbApellido";
-            this.rdbApellido.Size = new System.Drawing.Size(62, 17);
-            this.rdbApellido.TabIndex = 21;
-            this.rdbApellido.TabStop = true;
-            this.rdbApellido.Text = "Apellido";
-            this.rdbApellido.UseVisualStyleBackColor = true;
-            // 
-            // rdbCi
-            // 
-            this.rdbCi.AutoSize = true;
-            this.rdbCi.Location = new System.Drawing.Point(817, 63);
-            this.rdbCi.Name = "rdbCi";
-            this.rdbCi.Size = new System.Drawing.Size(118, 17);
-            this.rdbCi.TabIndex = 22;
-            this.rdbCi.TabStop = true;
-            this.rdbCi.Text = "Carnet de Identidad";
-            this.rdbCi.UseVisualStyleBackColor = true;
-            // 
-            // rdbName
-            // 
-            this.rdbName.AutoSize = true;
-            this.rdbName.Location = new System.Drawing.Point(646, 63);
-            this.rdbName.Name = "rdbName";
-            this.rdbName.Size = new System.Drawing.Size(62, 17);
-            this.rdbName.TabIndex = 20;
-            this.rdbName.TabStop = true;
-            this.rdbName.Text = "Nombre";
-            this.rdbName.UseVisualStyleBackColor = true;
-            this.rdbName.CheckedChanged += new System.EventHandler(this.rdbName_CheckedChanged);
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(567, 65);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(61, 13);
-            this.label10.TabIndex = 55;
-            this.label10.Text = "Buscar por:";
-            // 
-            // btnBuscarRegistros
-            // 
-            this.btnBuscarRegistros.BackColor = System.Drawing.Color.DarkSlateBlue;
-            this.btnBuscarRegistros.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btnBuscarRegistros.Location = new System.Drawing.Point(287, 57);
-            this.btnBuscarRegistros.Name = "btnBuscarRegistros";
-            this.btnBuscarRegistros.Size = new System.Drawing.Size(104, 29);
-            this.btnBuscarRegistros.TabIndex = 24;
-            this.btnBuscarRegistros.Text = "Buscar Registros";
-            this.btnBuscarRegistros.UseVisualStyleBackColor = false;
-            this.btnBuscarRegistros.Click += new System.EventHandler(this.btnBuscarRegistros_Click_1);
             // 
             // chkCartNeg
             // 
@@ -462,12 +389,91 @@ namespace capa_presentacion
             this.cbxAccesoV.Size = new System.Drawing.Size(100, 21);
             this.cbxAccesoV.TabIndex = 2;
             // 
+            // rdbEdad
+            // 
+            this.rdbEdad.AutoSize = true;
+            this.rdbEdad.Location = new System.Drawing.Point(993, 66);
+            this.rdbEdad.Name = "rdbEdad";
+            this.rdbEdad.Size = new System.Drawing.Size(50, 17);
+            this.rdbEdad.TabIndex = 71;
+            this.rdbEdad.TabStop = true;
+            this.rdbEdad.Text = "Edad";
+            this.rdbEdad.UseVisualStyleBackColor = true;
+            // 
+            // rdbApellido
+            // 
+            this.rdbApellido.AutoSize = true;
+            this.rdbApellido.Location = new System.Drawing.Point(763, 66);
+            this.rdbApellido.Name = "rdbApellido";
+            this.rdbApellido.Size = new System.Drawing.Size(62, 17);
+            this.rdbApellido.TabIndex = 69;
+            this.rdbApellido.TabStop = true;
+            this.rdbApellido.Text = "Apellido";
+            this.rdbApellido.UseVisualStyleBackColor = true;
+            // 
+            // rdbCi
+            // 
+            this.rdbCi.AutoSize = true;
+            this.rdbCi.Location = new System.Drawing.Point(853, 66);
+            this.rdbCi.Name = "rdbCi";
+            this.rdbCi.Size = new System.Drawing.Size(118, 17);
+            this.rdbCi.TabIndex = 70;
+            this.rdbCi.TabStop = true;
+            this.rdbCi.Text = "Carnet de Identidad";
+            this.rdbCi.UseVisualStyleBackColor = true;
+            // 
+            // rdbName
+            // 
+            this.rdbName.AutoSize = true;
+            this.rdbName.Location = new System.Drawing.Point(682, 66);
+            this.rdbName.Name = "rdbName";
+            this.rdbName.Size = new System.Drawing.Size(62, 17);
+            this.rdbName.TabIndex = 68;
+            this.rdbName.TabStop = true;
+            this.rdbName.Text = "Nombre";
+            this.rdbName.UseVisualStyleBackColor = true;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(603, 68);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(61, 13);
+            this.label10.TabIndex = 73;
+            this.label10.Text = "Buscar por:";
+            // 
+            // btnBuscarRegistros
+            // 
+            this.btnBuscarRegistros.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.btnBuscarRegistros.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.btnBuscarRegistros.Location = new System.Drawing.Point(323, 60);
+            this.btnBuscarRegistros.Name = "btnBuscarRegistros";
+            this.btnBuscarRegistros.Size = new System.Drawing.Size(104, 29);
+            this.btnBuscarRegistros.TabIndex = 72;
+            this.btnBuscarRegistros.Text = "Buscar Registros";
+            this.btnBuscarRegistros.UseVisualStyleBackColor = false;
+            this.btnBuscarRegistros.Click += new System.EventHandler(this.btnBuscarRegistros_Click);
+            // 
+            // txtParam
+            // 
+            this.txtParam.Location = new System.Drawing.Point(447, 65);
+            this.txtParam.Name = "txtParam";
+            this.txtParam.Size = new System.Drawing.Size(129, 20);
+            this.txtParam.TabIndex = 67;
+            // 
             // FrmHojaSecretaria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.BurlyWood;
             this.ClientSize = new System.Drawing.Size(1081, 652);
+            this.Controls.Add(this.rdbEdad);
+            this.Controls.Add(this.rdbApellido);
+            this.Controls.Add(this.rdbCi);
+            this.Controls.Add(this.rdbName);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.btnBuscarRegistros);
+            this.Controls.Add(this.txtParam);
             this.Controls.Add(this.cmbSeguro);
             this.Controls.Add(this.cbxMunicipio);
             this.Controls.Add(this.cbxRed);
@@ -486,13 +492,6 @@ namespace capa_presentacion
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label17);
-            this.Controls.Add(this.rdbEdad);
-            this.Controls.Add(this.rdbApellido);
-            this.Controls.Add(this.rdbCi);
-            this.Controls.Add(this.rdbName);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.btnBuscarRegistros);
-            this.Controls.Add(this.txtParam);
             this.Controls.Add(this.dtpFechaNac);
             this.Controls.Add(this.dtpPrimHem);
             this.Controls.Add(this.btnMostrarRegistros);
@@ -533,13 +532,6 @@ namespace capa_presentacion
         private System.Windows.Forms.Button btnMostrarRegistros;
         private System.Windows.Forms.Button btnInsertarRegistros;
         private System.Windows.Forms.DateTimePicker dtpPrimHem;
-        private System.Windows.Forms.TextBox txtParam;
-        private System.Windows.Forms.RadioButton rdbEdad;
-        private System.Windows.Forms.RadioButton rdbApellido;
-        private System.Windows.Forms.RadioButton rdbCi;
-        private System.Windows.Forms.RadioButton rdbName;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button btnBuscarRegistros;
         private System.Windows.Forms.CheckBox chkCartNeg;
         private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.TextBox txtCi;
@@ -560,5 +552,12 @@ namespace capa_presentacion
         private System.Windows.Forms.ComboBox cbxMunicipio;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox cbxAccesoV;
+        private System.Windows.Forms.RadioButton rdbEdad;
+        private System.Windows.Forms.RadioButton rdbApellido;
+        private System.Windows.Forms.RadioButton rdbCi;
+        private System.Windows.Forms.RadioButton rdbName;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button btnBuscarRegistros;
+        private System.Windows.Forms.TextBox txtParam;
     }
 }

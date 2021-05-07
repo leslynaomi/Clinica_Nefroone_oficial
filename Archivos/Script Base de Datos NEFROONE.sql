@@ -729,30 +729,31 @@ begin
 		rollback tran
 	end catch	
 end
-/*
+
 ------------						DIALISIS PERITONEAL
 go
 
 --PROCEDIMIENTO INSERTAR DIALISIS PERITONEAL
 create proc insertar_dialisis_peritoneal(
-@precio_Sesion_D_Peritoneal money,
+@nro_Dialisis int,
 @infucion_Inicio time,
 @infucion_Final time,
 @infucion_Volumen varchar(50),
 @drenaje_Inicio date,
 @drenaje_Volumen varchar (50),
 @balance_Parcial varchar(50),
-@balance_Total varchar(50), 
+@balance_Total varchar(50),
 @solucion_Usada1 varchar(50),
 @solucion_Usada2 varchar(50),
 @observacion_Balance varchar(100),
-@id_hojaE int,
+@total_Dialisis int,
+@variedad_De_Peso varchar(50),
 @id_sesion int
 )as
 begin
 	begin try
 		begin tran
-			insert into Dialisis_Peritoneal values(@precio_Sesion_D_Peritoneal,@infucion_Inicio,@infucion_Final,@infucion_Volumen,@drenaje_Inicio,@drenaje_Volumen,@balance_Parcial,@balance_Total,@solucion_Usada1,@solucion_Usada2,@observacion_Balance,@id_hojaE,@id_sesion)
+			insert into Dialisis_Peritoneal values(@nro_Dialisis,@infucion_Inicio,@infucion_Final,@infucion_Volumen,@drenaje_Inicio,@drenaje_Volumen,@balance_Parcial,@balance_Total,@solucion_Usada1,@solucion_Usada2,@observacion_Balance,@total_Dialisis,@variedad_De_Peso,@id_sesion)
 		commit tran
 	end try
 	begin catch
@@ -761,6 +762,7 @@ begin
 	end catch	
 end
 go
+/*
 --PROCEDIMIENTO MODIFICAR DIALISIS PERITONEAL
 create proc modificar_dialisis_peritoneal(
 @precio_Sesion_D_Peritoneal money,
@@ -819,7 +821,6 @@ begin
 	end catch	
 end
 go
-
 ---listar medicamentos para médico
 create proc ListarMedic
 as
@@ -851,6 +852,7 @@ as
 select id_medicamento,nombre_Medicamento,presentacion,concentracion,stock
 from Medicamento
 */
+
 go
 --Procedimiento que valida la existencia de un usuario y contraseña en los registros
 create proc sp_login(
