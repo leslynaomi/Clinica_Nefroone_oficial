@@ -1,6 +1,6 @@
 --Creación de la base de datos
---create database Nefroone15
---use Nefroone15
+--create database Nefroone16
+--use Nefroone16
 
 --Eliminar un Procedimiento
 --drop proc insertar_paciente
@@ -13,7 +13,7 @@
 --enable trigger Habitacion_Libre on detalle_habitacion
 
 --Eliminación de la base de datos
---drop database Nefroone13
+--drop database Nefroone16
 
 --Consulta para ver todas las tablas en una base de datos
 --SELECT CAST(table_name as varchar)  FROM INFORMATION_SCHEMA.TABLES
@@ -1028,6 +1028,7 @@ begin
 		end
 	else
 		begin
+			print 'El registro no corresponde a la tabla "Dialisis Peritoneal" por el tipo de acceso'
 			raiserror('no pertenece a este formulario',16,1) 	
 			ROLLBACK TRANSACTION
 		end
@@ -1047,7 +1048,47 @@ begin
 		end
 	else
 		begin
+			print 'El registro no corresponde a la tabla "Control Enfermería" por el tipo de acceso'
 			raiserror('no pertenece a este formulario',16,1) 
 			ROLLBACK TRANSACTION
 		end
+end
+go
+--Trigger para actualizar Número de Sesión de Hemodiálisis de Control de Enfermería
+--de forma incremental y automática
+create trigger incrementar_Nro_Sesion_HD
+on Control_Enfermeria
+for Insert
+as
+begin
+	--Variable que guarda la cantidad de sesiones ya registradas en la tabla Sesion
+	--con una misma Hoja_Secretaria
+	declare @cant int
+	declare @id_sesion int
+	declare @id_hojaS int
+
+	select @id_sesion = (select id_sesion from inserted)
+	select @id_hojaS = (select id_hojaS from Sesion where id_sesion = @id_sesion)
+	select @cant = (select count(id_sesion) from Sesion where id_hojaS = @id_hojaS)
+
+	/* Solo para mostrar los datos en pantalla (TESTING)
+	print @id_sesion 
+	print @id_hojaS 
+	print @cant
+	*/
+
+	if(@cant <= 1)
+		begin
+			--Incrementa el número de sesión HD al último registro que se está insertando
+			update Control_Enfermeria
+			set nro_Sesion_HD = 1
+			where id_sesion = (select id_sesion from inserted)
+		end
+	else
+		begin
+			--Incrementa el número de sesión HD al último registro que se está insertando
+			update Control_Enfermeria
+			set nro_Sesion_HD = @cant
+			where id_sesion = (select id_sesion from inserted)
+		end	
 end

@@ -1,7 +1,7 @@
 -----------------------------------------------------------------------------------------------------------
 -------------			POBLACIÓN DE TABLAS CON LOS PRODCEDIMIENTOS (PARA TESTEO)		-------------------
 -----------------------------------------------------------------------------------------------------------
---use Nefroone15
+--use Nefroone16
 go
 
 --Empleado
@@ -16,6 +16,7 @@ go
 --select *from Paciente
 exec insertar_paciente 92452354,'Joaquin','Charles','Flower','13/08/1998',0,'M','Calle Cosorio'
 exec insertar_paciente 93467764,'Oliver','Atom','','14/03/1998',0,'M','Calle Ambaibo'
+exec insertar_paciente 94548332,'Richard','Centellas','Carl','14/03/1998',0,'M','Calle Ambaibo'
 --exec modificar_paciente 92452354,'Pedro','Contra','Barreras','13/08/1998',0,'M','Calle Alemán'
 --exec eliminar_paciente 0
 go
@@ -23,6 +24,7 @@ go
 --select *from Hoja_Secretaria
 exec insertar_hoja_sec 7249399,1,1,'Profesional','Salud','Montero','SUS','12/03/2020','Cateter',92452354,1
 exec insertar_hoja_sec 7545699,0,0,'Profesional','Salud','Montero','SUS','12/03/2020','Dialisis Peritoneal',93467764,1
+exec insertar_hoja_sec 7545699,0,0,'Profesional','Salud','Montero','SUS','12/03/2020','Fistula',94548332,1
 --exec modificar_hoja_sec 1,7249399,true,'Esta es una carta negativa','este es un grado instrucción','local','Montero','Este es un seguro','27/09/2021',92452354
 --exec eliminar_hoja_sec 6,92452354
 go
@@ -35,6 +37,12 @@ exec insertar_nota_enf 'Paciente ingresa al servicio de hemodiálisis con signos 
 --select *from Sesion
 exec insertar_sesion '10/03/2021',60.7,50,1,1,1
 exec insertar_sesion '03/04/2021',62,55,1,1,4
+exec insertar_sesion '03/05/2021',62,55,1,1,5
+exec insertar_sesion '03/05/2021',62,55,1,1,6
+exec insertar_sesion '03/05/2021',62,55,1,1,6
+exec insertar_sesion '03/05/2021',62,55,1,1,6
+exec insertar_sesion '03/05/2021',62,55,1,1,6
+exec insertar_sesion '10/03/2021',60.7,50,1,1,1
 
 --Super consulta para el formulario de Sesion
 /*
@@ -46,6 +54,14 @@ where sec.ci = pac.ci and sec.id_hojaS = ses.id_hojaS
 --Control Enfermeria
 --select *from Control_Enfermeria
 exec insertar_control_enfermeria 1,'14:10','15:20','3000 ml','5000 ui','250 mlx','140/70/mHg',30,'68x','98%',1
+exec insertar_control_enfermeria 12,'14:10','15:20','3000 ml','5000 ui','250 mlx','140/70/mHg',30,'68x','98%',6
+exec insertar_control_enfermeria 11,'14:10','15:20','3000 ml','5000 ui','250 mlx','140/70/mHg',30,'68x','98%',2
+exec insertar_control_enfermeria 11,'14:10','15:20','3000 ml','5000 ui','250 mlx','140/70/mHg',30,'68x','98%',3
+exec insertar_control_enfermeria 11,'14:10','15:20','3000 ml','5000 ui','250 mlx','140/70/mHg',30,'68x','98%',7
+exec insertar_control_enfermeria 11,'14:10','15:20','3000 ml','5000 ui','250 mlx','140/70/mHg',30,'68x','98%',8
+exec insertar_control_enfermeria 11,'14:10','15:20','3000 ml','5000 ui','250 mlx','140/70/mHg',30,'68x','98%',9
+exec insertar_control_enfermeria 11,'14:10','15:20','3000 ml','5000 ui','250 mlx','140/70/mHg',30,'68x','98%',10
+exec insertar_control_enfermeria 11,'14:10','15:20','3000 ml','5000 ui','250 mlx','140/70/mHg',30,'68x','98%',11
 
 --Dialisis Peritoneal
 --select *from Dialisis_Peritoneal
@@ -64,6 +80,9 @@ where evol.id_sesion=ses.id_sesion and ses.id_sesion=enf.id_sesion and sec.id_ho
 */
 
 
+
+
+go
 
 /*
 insert into Farmacia values ('Farmacia NEFROONE',1)

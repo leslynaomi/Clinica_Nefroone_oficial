@@ -91,6 +91,8 @@ namespace capa_negocio
             return ds;
         }
 
+
+
         public DataSet Mostrar_HojaSec()
         {
             string s;
